@@ -1,5 +1,16 @@
 ------------------------------------------------------------
 User: jchiang  Fri Aug  1 20:58:24 PDT 2003
+observationSim/src
+
+Modified Files:
+	LatSc.cxx ScDataContainer.cxx Simulator.cxx 
+Added Files:
+	Roi.cxx 
+Log Message:
+use flux package instead of FluxSvc
+    *
+------------------------------------------------------------
+User: jchiang  Fri Aug  1 20:58:24 PDT 2003
 observationSim/observationSim
 
 Modified Files:
