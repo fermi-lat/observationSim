@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Dec 10 19:41:17 PST 2003
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx ScDataContainer.cxx 
+Log Message:
+delete Goodi data objects
+    *
+------------------------------------------------------------
+User: jchiang  Wed Dec 10 19:41:17 PST 2003
 observationSim/observationSim
 
 Modified Files:
