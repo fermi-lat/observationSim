@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Wed Jul  9 16:24:03 PDT 2003
+observationSim/observationSim
+
+Modified Files:
+	Simulator.h 
+Log Message:
+Allow for a vector of source names to be passed to the constructor.
+
+    *
+------------------------------------------------------------
 User: jchiang  Tue Jul  8 17:22:24 PDT 2003
 observationSim/xml
 
