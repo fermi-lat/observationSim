@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Mar  7 19:41:15 PST 2005
+observationSim/src/orbSim
+
+Modified Files:
+	orbSim.cxx 
+Log Message:
+disable banner method; tagging v5r6p4
+    *
+------------------------------------------------------------
+User: jchiang  Mon Mar  7 19:41:15 PST 2005
 observationSim/src/obsSim
 
 Modified Files:
