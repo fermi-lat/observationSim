@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Oct 28 07:37:08 PST 2003
+observationSim/python
+
+Modified Files:
+	test.py 
+Log Message:
+add script to generate broken-power-law source spectrum
+    *
+------------------------------------------------------------
 User: jchiang  Mon Oct 27 12:49:55 PST 2003
 observationSim/src/test
 
