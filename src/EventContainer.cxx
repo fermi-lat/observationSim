@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.11 2003/09/05 23:12:44 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.12 2003/10/02 18:22:48 jchiang Exp $
  */
 
 #include <cmath>
@@ -272,7 +272,5 @@ std::string EventContainer::outputFileName() const {
    outputfile << m_fileNum << ".fits";
    return outputfile.str();
 }
-
-
 
 } // namespace observationSim

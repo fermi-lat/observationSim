@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.11 2003/08/27 15:03:29 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.12 2003/09/05 23:12:45 jchiang Exp $
  */
 
 #include "astro/SkyDir.h"
@@ -93,7 +93,8 @@ int main(int argn, char * argc[]) {
 
 // Generate the events and spacecraft data.
    observationSim::EventContainer events("test_events", true);
-   observationSim::ScDataContainer scData("test_scData", true);
+// For SC data, don't use Goodi until LatSCTemplate file appears.
+   observationSim::ScDataContainer scData("test_scData", false);
 
 // The spacecraft object.
    observationSim::Spacecraft *spacecraft = new observationSim::LatSc();
