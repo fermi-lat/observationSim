@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Mar 11 19:41:39 PST 2004
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx 
+Log Message:
+use new hoopsUtil
+    *
+------------------------------------------------------------
+User: jchiang  Thu Mar 11 19:41:39 PST 2004
 observationSim/data
 
 Modified Files:
