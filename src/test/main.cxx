@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.20 2003/10/27 20:49:55 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.21 2003/10/30 16:18:54 jchiang Exp $
  */
 #ifdef TRAP_FPE
 #include <fenv.h>
@@ -99,7 +99,11 @@ int main(int argn, char * argc[]) {
    }
 
 // Generate the events and spacecraft data.
-   bool useGoodi = false;
+#ifdef USE_GOODI
+   bool useGoodi(true);
+#else
+   bool useGoodi(false);
+#endif
    observationSim::EventContainer events("test_events", useGoodi);
    observationSim::ScDataContainer scData("test_scData", useGoodi);
 
