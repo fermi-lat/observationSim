@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.12 2003/10/17 03:57:34 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.13 2003/10/18 02:42:44 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -40,7 +40,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.12 2003/10/17 03:57:34 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.13 2003/10/18 02:42:44 jchiang Exp $
  */
 
 class EventContainer {
@@ -58,9 +58,7 @@ public:
       m_filename(filename), m_useGoodi(useGoodi), m_fileNum(0), 
       m_maxNumEvents(maxNumEvents), m_prob(1) {init();}
 
-   ~EventContainer() {
-      if (m_events.size() > 0) writeEvents();
-   }
+   ~EventContainer();
 
    /// @param event A pointer to the current EventSource object
    ///        that was provided by the FluxMgr object.

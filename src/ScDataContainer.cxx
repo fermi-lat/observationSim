@@ -3,7 +3,7 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.13 2003/10/07 22:33:57 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.14 2003/11/26 01:54:21 jchiang Exp $
  */
 
 #include <sstream>
@@ -25,6 +25,13 @@
 #include "observationSim/ScDataContainer.h"
 
 namespace observationSim {
+
+ScDataContainer::~ScDataContainer() {
+   if (m_scData.size() > 0) writeScData();
+   if (m_useGoodi) {
+      delete m_goodiScData;
+   }
+}
 
 void ScDataContainer::init() {
    m_scData.clear();
