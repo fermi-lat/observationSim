@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Oct 16 20:57:34 PDT 2003
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+allow for multiple IRFs to be passed to Simulator
+    *
+------------------------------------------------------------
 User: jchiang  Tue Oct 14 21:53:14 PDT 2003
 observationSim/src/test
 
