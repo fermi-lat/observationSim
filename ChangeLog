@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Sep  3 17:35:37 PDT 2003
+observationSim/xml
+
+Added Files:
+	test_sources_v2.xml 
+Log Message:
+add second version of mock Cygnus region catalog
+    *
+------------------------------------------------------------
 User: jchiang  Wed Sep  3 17:35:36 PDT 2003
 observationSim/python
 
