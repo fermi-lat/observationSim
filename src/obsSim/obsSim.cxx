@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.13 2004/08/03 19:46:54 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.14 2004/08/11 17:16:00 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -25,7 +25,6 @@
 
 #include "irfInterface/IrfsFactory.h"
 #include "irfLoader/Loader.h"
-// #include "dc2Response/loadIrfs.h"
 
 #include "Likelihood/Util.h"
 
@@ -156,21 +155,16 @@ void ObsSim::readSrcNames() {
 
 void ObsSim::createResponseFuncs() {
    irfLoader::Loader::go();
-//    dc2Response::loadIrfs();
    irfInterface::IrfsFactory * myFactory 
       = irfInterface::IrfsFactory::instance();
+
    std::string responseFuncs = m_pars["Response_functions"];
-   std::map< std::string, std::vector<std::string> > responseIds;
-   responseIds["FRONT"].push_back("DC1::Front");
-   responseIds["BACK"].push_back("DC1::Back");
-   responseIds["FRONT/BACK"].push_back("DC1::Front");
-   responseIds["FRONT/BACK"].push_back("DC1::Back");
-//    responseIds["DC2"].push_back("DC2::Front");
-//    responseIds["DC2"].push_back("DC2::Back");
-   responseIds["GLAST25"].push_back("Glast25::Front");
-   responseIds["GLAST25"].push_back("Glast25::Back");
-   if (responseIds.count(responseFuncs)) {
-      std::vector<std::string> &resps = responseIds[responseFuncs];
+
+   typedef std::map< std::string, std::vector<std::string> > respMap;
+   const respMap & responseIds = irfLoader::Loader::respIds();
+   respMap::const_iterator it;
+   if ( (it = responseIds.find(responseFuncs)) != responseIds.end() ) {
+      const std::vector<std::string> & resps = it->second;
       for (unsigned int i = 0; i < resps.size(); i++) {
          m_respPtrs.push_back(myFactory->create(resps[i]));
       }
