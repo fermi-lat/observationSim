@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Apr  6 13:38:57 PDT 2005
+observationSim/src
+
+Modified Files:
+	ContainerBase.cxx EventContainer.cxx 
+Log Message:
+set ONTIME and TELAPSE in GTI ext.; tagging v5r6p7
+    *
+------------------------------------------------------------
 User: jchiang  Wed Apr  6 13:38:56 PDT 2005
 observationSim/doc
 
