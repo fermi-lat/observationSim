@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Apr  6 07:05:45 PDT 2004
+observationSim/src/test
+
+Modified Files:
+	main.cxx 
+Log Message:
+use new latResponse interface
+    *
+------------------------------------------------------------
 User: jchiang  Thu Mar 18 20:55:01 PST 2004
 observationSim/src
 
