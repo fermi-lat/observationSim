@@ -3,7 +3,7 @@
  * @brief Implementation for the interface class to FluxSvc::FluxMgr for
  * generating LAT photon events.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.1.1.1 2003/06/18 19:46:33 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.2 2003/06/19 00:14:05 jchiang Exp $
  */
 
 #include <string>
@@ -121,8 +121,8 @@ void Simulator::makeEvents(EventContainer &events, ScDataContainer &scData,
       m_absTime += interval;
       m_elapsedTime += interval;
       m_fluxMgr->pass(interval);
-      scData.addScData(f, *m_fluxMgr);
-      if (events.addEvent(f, *m_fluxMgr)) {
+      scData.addScData(f);
+      if (events.addEvent(f)) {
          m_numEvents++;
          if (m_maxNumEvents/20 > 0 &&
              m_numEvents % (m_maxNumEvents/20) == 0) std::cerr << ".";
