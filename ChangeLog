@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Oct 29 14:34:44 PDT 2004
+observationSim/observationSim
+
+Modified Files:
+	Simulator.h 
+Log Message:
+add maximum simulation time to par file
+    *
+------------------------------------------------------------
 User: jchiang  Fri Oct 29 14:17:25 PDT 2004
 observationSim/src/obsSim
 
