@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Apr  6 13:38:56 PDT 2005
+observationSim/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+set ONTIME and TELAPSE in GTI ext.; tagging v5r6p7
+    *
+------------------------------------------------------------
 User: jchiang  Wed Apr  6 13:38:55 PDT 2005
 observationSim/cmt
 
