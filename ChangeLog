@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Fri Oct 17 09:56:56 PDT 2003
+observationSim/doc
+
+Modified Files:
+	Doxyfile release.notes 
+Log Message:
+multiple IRF implementation now tested; improved test program and python module interfaces; tagging v2r0
+    *
+------------------------------------------------------------
+User: jchiang  Fri Oct 17 09:56:56 PDT 2003
 observationSim/cmt
 
 Modified Files:
