@@ -1,5 +1,16 @@
 ------------------------------------------------------------
 User: jchiang  Tue Aug 19 20:51:08 PDT 2003
+observationSim/src
+
+Modified Files:
+	Simulator.cxx 
+Added Files:
+	observationSim.cxx 
+Log Message:
+add python build for linux
+    *
+------------------------------------------------------------
+User: jchiang  Tue Aug 19 20:51:08 PDT 2003
 observationSim/python
 
 Added Files:
