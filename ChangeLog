@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: cohen  Sun Aug 24 13:52:20 PDT 2003
+observationSim/observationSim
+
+Modified Files:
+	EventContainer.h Simulator.h 
+Log Message:
+change dependancy from FluxSvc to flux
+    *
+------------------------------------------------------------
 User: jchiang  Sun Aug 24 12:14:25 PDT 2003
 observationSim/doc
 
