@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.18 2004/08/26 21:58:56 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.19 2004/09/26 17:57:56 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -183,7 +183,7 @@ void ObsSim::createSimulator() {
    m_simulator = new observationSim::Simulator(m_srcNames, m_xmlSourceFiles, 
                                                totalArea, startTime, 
                                                pointingHistory);
-// // Turn off rocking.
+// // Turn off rocking with pointing history
 //    my_simulator.setRocking(0);
 }
 

@@ -3,7 +3,7 @@
  * @brief A prototype O1 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.18 2004/08/26 21:58:56 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.1 2004/09/26 17:57:57 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -93,7 +93,10 @@ void OrbSim::createSimulator() {
       double ra = m_pars["ra"];
       double dec = m_pars["dec"];
       astro::SkyDir dir(ra, dec);
-      GPS::instance()->rotateAngles(std::make_pair(dir.l(), dir.b()));
+// GPS wants (l, b) for the rotation angles in pointing mode, but
+// they must be in radians!
+      GPS::instance()->rotateAngles(std::make_pair(dir.l()*M_PI/180., 
+                                                   dir.b()*M_PI/180.));
    }
 }
 
