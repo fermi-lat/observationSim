@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/obsSim.cxx,v 1.10 2004/01/13 04:07:34 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/obsSim.cxx,v 1.11 2004/01/23 02:29:21 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -135,6 +135,8 @@ int main(int iargc, char * argv[]) {
       responseIds["BACK"].push_back("DC1::Back");
       responseIds["FRONT/BACK"].push_back("DC1::Front");
       responseIds["FRONT/BACK"].push_back("DC1::Back");
+      responseIds["NO_EDISP"].push_back("DC1::Front_noEdisp");
+      responseIds["NO_EDISP"].push_back("DC1::Back_noEdisp");
 
       if (responseIds.count(responseFuncs)) {
          std::vector<std::string> &resps = responseIds[responseFuncs];
