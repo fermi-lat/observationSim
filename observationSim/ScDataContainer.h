@@ -2,7 +2,7 @@
  * @file ScDataContainer.h
  * @brief Declaration for ScDataContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.13 2004/08/27 04:37:38 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.14 2004/09/15 02:00:37 jchiang Exp $
  */
 
 #ifndef observationSim_ScDataContainer_h
@@ -28,7 +28,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.13 2004/08/27 04:37:38 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.14 2004/09/15 02:00:37 jchiang Exp $
  */
 
 class ScDataContainer : public ContainerBase {
@@ -39,8 +39,8 @@ public:
    /// @param maxNumEntries The maximum number of entries in the ScData
    ///        buffer before a FITS file is written.
    ScDataContainer(const std::string &filename, 
-                   int maxNumEntries=20000) : 
-      ContainerBase(filename, maxNumEntries) {
+                   int maxNumEntries=20000, bool writeData=true) : 
+      ContainerBase(filename, maxNumEntries), m_writeData(writeData) {
       init();
    }
 
@@ -64,6 +64,9 @@ private:
 
    /// The ScData buffer.
    std::vector<ScData> m_scData;
+
+   /// Flag if ScData is to be written out to FT2 files.
+   bool m_writeData;
 
    /// This routine contains the constructor implementation.
    void init();
