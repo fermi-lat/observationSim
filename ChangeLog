@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Fri Nov 14 22:04:46 PST 2003
+observationSim/src/test
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+apply energy dispersion; update documentation; simplify user interface
+    *
+------------------------------------------------------------
+User: jchiang  Fri Nov 14 22:04:46 PST 2003
 observationSim/src
 
 Modified Files:
