@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Tue Aug 26 08:55:40 PDT 2003
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+do const_cast<double *>(&energies[0]) in order to pass vector as c array pointer to cfitsio
+
+    *
+------------------------------------------------------------
 User: jchiang  Mon Aug 25 15:05:47 PDT 2003
 observationSim/doc
 
