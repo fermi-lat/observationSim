@@ -1,5 +1,16 @@
 ------------------------------------------------------------
 User: jchiang  Thu Jan 22 18:29:21 PST 2004
+observationSim/xml
+
+Added Files:
+	obsSim_source_library.xml time_source.xml 
+Removed Files:
+	source_library.xml 
+Log Message:
+allow more flexibility in specifying flux-style xml files
+    *
+------------------------------------------------------------
+User: jchiang  Thu Jan 22 18:29:21 PST 2004
 observationSim/src/test
 
 Modified Files:
