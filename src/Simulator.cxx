@@ -3,7 +3,7 @@
  * @brief Implementation for the interface class to flux::FluxMgr for
  * generating LAT photon events.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.13 2003/08/02 03:58:24 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.14 2003/08/20 03:51:08 jchiang Exp $
  */
 
 #include <string>
@@ -26,10 +26,12 @@
 
 #include "flux/SpectrumFactory.h"
 
-// #include "src/MapSpectrum.h"
+#if 0
+#include "src/MapSpectrum.h"
 
-// static SpectrumFactory<MapSpectrum> factory;
-// const ISpectrumFactory& MapSpectrumFactory = factory;
+static SpectrumFactory<MapSpectrum> factory;
+const ISpectrumFactory& MapSpectrumFactory = factory;
+#endif
 
 // The following routine seems not to be necessary (for now) since
 // CHIMESpectrum, et al. are provided by FluxSvc, and MapSpectrum

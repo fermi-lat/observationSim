@@ -1,9 +1,9 @@
 package observationSim
-version v0r3p1
+version v0r3p3
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.19 2003/09/04 00:35:35 jchiang Exp $
+# $Id: requirements,v 1.20 2003/09/04 01:30:56 jchiang Exp $
 
 branches observationSim cmt src doc
 
@@ -29,6 +29,7 @@ macro observationSim_cppflags "" Linux "-I ../src -g -pedantic " WIN32 "/I..\src
 macro_prepend cflags "" Linux "-g "
 
 #macro_append test_observationSimlinkopts "" Linux " -L$(MAPFLUXROOT)/$(CMTCONFIG)/ -lMapFlux -Wl,-rpath,$(MAPFLUXROOT)/$(CMTCONFIG)/ "
+#macro_append test_observationSimlinkopts "" Linux " -L$(MAPFLUXROOT)/$(CMTCONFIG)/ -lMapFlux "
      
 apply_pattern package_linkopts
 
