@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Sep 27 11:00:23 PDT 2004
+observationSim/observationSim
+
+Modified Files:
+	ScData.h Spacecraft.h 
+Log Message:
+add spacecraft position to scData output
+    *
+------------------------------------------------------------
 User: jchiang  Sun Sep 26 12:50:12 PDT 2004
 observationSim/src/orbSim
 
