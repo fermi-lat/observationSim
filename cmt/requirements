@@ -3,7 +3,7 @@ version v0r2
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.9 2003/07/15 01:01:28 jchiang Exp $
+# $Id: requirements,v 1.10 2003/08/02 03:58:23 jchiang Exp $
 
 branches observationSim cmt src doc
 
@@ -47,7 +47,10 @@ library observationSim -no_share $(my_headers) \
 # trapfpe.c
 
 # test application
-application test_observationSim test/*.cxx
+application test_observationSim test/main.cxx
+
+# exposure map calculator
+application exposureMap test/exposureMap.cxx
 
 ## Python/SWIG interface
 #
