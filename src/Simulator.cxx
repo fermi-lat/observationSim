@@ -3,7 +3,7 @@
  * @brief Implementation for the interface class to flux::FluxMgr for
  * generating LAT photon events.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.15 2003/09/05 23:12:44 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.16 2003/09/29 21:21:41 jchiang Exp $
  */
 
 #include <string>
@@ -11,7 +11,7 @@
 #include <algorithm>
 
 #include "flux/EventSource.h"
-#include "flux/../src/CompositeSource.h"
+//#include "flux/../src/CompositeSource.h"
 #include "flux/SpectrumFactoryTable.h"
 #include "flux/FluxMgr.h"
 #include "flux/ISpectrumFactory.h"
