@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Thu Jun 19 10:55:26 PDT 2003
+observationSim/src
+
+Added Files:
+	Container.cxx 
+Log Message:
+Add Container base class and provide glastToGalactic method.
+
+    *
+------------------------------------------------------------
 User: jchiang  Thu Jun 19 10:55:07 PDT 2003
 observationSim/observationSim
 
