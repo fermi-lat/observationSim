@@ -2,7 +2,7 @@
  * @file ScDataContainer.h
  * @brief Declaration for ScDataContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.7 2003/10/02 20:59:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.8 2003/10/07 22:33:55 jchiang Exp $
  */
 
 #ifndef observationSim_ScDataContainer_h
@@ -33,7 +33,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.7 2003/10/02 20:59:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.8 2003/10/07 22:33:55 jchiang Exp $
  */
 
 class ScDataContainer {
@@ -49,7 +49,7 @@ public:
       m_filename(filename), m_useGoodi(useGoodi), m_fileNum(0),
       m_maxNumEntries(maxNumEntries) {init();}
 
-   ~ScDataContainer() {if (m_scData.size() > 0) writeScData();}
+   ~ScDataContainer();
 
    /// @param event A pointer to the current EventSource object
    ///        that was provided by the FluxMgr object.

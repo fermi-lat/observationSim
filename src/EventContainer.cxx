@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.21 2003/11/15 06:04:45 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.22 2003/12/04 07:22:16 jchiang Exp $
  */
 
 #include <cmath>
@@ -92,6 +92,13 @@ namespace {
 } // unnamed namespace
 
 namespace observationSim {
+
+EventContainer::~EventContainer() {
+   if (m_events.size() > 0) writeEvents();
+   if (m_useGoodi) {
+      delete m_goodiEventData;
+   }
+}
 
 void EventContainer::init() {
    m_events.clear();
