@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Fri Aug  1 20:58:24 PDT 2003
+observationSim/observationSim
+
+Modified Files:
+	Simulator.h 
+Added Files:
+	Roi.h 
+Log Message:
+use flux package instead of FluxSvc
+    *
+------------------------------------------------------------
 User: jchiang  Fri Aug  1 20:58:23 PDT 2003
 observationSim/cmt
 
