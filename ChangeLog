@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Jul 21 09:35:30 PDT 2004
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+use proper version for dc1Response
+    *
+------------------------------------------------------------
 User: jchiang  Wed Jul 21 06:40:32 PDT 2004
 observationSim/doc
 
