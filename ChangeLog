@@ -1,5 +1,18 @@
 ------------------------------------------------------------
 User: jchiang  Mon Jun 30 22:13:45 PDT 2003
+observationSim/observationSim
+
+Modified Files:
+	EventContainer.h ScDataContainer.h 
+Added Files:
+	Spacecraft.h 
+Removed Files:
+	Container.h 
+Log Message:
+add Spacecraft class; remove Container base class
+    *
+------------------------------------------------------------
+User: jchiang  Mon Jun 30 22:13:45 PDT 2003
 observationSim/cmt
 
 Modified Files:
