@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.1.1.1 2003/06/18 19:46:33 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.2 2003/06/19 00:14:06 jchiang Exp $
  */
 
 #include "Likelihood/Response.h"
@@ -56,8 +56,13 @@ int main(int argn, char * argc[]) {
 // Generate the events and spacecraft data.
    observationSim::EventContainer events("test_events.dat", true);
    observationSim::ScDataContainer scData("test_scData.dat", true);
-   my_simulator.generateEvents(count, events, scData);
 
+// Use simulation time rather than total counts if desired.
+   if (argn == 4 && std::string(argc[3]) == "-t") {
+      my_simulator.generateEvents(static_cast<double>(count), events, scData);
+   } else {
+      my_simulator.generateEvents(count, events, scData);
+   }
 }
 
 void help() {
