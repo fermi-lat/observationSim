@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Aug 25 15:05:46 PDT 2003
+observationSim/cmt/fragments
+
+Removed Files:
+	swig swig_library 
+Log Message:
+enable module build using IExternal/python
+    *
+------------------------------------------------------------
 User: jchiang  Mon Aug 25 15:05:45 PDT 2003
 observationSim/cmt
 
