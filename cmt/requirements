@@ -3,7 +3,7 @@ version v3r3
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.71 2004/04/23 22:52:28 jchiang Exp $
+# $Id: requirements,v 1.72 2004/04/27 17:24:41 jchiang Exp $
 
 use STpolicy v1r*
 use cfitsio v1r* IExternal
@@ -14,7 +14,7 @@ use astro v0r*
 use flux v8r*
 use latResponse v2r*
 use Likelihood v3r*
-#use GRB v*
+use GRB v4r*
 
 #apply_pattern ST_library option="-no_share "
 apply_pattern package_include
