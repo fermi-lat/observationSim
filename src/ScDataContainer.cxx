@@ -3,7 +3,7 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.9 2003/07/09 23:25:01 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.10 2003/07/10 17:28:17 jchiang Exp $
  */
 
 #include <sstream>
@@ -12,8 +12,11 @@
 
 #include "astro/EarthCoordinate.h"
 
-#include "FluxSvc/../src/EventSource.h"
-#include "FluxSvc/../src/GPS.h"
+// #include "FluxSvc/../src/EventSource.h"
+// #include "FluxSvc/../src/GPS.h"
+
+#include "flux/EventSource.h"
+#include "flux/GPS.h"
 
 #include "observationSim/ScDataContainer.h"
 

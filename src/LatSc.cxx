@@ -3,11 +3,12 @@
  * @brief Implementation of LatSc class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.cxx,v 1.2 2003/07/02 05:17:52 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.cxx,v 1.3 2003/07/09 23:25:01 jchiang Exp $
  */
 
 #include "astro/EarthCoordinate.h"
-#include "FluxSvc/../src/GPS.h"
+//#include "FluxSvc/../src/GPS.h"
+#include "flux/GPS.h"
 #include "LatSc.h"
 
 namespace {
