@@ -2,7 +2,7 @@
  * @file ScData.h
  * @brief Simple data structure to hold ScData data.
  * @author J. Chiang
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScData.h,v 1.1.1.1 2003/06/18 19:46:33 jchiang Exp $
  */
 
 #ifndef observationSim_ScData_h
@@ -17,7 +17,7 @@ namespace observationSim {
  * @brief Simple data structure to hold ScData data.
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScData.h,v 1.1.1.1 2003/06/18 19:46:33 jchiang Exp $
  */
 
 class ScData {
@@ -25,15 +25,18 @@ class ScData {
 public:
 
    ScData(double time, double RAz, double Decz, double lon, 
-          double lat, int inSAA) :
+          double lat, const Hep3Vector &zAxis, const Hep3Vector &xAxis,
+          int inSAA) :
       m_time(time), m_RAz(RAz), m_Decz(Decz), m_lon(lon), 
-      m_lat(lat), m_inSaa(inSAA) {}
+      m_lat(lat), m_zAxis(zAxis), m_xAxis(xAxis), m_inSaa(inSAA) {}
 
    double m_time;
    double m_RAz;
    double m_Decz;
    double m_lon;
    double m_lat;
+   Hep3Vector m_zAxis;
+   Hep3Vector m_xAxis;
    int m_inSaa;
 };
 
