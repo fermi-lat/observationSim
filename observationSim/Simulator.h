@@ -2,7 +2,7 @@
  * @file Simulator.h
  * @brief Declaration for Simulator class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.10 2003/08/24 20:52:20 cohen Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.11 2003/10/02 22:05:17 cohen Exp $
  */
 
 #ifndef observationSim_Simulator_h
@@ -12,12 +12,13 @@
 #include <string>
 #include <iostream>
 #include "CLHEP/Geometry/Vector3D.h"
-#include "flux/CompositeSource.h"
 #include "flux/FluxMgr.h"
 
 #include "latResponse/Irfs.h"
 
 #include "observationSim/Spacecraft.h"
+
+class CompositeSource;
 
 namespace observationSim {
 
@@ -36,7 +37,7 @@ class Roi;
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.10 2003/08/24 20:52:20 cohen Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.11 2003/10/02 22:05:17 cohen Exp $
  */
 
 class Simulator {
@@ -69,7 +70,7 @@ public:
              double startTime = 0.)
       {init(sourceNames, fileList, totalArea, startTime);}
 
-   ~Simulator() {delete m_fluxMgr; delete m_source;}
+   ~Simulator();
 
    /// Specify the rocking strategy from among those defined by
    /// FluxSvc::GPS::RockType.  
