@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.29 2004/07/21 04:08:06 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.30 2004/07/21 13:38:52 jchiang Exp $
  */
 #ifdef TRAP_FPE
 #include <fenv.h>
@@ -14,7 +14,7 @@
 #include "astro/SkyDir.h"
 
 #include "irfInterface/IrfsFactory.h"
-#include "g25Response/loadIrfs.h"
+#include "irfLoader/Loader.h"
 
 #include "observationSim/Simulator.h"
 #include "observationSim/EventContainer.h"
@@ -99,7 +99,7 @@ int main(int iargc, char * argv[]) {
    observationSim::Simulator my_simulator(sourceNames, fileList);
 
 // Allow for multiple IRFs.
-   g25Response::loadIrfs();
+   irfLoader::Loader::go();
    irfInterface::IrfsFactory * myFactory 
       = irfInterface::IrfsFactory::instance();
    std::vector<irfInterface::Irfs *> respPtrs;
