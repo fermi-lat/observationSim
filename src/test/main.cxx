@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.31 2004/08/11 17:16:01 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.32 2004/08/25 15:26:10 jchiang Exp $
  */
 #ifdef TRAP_FPE
 #include <fenv.h>
@@ -114,13 +114,8 @@ int main(int iargc, char * argv[]) {
    }
 
 // Generate the events and spacecraft data.
-#ifdef USE_FT1
-   bool useFT1(true);
-#else
-   bool useFT1(false);
-#endif
-   observationSim::EventContainer events("test_events", useFT1);
-   observationSim::ScDataContainer scData("test_scData", useFT1);
+   observationSim::EventContainer events("test_events");
+   observationSim::ScDataContainer scData("test_scData");
 
 // The spacecraft object.
    observationSim::Spacecraft *spacecraft = new observationSim::LatSc();
