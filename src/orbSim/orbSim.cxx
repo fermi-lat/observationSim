@@ -3,7 +3,7 @@
  * @brief A prototype O1 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.3 2004/11/27 15:39:29 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.4 2004/11/28 14:51:40 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -76,7 +76,8 @@ void OrbSim::run() {
 void OrbSim::promptForParameters() {
    m_pars.Prompt("outfile_prefix");
    m_pars.Prompt("pointing_strategy");
-   if (m_pars["pointing_strategy"] != "POINT") {
+   std::string pointing_strategy = m_pars["pointing_strategy"];
+   if (pointing_strategy != "POINT") {
       m_pars.Prompt("rocking_angle");
    } else {
       m_pars.Prompt("ra");
