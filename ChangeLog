@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Oct 27 12:49:55 PST 2003
+observationSim/src/test
+
+Modified Files:
+	main.cxx 
+Log Message:
+comment out MapFlux; use latResponse v1*; tagging v2r1
+    *
+------------------------------------------------------------
 User: jchiang  Mon Oct 27 12:49:54 PST 2003
 observationSim/src
 
