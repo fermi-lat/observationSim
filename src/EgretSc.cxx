@@ -3,11 +3,12 @@
  * @brief Implementation for EGRET spacecraft class.
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EgretSc.cxx,v 1.1 2003/07/02 14:45:27 jchiang Exp $
  */
 
 #include <iostream>
-#include "observationSim/../src/EgretSc.h"
+#include <vector>
+#include "EgretSc.h"
 
 namespace observationSim {
 
