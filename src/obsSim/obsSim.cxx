@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.2 2004/04/15 17:36:06 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.3 2004/04/15 19:31:03 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -35,6 +35,7 @@
 // static SpectrumFactory<GRBmanager> my_factory;
 
 ISpectrumFactory & MapSourceFactory();
+ISpectrumFactory & SimpleTransientFactory();
 
 using Likelihood::Util;
 
@@ -43,6 +44,7 @@ public:
    ObsSim(hoops::IParGroup & pars) : m_pars(pars) {
       m_count = m_pars["Number_of_events"];
       MapSourceFactory();
+      SimpleTransientFactory();
    }
    ~ObsSim() {
       delete m_simulator;
