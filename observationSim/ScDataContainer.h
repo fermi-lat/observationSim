@@ -2,7 +2,7 @@
  * @file ScDataContainer.h
  * @brief Declaration for ScDataContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.9 2003/12/11 03:41:17 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.10 2004/04/10 15:14:34 jchiang Exp $
  */
 
 #ifndef observationSim_ScDataContainer_h
@@ -15,7 +15,6 @@
 #include "astro/SkyDir.h"
 
 #include "observationSim/ScData.h"
-#include "observationSim/FitsTable.h"
 #include "observationSim/Spacecraft.h"
 
 class EventSource;
@@ -28,7 +27,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.9 2003/12/11 03:41:17 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.10 2004/04/10 15:14:34 jchiang Exp $
  */
 
 class ScDataContainer {
@@ -36,12 +35,11 @@ class ScDataContainer {
 public:
 
    /// @param filename The root name of the output FITS file.
-   /// @param useFT2 Set to true if FT2 format is to be used.
    /// @param maxNumEntries The maximum number of entries in the ScData
    ///        buffer before a FITS file is written.
-   ScDataContainer(const std::string &filename, bool useFT2=true,
+   ScDataContainer(const std::string &filename, 
                    int maxNumEntries=20000) :
-      m_filename(filename), m_useFT2(useFT2), m_fileNum(0),
+      m_filename(filename), m_fileNum(0),
       m_maxNumEntries(maxNumEntries) {init();}
 
    ~ScDataContainer();
@@ -66,17 +64,11 @@ private:
    /// Template file for FT2 data.
    std::string m_ft2Template;
 
-   /// Flag to indicate that FT2 format will be used.
-   bool m_useFT2;
-
    /// The current index number fo the FITS output files.
    long m_fileNum;
 
    /// The maximum number of entries in the m_scData vector.
    unsigned int m_maxNumEntries;
-
-   /// The FITS binary table object that steers the cfitsio routines.
-   FitsTable *m_scDataTable;
 
    /// The ScData buffer.
    std::vector<ScData> m_scData;
@@ -84,11 +76,7 @@ private:
    /// This routine contains the constructor implementation.
    void init();
 
-   /// A routine the create the FITS binary table object.
-   void makeFitsTable(); 
-
-   /// This routine unpacks m_scData and calls the writeTableData(...)
-   /// method of the m_scDataTable object.
+   /// This routine unpacks and writes the ScData to a FT2 file.
    void writeScData();
 
    /// Return an output filename, based on the root name, m_filename,
