@@ -1,5 +1,16 @@
 ------------------------------------------------------------
 User: jchiang  Fri Apr  9 22:59:30 PDT 2004
+observationSim/observationSim
+
+Modified Files:
+	Event.h EventContainer.h 
+Added Files:
+	useGoodiNames.h 
+Log Message:
+begin tip migration
+    *
+------------------------------------------------------------
+User: jchiang  Fri Apr  9 22:59:30 PDT 2004
 observationSim/cmt
 
 Modified Files:
