@@ -3,7 +3,7 @@ version v0r1
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.6 2003/07/02 05:17:50 jchiang Exp $
+# $Id: requirements,v 1.7 2003/07/09 00:22:23 jchiang Exp $
 
 branches observationSim cmt src doc
 
@@ -41,8 +41,8 @@ library observationSim -no_share $(my_headers) \
  ScDataContainer.cxx\
  FitsTable.cxx\
  LatSc.cxx\
- EgretSc.cxx\
- trapfpe.c
+ EgretSc.cxx
+# trapfpe.c
 
 # test application
 application test_observationSim test/*.cxx
