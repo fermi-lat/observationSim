@@ -2,7 +2,7 @@
  * @file ContainerBase.cxx
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ContainerBase.cxx,v 1.2 2004/10/04 18:32:41 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ContainerBase.cxx,v 1.3 2005/03/07 18:49:21 jchiang Exp $
  */
 
 #include <ctime>
@@ -73,7 +73,7 @@ astro::JulianDate ContainerBase::currentTime() {
                                      now->tm_mday, hours);
       return current_time;
    } else {
-      throw std::runtime_error("EventContainer::currentTime:\n"
+      throw std::runtime_error("ContainerBase::currentTime:\n"
                                + std::string("cannot be ascertained, ")
                                + "std::time returns a null value.");
    }
