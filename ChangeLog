@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Jul 19 12:25:06 PDT 2004
+observationSim/src/test
+
+Modified Files:
+	main.cxx 
+Log Message:
+use irfInterface
+    *
+------------------------------------------------------------
 User: jchiang  Mon Jul 19 07:22:18 PDT 2004
 observationSim/src/obsSim
 
