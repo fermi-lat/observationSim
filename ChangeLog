@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Apr 26 13:28:35 PDT 2004
+observationSim/xml
+
+Modified Files:
+	obsSim_source_library.xml 
+Log Message:
+read energy bounds correctly
+    *
+------------------------------------------------------------
+User: jchiang  Mon Apr 26 13:28:35 PDT 2004
 observationSim/src
 
 Modified Files:
