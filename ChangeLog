@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Jul 19 07:21:39 PDT 2004
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+transition to irfs package
+    *
+------------------------------------------------------------
 User: jchiang  Wed Jul 14 10:59:08 PDT 2004
 observationSim/xml
 
