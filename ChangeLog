@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Apr 12 12:53:28 PDT 2004
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx ScDataContainer.cxx 
+Log Message:
+tip conversion; write GTI and header DATE keywords
+    *
+------------------------------------------------------------
+User: jchiang  Mon Apr 12 12:53:28 PDT 2004
 observationSim/observationSim
 
 Modified Files:
