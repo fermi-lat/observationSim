@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.23 2004/12/02 23:48:14 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.24 2004/12/03 06:44:17 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -40,7 +40,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.23 2004/12/02 23:48:14 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.24 2004/12/03 06:44:17 jchiang Exp $
  */
 
 class EventContainer : public ContainerBase {
@@ -108,7 +108,10 @@ private:
    void init();
 
    /// Return the zenith for the current spacecraft location.
-   astro::SkyDir ScZenith(double time);
+   astro::SkyDir ScZenith(double time) const;
+
+   /// Return the Earth azimuth angle of the apparent event direction.
+   double earthAzimuthAngle(double ra, double dec, double time) const;
 
    /// A routine to unpack and write the Event buffer to an FT1 file.
    void writeEvents();

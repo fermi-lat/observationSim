@@ -2,7 +2,7 @@
  * @file Event.h
  * @brief Simple data structure to hold Event data.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Event.h,v 1.5 2004/01/23 02:29:20 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Event.h,v 1.6 2004/04/10 05:59:30 jchiang Exp $
  */
 
 #ifndef observationSim_Event_h
@@ -18,7 +18,7 @@ namespace observationSim {
  * @brief Simple data structure to hold Event data.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Event.h,v 1.5 2004/01/23 02:29:20 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Event.h,v 1.6 2004/04/10 05:59:30 jchiang Exp $
  */
 
 class Event {
@@ -43,19 +43,19 @@ public:
    double energy() const {return m_energy;}
 
    /// Apparent photon direction in "Celestial" coordinates.
-   astro::SkyDir appDir() const {return m_appDir;}
+   const astro::SkyDir & appDir() const {return m_appDir;}
 
    /// True photon direction in "Celestial" coordinates.
-   astro::SkyDir srcDir() const {return m_srcDir;}
+   const astro::SkyDir & srcDir() const {return m_srcDir;}
 
    /// Instrument z-axis in "Celestial" coordinates.
-   astro::SkyDir zAxis() const {return m_zAxis;}
+   const astro::SkyDir & zAxis() const {return m_zAxis;}
 
    /// Instrument x-axis in "Celestial" coordinates.
-   astro::SkyDir xAxis() const {return m_xAxis;}
+   const astro::SkyDir & xAxis() const {return m_xAxis;}
 
    /// Zenith direction at spacecraft location in "Celestial" coordinates.
-   astro::SkyDir zenith() const {return m_zenith;}
+   const astro::SkyDir & zenith() const {return m_zenith;}
 
    /// Event type (for ascertaining which set of IRFs to use).
    int eventType() const {return m_eventType;}
