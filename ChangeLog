@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Jan 11 17:02:16 PST 2005
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx 
+Log Message:
+compute Earth azimuth angle
+    *
+------------------------------------------------------------
+User: jchiang  Tue Jan 11 17:02:16 PST 2005
 observationSim/observationSim
 
 Modified Files:
