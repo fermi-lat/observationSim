@@ -4,7 +4,7 @@
  * This implementation is not terribly general, so we await a better
  * FITS handling class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/FitsTable.cxx,v 1.1.1.1 2003/06/18 19:46:33 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/FitsTable.cxx,v 1.2 2003/06/18 20:28:23 jchiang Exp $
  */
 
 #include <iostream>
@@ -67,7 +67,7 @@ FitsTable::~FitsTable() {
 
 void FitsTable::writeTableData(const std::vector<std::vector<double> > &data) {
    
-// Ensure that the size of the data vector is consistent in both dimesions.
+// Ensure that the size of the data vector is consistent with m_tfields.
    if (static_cast<int>(data.size()) != m_tfields) {
       std::cerr << "FitsTable::writeTableData:\n"
                 << "The number of columns in data, " << data.size()

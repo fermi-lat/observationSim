@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.1.1.1 2003/06/18 19:46:33 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -25,7 +25,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.1.1.1 2003/06/18 19:46:33 jchiang Exp $
  */
 
 class EventContainer {
@@ -33,7 +33,8 @@ class EventContainer {
 public:
 
    /// @param filename The name of the output FITS file.
-   EventContainer(const std::string &filename);
+   /// @param useA1fmt A flag to use the format that the A1 tool expects.
+   EventContainer(const std::string &filename, bool useA1fmt=false);
 
    ~EventContainer() {writeEvents(); delete m_eventTable;}
 
@@ -46,6 +47,8 @@ public:
 
 private:
 
+   bool m_useA1fmt;
+
    long m_fileNum;
    
    FitsTable *m_eventTable;
@@ -56,6 +59,9 @@ private:
    /// from the distribution representing the PSF.
    Hep3Vector apparentDir(double energy, const Hep3Vector &srcDir, 
                           const Hep3Vector &zAxis);
+
+   /// Return the zenith for the current spacecraft location.
+   Hep3Vector ScZenith(double time);
 
    void writeEvents();
 
