@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Oct 29 14:34:45 PDT 2004
+observationSim/src
+
+Modified Files:
+	Simulator.cxx 
+Log Message:
+add maximum simulation time to par file
+    *
+------------------------------------------------------------
 User: jchiang  Fri Oct 29 14:34:44 PDT 2004
 observationSim/pfiles
 
