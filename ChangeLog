@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Jul 21 09:35:31 PDT 2004
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+use proper version for dc1Response
+    *
+------------------------------------------------------------
 User: jchiang  Wed Jul 21 09:35:30 PDT 2004
 observationSim/cmt
 
