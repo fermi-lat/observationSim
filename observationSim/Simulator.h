@@ -2,7 +2,7 @@
  * @file Simulator.h
  * @brief Declaration for Simulator class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.5 2003/07/02 05:17:51 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.6 2003/07/03 03:31:49 jchiang Exp $
  */
 
 #ifndef observationSim_Simulator_h
@@ -35,7 +35,7 @@ class ScDataContainer;
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.5 2003/07/02 05:17:51 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.6 2003/07/03 03:31:49 jchiang Exp $
  */
 
 class Simulator {
@@ -59,6 +59,14 @@ public:
              double totalArea = 1.21,
              double startTime = 0.)
       {init(std::string(sourceName), fileList, totalArea, startTime);}
+
+   /// @param sourceNames A vector of source names as they appear in 
+   ///        the xml file.
+   Simulator(const std::vector<std::string> &sourceNames,
+             const std::vector<std::string> &fileList,
+             double totalArea = 1.21,
+             double startTime = 0.)
+      {init(sourceNames, fileList, totalArea, startTime);}
 
    ~Simulator() {delete m_fluxMgr; delete m_source;}
 
@@ -118,11 +126,15 @@ private:
              const std::vector<std::string> &fileList,
              double totalArea, double startTime);
 
+   void init(const std::vector<std::string> &sourceNames, 
+             const std::vector<std::string> &fileList,
+             double totalArea, double startTime);
+
    void makeEvents(EventContainer &, ScDataContainer &, 
                    latResponse::Irfs &, Spacecraft *spacecraft,
                    bool useSimTime=true);
 
-   void fluxLoad();
+//   void fluxLoad();
 
    bool done();
 
