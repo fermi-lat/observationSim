@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Aug 11 10:16:00 PDT 2004
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+use irfLoader explicitly
+    *
+------------------------------------------------------------
 User: jchiang  Sat Aug  7 11:57:11 PDT 2004
 observationSim/cmt
 
