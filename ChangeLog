@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Mar 11 19:41:39 PST 2004
+observationSim/data
+
+Modified Files:
+	obsSim.par 
+Log Message:
+use new hoopsUtil
+    *
+------------------------------------------------------------
 User: jchiang  Thu Feb  5 16:25:20 PST 2004
 observationSim/src
 
