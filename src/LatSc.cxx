@@ -3,7 +3,7 @@
  * @brief Implementation of LatSc class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.cxx,v 1.8 2003/11/15 06:04:45 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.cxx,v 1.9 2004/02/02 16:39:22 jchiang Exp $
  */
 
 #include "astro/EarthCoordinate.h"
@@ -17,13 +17,13 @@ namespace observationSim {
 astro::SkyDir LatSc::zAxis(double time) {
    HepRotation rotationMatrix = InstrumentToCelestial(time);
    return astro::SkyDir(rotationMatrix(Hep3Vector(0, 0, 1)),
-                        astro::SkyDir::CELESTIAL);
+                        astro::SkyDir::EQUATORIAL);
 }
 
 astro::SkyDir LatSc::xAxis(double time) {
    HepRotation rotationMatrix = InstrumentToCelestial(time);
    return astro::SkyDir(rotationMatrix(Hep3Vector(1, 0, 0)),
-                        astro::SkyDir::CELESTIAL);
+                        astro::SkyDir::EQUATORIAL);
 }
 
 double LatSc::EarthLon(double time) {
@@ -41,27 +41,6 @@ double LatSc::EarthLat(double time) {
 }
 
 HepRotation LatSc::InstrumentToCelestial(double time) {
-// Get the rotation matrix from instrument to Galactic coordinates
-// from GPS.
-//    astro::GPS *gps = astro::GPS::instance();
-//   GPS *gps = GPS::instance();
-//    gps->getPointingCharacteristics(time);
-//    HepRotation glastToGalactic(gps->transformGlastToGalactic(time));
-
-// // Create astro::SkyDir objects for the instrument axes. 
-//    astro::SkyDir xAxisCel(glastToGalactic(Hep3Vector(1, 0, 0)),
-//                           astro::SkyDir::GALACTIC);
-//    astro::SkyDir yAxisCel(glastToGalactic(Hep3Vector(0, 1, 0)),
-//                           astro::SkyDir::GALACTIC);
-//    astro::SkyDir zAxisCel(glastToGalactic(Hep3Vector(0, 0, 1)),
-//                           astro::SkyDir::GALACTIC);
-
-// // Return the desired rotation matrix.
-//    return HepRotation(xAxisCel(), yAxisCel(), zAxisCel());
-
-// Use astro::PointingTransform class.  Let's hope this continues to
-// work as the flux package changes.
-
 //   astro::GPS *gps = astro::GPS::instance();
    GPS *gps = GPS::instance();
    gps->getPointingCharacteristics(time);
