@@ -3,7 +3,7 @@ version v0r3p4
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.21 2003/09/05 23:13:10 jchiang Exp $
+# $Id: requirements,v 1.22 2003/09/29 21:21:39 jchiang Exp $
 
 branches observationSim cmt src doc
 
@@ -29,7 +29,8 @@ private
 macro observationSim_cppflags "" Linux "-I ../src -g -pedantic " WIN32 "/I..\src  /wd4290"
 macro_prepend cflags "" Linux "-g "
 
-macro_append test_observationSimlinkopts "" Linux " -L$(MAPFLUXROOT)/$(CMTCONFIG)/ -lMapFlux -Wl,-rpath,$(MAPFLUXROOT)/$(CMTCONFIG)/ "
+macro_append test_observationSimlinkopts "" Linux " -L$(MAPFLUXROOT)/$(CMTCONFIG)/ -lMapFlux -Wl,-rpath,$(MAPFLUXROOT)/$(CMTCONFIG)/ " \
+ WIN32 " /LIBPATH:$(MAPFLUXROOT)\$(CMTCONFIG) "
 
 apply_pattern package_linkopts
 
