@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.31 2005/01/05 03:18:41 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.32 2005/02/01 00:04:12 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -43,6 +43,7 @@ ISpectrumFactory & GaussianSourceFactory();
 ISpectrumFactory & GRBmanagerFactory();
 ISpectrumFactory & IsotropicFactory();
 ISpectrumFactory & MapSourceFactory();
+ISpectrumFactory & MapCubeFactory();
 ISpectrumFactory & PeriodicSourceFactory();
 ISpectrumFactory & PulsarFactory();
 ISpectrumFactory & SimpleTransientFactory();
@@ -159,6 +160,7 @@ void ObsSim::createFactories() {
    GRBmanagerFactory();
    IsotropicFactory();
    MapSourceFactory();
+   MapCubeFactory();
    PeriodicSourceFactory();
    PulsarFactory();
    SimpleTransientFactory();

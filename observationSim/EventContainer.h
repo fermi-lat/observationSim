@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.24 2004/12/03 06:44:17 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.25 2005/01/12 01:02:16 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -40,7 +40,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.24 2004/12/03 06:44:17 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.25 2005/01/12 01:02:16 jchiang Exp $
  */
 
 class EventContainer : public ContainerBase {
@@ -72,10 +72,10 @@ public:
    /// @param alwaysAccept If true, the event is accepted without
    ///        regard to the response info, i.e., true energies and 
    ///        directions are saved.
-   int addEvent(EventSource *event, 
-                std::vector<irfInterface::Irfs *> &respPtrs, 
-                Spacecraft *spacecraft, bool flush=false, 
-                bool alwaysAccept=false);
+   bool addEvent(EventSource *event, 
+                 std::vector<irfInterface::Irfs *> &respPtrs, 
+                 Spacecraft *spacecraft, bool flush=false, 
+                 bool alwaysAccept=false);
 
    /// The number of events in the container.
    long numEvents() {return m_events.size();}
