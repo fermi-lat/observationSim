@@ -3,7 +3,7 @@
  * @brief Implementation for the interface class to FluxSvc::FluxMgr for
  * generating LAT photon events.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.8 2003/07/02 05:17:52 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.9 2003/07/03 03:31:49 jchiang Exp $
  */
 
 #include <string>
@@ -14,6 +14,7 @@
 #include "FluxSvc/../src/CompositeSource.h"
 #include "FluxSvc/../src/SpectrumFactoryTable.h"
 #include "FluxSvc/../src/FluxMgr.h"
+#include "FluxSvc/ISpectrumFactory.h"
 
 #include "latResponse/Irfs.h"
 
@@ -153,7 +154,7 @@ void Simulator::makeEvents(EventContainer &events, ScDataContainer &scData,
 #define DLL_DECL_SPECTRUM(x)   extern const ISpectrumFactory& x##Factory; x##Factory.addRef();
 
 void Simulator::fluxLoad() {
-   // These are the spectra that we want to make available.
+// These are the spectra that we want to make available.
 //    DLL_DECL_SPECTRUM( CHIMESpectrum);
 //    DLL_DECL_SPECTRUM( AlbedoPSpectrum);
 //    DLL_DECL_SPECTRUM( FILESpectrum);
