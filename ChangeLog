@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: richard  Sat Jun 21 16:25:12 PDT 2003
+observationSim/observationSim
+
+Modified Files:
+	Simulator.h 
+Log Message:
+change m_source to CompositeSource
+    *
+------------------------------------------------------------
 User: jchiang  Thu Jun 19 10:55:26 PDT 2003
 observationSim/src
 
