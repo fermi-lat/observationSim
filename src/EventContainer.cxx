@@ -4,12 +4,13 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.18 2003/10/17 16:56:58 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.19 2003/10/18 02:42:46 jchiang Exp $
  */
 
 #include <cmath>
 #include <sstream>
 #include <algorithm>
+#include <numeric>
 
 #include "CLHEP/Random/RandomEngine.h"
 #include "CLHEP/Random/JamesRandom.h"
