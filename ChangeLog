@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Jul 19 07:22:18 PDT 2004
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+transition to irfs package
+    *
+------------------------------------------------------------
 User: jchiang  Mon Jul 19 07:22:17 PDT 2004
 observationSim/src
 
