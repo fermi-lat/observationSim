@@ -4,7 +4,7 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.24 2003/11/15 06:04:45 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.25 2003/11/22 18:19:39 jchiang Exp $
  */
 
 #include <string>
@@ -29,12 +29,12 @@
 
 #include "flux/SpectrumFactory.h"
 
-//#if 0
+#if HAVE_MAPFLUX
 #include "src/MapSpectrum.h"
 
 static SpectrumFactory<MapSpectrum> factory;
 const ISpectrumFactory& MapSpectrumFactory = factory;
-//#endif
+#endif
 
 namespace observationSim {
 
