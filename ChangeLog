@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Nov 30 10:23:12 PST 2004
+observationSim/pfiles
+
+Modified Files:
+	orbSim.par 
+Log Message:
+shorten ra, dec prompts
+    *
+------------------------------------------------------------
 TAG
 Tag name: v5r3p3, operation: add
 Package: observationSim
