@@ -3,7 +3,7 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.18 2004/04/10 15:14:35 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.19 2004/04/12 19:53:28 jchiang Exp $
  */
 
 #include <sstream>
@@ -66,8 +66,10 @@ void ScDataContainer::writeScData() {
          row["start"].set(sc->time());
          if (sc+1 != m_scData.end()) {
             row["stop"].set((sc+1)->time());
+            row["livetime"].set((sc+1)->time() - sc->time());
          } else {
             row["stop"].set(stop_time);
+            row["livetime"].set(stop_time - sc->time());
          }
          row["lat_geo"].set(sc->lat());
          row["lon_geo"].set(sc->lon());
