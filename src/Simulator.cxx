@@ -4,7 +4,7 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.18 2003/10/13 19:04:19 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.19 2003/10/17 03:57:36 jchiang Exp $
  */
 
 #include <string>
@@ -130,54 +130,10 @@ void Simulator::makeEvents(EventContainer &events, ScDataContainer &scData,
                            latResponse::Irfs &response, Spacecraft *spacecraft,
                            bool useSimTime, EventContainer *allEvents, 
                            Roi *inAcceptanceCone) {
-   m_useSimTime = useSimTime;
-   m_elapsedTime = 0.;
-
-// Loop over event generation steps until done.
-   while (!done()) {
-
-// Check if we need a new event from m_source.
-      if (m_newEvent == 0) {
-         m_newEvent = m_source->event(m_absTime);
-         m_interval = m_source->interval(m_absTime);
-      }
-
-// Process m_newEvent either if we are accumulating counts or if the
-// event arrives within the present observing window given by
-// m_simTime.
-      if ( !m_useSimTime ||  (m_elapsedTime+m_interval < m_simTime) ) {
-         m_absTime += m_interval;
-         m_elapsedTime += m_interval;
-         m_fluxMgr->pass(m_interval);
-
-         std::string name = m_newEvent->fullTitle();
-         if (name.find("TimeTick") != std::string::npos) {
-            scData.addScData(m_newEvent, spacecraft);
-         } else {
-            if (allEvents != 0) 
-               allEvents->addEvent(m_newEvent, response, spacecraft, 
-                                   false, true);
-            if (inAcceptanceCone == 0 || (*inAcceptanceCone)(m_newEvent)) {
-               if (events.addEvent(m_newEvent, response, spacecraft)) {
-                  m_numEvents++;
-//                if (!m_useSimTime && m_maxNumEvents/20 > 0 &&
-//                    m_numEvents % (m_maxNumEvents/20) == 0) std::cerr << ".";
-               }
-            }
-         }
-// EventSource::event(...) does not generate a pointer to a new object
-// (as of 07/02/03), so there's no need to delete m_newEvent.
-         m_newEvent = 0;
-
-      } else if (m_useSimTime) {
-// No more events to process for this observation window, so advance
-// to the end of the window, updating all of the time accumlators.
-         m_absTime += (m_simTime - m_elapsedTime);
-         m_fluxMgr->pass(m_simTime - m_elapsedTime);
-         m_elapsedTime = m_simTime;
-      }
-   } // while (!done())
-//    if (!m_useSimTime) std::cerr << "!" << std::endl;
+   std::vector<latResponse::Irfs *> respPtrs;
+   respPtrs.push_back(&response);
+   makeEvents(events, scData, respPtrs, spacecraft, useSimTime, 
+              allEvents, inAcceptanceCone);
 }
 
 void Simulator::makeEvents(EventContainer &events, 
