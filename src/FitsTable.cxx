@@ -4,9 +4,10 @@
  * This implementation is not terribly general, so we await a better
  * FITS handling class.
  * @author J. Chiang
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/FitsTable.cxx,v 1.1.1.1 2003/06/18 19:46:33 jchiang Exp $
  */
 
+#include <iostream>
 #include "observationSim/FitsTable.h"
 
 namespace observationSim {
