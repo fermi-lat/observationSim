@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Sep  3 17:35:36 PDT 2003
+observationSim/python
+
+Modified Files:
+	latSim.py 
+Log Message:
+add second version of mock Cygnus region catalog
+    *
+------------------------------------------------------------
+User: jchiang  Wed Sep  3 17:35:36 PDT 2003
 observationSim/cmt
 
 Modified Files:
