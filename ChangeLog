@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Fri Apr 23 15:52:30 PDT 2004
+observationSim/src
+
+Modified Files:
+	mainpage.h 
+Added Files:
+	Isotropic.cxx Isotropic.h 
+Log Message:
+add Isotropic source
+    *
+------------------------------------------------------------
 User: jchiang  Fri Apr 23 15:52:29 PDT 2004
 observationSim/cmt
 
