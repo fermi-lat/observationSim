@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sun Sep 26 12:50:12 PDT 2004
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+pass angles in radians to GPS
+    *
+------------------------------------------------------------
+User: jchiang  Sun Sep 26 12:50:12 PDT 2004
 observationSim/src
 
 Modified Files:
