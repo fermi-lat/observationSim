@@ -2,7 +2,7 @@
  * @file Simulator.h
  * @brief Declaration for Simulator class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.12 2003/10/13 19:04:18 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.13 2003/10/17 03:57:34 jchiang Exp $
  */
 
 #ifndef observationSim_Simulator_h
@@ -13,8 +13,6 @@
 #include <iostream>
 #include "CLHEP/Geometry/Vector3D.h"
 #include "flux/FluxMgr.h"
-
-//#include "latResponse/Irfs.h"
 
 namespace latResponse {
    class Irfs;
@@ -41,7 +39,7 @@ class Roi;
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.12 2003/10/13 19:04:18 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.13 2003/10/17 03:57:34 jchiang Exp $
  */
 
 class Simulator {
@@ -57,18 +55,24 @@ public:
    Simulator(const std::string &sourceName, 
              const std::vector<std::string> &fileList,
              double totalArea = 1.21,
-             double startTime = 0.)
-      {init(sourceName, fileList, totalArea, startTime);}
+             double startTime = 0.,
+             const std::string &pointingHistory = "")
+      {init(sourceName, fileList, totalArea, startTime, pointingHistory);}
 
    /// @param sourceNames A vector of source names as they appear in 
    ///        the xml file.
    Simulator(const std::vector<std::string> &sourceNames,
              const std::vector<std::string> &fileList,
              double totalArea = 1.21,
-             double startTime = 0.)
-      {init(sourceNames, fileList, totalArea, startTime);}
+             double startTime = 0.,
+             const std::string &pointingHistory = "")
+      {init(sourceNames, fileList, totalArea, startTime, pointingHistory);}
 
    ~Simulator();
+
+   /// Set the pointing history file.
+   void setPointingHistoryFile(const std::string &filename)
+      {m_fluxMgr->setPointingHistoryFile(filename);}   
 
    /// Specify the rocking strategy from among those defined by
    /// flux::GPS::RockType.  
@@ -156,11 +160,13 @@ private:
 
    void init(const std::string &sourceName, 
              const std::vector<std::string> &fileList,
-             double totalArea, double startTime);
+             double totalArea, double startTime, 
+             const std::string &);
 
    void init(const std::vector<std::string> &sourceNames, 
              const std::vector<std::string> &fileList,
-             double totalArea, double startTime);
+             double totalArea, double startTime,
+             const std::string &);
 
    void makeEvents(EventContainer &, ScDataContainer &, 
                    latResponse::Irfs &, Spacecraft *spacecraft,
