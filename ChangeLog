@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Apr 15 11:48:17 PDT 2004
+observationSim/xml
+
+Modified Files:
+	obsSim_source_library.xml 
+Log Message:
+accommodate flux::MapSpectrum changes
+    *
+------------------------------------------------------------
 User: jchiang  Thu Apr 15 10:36:07 PDT 2004
 observationSim/xml
 
