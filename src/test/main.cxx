@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.9 2003/07/10 17:28:30 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.10 2003/08/26 16:11:57 jchiang Exp $
  */
 
 #include "astro/SkyDir.h"
@@ -100,11 +100,15 @@ int main(int argn, char * argc[]) {
 
 // Use simulation time rather than total counts if desired.
    if (useSimTime) {
+      std::cout << "Generating events for a simulation time of "
+                << count << " seconds....";
       my_simulator.generateEvents(static_cast<double>(count), events, 
                                   scData, response, spacecraft);
    } else {
+      std::cout << "Generating " << count << " events....";
       my_simulator.generateEvents(count, events, scData, response, spacecraft);
    }
+   std::cout << "Done." << std::endl;
 }
 
 void help() {
