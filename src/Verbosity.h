@@ -3,7 +3,7 @@
  * @brief Singleton to store verbosity level for screen output and whether
  * files are to be overwritten.
  * 
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Verbosity.h,v 1.1 2004/11/27 20:02:59 jchiang Exp $
  */
 
 #ifndef observationSim_Verbosity_h
@@ -35,7 +35,7 @@ private:
    bool m_clobber;
 };
 
-unsigned int verbosity();
+bool print_output(unsigned int local_verbosity=2);
 
 bool clobber();
 

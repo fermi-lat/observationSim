@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.21 2004/08/26 21:58:54 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.22 2004/08/26 23:07:13 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -28,6 +28,10 @@ namespace irfInterface {
    class Irfs;
 }
 
+namespace dataSubselector {
+   class Cuts;
+}
+
 namespace observationSim {
 
 /**
@@ -36,7 +40,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.21 2004/08/26 21:58:54 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.22 2004/08/26 23:07:13 jchiang Exp $
  */
 
 class EventContainer : public ContainerBase {
@@ -47,8 +51,9 @@ public:
    /// @param maxNumEvents The maximum size of the Event buffer before
    ///        a FITS file is written.
    EventContainer(const std::string &filename, 
+                  dataSubselector::Cuts * cuts=0,
                   unsigned int maxNumEvents=20000) : 
-      ContainerBase(filename, maxNumEvents), m_prob(1) {
+      ContainerBase(filename, maxNumEvents), m_prob(1), m_cuts(cuts) {
       init();
    }
 
@@ -57,7 +62,7 @@ public:
    /// @param event A pointer to the current EventSource object
    ///        that was provided by the FluxMgr object.
    /// @param respPtrs A vector of pointers to response 
-   ///        function containters.
+   ///        function containers.
    /// @param spacecraft A pointer to an object that provides methods 
    ///        for accessing spacecraft orbit and attitude information.
    /// @param flush A flag to indicate whether to write the accumulated
@@ -88,6 +93,8 @@ private:
    /// Typically this is set to be the ratio of livetime to elapsed
    /// time for a given observation interval.
    double m_prob;
+
+   dataSubselector::Cuts * m_cuts;
 
    /// The Event buffer.
    std::vector<Event> m_events;
