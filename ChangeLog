@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Oct 17 19:42:46 PDT 2003
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx Simulator.cxx 
+Log Message:
+remove redundant code
+    *
+------------------------------------------------------------
 User: jchiang  Fri Oct 17 19:42:45 PDT 2003
 observationSim/python
 
