@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.34 2004/04/10 15:14:35 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.35 2004/04/12 19:53:28 jchiang Exp $
  */
 
 #include <cmath>
@@ -219,6 +219,7 @@ void EventContainer::writeEvents() {
 // from the first and last events) in a single GTI.
       tip::Table * gti_table = 
          tip::IFileSvc::instance().editTable(ft1File, "GTI");
+      gti_table->setNumRecords(1);
       it = gti_table->begin();
       row["start"].set(m_events.begin()->time());
       row["stop"].set((m_events.end()-1)->time());
