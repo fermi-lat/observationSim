@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.28 2004/12/16 16:08:26 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.29 2004/12/21 16:09:16 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -125,7 +125,8 @@ void ObsSim::promptForParameters() {
 }
 
 void ObsSim::checkOutputFiles() {
-   if (!m_pars["clobber"]) {
+   bool clobber = m_pars["clobber"];
+   if (!clobber) {
       std::string prefix = m_pars["outfile_prefix"];
       std::string file = prefix + "_events_0000.fits";
       if (st_facilities::Util::fileExists(file)) {
