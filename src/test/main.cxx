@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.22 2003/11/26 01:54:22 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.23 2004/01/23 04:44:02 jchiang Exp $
  */
 #ifdef TRAP_FPE
 #include <fenv.h>
@@ -18,6 +18,8 @@
 #include "observationSim/EventContainer.h"
 #include "observationSim/ScDataContainer.h"
 #include "observationSim/../src/LatSc.h"
+
+using latResponse::irfsFactory;
 
 void help();
 
@@ -92,12 +94,12 @@ int main(int argn, char * argc[]) {
 
 // Allow for multiple IRFs.
    std::vector<latResponse::Irfs *> respPtrs;
-   latResponse::IrfsFactory irfsFactory;
+//   latResponse::IrfsFactory irfsFactory;
    if (useCombined) {
-      respPtrs.push_back(irfsFactory.create("Glast25::Combined"));
+      respPtrs.push_back(irfsFactory().create("Glast25::Combined"));
    } else { // use Front & Back
-      respPtrs.push_back(irfsFactory.create("Glast25::Front"));
-      respPtrs.push_back(irfsFactory.create("Glast25::Back"));
+      respPtrs.push_back(irfsFactory().create("Glast25::Front"));
+      respPtrs.push_back(irfsFactory().create("Glast25::Back"));
    }
 
 // Generate the events and spacecraft data.
