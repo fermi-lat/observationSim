@@ -1,9 +1,9 @@
 package observationSim
-version v5r6p6
+version v5r6p7
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.124 2005/03/21 22:16:23 jchiang Exp $
+# $Id: requirements,v 1.125 2005/04/04 21:12:41 jchiang Exp $
 
 use STpolicy v1r*
 use cfitsio v1r* IExternal

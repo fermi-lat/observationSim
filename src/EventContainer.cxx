@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.55 2005/01/27 22:12:57 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.56 2005/02/07 03:25:36 jchiang Exp $
  */
 
 #include <cmath>
@@ -36,6 +36,7 @@
 #include "irfInterface/Irfs.h"
 
 #include "dataSubselector/Cuts.h"
+#include "dataSubselector/Gti.h"
 
 #include "observationSim/EventContainer.h"
 #include "observationSim/Spacecraft.h"
@@ -243,12 +244,12 @@ void EventContainer::writeEvents() {
    writeDateKeywords(my_table, m_startTime, stop_time);
 
 // Fill the GTI extension, with the entire observation in a single GTI.
+   dataSubselector::Gti gti;
+   gti.insertInterval(m_startTime, stop_time);
+   gti.writeExtension(ft1File);
+
    tip::Table * gti_table = 
       tip::IFileSvc::instance().editTable(ft1File, "GTI");
-   gti_table->setNumRecords(1);
-   it = gti_table->begin();
-   row["start"].set(m_startTime);
-   row["stop"].set(stop_time);
    writeDateKeywords(gti_table, m_startTime, stop_time);
 
    dataSubselector::Cuts * cuts;
