@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Aug 25 08:26:09 PDT 2004
+observationSim/pfiles
+
+Modified Files:
+	obsSim.par 
+Log Message:
+use st_facilities
+    *
+------------------------------------------------------------
+User: jchiang  Wed Aug 25 08:26:09 PDT 2004
 observationSim/cmt
 
 Modified Files:
