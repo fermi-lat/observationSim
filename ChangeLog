@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Jul 20 17:28:45 PDT 2004
+observationSim/xml
+
+Removed Files:
+	3EG_catalog_30MeV.xml 3EG_catalog_32MeV.xml 
+Log Message:
+remove redundant xml files
+    *
+------------------------------------------------------------
 User: jchiang  Tue Jul 20 17:27:37 PDT 2004
 observationSim/xml
 
