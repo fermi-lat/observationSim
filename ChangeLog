@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Thu Jul 10 10:27:32 PDT 2003
+observationSim/observationSim
+
+Modified Files:
+	EventContainer.h ScDataContainer.h 
+Log Message:
+Allow for output to be spread out over several files.
+
+    *
+------------------------------------------------------------
 User: jchiang  Wed Jul  9 16:25:59 PDT 2003
 observationSim/xml
 
