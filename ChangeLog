@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Oct 17 19:42:44 PDT 2003
+observationSim/observationSim
+
+Modified Files:
+	Event.h EventContainer.h 
+Log Message:
+remove redundant code
+    *
+------------------------------------------------------------
 User: jchiang  Fri Oct 17 09:56:58 PDT 2003
 observationSim/src/test
 
