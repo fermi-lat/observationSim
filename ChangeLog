@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sat Oct 25 09:03:44 PDT 2003
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx 
+Log Message:
+#include <numeric>; use latResponse v1*
+    *
+------------------------------------------------------------
 User: jchiang  Sat Oct 25 09:03:43 PDT 2003
 observationSim/cmt
 
