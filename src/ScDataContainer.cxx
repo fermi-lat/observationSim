@@ -3,7 +3,7 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.25 2004/09/27 18:00:24 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.26 2004/09/27 19:17:01 jchiang Exp $
  */
 
 #include <sstream>
@@ -12,8 +12,10 @@
 #include "CLHEP/Geometry/Vector3D.h"
 
 #include "tip/IFileSvc.h"
+#include "tip/Image.h"
 #include "tip/Table.h"
 
+#include "st_facilities/FitsUtil.h"
 #include "st_facilities/Util.h"
 
 #include "astro/EarthCoordinate.h"
@@ -104,6 +106,13 @@ void ScDataContainer::writeScData() {
    }
    writeDateKeywords(my_table, start_time, stop_time);
    delete my_table;
+
+// Take care of date keywords in primary header.
+   tip::Image * phdu = tip::IFileSvc::instance().editImage(ft2File, "");
+   writeDateKeywords(phdu, start_time, stop_time);
+   delete phdu;
+
+   st_facilities::FitsUtil::writeChecksums(ft2File);
 
 // Flush the buffer...
    m_scData.clear();

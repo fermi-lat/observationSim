@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.44 2004/08/26 23:07:14 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.45 2004/09/26 19:50:12 jchiang Exp $
  */
 
 #include <cmath>
@@ -22,6 +22,7 @@
 #include "CLHEP/Geometry/Vector3D.h"
 
 #include "tip/IFileSvc.h"
+#include "tip/Image.h"
 #include "tip/Table.h"
 #include "tip/Header.h"
 
@@ -29,6 +30,8 @@
 #include "astro/GPS.h"
 
 #include "flux/EventSource.h"
+
+#include "st_facilities/FitsUtil.h"
 
 #include "irfInterface/Irfs.h"
 
@@ -222,6 +225,13 @@ void EventContainer::writeEvents() {
    row["stop"].set((m_events.end()-1)->time());
    writeDateKeywords(gti_table, start_time, stop_time);
    delete gti_table;
+
+// Take care of date keywords in primary header.
+   tip::Image * phdu = tip::IFileSvc::instance().editImage(ft1File, "");
+   writeDateKeywords(phdu, start_time, stop_time);
+   delete phdu;
+
+   st_facilities::FitsUtil::writeChecksums(ft1File);
    
 // Flush the Event buffer...
    m_events.clear();

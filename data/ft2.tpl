@@ -1,14 +1,14 @@
 # Template for FT2. August 2, 2003 definition.
 # See http://glast.gsfc.nasa.gov/ssc/dev/fits_def/definitionFT2.html
 #
-# $Id$
+# $Id: ft2.tpl,v 1.2 2004/10/04 17:19:00 jchiang Exp $
 
 SIMPLE  =                     T / File does conform to FITS standard?
 BITPIX  =                     8 / Number of bits per data pixel
 NAXIS   =                     0 / Number of data axes
 EXTEND  =                     T / FITS dataset may contain extensions
-CHECKSUM=                       / checksum for entire HDU
-DATASUM =                       / checksum for data table
+CHECKSUM=                     0 / checksum for entire HDU
+DATASUM =                     0 / checksum for data table
 TELESCOP=                 GLAST / Name of telescope generating data
 INSTRUME=                   LAT / Name of instrument generating data
 EQUINOX =                 2000. / Equinox of celestial coord. system
