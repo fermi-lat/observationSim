@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Dec  2 22:44:18 PST 2004
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+write GTIs using actual sim start and stop times
+    *
+------------------------------------------------------------
+User: jchiang  Thu Dec  2 22:44:18 PST 2004
 observationSim/src
 
 Modified Files:
