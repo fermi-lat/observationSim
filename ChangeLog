@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Oct  2 11:22:48 PDT 2003
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx 
+Log Message:
+use Goodi for Event data
+    *
+------------------------------------------------------------
 User: jchiang  Thu Oct  2 11:22:47 PDT 2003
 observationSim/python
 
