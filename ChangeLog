@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Jan 22 18:29:20 PST 2004
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+allow more flexibility in specifying flux-style xml files
+    *
+------------------------------------------------------------
 User: jchiang  Thu Jan 15 11:24:01 PST 2004
 observationSim/doc
 
