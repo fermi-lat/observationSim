@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Jan 15 11:21:37 PST 2004
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx Simulator.cxx 
+Log Message:
+changes to accomodate new flux package that incorporates MapFlux
+    *
+------------------------------------------------------------
 User: jchiang  Mon Jan 12 20:07:34 PST 2004
 observationSim/src/test
 
