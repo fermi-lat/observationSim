@@ -2,7 +2,7 @@
  * @file ScDataContainer.h
  * @brief Declaration for ScDataContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.3 2003/06/19 17:52:33 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.4 2003/06/26 17:41:17 jchiang Exp $
  */
 
 #ifndef observationSim_ScDataContainer_h
@@ -14,9 +14,9 @@
 
 #include "astro/SkyDir.h"
 
-#include "observationSim/Container.h"
 #include "observationSim/ScData.h"
 #include "observationSim/FitsTable.h"
+#include "observationSim/Spacecraft.h"
 
 class EventSource;
 
@@ -28,10 +28,10 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.3 2003/06/19 17:52:33 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.4 2003/06/26 17:41:17 jchiang Exp $
  */
 
-class ScDataContainer : public Container {
+class ScDataContainer {
 
 public:
 
@@ -47,9 +47,15 @@ public:
 
    /// @param event A pointer to the current EventSource object
    ///        that was provided by the FluxMgr object.
+   /// @param spacecraft A pointer to the object that provides methods
+   ///        for accessing spacecraft orbit and attitude info.
    /// @param flush A flag to indicate whether to write the accumulated
    ///        ScData and then flush the buffers.
-   void addScData(EventSource *event, bool flush=false);
+   void addScData(EventSource *event, Spacecraft *spacecraft, 
+                  bool flush=false);
+
+   /// The simulation time of the most recently added data.
+   double simTime() {return m_scData[m_scData.size()-1].time();}
 
 private:
 
