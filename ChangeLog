@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sun Nov 28 06:51:40 PST 2004
+observationSim/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+set chitter to 2 in par file
+    *
+------------------------------------------------------------
+User: jchiang  Sun Nov 28 06:51:40 PST 2004
 observationSim/cmt
 
 Modified Files:
