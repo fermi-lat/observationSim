@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.6 2003/07/01 05:13:45 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.7 2003/07/10 17:27:32 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -31,7 +31,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.6 2003/07/01 05:13:45 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.7 2003/07/10 17:27:32 jchiang Exp $
  */
 
 class EventContainer {
@@ -64,8 +64,12 @@ public:
    ///        for accessing spacecraft orbit and attitude information.
    /// @param flush A flag to indicate whether to write the accumulated
    ///        Event data and then flush the buffers.
+   /// @param alwaysAccept If true, the event is accepted without
+   ///        regard to the response info, i.e., true energies and 
+   ///        directions are saved.
    int addEvent(EventSource *event, latResponse::Irfs &respObj, 
-                Spacecraft *spacecraft, bool flush=false);
+                Spacecraft *spacecraft, bool flush=false, 
+                bool alwaysAccept=false);
 
    /// The number of events in the container.
    long numEvents() {return m_events.size();}
@@ -74,6 +78,10 @@ public:
    /// of the livetime to elapsed time for a given observation
    /// interval.
    void setAcceptanceProb(double prob) {m_prob = prob;}
+
+   /// Return a const reference to m_events for processing by Python
+   /// of the data contained therein.
+   const std::vector<Event> &getEvents() {return m_events;}  
 
 private:
 
