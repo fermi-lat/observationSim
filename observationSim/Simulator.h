@@ -2,7 +2,7 @@
  * @file Simulator.h
  * @brief Declaration for Simulator class.
  * @author J. Chiang
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.1.1.1 2003/06/18 19:46:33 jchiang Exp $
  */
 
 #ifndef observationSim_Simulator_h
@@ -11,7 +11,7 @@
 #include <vector>
 #include <string>
 #include "CLHEP/Geometry/Vector3D.h"
-#include "FluxSvc/../src/EventSource.h"
+#include "FluxSvc/../src/CompositeSource.h"
 #include "FluxSvc/../src/FluxMgr.h"
 
 namespace observationSim {
@@ -30,7 +30,7 @@ class ScDataContainer;
  *
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.1.1.1 2003/06/18 19:46:33 jchiang Exp $
  */
 
 class Simulator {
@@ -89,7 +89,7 @@ private:
 
    FluxMgr *m_fluxMgr;
 
-   EventSource *m_source;
+   CompositeSource *m_source;
 
    long m_numEvents;
    long m_maxNumEvents;
