@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.33 2005/02/07 03:25:36 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.34 2005/02/22 02:28:56 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -70,6 +70,7 @@ public:
       }
    }
    virtual void run();
+   virtual void banner() const {}
 private:
    st_app::AppParGroup & m_pars;
    double m_count;
