@@ -5,7 +5,7 @@ Basic script for steering the observationSim code.  No plotting.
 @author J. Chiang
 """
 #
-# $Header: /nfs/slac/g/glast/ground/cvs/observationSim/python/latSim.py,v 1.2 2003/09/04 00:35:36 jchiang Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/observationSim/python/latSim.py,v 1.3 2003/09/05 23:13:11 jchiang Exp $
 #
 import os, sys, string, numarray
 
@@ -68,9 +68,9 @@ def run_test(argv):
 
     response = latResponse.Irfs(aeff, psf, edisp)
 
-    useA1fmt = 1
-    events = observationSim.EventContainer(root + "_events", useA1fmt)
-    scData = observationSim.ScDataContainer(root + "_scData", useA1fmt)
+    useGoodi = 0
+    events = observationSim.EventContainer(root + "_events", useGoodi)
+    scData = observationSim.ScDataContainer(root + "_scData", useGoodi)
 
     spacecraft = observationSim.LatSc();
 
