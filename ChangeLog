@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Feb 14 16:38:43 PST 2005
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+update FITS template files; use st_facilities v0r4*
+    *
+------------------------------------------------------------
 User: jchiang  Sun Feb  6 19:25:36 PST 2005
 observationSim/src/obsSim
 
