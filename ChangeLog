@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Thu Jul 10 10:28:30 PDT 2003
+observationSim/src/test
+
+Modified Files:
+	main.cxx 
+Log Message:
+Allow for output to be spread out over several files.
+
+    *
+------------------------------------------------------------
 User: jchiang  Thu Jul 10 10:28:17 PDT 2003
 observationSim/src
 
