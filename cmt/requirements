@@ -3,7 +3,7 @@ version v3r7p4
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.85 2004/08/11 17:17:37 jchiang Exp $
+# $Id: requirements,v 1.86 2004/08/12 15:15:45 jchiang Exp $
 
 use STpolicy v1r*
 use cfitsio v1r* IExternal
@@ -12,10 +12,12 @@ use facilities v2r*
 use tip v1r*
 use astro v1r*
 use flux v8r*
-use Likelihood v4r*
+use st_facilities v0*
 use GRB v4r* celestialSources
 use genericSources v0* celestialSources
 use irfLoader v0* irfs
+
+macro_append ROOT_linkopts " $(ROOT_GUI_libs)"
 
 apply_pattern ST_library option="-no_share "
 apply_pattern ST_pfiles
