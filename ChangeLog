@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Nov  6 18:50:52 PST 2003
+observationSim/src/test
+
+Added Files:
+	obsSim.cxx 
+Log Message:
+add obsSim application
+    *
+------------------------------------------------------------
+User: jchiang  Thu Nov  6 18:50:52 PST 2003
 observationSim/data
 
 Added Files:
