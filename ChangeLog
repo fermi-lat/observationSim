@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Nov  6 18:50:52 PST 2003
+observationSim/data
+
+Added Files:
+	obsSim.par source_names.dat xml_files.dat 
+Log Message:
+add obsSim application
+    *
+------------------------------------------------------------
 User: jchiang  Thu Nov  6 18:50:51 PST 2003
 observationSim/cmt
 
