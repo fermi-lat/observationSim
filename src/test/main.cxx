@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.10 2003/08/26 16:11:57 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.11 2003/08/27 15:03:29 jchiang Exp $
  */
 
 #include "astro/SkyDir.h"
@@ -28,7 +28,7 @@ int main(int argn, char * argc[]) {
    fileList.push_back(xml_list);
    xml_list = "$(OBSERVATIONSIMROOT)/xml/3EG_catalog_32MeV.xml";
    fileList.push_back(xml_list);
-   xml_list = "$(OBSERVATIONSIMROOT)/xml/test_sources.xml";
+   xml_list = "$(OBSERVATIONSIMROOT)/xml/test_sources_v2.xml";
    fileList.push_back(xml_list);
    
 // Parse the command line arguments.
