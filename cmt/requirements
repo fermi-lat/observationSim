@@ -3,7 +3,7 @@ version v2r5p1
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.47 2003/12/05 05:38:15 jchiang Exp $
+# $Id: requirements,v 1.48 2003/12/05 19:10:47 jchiang Exp $
 
 branches observationSim cmt src doc
 
@@ -45,6 +45,8 @@ macro_prepend cppflags "-I ../src " Linux "-w " WIN32 "/I..\src "
 
 # this package uses obsolete C function names, beware	
 macro_append cpplinkflags "" WIN32 " oldnames.lib"
+
+macro_append ROOT_libs ""  WIN32 " libHisT.lib "
 
 apply_pattern package_linkopts
 
