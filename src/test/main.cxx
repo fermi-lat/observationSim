@@ -3,10 +3,10 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.2 2003/06/19 00:14:06 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.3 2003/06/19 17:53:50 jchiang Exp $
  */
 
-#include "Likelihood/Response.h"
+#include "latResponse/../src/Glast25.h"
 #include "observationSim/Simulator.h"
 #include "observationSim/EventContainer.h"
 #include "observationSim/ScDataContainer.h"
@@ -42,19 +42,23 @@ int main(int argn, char * argc[]) {
       count = 10;
    }
 
-// Read in the response data.
-   const char *root = ::getenv("LIKELIHOODROOT");
+// Ascertain paths to GLAST25 response files.
+   const char *root = ::getenv("LATRESPONSEROOT");
    std::string caldbPath;
    if (!root) {
-      caldbPath = "/u1/jchiang/SciToolsDev/Likelihood/v0r8/src/test/CALDB";
+      caldbPath = "/u1/jchiang/SciTools/O2/dev/latResponse/v0/data/CALDB";
    } else {
-      caldbPath = std::string(root) + "/src/test/CALDB";
+      caldbPath = std::string(root) + "/data/CALDB";
    }
 
-   my_simulator.readResponseData(caldbPath, Likelihood::Response::Combined);
+// Note that there is no GLAST25 energy dispersion file.
+   latResponse::ResponseFiles glast25Data(caldbPath, 
+                                          "aeff_lat.fits",
+                                          "psf_lat.fits", " ",
+                                          latResponse::Glast25::Combined);
 
 // Generate the events and spacecraft data.
-   observationSim::EventContainer events("test_events.dat", true);
+   observationSim::EventContainer events("test_events.dat", glast25Data, true);
    observationSim::ScDataContainer scData("test_scData.dat", true);
 
 // Use simulation time rather than total counts if desired.
