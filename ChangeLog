@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Jun 30 22:13:46 PDT 2003
+observationSim/src/test
+
+Modified Files:
+	main.cxx 
+Log Message:
+add Spacecraft class; remove Container base class
+    *
+------------------------------------------------------------
 User: jchiang  Mon Jun 30 22:13:45 PDT 2003
 observationSim/src
 
