@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.28 2004/01/23 02:29:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.29 2004/01/23 04:44:01 jchiang Exp $
  */
 
 #include <cmath>
@@ -18,9 +18,6 @@
 #include "CLHEP/Random/RandFlat.h"
 #include "CLHEP/Geometry/Vector3D.h"
 
-#include "astro/SkyDir.h"
-#include "astro/EarthCoordinate.h"
-
 #ifdef USE_GOODI
 #include "Goodi/GoodiConstants.h"
 #include "Goodi/DataIOServiceFactory.h"
@@ -29,6 +26,13 @@
 #include "Goodi/IData.h"
 #include "Goodi/IEventData.h"
 #endif
+
+#include "astro/SkyDir.h"
+#include "astro/EarthCoordinate.h"
+#include "astro/GPS.h"
+
+#include "flux/EventSource.h"
+//#include "flux/FluxMgr.h"
 
 #include "latResponse/IAeff.h"
 #include "latResponse/IPsf.h"
@@ -177,6 +181,7 @@ int EventContainer::addEvent(EventSource *event,
 }
 
 astro::SkyDir EventContainer::ScZenith(double time) {
+//   astro::GPS *gps = astro::GPS::instance();
    GPS *gps = GPS::instance();
    gps->getPointingCharacteristics(time);
    double lon_zenith = gps->RAZenith()*M_PI/180.;

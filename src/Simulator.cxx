@@ -4,7 +4,7 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.28 2004/01/15 19:21:37 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.29 2004/01/23 02:29:21 jchiang Exp $
  */
 
 #include <string>
@@ -101,7 +101,7 @@ void Simulator::init(const std::vector<std::string> &sourceNames,
    for (std::vector<std::string>::const_iterator name = sourceNames.begin();
         name != sourceNames.end(); name++) {
       EventSource * source;
-      if (source = m_fluxMgr->source(*name)) {
+      if ( (source = m_fluxMgr->source(*name)) ) {
          m_source->addSource(source);
          nsrcs++;
          std::cout << "added source \"" << *name << "\"" << std::endl;

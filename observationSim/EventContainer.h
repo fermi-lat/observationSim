@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.13 2003/10/18 02:42:44 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.14 2003/12/11 03:41:17 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -12,12 +12,10 @@
 #include <string>
 #include <vector>
 
-#include "flux/EventSource.h"
-#include "flux/FluxMgr.h"
-
 #include "astro/SkyDir.h"
 
-//#include "latResponse/Irfs.h"
+//#include "flux/EventSource.h"
+//#include "flux/FluxMgr.h"
 
 #include "observationSim/Event.h"
 #include "observationSim/FitsTable.h"
@@ -27,6 +25,8 @@ namespace Goodi {
    class IEventData;
    class IDataIOService;
 }
+
+class EventSource;
 
 namespace latResponse {
    class Irfs;
@@ -40,7 +40,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.13 2003/10/18 02:42:44 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.14 2003/12/11 03:41:17 jchiang Exp $
  */
 
 class EventContainer {

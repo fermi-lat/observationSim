@@ -3,12 +3,13 @@
  * @brief Implementation of LatSc class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.cxx,v 1.7 2003/10/15 04:53:13 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.cxx,v 1.8 2003/11/15 06:04:45 jchiang Exp $
  */
 
 #include "astro/EarthCoordinate.h"
 #include "astro/PointingTransform.h"
-#include "flux/GPS.h"
+#include "astro/GPS.h"
+
 #include "LatSc.h"
 
 namespace observationSim {
@@ -26,12 +27,14 @@ astro::SkyDir LatSc::xAxis(double time) {
 }
 
 double LatSc::EarthLon(double time) {
+//   astro::GPS *gps = astro::GPS::instance();
    GPS *gps = GPS::instance();
    gps->getPointingCharacteristics(time);
    return gps->lon();
 }
 
 double LatSc::EarthLat(double time) {
+//   astro::GPS *gps = astro::GPS::instance();
    GPS *gps = GPS::instance();
    gps->getPointingCharacteristics(time);
    return gps->lat();
@@ -40,7 +43,8 @@ double LatSc::EarthLat(double time) {
 HepRotation LatSc::InstrumentToCelestial(double time) {
 // Get the rotation matrix from instrument to Galactic coordinates
 // from GPS.
-//    GPS *gps = GPS::instance();
+//    astro::GPS *gps = astro::GPS::instance();
+//   GPS *gps = GPS::instance();
 //    gps->getPointingCharacteristics(time);
 //    HepRotation glastToGalactic(gps->transformGlastToGalactic(time));
 
@@ -58,6 +62,7 @@ HepRotation LatSc::InstrumentToCelestial(double time) {
 // Use astro::PointingTransform class.  Let's hope this continues to
 // work as the flux package changes.
 
+//   astro::GPS *gps = astro::GPS::instance();
    GPS *gps = GPS::instance();
    gps->getPointingCharacteristics(time);
    astro::SkyDir xAxis(gps->RAX(), gps->DECX());
