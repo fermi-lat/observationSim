@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.9 2003/08/24 20:52:20 cohen Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.10 2003/10/02 18:22:46 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -36,7 +36,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.9 2003/08/24 20:52:20 cohen Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.10 2003/10/02 18:22:46 jchiang Exp $
  */
 
 class EventContainer {
@@ -54,7 +54,9 @@ public:
       m_filename(filename), m_useGoodi(useGoodi), m_fileNum(0), 
       m_maxNumEvents(maxNumEvents), m_prob(1) {init();}
 
-   ~EventContainer() {if (m_events.size() > 0) writeEvents();}
+   ~EventContainer() {
+      if (m_events.size() > 0) writeEvents();
+   }
 
    /// @param event A pointer to the current EventSource object
    ///        that was provided by the FluxMgr object.
@@ -111,9 +113,6 @@ private:
 
    /// Goodi Event data object pointer.
    Goodi::IEventData *m_goodiEventData;
-
-   /// Goodi I/O service object pointer.
-   Goodi::IDataIOService *m_goodiIoService;
 
    /// The Event buffer.
    std::vector<Event> m_events;
