@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Oct  4 11:32:39 PDT 2004
+observationSim/data
+
+Modified Files:
+	ft2.tpl 
+Log Message:
+write checksum and datasum for FITS files
+    *
+------------------------------------------------------------
 User: jchiang  Mon Oct  4 10:19:00 PDT 2004
 observationSim/data
 
