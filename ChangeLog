@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Mar  7 19:41:14 PST 2005
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+disable banner method; tagging v5r6p4
+    *
+------------------------------------------------------------
 TAG
 Tag name: v5r6p3, operation: add
 Package: observationSim
