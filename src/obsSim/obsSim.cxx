@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.21 2004/09/28 18:56:01 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.22 2004/10/12 20:51:11 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -192,15 +192,16 @@ void ObsSim::createSimulator() {
    m_simulator = new observationSim::Simulator(m_srcNames, m_xmlSourceFiles, 
                                                totalArea, startTime, 
                                                pointingHistory);
-// // Turn off rocking with pointing history
-//    my_simulator.setRocking(0);
 }
 
 void ObsSim::generateData() {
    long nMaxRows = m_pars["Maximum_number_of_rows"];
    std::string prefix = m_pars["Output_file_prefix"];
    observationSim::EventContainer events(prefix + "_events", nMaxRows);
-   observationSim::ScDataContainer scData(prefix + "_scData", nMaxRows);
+   std::string pointingHistory = m_pars["Pointing_history_file"];
+   bool writeScData = (pointingHistory == "" || pointingHistory == "none");
+   observationSim::ScDataContainer scData(prefix + "_scData", nMaxRows,
+                                          writeScData);
    observationSim::Spacecraft * spacecraft = new observationSim::LatSc();
    if (m_pars["Use_as_sim_time"]) {
       std::cout << "Generating events for a simulation time of "
