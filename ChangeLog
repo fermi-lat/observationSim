@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sun Feb  6 19:25:36 PST 2005
+observationSim/observationSim
+
+Modified Files:
+	EventContainer.h 
+Log Message:
+add MapCube
+    *
+------------------------------------------------------------
 TAG
 Tag name: v5r6, operation: add
 Package: observationSim
