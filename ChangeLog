@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Jul 19 07:21:55 PDT 2004
+observationSim/observationSim
+
+Modified Files:
+	EventContainer.h Simulator.h 
+Log Message:
+transition to irfs package
+    *
+------------------------------------------------------------
 User: jchiang  Mon Jul 19 07:21:39 PDT 2004
 observationSim/cmt
 
