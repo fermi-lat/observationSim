@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Jun 27 17:09:46 PDT 2003
+observationSim/observationSim
+
+Modified Files:
+	EventContainer.h Simulator.h 
+Log Message:
+refactor some, using latResponse::Irfs class
+    *
+------------------------------------------------------------
 User: jchiang  Thu Jun 26 12:37:45 PDT 2003
 observationSim/doc
 
