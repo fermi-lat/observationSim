@@ -4,7 +4,7 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.33 2004/09/15 02:00:37 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.34 2004/09/26 17:57:56 jchiang Exp $
  */
 
 #include <string>
@@ -31,13 +31,6 @@
 #include "LatSc.h"
 
 #include "flux/SpectrumFactory.h"
-
-namespace {
-   bool fileExists(const std::string &filename) {
-      std::ifstream file(filename.c_str());
-      return file.is_open();
-   }
-}
 
 namespace observationSim {
 
@@ -72,7 +65,8 @@ void Simulator::init(const std::vector<std::string> &sourceNames,
    if (pointingHistory != "none" && pointingHistory != "") {
 // Use pointing history file.
       facilities::Util::expandEnvVar(&pointingHistory);
-      if (::fileExists(pointingHistory)) {
+      if (st_facilities::Util::fileExists(pointingHistory)) {
+         setRocking(5, 0);
          setPointingHistoryFile(pointingHistory);
       } else {
          std::cout << "Pointing history file not found: \n"

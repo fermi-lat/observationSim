@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.43 2004/08/26 21:58:55 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.44 2004/08/26 23:07:14 jchiang Exp $
  */
 
 #include <cmath>
@@ -116,7 +116,8 @@ int EventContainer::addEvent(EventSource *event,
    double energy = event->energy();
    Hep3Vector launchDir = event->launchDir();
 
-   double flux_theta = acos(launchDir.z());
+   double arg = launchDir.z();
+   double flux_theta = ::my_acos(arg);
    double flux_phi = atan2(launchDir.y(), launchDir.x());
 
    HepRotation rotMatrix = spacecraft->InstrumentToCelestial(time);
