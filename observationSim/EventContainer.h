@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.10 2003/10/02 18:22:46 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.11 2003/10/07 22:33:55 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -17,7 +17,7 @@
 
 #include "astro/SkyDir.h"
 
-#include "latResponse/Irfs.h"
+//#include "latResponse/Irfs.h"
 
 #include "observationSim/Event.h"
 #include "observationSim/FitsTable.h"
@@ -28,6 +28,10 @@ namespace Goodi {
    class IDataIOService;
 }
 
+namespace latResponse {
+   class Irfs;
+}
+
 namespace observationSim {
 
 /**
@@ -36,7 +40,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.10 2003/10/02 18:22:46 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.11 2003/10/07 22:33:55 jchiang Exp $
  */
 
 class EventContainer {
@@ -70,6 +74,11 @@ public:
    ///        regard to the response info, i.e., true energies and 
    ///        directions are saved.
    int addEvent(EventSource *event, latResponse::Irfs &respObj, 
+                Spacecraft *spacecraft, bool flush=false, 
+                bool alwaysAccept=false);
+
+   int addEvent(EventSource *event, 
+                std::vector<latResponse::Irfs *> &respPtrs, 
                 Spacecraft *spacecraft, bool flush=false, 
                 bool alwaysAccept=false);
 
