@@ -5,7 +5,7 @@ Basic script for steering the observationSim code.
 @author J. Chiang
 """
 #
-# $Header: /nfs/slac/g/glast/ground/cvs/observationSim/python/test.py,v 1.2 2003/10/17 16:56:57 jchiang Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/observationSim/python/test.py,v 1.3 2003/10/18 02:42:45 jchiang Exp $
 #
 import os, sys, string, numarray
 
@@ -77,10 +77,10 @@ def run_test(argv):
     edispCombined = latResponse.EdispGlast25()
     respCombined = latResponse.Irfs(aeffCombined, psfCombined, edispCombined,4)
 
-#    respVector = latResponse.IrfVector((respCombined, ))
+    respVector = latResponse.IrfVector((respCombined, ))
 #    respVector = latResponse.IrfVector((respFront, ))
 #    respVector = latResponse.IrfVector((respBack, ))
-    respVector = latResponse.IrfVector((respFront, respBack))
+#    respVector = latResponse.IrfVector((respFront, respBack))
 
     useGoodi = 0
     events = observationSim.EventContainer(root + "_events", useGoodi)
