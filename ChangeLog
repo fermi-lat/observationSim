@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Jul 14 10:59:05 PDT 2004
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+use celestialSources/GRB; fix Crab_Pulsar flux; tagging v3r6p1
+    *
+------------------------------------------------------------
 User: jchiang  Tue Jun 29 13:24:10 PDT 2004
 observationSim/src
 
