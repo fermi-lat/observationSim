@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Jul  1 22:17:52 PDT 2003
+observationSim/src/test
+
+Modified Files:
+	main.cxx 
+Log Message:
+pass Spacecraft pointer to Simulator::generateEvents, making orbit and attitude specs (more) independent of FluxSvc
+    *
+------------------------------------------------------------
+User: jchiang  Tue Jul  1 22:17:52 PDT 2003
 observationSim/src
 
 Modified Files:
