@@ -3,7 +3,7 @@
  * @brief A prototype O1 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.7 2005/01/04 20:20:37 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.8 2005/02/01 00:04:13 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -45,6 +45,7 @@ public:
       }
    }
    virtual void run();
+   virtual void banner() const {}
 private:
    st_app::AppParGroup & m_pars;
    double m_count;
