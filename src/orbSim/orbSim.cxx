@@ -3,7 +3,7 @@
  * @brief A prototype O1 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.2 2004/09/26 19:50:12 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.3 2004/11/27 15:39:29 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -34,7 +34,7 @@
 class OrbSim : public st_app::StApp {
 public:
    OrbSim() : st_app::StApp(), m_pars(st_app::StApp::getParGroup("orbSim")),
-              m_simulator(0), m_verbosity(1) {
+              m_simulator(0) {
    }
    virtual ~OrbSim() throw() {
       try {
@@ -51,7 +51,6 @@ private:
    observationSim::Simulator * m_simulator;
    std::map<std::string, int> m_rockTypes;
    std::vector<irfInterface::Irfs *> m_respPtrs;
-   unsigned int m_verbosity;
 
    void defineRockTypes();
    void promptForParameters();
