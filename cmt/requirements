@@ -1,9 +1,9 @@
 package observationSim
-version v5r5p1
+version v5r6
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.116 2005/01/16 03:31:09 jchiang Exp $
+# $Id: requirements,v 1.117 2005/01/27 22:12:55 jchiang Exp $
 
 use STpolicy v1r*
 use cfitsio v1r* IExternal
@@ -23,8 +23,8 @@ macro_append ROOT_linkopts " $(ROOT_GUI_libs)"
 
 apply_pattern ST_library option="-no_share "
 apply_pattern ST_pfiles
-apply_pattern ST_app name=obsSim
-apply_pattern ST_app name=orbSim
+apply_pattern ST_app_withDir name=gtobssim dir=obsSim
+apply_pattern ST_app_withDir name=gtorbsim dir=orbSim
 
 private
 
