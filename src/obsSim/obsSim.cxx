@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.5 2004/04/17 15:28:14 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.6 2004/04/19 20:06:57 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -38,6 +38,7 @@
 // static SpectrumFactory<GRBmanager> my_factory;
 
 ISpectrumFactory & GaussianSourceFactory();
+ISpectrumFactory & IsotropicFactory();
 ISpectrumFactory & MapSourceFactory();
 ISpectrumFactory & PeriodicSourceFactory();
 ISpectrumFactory & PulsarFactory();
@@ -54,6 +55,7 @@ public:
       m_pars.Save();
       m_count = m_pars["Number_of_events"];
       GaussianSourceFactory();
+      IsotropicFactory();
       MapSourceFactory();
       PeriodicSourceFactory();
       PulsarFactory();

@@ -1,4 +1,4 @@
-<!-- $Header: /nfs/slac/g/glast/ground/cvs/observationSim/xml/obsSim_source_library.xml,v 1.5 2004/04/16 17:03:05 jchiang Exp $
+<!-- $Header: /nfs/slac/g/glast/ground/cvs/observationSim/xml/obsSim_source_library.xml,v 1.6 2004/04/17 15:28:15 jchiang Exp $
    This is a library of sources that can be included by a source with
    an empty element: that is, <source name="chime"/> picks up the
    entry named "chime".  Also, if the second command line option
@@ -582,6 +582,14 @@
       <spectrum escale="MeV">
          <SpectrumClass name="GaussianSource"
                         params="0.1, 2.1, 45., 30., 3., 0.5, 45, 30., 2e5"/>
+         <use_spectrum frame="galaxy"/>
+      </spectrum>
+   </source>
+
+   <source name="Extragalactic_diffuse">
+      <spectrum escale="MeV">
+         <SpectrumClass name="Isotropic"
+                        params="6.85, 2.1, 30, 2e5"/>
          <use_spectrum frame="galaxy"/>
       </spectrum>
    </source>
