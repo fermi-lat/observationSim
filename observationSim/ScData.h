@@ -2,7 +2,7 @@
  * @file ScData.h
  * @brief Simple data structure to hold ScData data.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScData.h,v 1.3 2003/06/19 17:52:33 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScData.h,v 1.4 2003/06/26 17:41:17 jchiang Exp $
  */
 
 #ifndef observationSim_ScData_h
@@ -17,7 +17,7 @@ namespace observationSim {
  * @brief Simple data structure to hold ScData data.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScData.h,v 1.3 2003/06/19 17:52:33 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScData.h,v 1.4 2003/06/26 17:41:17 jchiang Exp $
  */
 
 class ScData {
@@ -26,9 +26,10 @@ public:
 
    ScData(double time, double RAz, double Decz, double lon, 
           double lat, const astro::SkyDir &zAxis, const astro::SkyDir &xAxis,
-          int inSAA) :
+          int inSAA, const std::vector<double> & position) :
       m_time(time), m_RAz(RAz), m_Decz(Decz), m_lon(lon), 
-      m_lat(lat), m_zAxis(zAxis), m_xAxis(xAxis), m_inSaa(inSAA) {}
+      m_lat(lat), m_zAxis(zAxis), m_xAxis(xAxis), m_inSaa(inSAA),
+      m_position(position) {}
 
    /// Time in seconds (referenced to the zero time of the orbit
    /// calculation in astro::EarthOrbit).
@@ -55,6 +56,9 @@ public:
    /// Flag to indicate if the spacecraft is in the SAA.
    int inSaa() const {return m_inSaa;}
 
+   /// The spacecraft position in geocentric coordinates (km).
+   const std::vector<double> & position() const {return m_position;}
+
 private:
 
    double m_time;
@@ -65,6 +69,7 @@ private:
    astro::SkyDir m_zAxis;
    astro::SkyDir m_xAxis;
    int m_inSaa;
+   std::vector<double> m_position;
 };
 
 } // namespace observationSim

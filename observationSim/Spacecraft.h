@@ -3,12 +3,13 @@
  * @brief Declaration of Spacecraft base class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Spacecraft.h,v 1.1 2003/07/01 05:13:45 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Spacecraft.h,v 1.2 2003/07/02 05:17:51 jchiang Exp $
  */
 
 #ifndef observationSim_Spacecraft_h
 #define observationSim_Spacecraft_h
 
+#include <vector>
 #include "astro/SkyDir.h"
 
 namespace observationSim {
@@ -22,7 +23,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Spacecraft.h,v 1.1 2003/07/01 05:13:45 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Spacecraft.h,v 1.2 2003/07/02 05:17:51 jchiang Exp $
  */
 
 class Spacecraft {
@@ -48,6 +49,10 @@ public:
 
    /// Unity if in SAA, zero otherwise.
    virtual int inSaa(double time) = 0;
+
+   /// Spacecraft position in geocentric coordinates (km)
+   virtual void getScPosition(double time,
+                              std::vector<double> & scPosition) = 0;
 
 };
 

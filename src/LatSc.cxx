@@ -3,7 +3,7 @@
  * @brief Implementation of LatSc class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.cxx,v 1.9 2004/02/02 16:39:22 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.cxx,v 1.10 2004/02/06 00:25:20 jchiang Exp $
  */
 
 #include "astro/EarthCoordinate.h"
@@ -54,6 +54,14 @@ HepRotation LatSc::InstrumentToCelestial(double time) {
 int LatSc::inSaa(double time) {
    astro::EarthCoordinate earthCoord( EarthLat(time), EarthLon(time) );
    return earthCoord.insideSAA();
+}
+
+void LatSc::getScPosition(double time, std::vector<double> & position) {
+   Hep3Vector pos = GPS::instance()->position(time);
+   position.clear();
+   position.push_back(pos.x());
+   position.push_back(pos.y());
+   position.push_back(pos.z());
 }
 
 } // namespace observationSim
