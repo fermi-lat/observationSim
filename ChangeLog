@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Aug 11 15:08:25 PDT 2004
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx ScDataContainer.cxx 
+Log Message:
+add check to see if OBSERVATIONSIMROOT is properly set
+    *
+------------------------------------------------------------
 User: jchiang  Wed Aug 11 10:17:38 PDT 2004
 observationSim/doc
 
