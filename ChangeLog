@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Wed Jun 18 17:14:05 PDT 2003
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx FitsTable.cxx ScDataContainer.cxx 
+	Simulator.cxx 
+Log Message:
+modify FITS output for use with A1
+    *
+------------------------------------------------------------
 User: jchiang  Wed Jun 18 17:14:04 PDT 2003
 observationSim/observationSim
 
