@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.23 2004/01/23 04:44:02 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.24 2004/04/06 14:05:45 jchiang Exp $
  */
 #ifdef TRAP_FPE
 #include <fenv.h>
@@ -94,7 +94,6 @@ int main(int argn, char * argc[]) {
 
 // Allow for multiple IRFs.
    std::vector<latResponse::Irfs *> respPtrs;
-//   latResponse::IrfsFactory irfsFactory;
    if (useCombined) {
       respPtrs.push_back(irfsFactory().create("Glast25::Combined"));
    } else { // use Front & Back
@@ -103,13 +102,13 @@ int main(int argn, char * argc[]) {
    }
 
 // Generate the events and spacecraft data.
-#ifdef USE_GOODI
-   bool useGoodi(true);
+#ifdef USE_FT1
+   bool useFT1(true);
 #else
-   bool useGoodi(false);
+   bool useFT1(false);
 #endif
-   observationSim::EventContainer events("test_events", useGoodi);
-   observationSim::ScDataContainer scData("test_scData", useGoodi);
+   observationSim::EventContainer events("test_events", useFT1);
+   observationSim::ScDataContainer scData("test_scData", useFT1);
 
 // The spacecraft object.
    observationSim::Spacecraft *spacecraft = new observationSim::LatSc();
