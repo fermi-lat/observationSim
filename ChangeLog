@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Apr 12 15:17:22 PDT 2004
+observationSim/observationSim
+
+Modified Files:
+	Simulator.h 
+Log Message:
+use st_app; tagging v3r0
+    *
+------------------------------------------------------------
+User: jchiang  Mon Apr 12 15:17:22 PDT 2004
 observationSim/doc
 
 Modified Files:
