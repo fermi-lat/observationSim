@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: richard  Sat Jun 21 16:27:03 PDT 2003
+observationSim/src
+
+Modified Files:
+	Simulator.cxx ScDataContainer.cxx 
+Log Message:
+change m_source to CompositeSource. Add type to SkyDir use
+    *
+------------------------------------------------------------
 User: richard  Sat Jun 21 16:25:12 PDT 2003
 observationSim/observationSim
 
