@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Jun 18 17:14:04 PDT 2003
+observationSim/observationSim
+
+Modified Files:
+	Event.h EventContainer.h ScData.h ScDataContainer.h 
+Log Message:
+modify FITS output for use with A1
+    *
+------------------------------------------------------------
 User: jchiang  Wed Jun 18 13:28:23 PDT 2003
 observationSim/src
 
