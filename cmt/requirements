@@ -1,9 +1,9 @@
 package observationSim
-version v5r1
+version v5r1p1
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.95 2004/09/30 22:00:45 jchiang Exp $
+# $Id: requirements,v 1.96 2004/10/04 18:33:58 jchiang Exp $
 
 use STpolicy v1r*
 use cfitsio v1r* IExternal
@@ -12,7 +12,7 @@ use facilities v2r*
 use tip v1r*
 use astro v1r*
 use flux v8r*
-use st_facilities v0*
+use st_facilities v0r3*
 use GRB v4r* celestialSources
 use genericSources v0* celestialSources
 use irfLoader v0* irfs
