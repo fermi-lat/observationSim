@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Jul  8 17:22:24 PDT 2003
+observationSim/src
+
+Modified Files:
+	Simulator.cxx 
+Log Message:
+add entry for galdiffusemap and modify requirements to link to MapFlux
+    *
+------------------------------------------------------------
 User: jchiang  Tue Jul  8 17:22:23 PDT 2003
 observationSim/cmt
 
