@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Aug 26 14:58:53 PDT 2004
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+remove non-FT1/2 output formatting
+    *
+------------------------------------------------------------
 User: jchiang  Wed Aug 25 14:50:53 PDT 2004
 observationSim/doc
 
