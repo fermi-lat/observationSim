@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sat Nov 27 07:39:29 PST 2004
+observationSim/pfiles
+
+Modified Files:
+	obsSim.par orbSim.par 
+Log Message:
+canonicalize parameter interface
+    *
+------------------------------------------------------------
 User: jchiang  Fri Oct 29 22:01:27 PDT 2004
 observationSim/doc
 
