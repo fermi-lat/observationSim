@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Dec 16 08:08:25 PST 2004
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+add Earth source
+    *
+------------------------------------------------------------
 TAG
 Tag name: v5r4p4, operation: add
 Package: observationSim
