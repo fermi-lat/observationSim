@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.27 2004/12/03 06:44:18 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.28 2004/12/16 16:08:26 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -48,7 +48,7 @@ ISpectrumFactory & PulsarFactory();
 ISpectrumFactory & SimpleTransientFactory();
 ISpectrumFactory & TransientTemplateFactory();
 ISpectrumFactory & PulsarSpectrumFactory();
-ISpectrumFactory & Magrathea();
+//ISpectrumFactory & Magrathea();
 
 using st_facilities::Util;
 
@@ -164,7 +164,7 @@ void ObsSim::createFactories() {
    SimpleTransientFactory();
    TransientTemplateFactory();
    PulsarSpectrumFactory();
-   Magrathea();
+//   Magrathea();
 }
 
 void ObsSim::setXmlFiles() {
