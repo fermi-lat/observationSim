@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Thu Aug 26 14:58:54 PDT 2004
+observationSim/observationSim
+
+Modified Files:
+	EventContainer.h ScDataContainer.h 
+Removed Files:
+	FitsTable.h 
+Log Message:
+remove non-FT1/2 output formatting
+    *
+------------------------------------------------------------
 User: jchiang  Thu Aug 26 14:58:53 PDT 2004
 observationSim/cmt
 
