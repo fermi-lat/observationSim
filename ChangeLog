@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Oct  2 11:22:46 PDT 2003
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+use Goodi for Event data
+    *
+------------------------------------------------------------
 User: jchiang  Tue Sep 30 10:26:08 PDT 2003
 observationSim/cmt
 
