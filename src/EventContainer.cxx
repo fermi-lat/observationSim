@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.36 2004/04/13 15:17:53 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.37 2004/04/15 17:36:05 jchiang Exp $
  */
 
 #include <cmath>
@@ -200,10 +200,10 @@ void EventContainer::writeEvents() {
             std::cout << eObj.what() << std::endl;
             std::exit(-1);
          }
-//          tip::Table::Vector<short> calibVersion = row["calib_version"];
-//          for (int i = 0; i < 3; i++) {
-//             calibVersion[i] = 1;
-//          }
+         tip::Table::Vector<short> calibVersion = row["calib_version"];
+         for (int i = 0; i < 3; i++) {
+            calibVersion[i] = 1;
+         }
       }
       it = my_table->begin();
       double start_time;

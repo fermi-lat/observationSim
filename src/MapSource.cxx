@@ -3,7 +3,7 @@
  * @brief A simple Spectrum subclass that exercises the flux package.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/MapSource.cxx,v 1.1 2004/04/15 17:36:05 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/MapSource.cxx,v 1.2 2004/04/16 17:02:27 jchiang Exp $
  */
 
 #include <cmath>
@@ -26,8 +26,6 @@
 #include "Likelihood/FitsImage.h"
 
 #include "MapSource.h"
-
-//namespace fluxSources {
 
 ISpectrumFactory &MapSourceFactory() {
    static SpectrumFactory<MapSource> myFactory;
@@ -150,5 +148,3 @@ void MapSource::readFitsFile(std::string fitsFile) {
       m_integralDist[i] /= m_integralDist[npix-1];
    }
 }
-
-//} // namespace fluxSources

@@ -1,9 +1,9 @@
 package observationSim
-version v3r1
+version v3r2
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.67 2004/04/12 22:17:21 jchiang Exp $
+# $Id: requirements,v 1.68 2004/04/15 19:31:00 jchiang Exp $
 
 use STpolicy v1r*
 use cfitsio v1r* IExternal
@@ -13,6 +13,7 @@ use tip v1r*
 use astro v0r*
 use flux v8r*
 use latResponse v2r*
+use Likelihood v3r*
 
 apply_pattern ST_library option="-no_share "
 apply_pattern ST_pfiles
@@ -21,7 +22,6 @@ apply_pattern ST_app name=obsSim
 private
 
 use hoops v0r*
-use Likelihood v3r*
 use st_app v1r*
 
 #use python v2* IExternal

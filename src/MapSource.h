@@ -4,7 +4,7 @@
  * templates for the photon distribution on the sky.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/users/jchiang/fluxSources/fluxSources/MapSource.h,v 1.4 2004/04/15 15:53:03 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/MapSource.h,v 1.1 2004/04/15 17:36:05 jchiang Exp $
  */
 
 #ifndef mySpectrum_MapSource_h
@@ -14,8 +14,6 @@
 
 #include "flux/Spectrum.h"
 
-//namespace fluxSources {
-
 /**
  * @class MapSource
  *
@@ -24,7 +22,7 @@
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/users/jchiang/fluxSources/fluxSources/MapSource.h,v 1.4 2004/04/15 15:53:03 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/MapSource.h,v 1.1 2004/04/15 17:36:05 jchiang Exp $
  */
 
 class MapSource : public Spectrum {
@@ -93,7 +91,5 @@ private:
    void readFitsFile(std::string fitsFile);
 
 };
-
-//} // namespace fluxSources
 
 #endif // mySpectrum_MapSource_h
