@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Mon May  3 14:25:21 PDT 2004
+observationSim/data
+
+Modified Files:
+	CrabTemplate.dat 
+Added Files:
+	GemingaTemplate.dat 
+Log Message:
+add Crab and Geminga Pulsar templates
+    *
+------------------------------------------------------------
 User: jchiang  Fri Apr 30 06:57:44 PDT 2004
 observationSim/src/obsSim
 
