@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Fri Oct 17 09:56:58 PDT 2003
+observationSim/src/test
+
+Modified Files:
+	main.cxx 
+Log Message:
+multiple IRF implementation now tested; improved test program and python module interfaces; tagging v2r0
+    *
+------------------------------------------------------------
+User: jchiang  Fri Oct 17 09:56:58 PDT 2003
 observationSim/src
 
 Modified Files:
