@@ -1,9 +1,9 @@
 package observationSim
-version v0r2
+version v0r3
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.12 2003/08/19 17:28:57 cohen Exp $
+# $Id: requirements,v 1.13 2003/08/20 03:51:08 jchiang Exp $
 
 branches observationSim cmt src doc
 
