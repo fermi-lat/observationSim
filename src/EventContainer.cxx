@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.22 2003/12/04 07:22:16 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.23 2003/12/11 03:41:17 jchiang Exp $
  */
 
 #include <cmath>
@@ -232,6 +232,11 @@ void EventContainer::writeEvents() {
          convPoint[i].resize(3);
          acdTilesHit[i].resize(3);
          calibVersion[i].resize(3);
+// All events produced by observationSim satisfy all bg, goodPsf and
+// goodEnergy cuts.
+         calibVersion[i][0] = 1;
+         calibVersion[i][1] = 1;
+         calibVersion[i][2] = 1;
       }
 
       m_goodiEventData->setGeoOffset(geoOffset);
