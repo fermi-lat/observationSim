@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.53 2005/01/12 05:08:40 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.54 2005/01/16 03:31:10 jchiang Exp $
  */
 
 #include <cmath>
@@ -250,9 +250,11 @@ void EventContainer::writeEvents() {
    row["stop"].set(stop_time);
    writeDateKeywords(gti_table, m_startTime, stop_time);
 
-   dataSubselector::Cuts * cuts = new dataSubselector::Cuts();
+   dataSubselector::Cuts * cuts;
    if (m_cuts) {
       cuts = new dataSubselector::Cuts(*m_cuts);
+   } else {
+      cuts = new dataSubselector::Cuts();
    }
    cuts->addGtiCut(*gti_table);
    cuts->writeDssKeywords(my_table->getHeader());

@@ -3,7 +3,7 @@
  * @brief Implementation of LatSc class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.cxx,v 1.12 2004/09/27 19:17:01 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.cxx,v 1.13 2004/09/28 18:56:00 jchiang Exp $
  */
 
 #include "astro/EarthCoordinate.h"
@@ -59,9 +59,12 @@ int LatSc::inSaa(double time) {
 void LatSc::getScPosition(double time, std::vector<double> & position) {
    Hep3Vector pos = GPS::instance()->position(time);
    position.clear();
-   position.push_back(pos.x());
-   position.push_back(pos.y());
-   position.push_back(pos.z());
+// GPS returns the position in units of km, but FT2 wants meters so
+// we multiply by 10^3.
+   double mperkm(1e3);
+   position.push_back(pos.x()*mperkm);
+   position.push_back(pos.y()*mperkm);
+   position.push_back(pos.z()*mperkm);
 }
 
 void LatSc::getZenith(double time, double & ra, double & dec) {
