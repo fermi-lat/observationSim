@@ -3,7 +3,7 @@ version v0r3p4
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.22 2003/09/29 21:21:39 jchiang Exp $
+# $Id: requirements,v 1.23 2003/09/30 17:26:08 jchiang Exp $
 
 branches observationSim cmt src doc
 
@@ -20,6 +20,8 @@ use CLHEP v2* IExternal
 apply_pattern package_include
 
 private
+
+use Goodi v1*
 
 #use python v2* IExternal
 #macro pydir ../python/
