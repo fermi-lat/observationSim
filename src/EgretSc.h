@@ -3,7 +3,7 @@
  * @brief Declaration for the EGRET spacecraft object.
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EgretSc.h,v 1.1 2003/07/02 14:45:27 jchiang Exp $
  */
 
 #ifndef observationSim_EgretSc_h
@@ -24,7 +24,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EgretSc.h,v 1.1 2003/07/02 14:45:27 jchiang Exp $
  */
 
 class EgretSc : public Spacecraft {
@@ -38,8 +38,8 @@ public:
 
    EgretSc(double raz, double decz, double rax, double decx,
            double earthLon, double earthLat, int inSaa) :
-      m_zAxis(astro::SkyDir(raz, decz, astro::SkyDir::CELESTIAL)), 
-      m_xAxis(astro::SkyDir(rax, decx, astro::SkyDir::CELESTIAL)), 
+      m_zAxis(astro::SkyDir(raz, decz, astro::SkyDir::EQUATORIAL)), 
+      m_xAxis(astro::SkyDir(rax, decx, astro::SkyDir::EQUATORIAL)), 
       m_earthLon(earthLon), m_earthLat(earthLat), m_inSaa(inSaa) {}
 
    virtual ~EgretSc() {}
