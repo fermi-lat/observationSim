@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.30 2004/07/21 13:38:52 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.31 2004/08/11 17:16:01 jchiang Exp $
  */
 #ifdef TRAP_FPE
 #include <fenv.h>
@@ -91,7 +91,7 @@ int main(int iargc, char * argv[]) {
       }
    } else {
       sourceNames.push_back("all_3EG_sources");
-      sourceNames.push_back("One_GRB_each_10Minutes");
+//      sourceNames.push_back("One_GRB_each_10Minutes");
 //      sourceNames.push_back("galdiffusemap");
    }
 
