@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.48 2004/12/02 23:48:16 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.49 2004/12/03 06:44:18 jchiang Exp $
  */
 
 #include <cmath>
@@ -223,10 +223,6 @@ void EventContainer::writeEvents() {
       stop_time = m_stopTime;
    }
    writeDateKeywords(my_table, m_startTime, stop_time);
-   if (m_cuts) {
-      m_cuts->writeDssKeywords(my_table->getHeader());
-   }
-   delete my_table;
 
 // Fill the GTI extension, with the entire observation (as ascertained
 // from the first and last events) in a single GTI.
@@ -237,6 +233,12 @@ void EventContainer::writeEvents() {
    row["start"].set(m_startTime);
    row["stop"].set(stop_time);
    writeDateKeywords(gti_table, m_startTime, stop_time);
+
+   m_cuts->addGtiCut(*gti_table);
+   if (m_cuts) {
+      m_cuts->writeDssKeywords(my_table->getHeader());
+   }
+   delete my_table;
    delete gti_table;
 
 // Take care of date keywords in primary header.
