@@ -1,9 +1,9 @@
 package observationSim
-version v2r5p2
+version v2r5p3
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.49 2003/12/06 00:14:48 richard Exp $
+# $Id: requirements,v 1.50 2003/12/06 22:37:02 jchiang Exp $
 
 branches observationSim cmt src doc
 
@@ -78,6 +78,7 @@ set PFILES "$(OBSERVATIONSIMROOT)/data/"
 
 # test applications
 application test_observationSim test/main.cxx
+#application testGoodiWrite test/testGoodiWrite.cxx
 #application testGoodiRead test/testGoodiRead.cxx
 #application testScDataRead test/testScDataRead.cxx
 
