@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/obsSim.cxx,v 1.6 2003/12/04 07:22:16 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/obsSim.cxx,v 1.7 2003/12/06 22:21:37 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -11,6 +11,8 @@
 #endif
 
 #include <cassert>
+
+#include "CLHEP/Random/Random.h"
 
 #include "hoops/hoops_exception.h"
 
@@ -36,6 +38,13 @@ int main(int iargc, char * argv[]) {
    strcpy(argv[0], "obsSim");
    try {
       Likelihood::RunParams params(iargc, argv);
+
+// Set the random number seed in the CLHEP random number engine.
+// We only do this once per run, so we set it using the constructor.
+// See <a href="http://wwwasd.web.cern.ch/wwwasd/lhc++/clhep/doxygen/html/Random_8h-source.html">CLHEP/Random/Random.h</a>.
+      long seed;
+      params.getParam("Random_seed", seed);
+      HepRandom hepRandom(seed);
          
 // Here are the default xml files for flux-style sources.
       std::vector<std::string> xmlSourceFiles;
