@@ -1,0 +1,50 @@
+------------------------------------------------------------
+User: jchiang  Wed Jun 18 12:46:36 PDT 2003
+observationSim
+
+Log Message:
+First import
+
+Status:
+
+Vendor Tag:	GLAST
+Release Tags:	v0
+		
+I observationSim/rh72_gcc2953
+N observationSim/.cvsignore
+N observationSim/cmt/Makefile
+N observationSim/cmt/requirements
+I observationSim/cmt/test_events.dat
+I observationSim/cmt/test_scData.dat
+N observationSim/cmt/.cvsignore
+I observationSim/cmt/results.pro
+N observationSim/observationSim/EventContainer.h
+N observationSim/observationSim/ScData.h
+N observationSim/observationSim/Simulator.h
+N observationSim/observationSim/ScDataContainer.h
+N observationSim/observationSim/FitsTable.h
+N observationSim/observationSim/Event.h
+N observationSim/src/Simulator.cxx
+N observationSim/src/ScDataContainer.cxx
+N observationSim/src/FitsTable.cxx
+N observationSim/src/EventContainer.cxx
+N observationSim/src/test/.cvsignore
+N observationSim/src/test/main.cxx
+I observationSim/src/test/main_cxx
+N observationSim/doc/Doxyfile
+I observationSim/doc/Doxyfile.run
+I observationSim/doc/doxy-html
+N observationSim/doc/release.notes
+N observationSim/doc/results.ps
+I observationSim/doc/notes
+N observationSim/doc/.cvsignore
+N observationSim/xml/source_library.xml
+N observationSim/xml/3EG_catalog.xml
+N observationSim/xml/3EG_catalog.txt
+N observationSim/xml/3EG_to_xml.py
+N observationSim/xml/3EG_catalog_30MeV.xml
+N observationSim/xml/3EG_catalog_32MeV.xml
+
+No conflicts created by this import
+
+    *
