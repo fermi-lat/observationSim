@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Mar  7 10:49:19 PST 2005
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+set mission start to MJDREF; tagging v5r6p3
+    *
+------------------------------------------------------------
 TAG
 Tag name: v5r6p2, operation: add
 Package: observationSim
