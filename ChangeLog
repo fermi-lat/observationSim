@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sun Sep 26 10:57:56 PDT 2004
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+add orbSim application
+    *
+------------------------------------------------------------
+User: jchiang  Sun Sep 26 10:57:56 PDT 2004
 observationSim/src
 
 Modified Files:
