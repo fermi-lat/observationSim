@@ -1,4 +1,17 @@
 ------------------------------------------------------------
+User: jchiang  Sat Apr 17 08:28:13 PDT 2004
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx MapSource.cxx MapSource.h SimpleTransient.h 
+Added Files:
+	GaussianSource.cxx GaussianSource.h PeriodicSource.cxx 
+	PeriodicSource.h Pulsar.cxx Pulsar.h TransientTemplate.cxx 
+	TransientTemplate.h 
+Log Message:
+add various sources; tagging v3r2
+    *
+------------------------------------------------------------
 User: jchiang  Sat Apr 17 08:28:11 PDT 2004
 observationSim/doc
 
