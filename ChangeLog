@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Aug 27 08:03:29 PDT 2003
+observationSim/src/test
+
+Modified Files:
+	main.cxx 
+Log Message:
+add output message to test program
+    *
+------------------------------------------------------------
 User: jchiang  Tue Aug 26 09:11:57 PDT 2003
 observationSim/src/test
 
