@@ -3,7 +3,7 @@ version v5r1p2
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.97 2004/10/04 20:06:05 jchiang Exp $
+# $Id: requirements,v 1.98 2004/10/08 17:47:30 jchiang Exp $
 
 use STpolicy v1r*
 use cfitsio v1r* IExternal
@@ -15,6 +15,7 @@ use flux v8r*
 use st_facilities v0r3*
 use GRB v4r* celestialSources
 use genericSources v0* celestialSources
+use Pulsar v0* celestialSources
 use irfLoader v0* irfs
 
 macro_append ROOT_linkopts " $(ROOT_GUI_libs)"
