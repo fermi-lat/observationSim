@@ -1,4 +1,16 @@
 ------------------------------------------------------------
+User: jchiang  Tue Jun 29 13:24:10 PDT 2004
+observationSim/src
+
+Removed Files:
+	GaussianSource.cxx GaussianSource.h MapSource.cxx MapSource.h 
+	PeriodicSource.cxx PeriodicSource.h Pulsar.cxx Pulsar.h 
+	SimpleTransient.cxx SimpleTransient.h TransientTemplate.cxx 
+	TransientTemplate.h 
+Log Message:
+remove sources that are now in celestialSources/genericSources; tagging v3r6
+    *
+------------------------------------------------------------
 User: jchiang  Tue Jun 29 13:24:08 PDT 2004
 observationSim/doc
 
