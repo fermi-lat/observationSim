@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Sep 27 12:17:00 PDT 2004
+observationSim/observationSim
+
+Modified Files:
+	ScData.h Spacecraft.h 
+Log Message:
+set zenith direction in output
+    *
+------------------------------------------------------------
 User: jchiang  Mon Sep 27 11:03:42 PDT 2004
 observationSim/doc
 
