@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.26 2004/04/12 19:53:29 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.27 2004/04/28 20:19:57 jchiang Exp $
  */
 #ifdef TRAP_FPE
 #include <fenv.h>
@@ -13,15 +13,17 @@
 
 #include "astro/SkyDir.h"
 
-#include "latResponse/Irfs.h"
-#include "latResponse/IrfsFactory.h"
+// #include "latResponse/Irfs.h"
+// #include "latResponse/IrfsFactory.h"
+#include "irfInterface/IrfsFactory.h"
+#include "g25Response/loadIrfs.h"
 
 #include "observationSim/Simulator.h"
 #include "observationSim/EventContainer.h"
 #include "observationSim/ScDataContainer.h"
 #include "LatSc.h"
 
-using latResponse::irfsFactory;
+//using latResponse::irfsFactory;
 
 ISpectrumFactory & GaussianSourceFactory();
 ISpectrumFactory & GRBmanagerFactory();
@@ -100,22 +102,19 @@ int main(int iargc, char * argv[]) {
 // Create the Simulator object
    observationSim::Simulator my_simulator(sourceNames, fileList);
 
-// Ascertain paths to GLAST25 response files.
-   const char *root = std::getenv("LATRESPONSEROOT");
-   std::string caldbPath;
-   if (!root) {
-      caldbPath = "/u1/jchiang/SciTools/dev/latResponse/v0r1/data/CALDB";
-   } else {
-      caldbPath = std::string(root) + "/data/CALDB";
-   }
-
 // Allow for multiple IRFs.
-   std::vector<latResponse::Irfs *> respPtrs;
+   g25Response::loadIrfs();
+   irfInterface::IrfsFactory * myFactory 
+      = irfInterface::IrfsFactory::instance();
+   std::vector<irfInterface::Irfs *> respPtrs;
    if (useCombined) {
-      respPtrs.push_back(irfsFactory().create("Glast25::Combined"));
+//      respPtrs.push_back(irfsFactory().create("Glast25::Combined"));
+      respPtrs.push_back(myFactory->create("Glast25::Combined"));
    } else { // use Front & Back
-      respPtrs.push_back(irfsFactory().create("Glast25::Front"));
-      respPtrs.push_back(irfsFactory().create("Glast25::Back"));
+//       respPtrs.push_back(irfsFactory().create("Glast25::Front"));
+//       respPtrs.push_back(irfsFactory().create("Glast25::Back"));
+      respPtrs.push_back(myFactory->create("Glast25::Front"));
+      respPtrs.push_back(myFactory->create("Glast25::Back"));
    }
 
 // Generate the events and spacecraft data.
