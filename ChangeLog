@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Jul  2 20:31:49 PDT 2003
+observationSim/observationSim
+
+Modified Files:
+	Simulator.h 
+Log Message:
+modify Simulator::makeEvents(..) to account for EventSource intervals longer than the observation time
+    *
+------------------------------------------------------------
 User: jchiang  Wed Jul  2 07:45:27 PDT 2003
 observationSim/src
 
