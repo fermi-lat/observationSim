@@ -1,13 +1,13 @@
 package observationSim
-version v2r7p1
+version v2r7p2
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.56 2004/01/23 02:47:15 jchiang Exp $
+# $Id: requirements,v 1.57 2004/01/23 04:43:59 jchiang Exp $
 
 branches observationSim cmt src doc
 
-use flux v8*
+use flux v*
 use latResponse v*
 use Goodi v*
 use astro v0*
@@ -33,9 +33,6 @@ Linux "-I ../src -g -O -pedantic -D TRAP_FPE -D USE_GOODI " \
 WIN32 '/I..\src /D"USE_GOODI" /wd4290'
 
 macro_prepend cflags "" Linux "-g -O"
-
-# suppress warning messages (from flux, Goodi, etc.) on Linux:
-macro_prepend cppflags "-I ../src " Linux "-w " WIN32 "/I..\src "
 
 macro_append ROOT_libs ""  WIN32 " libHisT.lib "
 
