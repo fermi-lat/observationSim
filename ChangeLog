@@ -1,4 +1,16 @@
 ------------------------------------------------------------
+User: jchiang  Thu Jun 19 10:53:51 PDT 2003
+observationSim/src/test
+
+Modified Files:
+	main.cxx 
+Log Message:
+Move to astro::SkyDir from Hep3Vector;
+Add a public interface to Event and ScData classes;
+Add inheritance from Container class and glastToGalactic method.
+
+    *
+------------------------------------------------------------
 User: jchiang  Thu Jun 19 10:53:24 PDT 2003
 observationSim/src
 
