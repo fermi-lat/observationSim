@@ -3,7 +3,7 @@ version v1r0
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.25 2003/10/02 22:05:16 cohen Exp $
+# $Id: requirements,v 1.26 2003/10/02 22:31:03 jchiang Exp $
 
 branches observationSim cmt src doc
 
@@ -21,7 +21,7 @@ apply_pattern package_include
 
 private
 
-use Goodi v1*
+use Goodi v2*
 
 #use python v2* IExternal
 #macro pydir ../python/
