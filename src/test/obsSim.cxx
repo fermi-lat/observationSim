@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/obsSim.cxx,v 1.13 2004/03/12 03:41:40 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/obsSim.cxx,v 1.14 2004/03/18 06:06:06 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -151,17 +151,17 @@ int main(int iargc, char * argv[]) {
 //      my_simulator.setRocking(0);
       
 // Generate the events and spacecraft data.
-#ifdef USE_GOODI
-      bool useGoodi(true);
+#ifdef USE_FT1
+      bool useFT1(true);
 #else
-      bool useGoodi(false);
+      bool useFT1(false);
 #endif
       long nMaxRows = pars["Maximum_number_of_rows"];
       std::string prefix = pars["Output_file_prefix"];
       observationSim::EventContainer events(prefix + "_events", 
-                                            useGoodi, nMaxRows);
+                                            useFT1, nMaxRows);
       observationSim::ScDataContainer scData(prefix + "_scData", 
-                                             useGoodi, nMaxRows);
+                                             useFT1, nMaxRows);
 // The spacecraft object.
       observationSim::Spacecraft *spacecraft = new observationSim::LatSc();
       
