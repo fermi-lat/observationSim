@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Thu Jul 10 10:28:17 PDT 2003
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx FitsTable.cxx ScDataContainer.cxx 
+Log Message:
+Allow for output to be spread out over several files.
+Remove m_fptr deletion in FitsTable.cxx.
+
+    *
+------------------------------------------------------------
 User: jchiang  Thu Jul 10 10:27:32 PDT 2003
 observationSim/observationSim
 
