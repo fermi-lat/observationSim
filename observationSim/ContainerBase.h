@@ -3,7 +3,7 @@
  * @brief Base class for observationSim Event and ScData containers.
  * @author J. Chiang <jchiang@slac.stanford.edu>
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ContainerBase.h,v 1.1 2004/08/26 23:07:13 jchiang Exp $
  */
 
 #ifndef observationSim_ContainerBase_h
@@ -14,7 +14,7 @@
 #include "astro/JulianDate.h"
 
 namespace tip {
-   class Table;
+   class Extension;
 }
 
 namespace observationSim {
@@ -22,7 +22,7 @@ namespace observationSim {
 /**
  * @class ContainerBase
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ContainerBase.h,v 1.1 2004/08/26 23:07:13 jchiang Exp $
  */
 
 class ContainerBase {
@@ -54,8 +54,8 @@ protected:
    std::string outputFileName() const;
 
    /// Set the date keywords in a given header, accesses via the
-   /// tip::Table and tip::Header interface.
-   static void writeDateKeywords(tip::Table * table, double start_time,
+   /// tip::Extension and tip::Header interface.
+   static void writeDateKeywords(tip::Extension * table, double start_time,
                                  double stop_time);
 
    /// Return an astro::JulianDate object for the current time.
