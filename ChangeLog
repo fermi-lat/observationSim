@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Nov 10 17:19:43 PST 2003
+observationSim/src/test
+
+Modified Files:
+	exposureMap.cxx obsSim.cxx 
+Log Message:
+allow use of pointing history
+    *
+------------------------------------------------------------
 User: jchiang  Mon Nov 10 17:19:42 PST 2003
 observationSim/src
 
