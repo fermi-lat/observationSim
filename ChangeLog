@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Oct 27 12:49:54 PST 2003
+observationSim/src
+
+Modified Files:
+	Simulator.cxx 
+Log Message:
+comment out MapFlux; use latResponse v1*; tagging v2r1
+    *
+------------------------------------------------------------
+User: jchiang  Mon Oct 27 12:49:54 PST 2003
 observationSim/python
 
 Modified Files:
