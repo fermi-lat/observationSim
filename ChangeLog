@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sat Dec  6 14:21:37 PST 2003
+observationSim/src/test
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+argv fixes for obsSim
+    *
+------------------------------------------------------------
 User: jchiang  Sat Dec  6 14:21:36 PST 2003
 observationSim/data
 
