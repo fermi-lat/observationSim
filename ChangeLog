@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sun Nov 28 06:51:40 PST 2004
+observationSim/pfiles
+
+Modified Files:
+	obsSim.par orbSim.par 
+Log Message:
+set chitter to 2 in par file
+    *
+------------------------------------------------------------
+User: jchiang  Sun Nov 28 06:51:40 PST 2004
 observationSim/doc
 
 Modified Files:
