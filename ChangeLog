@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Apr 26 13:28:35 PDT 2004
+observationSim/src
+
+Modified Files:
+	Isotropic.cxx 
+Log Message:
+read energy bounds correctly
+    *
+------------------------------------------------------------
 User: jchiang  Fri Apr 23 15:59:04 PDT 2004
 observationSim/src
 
