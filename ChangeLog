@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Thu Apr 15 10:36:05 PDT 2004
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx 
+Added Files:
+	MapSource.cxx MapSource.h 
+Log Message:
+add MapSource
+    *
+------------------------------------------------------------
 User: jchiang  Tue Apr 13 08:17:53 PDT 2004
 observationSim/src
 
