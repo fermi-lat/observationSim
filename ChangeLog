@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Jan 22 20:44:01 PST 2004
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx 
+Log Message:
+fix test program
+    *
+------------------------------------------------------------
+User: jchiang  Thu Jan 22 20:44:01 PST 2004
 observationSim/doc
 
 Modified Files:
