@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Nov 30 10:17:42 PST 2004
+observationSim/src/orbSim
+
+Modified Files:
+	orbSim.cxx 
+Log Message:
+fix pointing_history test; extend pulsar energy ranges to 20 -- 2e5 MeV
+    *
+------------------------------------------------------------
 TAG
 Tag name: v5r3p2, operation: add
 Package: observationSim
