@@ -1,4 +1,4 @@
-<!-- $Header: /nfs/slac/g/glast/ground/cvs/observationSim/xml/obsSim_source_library.xml,v 1.3 2004/04/15 17:36:06 jchiang Exp $
+<!-- $Header: /nfs/slac/g/glast/ground/cvs/observationSim/xml/obsSim_source_library.xml,v 1.4 2004/04/15 18:48:16 jchiang Exp $
    This is a library of sources that can be included by a source with
    an empty element: that is, <source name="chime"/> picks up the
    entry named "chime".  Also, if the second command line option
@@ -540,8 +540,17 @@
      Maximum photon energy (MeV) = 2e5
 -->
          <SpectrumClass name="MapSource"
-         params="17.,2.1,$(FLUXROOT)/sources/gas_gal.fits,30.,2e5"/>
+          params="17.,2.1,$(FLUXROOT)/sources/gas_gal.fits,30.,2e5"/>
          <use_spectrum frame="galaxy"/>
+      </spectrum>
+   </source>
+
+<!-- A short transient source, similar to a simple GRB -->
+   <source name="simple_transient">
+      <spectrum escale="MeV">
+         <SpectrumClass name="SimpleTransient"
+          params="10., 2., 1e3, 1.1e3, 30., 2e5"/>
+         <celestial_dir ra="83." dec="22."/>
       </spectrum>
    </source>
 

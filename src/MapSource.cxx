@@ -3,11 +3,13 @@
  * @brief A simple Spectrum subclass that exercises the flux package.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/users/jchiang/fluxSources/src/MapSource.cxx,v 1.5 2004/04/15 15:53:04 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/MapSource.cxx,v 1.1 2004/04/15 17:36:05 jchiang Exp $
  */
 
 #include <cmath>
 #include <cstdlib>
+
+#include <algorithm>
 
 #include "CLHEP/Random/RandomEngine.h"
 #include "CLHEP/Random/JamesRandom.h"
