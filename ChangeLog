@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Thu Dec  2 15:48:14 PST 2004
+observationSim/observationSim
+
+Modified Files:
+	EventContainer.h Simulator.h 
+Removed Files:
+	Roi.h 
+Log Message:
+allow events to be cut by acceptance cone
+    *
+------------------------------------------------------------
 User: jchiang  Thu Dec  2 15:48:13 PST 2004
 observationSim/doc
 
