@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.7 2004/04/23 22:52:31 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.8 2004/04/28 20:19:53 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -120,17 +120,21 @@ void ObsSim::setXmlFiles() {
    }
    facilities::Util::expandEnvVar(&xmlFiles);
    if (Util::fileExists(xmlFiles)) {
-      std::vector<std::string> files;
-      Util::readLines(xmlFiles, files);
-      for (unsigned int i=0; i < files.size(); i++) {
-         facilities::Util::expandEnvVar(&files[i]);
-         if (Util::fileExists(files[i])) {
-            m_xmlSourceFiles.push_back(files[i]);
-         } else {
-            std::cout << "File not found: " 
-                      << files[i] << std::endl;
+      if (Util::isXmlFile(xmlFiles)) {
+         m_xmlSourceFiles.push_back(xmlFiles);
+      } else {
+         std::vector<std::string> files;
+         Util::readLines(xmlFiles, files);
+         for (unsigned int i=0; i < files.size(); i++) {
+            facilities::Util::expandEnvVar(&files[i]);
+            if (Util::fileExists(files[i])) {
+               m_xmlSourceFiles.push_back(files[i]);
+            } else {
+               std::cout << "File not found: " 
+                         << files[i] << std::endl;
+            }
          }
-      }
+      } 
    } else {
       throw std::invalid_argument("List of XML files not found: " + xmlFiles);
    }
