@@ -5,7 +5,7 @@ Basic script for steering the observationSim code.  No plotting.
 @author J. Chiang
 """
 #
-# $Header$
+# $Header: /nfs/slac/g/glast/ground/cvs/observationSim/python/latSim.py,v 1.1 2003/08/20 03:51:08 jchiang Exp $
 #
 import os, sys, string, numarray
 
@@ -57,6 +57,7 @@ def run_test(argv):
                 useSimTime = 1    # count as seconds of simulation time
             else:
                 source_names.append(name)
+    print type(source_names)
     if len(source_names) == 0:
         source_names.append("all_3EG_sources")
 
