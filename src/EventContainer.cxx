@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.52 2005/01/12 01:02:16 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.53 2005/01/12 05:08:40 jchiang Exp $
  */
 
 #include <cmath>
@@ -191,7 +191,6 @@ double EventContainer::earthAzimuthAngle(double ra, double dec,
    astro::SkyDir zen_x = astro::SkyDir(-tmp());
    astro::SkyDir zen_y = zen_x;
    zen_y().rotate(zen_z(), M_PI/2.);
-   double cosxy = zen_x().dot(zen_y());
    double azimuth = std::atan2(zen_y().dot(appDir()), zen_x().dot(appDir()));
    return azimuth*180./M_PI;
 }
