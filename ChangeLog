@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Nov 30 10:17:42 PST 2004
+observationSim/xml
+
+Modified Files:
+	obsSim_source_library.xml 
+Log Message:
+fix pointing_history test; extend pulsar energy ranges to 20 -- 2e5 MeV
+    *
+------------------------------------------------------------
+User: jchiang  Tue Nov 30 10:17:42 PST 2004
 observationSim/src/orbSim
 
 Modified Files:
