@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Thu Dec  2 15:48:16 PST 2004
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx Simulator.cxx Verbosity.cxx Verbosity.h 
+Removed Files:
+	Roi.cxx 
+Log Message:
+allow events to be cut by acceptance cone
+    *
+------------------------------------------------------------
 User: jchiang  Thu Dec  2 15:48:15 PST 2004
 observationSim/pfiles
 
