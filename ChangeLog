@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Aug 26 21:37:38 PDT 2004
+observationSim/observationSim
+
+Modified Files:
+	ScDataContainer.h 
+Log Message:
+remove unwanted data member
+    *
+------------------------------------------------------------
 User: jchiang  Thu Aug 26 17:31:22 PDT 2004
 observationSim/doc
 
