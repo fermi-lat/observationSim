@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.28 2004/07/19 19:25:06 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.29 2004/07/21 04:08:06 jchiang Exp $
  */
 #ifdef TRAP_FPE
 #include <fenv.h>
@@ -44,7 +44,7 @@ int main(int iargc, char * argv[]) {
    std::vector<std::string> fileList;
    std::string xml_list("$(OBSERVATIONSIMROOT)/xml/obsSim_source_library.xml");
    fileList.push_back(xml_list);
-   xml_list = "$(OBSERVATIONSIMROOT)/xml/3EG_catalog_32MeV.xml";
+   xml_list = "$(OBSERVATIONSIMROOT)/xml/3EG_catalog_20-1e6MeV.xml";
    fileList.push_back(xml_list);
    xml_list = "$(GRBROOT)/xml/GRB_user_library.xml";
    fileList.push_back(xml_list);
