@@ -3,7 +3,7 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.6 2003/06/26 17:41:18 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.7 2003/07/01 05:13:45 jchiang Exp $
  */
 
 #include "CLHEP/Geometry/Vector3D.h"
@@ -56,12 +56,13 @@ void ScDataContainer::addScData(EventSource *event, Spacecraft *spacecraft,
 
 // Get the rotation matrix from instrument to "Celestial" (J2000?)
 // coordinates.
-   astro::SkyDir zAxis = spacecraft->zAxis();
-   astro::SkyDir xAxis = spacecraft->xAxis();
+   astro::SkyDir zAxis = spacecraft->zAxis(time);
+   astro::SkyDir xAxis = spacecraft->xAxis(time);
 
    m_scData.push_back(ScData(time, zAxis.ra(), zAxis.dec(), 
-                             spacecraft->EarthLon(), spacecraft->EarthLat(),
-                             zAxis, xAxis, spacecraft->inSaa()));
+                             spacecraft->EarthLon(time), 
+                             spacecraft->EarthLat(time),
+                             zAxis, xAxis, spacecraft->inSaa(time)));
    if (flush) writeScData();
 }
 

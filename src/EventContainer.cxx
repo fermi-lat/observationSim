@@ -3,7 +3,7 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.5 2003/06/28 00:09:46 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.6 2003/07/01 05:13:45 jchiang Exp $
  */
 
 #include "CLHEP/Random/RandomEngine.h"
@@ -22,6 +22,7 @@
 #include "latResponse/../src/Glast25.h"
 
 #include "observationSim/Spacecraft.h"
+#include "observationSim/../src/LatSc.h"
 #include "observationSim/EventContainer.h"
 
 namespace {
@@ -84,30 +85,34 @@ int EventContainer::addEvent(EventSource *event,
    double energy = event->energy();
    Hep3Vector launchDir = event->launchDir();
 
-// Create the rotation matrix from instrument to "Celestial" (J2000?)
-// coordinates.
-   HepRotation rotationMatrix = spacecraft->InstrumentToCelestial();
+// We need the source direction in J2000 coordinates here.
+// Unfortunately, because EventSource objects are so closely tied to
+// the LAT geometry as embodied in the various FluxSvc and astro
+// classes (e.g., GPS, EarthOrbit, EarthCoordinate), launchDir is
+// accessible only as a Hep3Vector in LAT coordinates.  Therefore, we
+// are forced to cheat and use an LatSc object explicitly in order to
+// recover the source direction in J2000 coordinates.
+   LatSc latSpacecraft;
+   HepRotation rotMatrix = latSpacecraft.InstrumentToCelestial(time);
+   astro::SkyDir sourceDir(rotMatrix(launchDir), astro::SkyDir::CELESTIAL);
 
-   astro::SkyDir sourceDir(rotationMatrix(launchDir),
-                           astro::SkyDir::CELESTIAL);
-
-   astro::SkyDir zAxis = spacecraft->zAxis();
-   astro::SkyDir xAxis = spacecraft->xAxis();
+   astro::SkyDir zAxis = spacecraft->zAxis(time);
+   astro::SkyDir xAxis = spacecraft->xAxis(time);
 
    double inclination = sourceDir.difference(zAxis)*180./M_PI;
+   double effArea = (*response.aeff())(energy, sourceDir, zAxis, xAxis);
    if ( inclination < latResponse::Glast25::incMax()
         && energy > 31.623 
         && RandFlat::shoot() < m_prob
-        && RandFlat::shoot() < ( (*response.aeff())(energy, sourceDir, 
-                                                  zAxis, xAxis)
-                                 /event->totalArea()/1e4 )
-        && !spacecraft->inSaa() ) {
+        && RandFlat::shoot() < effArea/event->totalArea()/1e4
+        && !spacecraft->inSaa(time) ) {
       astro::SkyDir appDir = response.psf()->appDir(energy, sourceDir, 
                                                     zAxis, xAxis);
                                                         
       m_events.push_back( Event(time, energy, 
                                 appDir, sourceDir, zAxis, xAxis,
                                 ScZenith(time)) );
+//      std::cout << "adding an event: " << m_events.size() << std::endl;
       if (flush) writeEvents();
       return 1;
    }

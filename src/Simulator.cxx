@@ -3,7 +3,7 @@
  * @brief Implementation for the interface class to FluxSvc::FluxMgr for
  * generating LAT photon events.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.6 2003/06/28 00:09:46 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.7 2003/07/01 05:13:45 jchiang Exp $
  */
 
 #include <string>
@@ -101,7 +101,8 @@ void Simulator::listSpectra() const {
 }
 
 void Simulator::makeEvents(EventContainer &events, ScDataContainer &scData, 
-                           latResponse::Irfs &response, bool useSimTime) {
+                           latResponse::Irfs &response, Spacecraft *spacecraft,
+                           bool useSimTime) {
    m_useSimTime = useSimTime;
 
 // Loop over event generation steps until done.
@@ -111,7 +112,6 @@ void Simulator::makeEvents(EventContainer &events, ScDataContainer &scData,
       m_absTime += interval;
       m_elapsedTime += interval;
       m_fluxMgr->pass(interval);
-      Spacecraft *spacecraft = new LatSc(m_absTime);
 
       std::string name = f->fullTitle();
       if (name.find("TimeTick") != std::string::npos) {
@@ -119,13 +119,12 @@ void Simulator::makeEvents(EventContainer &events, ScDataContainer &scData,
       } else {
          if (events.addEvent(f, response, spacecraft)) {
             m_numEvents++;
-            if (m_maxNumEvents/20 > 0 &&
+            if (!m_useSimTime && m_maxNumEvents/20 > 0 &&
                 m_numEvents % (m_maxNumEvents/20) == 0) std::cerr << ".";
          }
       }
-      delete spacecraft;
    }
-   std::cerr << "!" << std::endl;
+   if (!m_useSimTime) std::cerr << "!" << std::endl;
 }
 
 // "As ever, macros are best avoided."  Stroustrup 1999

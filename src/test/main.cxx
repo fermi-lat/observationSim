@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.5 2003/06/28 00:09:46 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.6 2003/07/01 05:13:45 jchiang Exp $
  */
 
 #include "astro/SkyDir.h"
@@ -16,6 +16,7 @@
 #include "observationSim/Simulator.h"
 #include "observationSim/EventContainer.h"
 #include "observationSim/ScDataContainer.h"
+#include "observationSim/../src/LatSc.h"
 
 void help();
 
@@ -73,12 +74,15 @@ int main(int argn, char * argc[]) {
    observationSim::EventContainer events("test_events.dat", true);
    observationSim::ScDataContainer scData("test_scData.dat", true);
 
+// The spacecraft object.
+   observationSim::Spacecraft *spacecraft = new observationSim::LatSc();
+
 // Use simulation time rather than total counts if desired.
    if (argn == 4 && std::string(argc[3]) == "-t") {
       my_simulator.generateEvents(static_cast<double>(count), events, 
-                                  scData, response);
+                                  scData, response, spacecraft);
    } else {
-      my_simulator.generateEvents(count, events, scData, response);
+      my_simulator.generateEvents(count, events, scData, response, spacecraft);
    }
 }
 
