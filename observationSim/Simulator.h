@@ -2,7 +2,7 @@
  * @file Simulator.h
  * @brief Declaration for Simulator class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.13 2003/10/17 03:57:34 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.14 2003/11/11 01:19:41 jchiang Exp $
  */
 
 #ifndef observationSim_Simulator_h
@@ -39,7 +39,7 @@ class Roi;
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.13 2003/10/17 03:57:34 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.14 2003/11/11 01:19:41 jchiang Exp $
  */
 
 class Simulator {
@@ -166,7 +166,7 @@ private:
    void init(const std::vector<std::string> &sourceNames, 
              const std::vector<std::string> &fileList,
              double totalArea, double startTime,
-             const std::string &);
+             std::string);
 
    void makeEvents(EventContainer &, ScDataContainer &, 
                    latResponse::Irfs &, Spacecraft *spacecraft,
