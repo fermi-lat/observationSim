@@ -3,7 +3,7 @@ version v3r2
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.69 2004/04/17 15:28:09 jchiang Exp $
+# $Id: requirements,v 1.68 2004/04/15 19:31:00 jchiang Exp $
 
 use STpolicy v1r*
 use cfitsio v1r* IExternal
@@ -14,13 +14,27 @@ use astro v0r*
 use flux v8r*
 use latResponse v2r*
 use Likelihood v3r*
+#use GRB v*
 
-apply_pattern ST_library option="-no_share "
+#apply_pattern ST_library option="-no_share "
+apply_pattern package_include
+apply_pattern package_Llinkopts
+private
+macro_prepend includes "-I $(OBSERVATIONSIMROOT)/src -I.." \
+   WIN32 "/I $(OBSERVATIONSIMROOT)\src /I.. "
+macro win_source "-s=../observationSim *.h -s=../src *.h *.cxx "
+macro lib_source "*.cxx " WIN32 $(win_source)
+library observationSimLib -no_share $(lib_source)
+macro test_source "test/*.cxx " WIN32 "-s=../src/test *.h *.cxx "
+application test_observationSim $(test_source)
+public
+
 apply_pattern ST_pfiles
 apply_pattern ST_app name=obsSim
 
 private
 
+use hoops v0r*
 use st_app v1r*
 
 #use python v2* IExternal
