@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Sep 14 19:00:37 PDT 2004
+observationSim/observationSim
+
+Modified Files:
+	ScDataContainer.h 
+Log Message:
+add first entry to scData file as start time of simulation
+    *
+------------------------------------------------------------
 User: jchiang  Thu Aug 26 21:37:38 PDT 2004
 observationSim/observationSim
 
