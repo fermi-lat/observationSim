@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/obsSim.cxx,v 1.16 2004/04/12 19:53:29 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.1 2004/04/12 22:17:23 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -30,12 +30,15 @@
 #include "observationSim/ScDataContainer.h"
 #include "LatSc.h"
 
+ISpectrumFactory & MapSourceFactory();
+
 using Likelihood::Util;
 
 class ObsSim {
 public:
    ObsSim(hoops::IParGroup & pars) : m_pars(pars) {
       m_count = m_pars["Number_of_events"];
+      MapSourceFactory();
    }
    ~ObsSim() {
       delete m_simulator;

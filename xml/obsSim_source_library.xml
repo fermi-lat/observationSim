@@ -1,4 +1,4 @@
-<!-- $Header: /nfs/slac/g/glast/ground/cvs/observationSim/xml/obsSim_source_library.xml,v 1.1 2004/01/23 02:29:21 jchiang Exp $
+<!-- $Header: /nfs/slac/g/glast/ground/cvs/observationSim/xml/obsSim_source_library.xml,v 1.2 2004/03/12 03:41:40 jchiang Exp $
    This is a library of sources that can be included by a source with
    an empty element: that is, <source name="chime"/> picks up the
    entry named "chime".  Also, if the second command line option
@@ -529,5 +529,14 @@
         <nestedSource sourceRef="low_bpl" />
         <nestedSource sourceRef="high_bpl" />
     </source>
+
+<!-- MapSource version of the Galactic Diffuse model -->
+   <source name="Galactic_diffuse">
+      <spectrum escale="MeV">
+         <SpectrumClass name="MapSource"
+         params="17.,2.1,$(FLUXROOT)/sources/gas_gal.fits,30.,2e5"/>
+         <use_spectrum frame="galaxy"/>
+      </spectrum>
+   </source>
 
 </source_library>
