@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Thu Jun 19 10:55:07 PDT 2003
+observationSim/observationSim
+
+Added Files:
+	Container.h 
+Log Message:
+Add Container base class.
+
+    *
+------------------------------------------------------------
 User: jchiang  Thu Jun 19 10:53:51 PDT 2003
 observationSim/src/test
 
