@@ -3,12 +3,14 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/obsSim.cxx,v 1.3 2003/11/11 01:19:43 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/obsSim.cxx,v 1.4 2003/11/15 06:04:46 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
 #include <fenv.h>
 #endif
+
+#include "hoops/hoops_exception.h"
 
 #include "astro/SkyDir.h"
 
@@ -34,7 +36,7 @@ int main(int iargc, char * argv[]) {
    argv[0] = strdup(filename.c_str());
 
    Likelihood::RunParams params(iargc, argv);
-
+         
 // Here are the default xml files for flux-style sources.
    std::vector<std::string> xmlSourceFiles;
    xmlSourceFiles.push_back("$(OBSERVATIONSIMROOT)/xml/source_library.xml");
@@ -93,7 +95,11 @@ int main(int iargc, char * argv[]) {
                                           startTime, pointingHistory);
 
 // Generate the events and spacecraft data.
-   bool useGoodi = false;
+#ifdef USE_GOODI
+   bool useGoodi(true);
+#else
+   bool useGoodi(false);
+#endif
    long nMaxRows;
    params.getParam("Maximum_number_of_rows", nMaxRows);
    std::string prefix;
