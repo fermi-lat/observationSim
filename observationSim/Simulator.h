@@ -2,16 +2,20 @@
  * @file Simulator.h
  * @brief Declaration for Simulator class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.19 2004/10/29 21:17:24 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.20 2004/10/29 21:34:43 jchiang Exp $
  */
 
 #ifndef observationSim_Simulator_h
 #define observationSim_Simulator_h
 
-#include <vector>
-#include <string>
 #include <iostream>
+#include <string>
+#include <vector>
+
 #include "CLHEP/Geometry/Vector3D.h"
+
+#include "astro/SkyDir.h"
+
 #include "flux/FluxMgr.h"
 
 namespace irfInterface {
@@ -26,7 +30,6 @@ namespace observationSim {
 
 class EventContainer;
 class ScDataContainer;
-class Roi;
 
 /**
  * @class Simulator
@@ -39,7 +42,7 @@ class Roi;
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.19 2004/10/29 21:17:24 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.20 2004/10/29 21:34:43 jchiang Exp $
  */
 
 class Simulator {
@@ -104,12 +107,10 @@ public:
                        EventContainer &events,
                        ScDataContainer &scData, 
                        irfInterface::Irfs &response,
-                       Spacecraft *spacecraft, 
-                       EventContainer *allEvents=0,
-                       Roi *roi=0) {
+                       Spacecraft * spacecraft, 
+                       EventContainer * allEvents=0) {
       m_simTime = simulationTime;
-      makeEvents(events, scData, response, spacecraft, true, 
-                 allEvents, roi);
+      makeEvents(events, scData, response, spacecraft, true, allEvents);
    }
 
    /// Generate a specified number of events.
@@ -118,11 +119,9 @@ public:
                        ScDataContainer &scData, 
                        irfInterface::Irfs &response,
                        Spacecraft *spacecraft,
-                       EventContainer *allEvents=0,
-                       Roi *roi=0) {
+                       EventContainer *allEvents=0) {
       m_maxNumEvents = numberOfEvents;
-      makeEvents(events, scData, response, spacecraft, false, 
-                 allEvents, roi);
+      makeEvents(events, scData, response, spacecraft, false, allEvents);
    }
 
    /// Generate photon events for a given elapsed simulation time.
@@ -131,11 +130,9 @@ public:
                        ScDataContainer &scData, 
                        std::vector<irfInterface::Irfs*> &respPtrs,
                        Spacecraft *spacecraft, 
-                       EventContainer *allEvents=0,
-                       Roi *roi=0) {
+                       EventContainer *allEvents=0) {
       m_simTime = simulationTime;
-      makeEvents(events, scData, respPtrs, spacecraft, true, 
-                 allEvents, roi);
+      makeEvents(events, scData, respPtrs, spacecraft, true, allEvents);
    }
 
    /// Generate a specified number of events.
@@ -144,11 +141,9 @@ public:
                        ScDataContainer &scData, 
                        std::vector<irfInterface::Irfs*> &respPtrs,
                        Spacecraft *spacecraft,
-                       EventContainer *allEvents=0,
-                       Roi *roi=0) {
+                       EventContainer *allEvents=0) {
       m_maxNumEvents = numberOfEvents;
-      makeEvents(events, scData, respPtrs, spacecraft, false, 
-                 allEvents, roi);
+      makeEvents(events, scData, respPtrs, spacecraft, false, allEvents);
    }
 
 protected:
@@ -187,12 +182,12 @@ private:
 
    void makeEvents(EventContainer &, ScDataContainer &, 
                    irfInterface::Irfs &, Spacecraft *spacecraft,
-                   bool useSimTime, EventContainer *allEvents, Roi *roi);
+                   bool useSimTime, EventContainer *allEvents);
 
    void makeEvents(EventContainer &, ScDataContainer &, 
                    std::vector<irfInterface::Irfs *> &, 
                    Spacecraft *spacecraft,
-                   bool useSimTime, EventContainer *allEvents, Roi *roi);
+                   bool useSimTime, EventContainer *allEvents);
 
    bool done();
 

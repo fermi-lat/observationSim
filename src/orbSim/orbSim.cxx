@@ -3,7 +3,7 @@
  * @brief A prototype O1 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.4 2004/11/28 14:51:40 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.5 2004/11/30 18:17:41 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -68,7 +68,7 @@ void OrbSim::run() {
    observationSim::Verbosity::instance(m_pars["chatter"]);
    createSimulator();
    generateData();
-   if (observationSim::verbosity() > 1) {
+   if (observationSim::print_output()) {
       std::cout << "Done." << std::endl;
    }
 }
@@ -141,10 +141,10 @@ void OrbSim::createSimulator() {
 void OrbSim::generateData() {
    long nMaxRows = m_pars["max_numrows"];
    std::string prefix = m_pars["outfile_prefix"];
-   observationSim::EventContainer events(prefix + "_events", nMaxRows);
+   observationSim::EventContainer events(prefix + "_events", 0, nMaxRows);
    observationSim::ScDataContainer scData(prefix + "_scData", nMaxRows);
    observationSim::Spacecraft * spacecraft = new observationSim::LatSc();
-   if (observationSim::verbosity() > 1) {
+   if (observationSim::print_output()) {
       std::cout << "Generating pointing history for a simulation time of "
                 << m_count << " seconds...." << std::endl;
    }
