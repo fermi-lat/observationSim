@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sun Nov 28 06:51:40 PST 2004
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+set chitter to 2 in par file
+    *
+------------------------------------------------------------
 TAG
 Tag name: v5r3p1, operation: add
 Package: observationSim
