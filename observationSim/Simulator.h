@@ -2,7 +2,7 @@
  * @file Simulator.h
  * @brief Declaration for Simulator class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.3 2003/06/26 17:41:17 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.4 2003/06/28 00:09:46 jchiang Exp $
  */
 
 #ifndef observationSim_Simulator_h
@@ -15,6 +15,8 @@
 #include "FluxSvc/../src/FluxMgr.h"
 
 #include "latResponse/Irfs.h"
+
+#include "observationSim/Spacecraft.h"
 
 namespace observationSim {
 
@@ -32,7 +34,7 @@ class ScDataContainer;
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.3 2003/06/26 17:41:17 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.4 2003/06/28 00:09:46 jchiang Exp $
  */
 
 class Simulator {
@@ -77,17 +79,19 @@ public:
    /// Generate photon events for a given elapsed simulation time.
    void generateEvents(double simulationTime, EventContainer &events,
                        ScDataContainer &scData, 
-                       latResponse::Irfs &response) {
+                       latResponse::Irfs &response,
+                       Spacecraft *spacecraft) {
       m_simTime = simulationTime;
-      makeEvents(events, scData, response);
+      makeEvents(events, scData, response, spacecraft);
    }
 
    /// Generate a specified number of events.
    void generateEvents(long numberOfEvents, EventContainer &events,
                        ScDataContainer &scData, 
-                       latResponse::Irfs &response) {
+                       latResponse::Irfs &response,
+                       Spacecraft *spacecraft) {
       m_maxNumEvents = numberOfEvents;
-      makeEvents(events, scData, response, false);
+      makeEvents(events, scData, response, spacecraft, false);
    }
 
 private:
@@ -109,7 +113,8 @@ private:
              double totalArea, double startTime);
 
    void makeEvents(EventContainer &, ScDataContainer &, 
-                   latResponse::Irfs &, bool useSimTime=true);
+                   latResponse::Irfs &, Spacecraft *spacecraft,
+                   bool useSimTime=true);
 
    void fluxLoad();
 
