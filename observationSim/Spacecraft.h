@@ -3,7 +3,7 @@
  * @brief Declaration of Spacecraft base class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Spacecraft.h,v 1.2 2003/07/02 05:17:51 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Spacecraft.h,v 1.3 2004/09/27 18:00:22 jchiang Exp $
  */
 
 #ifndef observationSim_Spacecraft_h
@@ -23,7 +23,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Spacecraft.h,v 1.2 2003/07/02 05:17:51 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Spacecraft.h,v 1.3 2004/09/27 18:00:22 jchiang Exp $
  */
 
 class Spacecraft {
@@ -53,6 +53,8 @@ public:
    /// Spacecraft position in geocentric coordinates (km)
    virtual void getScPosition(double time,
                               std::vector<double> & scPosition) = 0;
+
+   virtual void getZenith(double time, double & ra, double & dec) = 0;
 
 };
 
