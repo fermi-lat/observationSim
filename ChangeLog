@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Apr 13 08:17:53 PDT 2004
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx 
+Log Message:
+add pfiles directory
+    *
+------------------------------------------------------------
+User: jchiang  Tue Apr 13 08:17:53 PDT 2004
 observationSim/pfiles
 
 Added Files:
