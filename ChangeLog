@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Dec 21 08:09:16 PST 2004
+observationSim/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+Earth has been code copied (cvs update -Ad) to the flux package, so must remove references to it here.
+    *
+------------------------------------------------------------
 User: jchiang  Tue Dec 21 08:09:14 PST 2004
 observationSim/cmt
 
