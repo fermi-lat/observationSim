@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Jun 29 13:24:08 PDT 2004
+observationSim/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+remove sources that are now in celestialSources/genericSources; tagging v3r6
+    *
+------------------------------------------------------------
 User: jchiang  Tue Jun 29 13:24:07 PDT 2004
 observationSim/cmt
 
