@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Jan 22 18:29:20 PST 2004
+observationSim/observationSim
+
+Modified Files:
+	Event.h 
+Log Message:
+allow more flexibility in specifying flux-style xml files
+    *
+------------------------------------------------------------
+User: jchiang  Thu Jan 22 18:29:20 PST 2004
 observationSim/cmt
 
 Modified Files:
