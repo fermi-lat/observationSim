@@ -1,5 +1,18 @@
 ------------------------------------------------------------
 User: jchiang  Mon Jun 30 22:13:45 PDT 2003
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx ScDataContainer.cxx Simulator.cxx 
+Added Files:
+	LatSc.cxx LatSc.h 
+Removed Files:
+	Container.cxx 
+Log Message:
+add Spacecraft class; remove Container base class
+    *
+------------------------------------------------------------
+User: jchiang  Mon Jun 30 22:13:45 PDT 2003
 observationSim/observationSim
 
 Modified Files:
