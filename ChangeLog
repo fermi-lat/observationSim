@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Dec 13 18:05:55 PST 2004
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+tagging v5r4p4
+    *
+------------------------------------------------------------
 TAG
 Tag name: v5r4p3, operation: add
 Package: observationSim
