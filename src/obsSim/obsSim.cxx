@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.1 2004/04/12 22:17:23 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.2 2004/04/15 17:36:06 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -29,6 +29,10 @@
 #include "observationSim/EventContainer.h"
 #include "observationSim/ScDataContainer.h"
 #include "LatSc.h"
+
+// #include "flux/SpectrumFactory.h"
+// #include "GRB/GRBmanager.h"
+// static SpectrumFactory<GRBmanager> my_factory;
 
 ISpectrumFactory & MapSourceFactory();
 
