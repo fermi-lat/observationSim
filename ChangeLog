@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Tue Oct 28 07:37:09 PST 2003
+observationSim/xml
+
+Modified Files:
+	source_library.xml 
+Added Files:
+	bpl_source.py 
+Log Message:
+add script to generate broken-power-law source spectrum
+    *
+------------------------------------------------------------
 User: jchiang  Tue Oct 28 07:37:08 PST 2003
 observationSim/python
 
