@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Dec 15 11:08:10 PST 2003
+observationSim/src/test
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+add random seed access
+    *
+------------------------------------------------------------
 User: jchiang  Mon Dec 15 11:08:09 PST 2003
 observationSim/data
 
