@@ -3,7 +3,7 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.22 2004/08/26 21:58:55 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.23 2004/08/26 23:07:14 jchiang Exp $
  */
 
 #include <sstream>
@@ -41,9 +41,12 @@ void ScDataContainer::init() {
 
 void ScDataContainer::addScData(EventSource *event, Spacecraft *spacecraft,
                                 bool flush) {
-   
    double time = event->time();
+   addScData(time, spacecraft, flush);
+}
 
+void ScDataContainer::addScData(double time, Spacecraft * spacecraft, 
+                                bool flush) {
    astro::SkyDir zAxis = spacecraft->zAxis(time);
    astro::SkyDir xAxis = spacecraft->xAxis(time);
 

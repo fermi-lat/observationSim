@@ -2,7 +2,7 @@
  * @file ScDataContainer.h
  * @brief Declaration for ScDataContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.12 2004/08/26 23:07:13 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.13 2004/08/27 04:37:38 jchiang Exp $
  */
 
 #ifndef observationSim_ScDataContainer_h
@@ -28,7 +28,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.12 2004/08/26 23:07:13 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.13 2004/08/27 04:37:38 jchiang Exp $
  */
 
 class ScDataContainer : public ContainerBase {
@@ -54,6 +54,8 @@ public:
    ///        ScData and then flush the buffers.
    void addScData(EventSource *event, Spacecraft *spacecraft, 
                   bool flush=false);
+
+   void addScData(double time, Spacecraft *spacecraft, bool flush=false);
 
    /// The simulation time of the most recently added entry.
    double simTime() {return m_scData[m_scData.size()-1].time();}
