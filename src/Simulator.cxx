@@ -4,7 +4,7 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.34 2004/09/26 17:57:56 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.35 2004/09/26 19:50:12 jchiang Exp $
  */
 
 #include <string>
@@ -42,20 +42,24 @@ Simulator::~Simulator() {
 void Simulator::init(const std::string &sourceName,
                      const std::vector<std::string> &fileList,
                      double totalArea, double startTime,
-                     const std::string &pointingHistory) {
+                     const std::string &pointingHistory,
+                     double maxSimTime) {
    std::vector<std::string> sourceNames;
    sourceNames.push_back(sourceName);
-   init(sourceNames, fileList, totalArea, startTime, pointingHistory);
+   init(sourceNames, fileList, totalArea, startTime, pointingHistory,
+        maxSimTime);
 }
 
 void Simulator::init(const std::vector<std::string> &sourceNames,
                      const std::vector<std::string> &fileList,
                      double totalArea, double startTime, 
-                     std::string pointingHistory) {
+                     std::string pointingHistory, double maxSimTime) {
    m_absTime = startTime;
    m_numEvents = 0;
    m_newEvent = 0;
    m_interval = 0;
+
+   m_maxSimTime = maxSimTime;
 
 // Create the FluxMgr object, providing access to the sources in the
 // various xml files.
@@ -239,6 +243,9 @@ void Simulator::makeEvents(EventContainer &events,
 }
 
 bool Simulator::done() {
+   if (m_elapsedTime > m_maxSimTime) {
+      return true;
+   }
    if (m_useSimTime) {
       return m_elapsedTime >= m_simTime;
    } else {

@@ -2,7 +2,7 @@
  * @file Simulator.h
  * @brief Declaration for Simulator class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.18 2004/07/21 04:08:05 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.19 2004/10/29 21:17:24 jchiang Exp $
  */
 
 #ifndef observationSim_Simulator_h
@@ -39,7 +39,7 @@ class Roi;
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.18 2004/07/21 04:08:05 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.19 2004/10/29 21:17:24 jchiang Exp $
  */
 
 class Simulator {
@@ -58,9 +58,11 @@ public:
              const std::vector<std::string> &fileList,
              double totalArea = 1.21,
              double startTime = 0.,
-             const std::string &pointingHistory = "")
+             const std::string &pointingHistory = "",
+             double maxSimTime = 3.155e8)
       : m_fluxMgr(0), m_source(0), m_newEvent(0) {
-      init(sourceName, fileList, totalArea, startTime, pointingHistory);
+      init(sourceName, fileList, totalArea, startTime, pointingHistory,
+           maxSimTime);
    }
 
    /// @param sourceNames A vector of source names as they appear in 
@@ -69,9 +71,11 @@ public:
              const std::vector<std::string> &fileList,
              double totalArea = 1.21,
              double startTime = 0.,
-             const std::string &pointingHistory = "")
+             const std::string &pointingHistory = "",
+             double maxSimTime = 3.155e8)
       : m_fluxMgr(0), m_source(0), m_newEvent(0) {
-      init(sourceNames, fileList, totalArea, startTime, pointingHistory);
+      init(sourceNames, fileList, totalArea, startTime, pointingHistory,
+           maxSimTime);
    }
 
    ~Simulator();
@@ -169,15 +173,17 @@ private:
    double m_elapsedTime;
    bool m_useSimTime;
 
+   double m_maxSimTime;
+
    void init(const std::string &sourceName, 
              const std::vector<std::string> &fileList,
              double totalArea, double startTime, 
-             const std::string &);
+             const std::string &, double);
 
    void init(const std::vector<std::string> &sourceNames, 
              const std::vector<std::string> &fileList,
              double totalArea, double startTime,
-             std::string);
+             std::string, double);
 
    void makeEvents(EventContainer &, ScDataContainer &, 
                    irfInterface::Irfs &, Spacecraft *spacecraft,

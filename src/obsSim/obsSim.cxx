@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.22 2004/10/12 20:51:11 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.23 2004/10/29 21:17:25 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -189,9 +189,14 @@ void ObsSim::createSimulator() {
    double totalArea = m_pars["Maximum_effective_area"];
    double startTime = m_pars["Start_time"];
    std::string pointingHistory = m_pars["Pointing_history_file"];
+   double maxSimTime = 3.155e8;
+   try {
+      maxSimTime = m_pars["maximum_simulation_time"];
+   } catch (std::exception & eObj) {
+   }
    m_simulator = new observationSim::Simulator(m_srcNames, m_xmlSourceFiles, 
                                                totalArea, startTime, 
-                                               pointingHistory);
+                                               pointingHistory, maxSimTime);
 }
 
 void ObsSim::generateData() {
