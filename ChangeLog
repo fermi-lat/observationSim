@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Dec  3 23:22:16 PST 2003
+observationSim/src/test
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+conversion layer; oldnames.lib
+    *
+------------------------------------------------------------
+User: jchiang  Wed Dec  3 23:22:16 PST 2003
 observationSim/src
 
 Modified Files:
