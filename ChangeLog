@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Wed Jun 18 13:28:23 PDT 2003
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+add compile flag to ignore exception declaration warnings on Windows;
+add #include <iostream>
+
+    *
+------------------------------------------------------------
 User: jchiang  Wed Jun 18 12:46:36 PDT 2003
 observationSim
 
