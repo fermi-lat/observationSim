@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Tue Jan  4 12:20:37 PST 2005
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+fixes for windows since hoops type conversion fails
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: v5r4p6, operation: add
 Package: observationSim
