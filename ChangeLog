@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Jul  2 07:45:27 PDT 2003
+observationSim/src
+
+Added Files:
+	EgretSc.cxx EgretSc.h 
+Log Message:
+Add EGRET spacecraft class
+    *
+------------------------------------------------------------
 User: jchiang  Tue Jul  1 22:17:52 PDT 2003
 observationSim/src/test
 
