@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.21 2003/10/30 16:18:54 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.22 2003/11/26 01:54:22 jchiang Exp $
  */
 #ifdef TRAP_FPE
 #include <fenv.h>
@@ -28,11 +28,13 @@ int main(int argn, char * argc[]) {
    
 // Create list of xml input files for source definitions.
    std::vector<std::string> fileList;
-   std::string xml_list("$(OBSERVATIONSIMROOT)/xml/source_library.xml");
+   std::string xml_list("$(OBSERVATIONSIMROOT)/xml/obsSim_source_library.xml");
    fileList.push_back(xml_list);
    xml_list = "$(OBSERVATIONSIMROOT)/xml/3EG_catalog_32MeV.xml";
    fileList.push_back(xml_list);
    xml_list = "$(OBSERVATIONSIMROOT)/xml/test_sources.xml";
+   fileList.push_back(xml_list);
+   xml_list = "$(OBSERVATIONSIMROOT)/xml/time_source.xml";
    fileList.push_back(xml_list);
    
 // Parse the command line arguments.
