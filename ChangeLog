@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sat Jun 21 22:21:52 PDT 2003
+observationSim/src
+
+Modified Files:
+	Container.cxx ScDataContainer.cxx 
+Log Message:
+Simplify Container implementation; de-tabify
+    *
+------------------------------------------------------------
 User: richard  Sat Jun 21 16:27:03 PDT 2003
 observationSim/src
 
