@@ -5,7 +5,7 @@ Basic script for steering the observationSim code.
 @author J. Chiang
 """
 #
-# $Header: /nfs/slac/g/glast/ground/cvs/observationSim/python/test.py,v 1.4 2003/10/18 18:12:44 jchiang Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/observationSim/python/test.py,v 1.5 2003/10/27 20:49:53 jchiang Exp $
 #
 import os, sys, string, numarray
 
@@ -58,8 +58,8 @@ def run_test(argv):
             else:
                 source_names.append(name)
     if len(source_names) == 0:
-#        source_names.append("all_3EG_sources")
-        source_names.append("anticenter")
+        source_names.append("all_3EG_sources")
+#        source_names.append("anticenter")
 
     my_simulator = observationSim.Simulator(source_names, xml_files)
 
@@ -68,6 +68,7 @@ def run_test(argv):
 #    respVector.append(irfsFactory.create("Glast25::Combined"))
     respVector.append(irfsFactory.create("Glast25::Front"))
     respVector.append(irfsFactory.create("Glast25::Back"))
+#    respVector.append(irfsFactory.create("Glast25::FlatAeff"))
 
     useGoodi = 0
     events = observationSim.EventContainer(root + "_events", useGoodi)
