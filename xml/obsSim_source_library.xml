@@ -1,4 +1,4 @@
-<!-- $Header: /nfs/slac/g/glast/ground/cvs/observationSim/xml/obsSim_source_library.xml,v 1.7 2004/04/23 22:52:32 jchiang Exp $
+<!-- $Header: /nfs/slac/g/glast/ground/cvs/observationSim/xml/obsSim_source_library.xml,v 1.8 2004/04/26 20:28:35 jchiang Exp $
    This is a library of sources that can be included by a source with
    an empty element: that is, <source name="chime"/> picks up the
    entry named "chime".  Also, if the second command line option
@@ -573,8 +573,16 @@
    <source name="Crab_Pulsar">
       <spectrum escale="MeV">
          <SpectrumClass name="Pulsar"
-       params="1e-3,2.,0.033,0,0,$(OBSERVATIONSIMROOT)/data/CrabTemplate.dat"/>
+          params="0.154,2.19,0.0333,4.24e-13,0,$(OBSERVATIONSIMROOT)/data/CrabTemplate.dat"/>
          <celestial_dir ra="83.57" dec="22.01"/>
+      </spectrum>
+   </source>
+
+   <source name="Geminga_Pulsar">
+      <spectrum escale="MeV">
+         <SpectrumClass name="Pulsar"
+          params="0.102,1.66,0.2371,1.098e-14,0,$(OBSERVATIONSIMROOT)/data/GemingaTemplate.dat"/>
+         <celestial_dir ra="98.49" dec="17.86"/>
       </spectrum>
    </source>
 
