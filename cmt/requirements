@@ -3,7 +3,7 @@ version v3r2
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.68 2004/04/15 19:31:00 jchiang Exp $
+# $Id: requirements,v 1.69 2004/04/17 15:28:09 jchiang Exp $
 
 use STpolicy v1r*
 use cfitsio v1r* IExternal
@@ -21,7 +21,6 @@ apply_pattern ST_app name=obsSim
 
 private
 
-use hoops v0r*
 use st_app v1r*
 
 #use python v2* IExternal
