@@ -3,14 +3,12 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.15 2003/12/11 03:41:17 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.16 2004/01/05 18:39:19 jchiang Exp $
  */
 
 #include <sstream>
 
 #include "CLHEP/Geometry/Vector3D.h"
-
-#include "astro/EarthCoordinate.h"
 
 #ifdef USE_GOODI
 #include "Goodi/GoodiConstants.h"
@@ -21,8 +19,10 @@
 #include "Goodi/ISpacecraftData.h"
 #endif
 
+#include "astro/EarthCoordinate.h"
+//#include "astro/GPS.h"
+
 #include "flux/EventSource.h"
-#include "flux/GPS.h"
 
 #include "observationSim/ScDataContainer.h"
 
