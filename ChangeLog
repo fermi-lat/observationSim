@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Aug  5 06:58:36 PDT 2003
+observationSim/src/test
+
+Modified Files:
+	exposureMap.cxx 
+Log Message:
+make the code a bit faster
+    *
+------------------------------------------------------------
 User: jchiang  Sun Aug  3 14:30:03 PDT 2003
 observationSim/src/test
 
