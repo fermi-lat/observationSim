@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Thu Aug 26 16:07:15 PDT 2004
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx ScDataContainer.cxx 
+Added Files:
+	ContainerBase.cxx 
+Log Message:
+refactor Container classes
+    *
+------------------------------------------------------------
 User: jchiang  Thu Aug 26 16:07:14 PDT 2004
 observationSim/observationSim
 
