@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.14 2003/12/11 03:41:17 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.15 2004/02/02 16:39:21 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -13,9 +13,6 @@
 #include <vector>
 
 #include "astro/SkyDir.h"
-
-//#include "flux/EventSource.h"
-//#include "flux/FluxMgr.h"
 
 #include "observationSim/Event.h"
 #include "observationSim/FitsTable.h"
@@ -40,7 +37,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.14 2003/12/11 03:41:17 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.15 2004/02/02 16:39:21 jchiang Exp $
  */
 
 class EventContainer {
@@ -96,6 +93,9 @@ private:
    /// Flag to indicate that Goodi shall be used to write the Event
    /// data in FT1 format.
    bool m_useGoodi;
+
+   /// Name of the FT1 template file.
+   std::string m_ft1Template;
 
    /// The current index number of the FITS file to be written.  This
    /// number is formatted appropriately and appended to the root
