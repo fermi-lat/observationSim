@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Feb 21 18:28:56 PST 2005
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+add SpectralTransient source
+    *
+------------------------------------------------------------
+User: jchiang  Mon Feb 21 18:28:56 PST 2005
 observationSim/doc
 
 Modified Files:
