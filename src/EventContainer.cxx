@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.54 2005/01/16 03:31:10 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.55 2005/01/27 22:12:57 jchiang Exp $
  */
 
 #include <cmath>
@@ -112,10 +112,10 @@ void EventContainer::init() {
    }
 }
 
-int EventContainer::addEvent(EventSource *event, 
-                             std::vector<irfInterface::Irfs *> &respPtrs, 
-                             Spacecraft *spacecraft,
-                             bool flush, bool alwaysAccept) {
+bool EventContainer::addEvent(EventSource *event, 
+                              std::vector<irfInterface::Irfs *> &respPtrs, 
+                              Spacecraft *spacecraft,
+                              bool flush, bool alwaysAccept) {
    
    std::string particleType = event->particleName();
    double time = event->time();
@@ -137,12 +137,13 @@ int EventContainer::addEvent(EventSource *event,
                                 sourceDir, sourceDir, zAxis, xAxis,
                                 ScZenith(time), 0) );
       if (flush || m_events.size() >= m_maxNumEntries) writeEvents();
-      return 1;
+      return true;
    }
 
    irfInterface::Irfs *respPtr;
 
 // Apply the acceptance criteria.
+   bool accepted(false);
    if ( RandFlat::shoot() < m_prob
         && (respPtr = ::drawRespPtr(respPtrs, event->totalArea()*1e4, 
                                     energy, sourceDir, zAxis, xAxis))
@@ -164,12 +165,12 @@ int EventContainer::addEvent(EventSource *event,
                                    appDir, sourceDir, zAxis, xAxis,
                                    ScZenith(time), respPtr->irfID(), 
                                    energy, flux_theta, flux_phi) );
+         accepted = true;
       }
       if (flush || m_events.size() >= m_maxNumEntries) writeEvents();
-      return 1;
    }
    if (flush) writeEvents();
-   return 0;
+   return accepted;
 }
 
 astro::SkyDir EventContainer::ScZenith(double time) const {
