@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.12 2003/10/02 18:22:48 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.13 2003/10/02 20:59:23 jchiang Exp $
  */
 
 #include <cmath>
@@ -164,7 +164,7 @@ void EventContainer::writeEvents() {
       m_goodiEventData->setRA(ra);
       m_goodiEventData->setDec(dec);
       m_goodiEventData->setTheta(theta);
-      m_goodiEventData->setPsi(phi);
+      m_goodiEventData->setPhi(phi);
       m_goodiEventData->setZenithAngle(zenithAngle);
 
 // Set the sizes of the valarray data for the multiword columns,
