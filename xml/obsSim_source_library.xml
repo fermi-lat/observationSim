@@ -1,4 +1,4 @@
-<!-- $Header: /nfs/slac/g/glast/ground/cvs/observationSim/xml/source_library.xml,v 1.8 2004/01/15 19:21:38 jchiang Exp $
+<!-- $Header: /nfs/slac/g/glast/ground/cvs/observationSim/xml/obsSim_source_library.xml,v 1.1 2004/01/23 02:29:21 jchiang Exp $
    This is a library of sources that can be included by a source with
    an empty element: that is, <source name="chime"/> picks up the
    entry named "chime".  Also, if the second command line option
@@ -356,6 +356,16 @@
         <spectrum escale="GeV"> 
             <SpectrumClass name="MapSpectrum" 
              params="0.1,0.03,1e5,2.1,/sources/gas_gal.fits"/> 
+            <use_spectrum frame="galaxy"/>
+        </spectrum>
+    </source>
+
+    <!-- the Map of the galactic diffuse gamma-ray emission that
+         extrapolates the EGRET > 100 MeV map down to 20 MeV -->
+    <source name="galdiffusemap20">
+        <spectrum escale="GeV"> 
+            <SpectrumClass name="MapSpectrum" 
+             params="0.1,0.02,1e3,2.1,/sources/gas_gal.fits"/> 
             <use_spectrum frame="galaxy"/>
         </spectrum>
     </source>
