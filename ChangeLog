@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Aug 26 09:11:57 PDT 2003
+observationSim/src/test
+
+Modified Files:
+	main.cxx 
+Log Message:
+comment out MapFlux dependencies
+    *
+------------------------------------------------------------
 User: jchiang  Tue Aug 26 09:11:56 PDT 2003
 observationSim/doc
 
