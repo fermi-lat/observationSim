@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Jul  2 20:31:49 PDT 2003
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx Simulator.cxx 
+Log Message:
+modify Simulator::makeEvents(..) to account for EventSource intervals longer than the observation time
+    *
+------------------------------------------------------------
+User: jchiang  Wed Jul  2 20:31:49 PDT 2003
 observationSim/observationSim
 
 Modified Files:
