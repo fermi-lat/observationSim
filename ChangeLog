@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Mon Oct 13 15:58:09 PDT 2003
+observationSim/python
+
+Modified Files:
+	latSim.py 
+Log Message:
+add useGoodi flag in Event and ScData container calls.
+
+    *
+------------------------------------------------------------
 User: jchiang  Mon Oct 13 15:57:27 PDT 2003
 observationSim/doc
 
