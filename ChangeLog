@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Jul 20 21:08:05 PDT 2004
+observationSim/observationSim
+
+Modified Files:
+	EventContainer.h Simulator.h 
+Log Message:
+use irfs/irfInterface; tagging v3r7
+    *
+------------------------------------------------------------
+User: jchiang  Tue Jul 20 21:08:05 PDT 2004
 observationSim/doc
 
 Modified Files:
