@@ -1,5 +1,16 @@
 ------------------------------------------------------------
 User: jchiang  Tue Oct 14 21:53:14 PDT 2003
+observationSim/src/test
+
+Modified Files:
+	main.cxx 
+Added Files:
+	testGoodiRead.cxx 
+Log Message:
+add program to test using Goodi to read FT1/FT2 data
+    *
+------------------------------------------------------------
+User: jchiang  Tue Oct 14 21:53:14 PDT 2003
 observationSim/src
 
 Modified Files:
