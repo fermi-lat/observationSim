@@ -4,13 +4,14 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.40 2004/07/21 04:08:05 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.41 2004/08/11 22:08:25 jchiang Exp $
  */
 
 #include <cmath>
 #include <cstdlib>
 #include <ctime>
 
+#include <algorithm>
 #include <numeric>
 #include <sstream>
 #include <stdexcept>
