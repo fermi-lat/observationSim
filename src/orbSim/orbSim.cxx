@@ -3,7 +3,7 @@
  * @brief A prototype O1 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.5 2004/11/30 18:17:41 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.6 2004/12/02 23:48:17 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -89,7 +89,8 @@ void OrbSim::promptForParameters() {
 }
 
 void OrbSim::checkOutputFiles() {
-   if (!m_pars["clobber"]) {
+   bool clobber = m_pars["clobber"];
+   if (!clobber) {
       std::string prefix = m_pars["outfile_prefix"];
       std::string file = prefix + "_scData_0000.fits";
       if (st_facilities::Util::fileExists(file)) {
