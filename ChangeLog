@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Tue Dec  2 09:25:39 PST 2003
+observationSim/xml
+
+Modified Files:
+	3EG_catalog.txt 3EG_catalog_20-1e6MeV.xml 
+Added Files:
+	3EG_catalog.txt_orig 
+Log Message:
+replace 3EG_catalog.txt with artifacts removed; corrected version of 20MeV to 1TeV xml file
+    *
+------------------------------------------------------------
 User: jchiang  Mon Dec  1 16:27:39 PST 2003
 observationSim/xml
 
