@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: cohen  Tue Oct  7 08:37:16 PDT 2003
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx 
+Log Message:
+small fix to comply with Goodi v2
+    *
+------------------------------------------------------------
+User: cohen  Tue Oct  7 08:37:16 PDT 2003
 observationSim/cmt
 
 Modified Files:
