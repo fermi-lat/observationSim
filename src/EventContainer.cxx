@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.38 2004/04/17 15:28:12 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.39 2004/07/19 14:22:17 jchiang Exp $
  */
 
 #include <cmath>
@@ -33,10 +33,6 @@
 
 #include "flux/EventSource.h"
 
-// #include "latResponse/IAeff.h"
-// #include "latResponse/IPsf.h"
-// #include "latResponse/IEdisp.h"
-// #include "latResponse/Irfs.h"
 #include "irfInterface/Irfs.h"
 
 #include "observationSim/Spacecraft.h"
@@ -53,7 +49,6 @@ namespace {
       }
    }
 
-//   latResponse::Irfs* drawRespPtr(std::vector<latResponse::Irfs*> &respPtrs,
    irfInterface::Irfs* drawRespPtr(std::vector<irfInterface::Irfs*> &respPtrs,
                                   double area, double energy, 
                                   astro::SkyDir &sourceDir,
@@ -66,7 +61,6 @@ namespace {
 // First, fill a vector with the individual values.
       std::vector<double> effAreas(respPtrs.size());
       std::vector<double>::iterator eaIt = effAreas.begin();
-//      std::vector<latResponse::Irfs *>::iterator respIt = respPtrs.begin();
       std::vector<irfInterface::Irfs *>::iterator respIt = respPtrs.begin();
       while (eaIt != effAreas.end() && respIt != respPtrs.end()) {
          *eaIt = (*respIt)->aeff()->value(energy, sourceDir, zAxis, xAxis);
@@ -113,7 +107,6 @@ void EventContainer::init() {
 }
 
 int EventContainer::addEvent(EventSource *event, 
-//                             std::vector<latResponse::Irfs *> &respPtrs, 
                              std::vector<irfInterface::Irfs *> &respPtrs, 
                              Spacecraft *spacecraft,
                              bool flush, bool alwaysAccept) {
@@ -140,7 +133,6 @@ int EventContainer::addEvent(EventSource *event,
       return 1;
    }
 
-//   latResponse::Irfs *respPtr;
    irfInterface::Irfs *respPtr;
 
 // Apply the acceptance criteria.

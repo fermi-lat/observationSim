@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.27 2004/04/28 20:19:57 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.28 2004/07/19 19:25:06 jchiang Exp $
  */
 #ifdef TRAP_FPE
 #include <fenv.h>
@@ -13,8 +13,6 @@
 
 #include "astro/SkyDir.h"
 
-// #include "latResponse/Irfs.h"
-// #include "latResponse/IrfsFactory.h"
 #include "irfInterface/IrfsFactory.h"
 #include "g25Response/loadIrfs.h"
 
@@ -22,8 +20,6 @@
 #include "observationSim/EventContainer.h"
 #include "observationSim/ScDataContainer.h"
 #include "LatSc.h"
-
-//using latResponse::irfsFactory;
 
 ISpectrumFactory & GaussianSourceFactory();
 ISpectrumFactory & GRBmanagerFactory();
