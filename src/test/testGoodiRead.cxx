@@ -3,7 +3,7 @@
  * @brief This program demostrates how to read in FT1 and FT2 files.
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/testGoodiRead.cxx,v 1.1 2003/10/15 04:53:14 jchiang Exp $
  */
 
 #include "Goodi/GoodiConstants.h"
@@ -41,7 +41,7 @@ int main(int iargc, char* argv[]) {
 
    while (!done) {
       const Goodi::Event evt = eventData->nextEvent(ioService, done);
-      if (!done) {
+      if (!done && i < 20) {
          std::cout << i++ << "  "
                    << evt.time() << "  "
                    << evt.energy() << "  "

@@ -3,8 +3,11 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.17 2003/10/17 03:57:37 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.18 2003/10/17 16:56:58 jchiang Exp $
  */
+#ifdef TRAP_FPE
+#include <fenv.h>
+#endif
 
 #include "astro/SkyDir.h"
 
@@ -22,6 +25,9 @@
 void help();
 
 int main(int argn, char * argc[]) {
+#ifdef TRAP_FPE
+   feenableexcept (FE_INVALID|FE_DIVBYZERO|FE_OVERFLOW);
+#endif
    
 // Create list of xml input files for source definitions.
    std::vector<std::string> fileList;
