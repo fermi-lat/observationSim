@@ -4,7 +4,7 @@
  * This implementation is not terribly general, so we await a better
  * FITS handling class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/FitsTable.cxx,v 1.2 2003/06/18 20:28:23 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/FitsTable.cxx,v 1.3 2003/06/19 00:14:05 jchiang Exp $
  */
 
 #include <iostream>
@@ -56,7 +56,7 @@ FitsTable::FitsTable(const std::string filename, const std::string extName,
 }
 
 FitsTable::~FitsTable() {
-   delete m_fptr;
+//   delete m_fptr;
    delete m_extName;
    for (int i = 0; i < m_tfields; i++) {
       delete m_ttype[i];
