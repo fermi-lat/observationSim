@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.18 2004/04/12 19:53:28 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.19 2004/07/19 14:21:55 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -25,7 +25,6 @@ namespace tip {
    class Table;
 }
 
-//namespace latResponse {
 namespace irfInterface {
    class Irfs;
 }
@@ -38,7 +37,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.18 2004/04/12 19:53:28 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.19 2004/07/19 14:21:55 jchiang Exp $
  */
 
 class EventContainer {
@@ -70,7 +69,6 @@ public:
    ///        regard to the response info, i.e., true energies and 
    ///        directions are saved.
    int addEvent(EventSource *event, 
-//                std::vector<latResponse::Irfs *> &respPtrs, 
                 std::vector<irfInterface::Irfs *> &respPtrs, 
                 Spacecraft *spacecraft, bool flush=false, 
                 bool alwaysAccept=false);

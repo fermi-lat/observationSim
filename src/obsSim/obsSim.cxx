@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.9 2004/04/30 13:57:44 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.10 2004/07/19 14:22:18 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -22,9 +22,6 @@
 #include "facilities/Util.h"
 
 #include "astro/SkyDir.h"
-
-// #include "latResponse/Irfs.h"
-// #include "latResponse/IrfsFactory.h"
 
 #include "irfInterface/IrfsFactory.h"
 #include "g25Response/loadIrfs.h"
@@ -81,7 +78,6 @@ private:
    double m_count;
    std::vector<std::string> m_xmlSourceFiles;
    std::vector<std::string> m_srcNames;
-//    std::vector<latResponse::Irfs *> m_respPtrs;
    std::vector<irfInterface::Irfs *> m_respPtrs;
    observationSim::Simulator * m_simulator;
 
@@ -176,7 +172,6 @@ void ObsSim::createResponseFuncs() {
    if (responseIds.count(responseFuncs)) {
       std::vector<std::string> &resps = responseIds[responseFuncs];
       for (unsigned int i = 0; i < resps.size(); i++) {
-//          m_respPtrs.push_back(latResponse::irfsFactory().create(resps[i]));
          m_respPtrs.push_back(myFactory->create(resps[i]));
       }
    } else {

@@ -2,7 +2,7 @@
  * @file Simulator.h
  * @brief Declaration for Simulator class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.16 2004/04/12 22:17:22 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.17 2004/07/19 14:21:55 jchiang Exp $
  */
 
 #ifndef observationSim_Simulator_h
@@ -14,7 +14,6 @@
 #include "CLHEP/Geometry/Vector3D.h"
 #include "flux/FluxMgr.h"
 
-//namespace latResponse {
 namespace irfInterface {
    class Irfs;
 }
@@ -40,7 +39,7 @@ class Roi;
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.16 2004/04/12 22:17:22 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.17 2004/07/19 14:21:55 jchiang Exp $
  */
 
 class Simulator {
@@ -100,7 +99,6 @@ public:
    void generateEvents(double simulationTime, 
                        EventContainer &events,
                        ScDataContainer &scData, 
-//                       latResponse::Irfs &response,
                        irfInterface::Irfs &response,
                        Spacecraft *spacecraft, 
                        EventContainer *allEvents=0,
@@ -114,7 +112,6 @@ public:
    void generateEvents(long numberOfEvents, 
                        EventContainer &events,
                        ScDataContainer &scData, 
-//                        latResponse::Irfs &response,
                        irfInterface::Irfs &response,
                        Spacecraft *spacecraft,
                        EventContainer *allEvents=0,
@@ -128,7 +125,6 @@ public:
    void generateEvents(double simulationTime, 
                        EventContainer &events,
                        ScDataContainer &scData, 
-//                        std::vector<latResponse::Irfs*> &respPtrs,
                        std::vector<irfInterface::Irfs*> &respPtrs,
                        Spacecraft *spacecraft, 
                        EventContainer *allEvents=0,
@@ -142,7 +138,6 @@ public:
    void generateEvents(long numberOfEvents, 
                        EventContainer &events,
                        ScDataContainer &scData, 
-//                        std::vector<latResponse::Irfs*> &respPtrs,
                        std::vector<irfInterface::Irfs*> &respPtrs,
                        Spacecraft *spacecraft,
                        EventContainer *allEvents=0,
@@ -185,12 +180,10 @@ private:
              std::string);
 
    void makeEvents(EventContainer &, ScDataContainer &, 
-//                    latResponse::Irfs &, Spacecraft *spacecraft,
                    irfInterface::Irfs &, Spacecraft *spacecraft,
                    bool useSimTime, EventContainer *allEvents, Roi *roi);
 
    void makeEvents(EventContainer &, ScDataContainer &, 
-//                    std::vector<latResponse::Irfs *> &, 
                    std::vector<irfInterface::Irfs *> &, 
                    Spacecraft *spacecraft,
                    bool useSimTime, EventContainer *allEvents, Roi *roi);
