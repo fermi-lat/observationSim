@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.15 2004/08/17 03:38:54 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.16 2004/08/25 15:26:10 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -11,7 +11,9 @@
 #endif
 
 #include <cassert>
+
 #include <fstream>
+#include <stdexcept>
 
 #include "CLHEP/Random/Random.h"
 
