@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.12 2004/07/21 16:35:31 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.13 2004/08/03 19:46:54 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -24,8 +24,7 @@
 #include "astro/SkyDir.h"
 
 #include "irfInterface/IrfsFactory.h"
-#include "g25Response/loadIrfs.h"
-#include "dc1Response/loadIrfs.h"
+#include "irfLoader/Loader.h"
 // #include "dc2Response/loadIrfs.h"
 
 #include "Likelihood/Util.h"
@@ -156,8 +155,7 @@ void ObsSim::readSrcNames() {
 }   
 
 void ObsSim::createResponseFuncs() {
-   g25Response::loadIrfs();
-   dc1Response::loadIrfs();
+   irfLoader::Loader::go();
 //    dc2Response::loadIrfs();
    irfInterface::IrfsFactory * myFactory 
       = irfInterface::IrfsFactory::instance();
