@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Jan 22 18:29:21 PST 2004
+observationSim/src/test
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+allow more flexibility in specifying flux-style xml files
+    *
+------------------------------------------------------------
+User: jchiang  Thu Jan 22 18:29:21 PST 2004
 observationSim/src
 
 Modified Files:
