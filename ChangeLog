@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: richard  Fri Dec  5 16:14:49 PST 2003
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+add libHist for windows
+    *
+------------------------------------------------------------
 User: jchiang  Fri Dec  5 11:10:48 PST 2003
 observationSim/doc
 
