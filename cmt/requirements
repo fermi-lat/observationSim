@@ -1,9 +1,9 @@
 package observationSim
-version v1r1
+version v2r0
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.30 2003/10/15 04:53:12 jchiang Exp $
+# $Id: requirements,v 1.31 2003/10/17 03:57:33 jchiang Exp $
 
 branches observationSim cmt src doc
 
@@ -65,7 +65,7 @@ library observationSim -no_share $(my_headers) \
 set INFILES "$(GOODIROOT)/Data"
 
 # test applications
-#application test_observationSim test/main.cxx
+application test_observationSim test/main.cxx
 #application testGoodiRead test/testGoodiRead.cxx
 
 # exposure map calculator

@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 """
-Basic script for steering the observationSim code.  No plotting.
+Basic script for steering the observationSim code. 
 
 @author J. Chiang
 """
 #
-# $Header: /nfs/slac/g/glast/ground/cvs/observationSim/python/latSim.py,v 1.3 2003/09/05 23:13:11 jchiang Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/observationSim/python/latSim.py,v 1.4 2003/10/13 22:58:09 jchiang Exp $
 #
 import os, sys, string, numarray
 
@@ -84,6 +84,7 @@ def run_test(argv):
         while (elapsed_time < count - time_step):
             my_simulator.generate_events(time_step, events, scData, 
                                          response, spacecraft)
+            elapsed_time += time_step
         my_simulator.generate_events(count-elapsed_time, events, scData, 
                                      response, spacecraft)
     else:
