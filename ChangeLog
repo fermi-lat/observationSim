@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Fri Oct 29 14:17:25 PDT 2004
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+disable writing of ScData file if pointing history file is supplied
+    *
+------------------------------------------------------------
+User: jchiang  Fri Oct 29 14:17:25 PDT 2004
 observationSim/src
 
 Modified Files:
