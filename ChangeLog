@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Sat Apr 10 08:14:36 PDT 2004
+observationSim/src/test
+
+Modified Files:
+	main.cxx obsSim.cxx 
+Removed Files:
+	testGoodiRead.cxx 
+Log Message:
+more tip conversion
+    *
+------------------------------------------------------------
 User: jchiang  Sat Apr 10 08:14:35 PDT 2004
 observationSim/src
 
