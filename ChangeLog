@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Dec  1 16:27:39 PST 2003
+observationSim/xml
+
+Modified Files:
+	3EG_catalog.txt 3EG_catalog_20-1e6MeV.xml 3EG_to_xml.py 
+Log Message:
+remove possible artifacts from 3EG cat.; rescale non-P1234 fluxes by half
+    *
+------------------------------------------------------------
 User: jchiang  Mon Dec  1 15:21:56 PST 2003
 observationSim/xml
 
