@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.3 2004/04/15 19:31:03 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.4 2004/04/16 17:02:31 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -34,17 +34,25 @@
 // #include "GRB/GRBmanager.h"
 // static SpectrumFactory<GRBmanager> my_factory;
 
+ISpectrumFactory & GaussianSourceFactory();
 ISpectrumFactory & MapSourceFactory();
+ISpectrumFactory & PeriodicSourceFactory();
+ISpectrumFactory & PulsarFactory();
 ISpectrumFactory & SimpleTransientFactory();
+ISpectrumFactory & TransientTemplateFactory();
 
 using Likelihood::Util;
 
 class ObsSim {
 public:
-   ObsSim(hoops::IParGroup & pars) : m_pars(pars) {
+   ObsSim(hoops::IParGroup & pars) : m_pars(pars), m_simulator(0) {
       m_count = m_pars["Number_of_events"];
+      GaussianSourceFactory();
       MapSourceFactory();
+      PeriodicSourceFactory();
+      PulsarFactory();
       SimpleTransientFactory();
+      TransientTemplateFactory();
    }
    ~ObsSim() {
       delete m_simulator;

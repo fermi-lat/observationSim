@@ -4,7 +4,7 @@
  * photon flux and spectral index during that interval.
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/SimpleTransient.h,v 1.1 2004/04/16 17:02:28 jchiang Exp $
  */
 
 #ifndef mySpectrum_SimpleTransient_h
@@ -20,7 +20,7 @@
  *
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/SimpleTransient.h,v 1.1 2004/04/16 17:02:28 jchiang Exp $
  */
 
 class SimpleTransient : public Spectrum {
@@ -49,6 +49,19 @@ public:
 
 protected:
 
+   double m_flux;
+   double m_gamma;
+   double m_tstart;
+   double m_tstop;
+   double m_emin;
+   double m_emax;
+
+   /// Default constructor for use with subclasses.
+   SimpleTransient() : m_flux(1.), m_gamma(2.), m_tstart(0),
+      m_tstop(100.), m_emin(30.), m_emax(2e5) {}
+
+   std::vector<double> m_eventTimes;
+
    /// Disable these virtual functions since they are not used by
    /// this source.
    virtual double flux(double) const {return 0;}
@@ -62,15 +75,6 @@ protected:
 
 private:
 
-   double m_flux;
-   double m_gamma;
-   double m_tstart;
-   double m_tstop;
-   double m_emin;
-   double m_emax;
-
-   unsigned int m_nextEvent;
-   std::vector<double> m_eventTimes;
    void createEventTimes();
 
 };
