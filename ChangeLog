@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Mon Dec  1 15:21:56 PST 2003
+observationSim/xml
+
+Modified Files:
+	3EG_catalog.txt 3EG_to_xml.py 
+Added Files:
+	3EG_catalog_20-1e6MeV.xml 
+Log Message:
+add catalog for 20MeV to 1TeV
+    *
+------------------------------------------------------------
 User: jchiang  Mon Dec  1 14:28:27 PST 2003
 observationSim/src
 
