@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Apr 15 10:36:06 PDT 2004
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+add MapSource
+    *
+------------------------------------------------------------
 User: jchiang  Thu Apr 15 10:36:05 PDT 2004
 observationSim/src
 
