@@ -2,7 +2,7 @@
  * @file ContainerBase.cxx
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ContainerBase.cxx,v 1.3 2005/03/07 18:49:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ContainerBase.cxx,v 1.4 2005/03/21 20:21:29 jchiang Exp $
  */
 
 #include <ctime>
@@ -55,11 +55,6 @@ void ContainerBase::writeDateKeywords(tip::Extension * table,
    try {
       header["TSTART"].set(start_time);
       header["TSTOP"].set(stop_time);
-   } catch (...) {
-   }
-   try {
-      header["ONTIME"].set(duration);
-      header["TELAPSE"].set(duration);
    } catch (...) {
    }
 }
