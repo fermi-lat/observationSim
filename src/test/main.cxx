@@ -3,11 +3,13 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.24 2004/04/06 14:05:45 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.25 2004/04/10 15:14:35 jchiang Exp $
  */
 #ifdef TRAP_FPE
 #include <fenv.h>
 #endif
+
+#include <cstdlib>
 
 #include "astro/SkyDir.h"
 
@@ -17,13 +19,13 @@
 #include "observationSim/Simulator.h"
 #include "observationSim/EventContainer.h"
 #include "observationSim/ScDataContainer.h"
-#include "observationSim/../src/LatSc.h"
+#include "LatSc.h"
 
 using latResponse::irfsFactory;
 
 void help();
 
-int main(int argn, char * argc[]) {
+int main(int iargc, char * argv[]) {
 #ifdef TRAP_FPE
    feenableexcept (FE_INVALID|FE_DIVBYZERO|FE_OVERFLOW);
 #endif
@@ -45,8 +47,8 @@ int main(int argn, char * argc[]) {
 // simulation time in seconds.
 //
    long count;
-   if (argn > 1) {
-      count = static_cast<long>(::atof(argc[1]));
+   if (iargc > 1) {
+      count = static_cast<long>(std::atof(argv[1]));
    } else {
       count = 1000;
    }
@@ -57,9 +59,9 @@ int main(int argn, char * argc[]) {
    bool useSimTime(false);
    bool useCombined(true);
    std::vector<std::string> sourceNames;
-   if (argn > 2) {
-      for (int i = 2; i < argn; i++) {
-         std::string argString = argc[i];
+   if (iargc > 2) {
+      for (int i = 2; i < iargc; i++) {
+         std::string argString = argv[i];
          if (argString == "-t") {
 // Interpret arg[1] as elapsed time in seconds.
             useSimTime = true;
@@ -84,7 +86,7 @@ int main(int argn, char * argc[]) {
    observationSim::Simulator my_simulator(sourceNames, fileList);
 
 // Ascertain paths to GLAST25 response files.
-   const char *root = ::getenv("LATRESPONSEROOT");
+   const char *root = std::getenv("LATRESPONSEROOT");
    std::string caldbPath;
    if (!root) {
       caldbPath = "/u1/jchiang/SciTools/dev/latResponse/v0r1/data/CALDB";

@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/obsSim.cxx,v 1.14 2004/03/18 06:06:06 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/obsSim.cxx,v 1.15 2004/04/10 15:14:35 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -28,7 +28,7 @@
 #include "observationSim/Simulator.h"
 #include "observationSim/EventContainer.h"
 #include "observationSim/ScDataContainer.h"
-#include "observationSim/../src/LatSc.h"
+#include "LatSc.h"
 
 namespace {
    void readLines(std::string inputFile, 
@@ -61,6 +61,7 @@ int main(int iargc, char * argv[]) {
    try {
       hoops::ParPromptGroup pars(iargc, argv);
       pars.Prompt();
+      pars.Save();
 
 // Set the random number seed in the CLHEP random number engine.
 // We only do this once per run, so we set it using the constructor.

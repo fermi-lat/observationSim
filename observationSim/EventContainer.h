@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.16 2004/04/10 05:59:30 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.17 2004/04/10 15:14:34 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -13,12 +13,17 @@
 #include <vector>
 
 #include "astro/SkyDir.h"
+#include "astro/JulianDate.h"
 
 #include "observationSim/Event.h"
 #include "observationSim/FitsTable.h"
 #include "observationSim/Spacecraft.h"
 
-class EventSource;
+class EventSource;  // from flux package
+
+namespace tip {
+   class Table;
+}
 
 namespace latResponse {
    class Irfs;
@@ -32,7 +37,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.16 2004/04/10 05:59:30 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.17 2004/04/10 15:14:34 jchiang Exp $
  */
 
 class EventContainer {
@@ -79,6 +84,14 @@ public:
    /// Return a const reference to m_events for processing by Python
    /// of the data contained therein.
    const std::vector<Event> &getEvents() {return m_events;}  
+
+   /// Set the date keywords in a given header, accesses via the
+   /// tip::Table and tip::Header interface.
+   static void writeDateKeywords(tip::Table * table, double start_time,
+                                 double stop_time);
+
+   /// Return an astro::JulianDate object for the current time.
+   static astro::JulianDate currentTime();
 
 private:
 
