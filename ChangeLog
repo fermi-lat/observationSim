@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Mon Nov 10 17:19:41 PST 2003
+observationSim/data
+
+Modified Files:
+	obsSim.par xml_files.dat 
+Added Files:
+	pointing_history.txt 
+Log Message:
+allow use of pointing history
+    *
+------------------------------------------------------------
 User: jchiang  Mon Nov 10 17:19:39 PST 2003
 observationSim/cmt
 
