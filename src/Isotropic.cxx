@@ -3,7 +3,7 @@
  * @brief Isotropic diffuse emission
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Isotropic.cxx,v 1.1 2004/04/23 22:52:30 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Isotropic.cxx,v 1.2 2004/04/23 22:59:03 jchiang Exp $
  */
 
 #include <cmath>
@@ -33,9 +33,8 @@ Isotropic::Isotropic(const std::string & paramString)
 
    m_flux = std::atof(params[0].c_str());
    m_gamma = std::atof(params[1].c_str());
-   std::string fitsFile = params[2];
-   if (params.size() > 3) m_emin = std::atof(params[3].c_str());
-   if (params.size() > 4) m_emax = std::atof(params[4].c_str());
+   if (params.size() > 2) m_emin = std::atof(params[2].c_str());
+   if (params.size() > 3) m_emax = std::atof(params[3].c_str());
 }
 
 float Isotropic::operator()(float xi) const {
@@ -71,7 +70,7 @@ std::pair<double, double> Isotropic::dir(double energy) {
    (void)(energy);
 
    double xi = RandFlat::shoot();
-   double lon = 360.*xi;
+   double lon = 360.*xi - 180.;
 
    xi = RandFlat::shoot();
    double mu = 2.*xi - 1.;

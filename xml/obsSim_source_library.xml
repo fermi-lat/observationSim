@@ -1,4 +1,4 @@
-<!-- $Header: /nfs/slac/g/glast/ground/cvs/observationSim/xml/obsSim_source_library.xml,v 1.6 2004/04/17 15:28:15 jchiang Exp $
+<!-- $Header: /nfs/slac/g/glast/ground/cvs/observationSim/xml/obsSim_source_library.xml,v 1.7 2004/04/23 22:52:32 jchiang Exp $
    This is a library of sources that can be included by a source with
    an empty element: that is, <source name="chime"/> picks up the
    entry named "chime".  Also, if the second command line option
@@ -557,7 +557,7 @@
    <source name="transient_template">
       <spectrum escale="MeV">
          <SpectrumClass name="TransientTemplate"
-          params="100.,2,1e3,1.1e3,$(OBSERVATIONSIMROOT)/data/CrabTemplate.dat"/>
+        params="100.,2,1e3,1.1e3,$(OBSERVATIONSIMROOT)/data/CrabTemplate.dat"/>
          <celestial_dir ra="80" dec="20"/>
       </spectrum>
    </source>
@@ -573,7 +573,7 @@
    <source name="Crab_Pulsar">
       <spectrum escale="MeV">
          <SpectrumClass name="Pulsar"
-         params="1e-3,2.,0.033,0,0,$(OBSERVATIONSIMROOT)/data/CrabTemplate.dat"/>
+       params="1e-3,2.,0.033,0,0,$(OBSERVATIONSIMROOT)/data/CrabTemplate.dat"/>
          <celestial_dir ra="83.57" dec="22.01"/>
       </spectrum>
    </source>
@@ -589,7 +589,7 @@
    <source name="Extragalactic_diffuse">
       <spectrum escale="MeV">
          <SpectrumClass name="Isotropic"
-                        params="6.85, 2.1, 30, 2e5"/>
+                        params="10.7, 2.1, 20., 2e5"/>
          <use_spectrum frame="galaxy"/>
       </spectrum>
    </source>
