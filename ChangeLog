@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Nov 14 22:04:45 PST 2003
+observationSim/observationSim
+
+Modified Files:
+	Simulator.h 
+Log Message:
+apply energy dispersion; update documentation; simplify user interface
+    *
+------------------------------------------------------------
 User: jchiang  Fri Nov 14 22:04:44 PST 2003
 observationSim/data
 
