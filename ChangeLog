@@ -1,5 +1,16 @@
 ------------------------------------------------------------
 User: jchiang  Thu Oct 16 20:57:35 PDT 2003
+observationSim/python
+
+Modified Files:
+	observationSim.i 
+Added Files:
+	test.py 
+Log Message:
+allow for multiple IRFs to be passed to Simulator
+    *
+------------------------------------------------------------
+User: jchiang  Thu Oct 16 20:57:35 PDT 2003
 observationSim/observationSim
 
 Modified Files:
