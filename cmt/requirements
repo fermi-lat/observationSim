@@ -3,12 +3,12 @@ version v0r3p1
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.15 2003/08/24 21:59:00 cohen Exp $
+# $Id: requirements,v 1.16 2003/08/25 22:05:45 jchiang Exp $
 
 branches observationSim cmt src doc
 
 use flux v7*
-use MapFlux v0*
+#use MapFlux v0*
 use astro v0*
 use latResponse v0*
 use Likelihood v*
