@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sun Aug  3 14:30:03 PDT 2003
+observationSim/src/test
+
+Added Files:
+	exposureMap.cxx 
+Log Message:
+add exposure map calculator
+    *
+------------------------------------------------------------
 User: jchiang  Sun Aug  3 14:30:02 PDT 2003
 observationSim/cmt
 
