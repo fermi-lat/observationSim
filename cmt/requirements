@@ -3,7 +3,7 @@ version v2r10
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.62 2004/03/18 06:06:05 jchiang Exp $
+# $Id: requirements,v 1.63 2004/03/19 04:54:59 jchiang Exp $
 
 branches observationSim cmt src doc
 
@@ -11,6 +11,7 @@ use GlastPolicy v5r*
 use flux v*
 use latResponse v*
 use Goodi v*
+use tip v1r*
 use astro v0*
 use facilities v*
 use cfitsio v1* IExternal
