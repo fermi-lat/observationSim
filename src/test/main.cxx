@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.32 2004/08/25 15:26:10 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.33 2004/08/26 21:58:57 jchiang Exp $
  */
 #ifdef TRAP_FPE
 #include <fenv.h>
@@ -104,11 +104,8 @@ int main(int iargc, char * argv[]) {
       = irfInterface::IrfsFactory::instance();
    std::vector<irfInterface::Irfs *> respPtrs;
    if (useCombined) {
-//      respPtrs.push_back(irfsFactory().create("Glast25::Combined"));
       respPtrs.push_back(myFactory->create("Glast25::Combined"));
    } else { // use Front & Back
-//       respPtrs.push_back(irfsFactory().create("Glast25::Front"));
-//       respPtrs.push_back(irfsFactory().create("Glast25::Back"));
       respPtrs.push_back(myFactory->create("Glast25::Front"));
       respPtrs.push_back(myFactory->create("Glast25::Back"));
    }

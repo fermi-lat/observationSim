@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.45 2004/09/26 19:50:12 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.46 2004/10/04 18:32:41 jchiang Exp $
  */
 
 #include <cmath>
@@ -35,8 +35,9 @@
 
 #include "irfInterface/Irfs.h"
 
-#include "observationSim/Spacecraft.h"
 #include "observationSim/EventContainer.h"
+#include "observationSim/Spacecraft.h"
+#include "Verbosity.h"
 
 namespace {
    double my_acos(double mu) {
@@ -197,7 +198,9 @@ void EventContainer::writeEvents() {
       try {
          row["conversion_layer"].set(evt->convLayer());
       } catch (std::exception &eObj) {
-         std::cout << eObj.what() << std::endl;
+         if (verbosity() > 1) {
+            std::cout << eObj.what() << std::endl;
+         }
          std::exit(-1);
       }
       tip::Table::Vector<short> calibVersion = row["calib_version"];
