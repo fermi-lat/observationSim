@@ -2,7 +2,7 @@
  * @file ScDataContainer.h
  * @brief Declaration for ScDataContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.10 2004/04/10 15:14:34 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.11 2004/08/26 21:58:54 jchiang Exp $
  */
 
 #ifndef observationSim_ScDataContainer_h
@@ -14,6 +14,7 @@
 
 #include "astro/SkyDir.h"
 
+#include "observationSim/ContainerBase.h"
 #include "observationSim/ScData.h"
 #include "observationSim/Spacecraft.h"
 
@@ -27,10 +28,10 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.10 2004/04/10 15:14:34 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.11 2004/08/26 21:58:54 jchiang Exp $
  */
 
-class ScDataContainer {
+class ScDataContainer : public ContainerBase {
 
 public:
 
@@ -38,9 +39,10 @@ public:
    /// @param maxNumEntries The maximum number of entries in the ScData
    ///        buffer before a FITS file is written.
    ScDataContainer(const std::string &filename, 
-                   int maxNumEntries=20000) :
-      m_filename(filename), m_fileNum(0),
-      m_maxNumEntries(maxNumEntries) {init();}
+                   int maxNumEntries=20000) : 
+      ContainerBase(filename, maxNumEntries) {
+      init();
+   }
 
    ~ScDataContainer();
 
@@ -58,15 +60,6 @@ public:
 
 private:
 
-   /// Root name for the FITS binary table output files.
-   std::string m_filename;
-
-   /// Template file for FT2 data.
-   std::string m_ft2Template;
-
-   /// The current index number fo the FITS output files.
-   long m_fileNum;
-
    /// The maximum number of entries in the m_scData vector.
    unsigned int m_maxNumEntries;
 
@@ -78,10 +71,6 @@ private:
 
    /// This routine unpacks and writes the ScData to a FT2 file.
    void writeScData();
-
-   /// Return an output filename, based on the root name, m_filename,
-   /// and the counter index, m_fileNum.
-   std::string outputFileName() const;
 
 };
 
