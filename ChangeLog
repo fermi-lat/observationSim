@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Jan 23 09:55:19 PST 2004
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+add NO_EDISP irf option; tagging v2r7p2
+    *
+------------------------------------------------------------
 User: jchiang  Fri Jan 23 09:43:02 PST 2004
 observationSim/src/test
 
