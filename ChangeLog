@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sun Sep 26 10:57:57 PDT 2004
+observationSim/xml
+
+Modified Files:
+	time_source.xml 
+Log Message:
+add orbSim application
+    *
+------------------------------------------------------------
+User: jchiang  Sun Sep 26 10:57:57 PDT 2004
 observationSim/src/orbSim
 
 Added Files:
