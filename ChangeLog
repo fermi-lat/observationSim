@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Jun 27 17:09:47 PDT 2003
+observationSim/src/test
+
+Modified Files:
+	main.cxx 
+Log Message:
+refactor some, using latResponse::Irfs class
+    *
+------------------------------------------------------------
 User: jchiang  Fri Jun 27 17:09:46 PDT 2003
 observationSim/src
 
