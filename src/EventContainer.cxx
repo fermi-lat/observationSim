@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.25 2004/01/05 18:39:19 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.26 2004/01/06 18:15:28 jchiang Exp $
  */
 
 #include <cmath>
@@ -230,6 +230,18 @@ void EventContainer::writeEvents() {
       m_goodiEventData->setZenithAngle(zenithAngle);
       m_goodiEventData->setConvLayer(convLayer);
       m_goodiEventData->setGTI(gti);
+
+// Header keywords for the GTI extension.
+      std::string date_start = "2005-07-18T00:00:00.0000";
+// This needs to be computed....we need a date class.
+      std::string date_stop  = "2005-07-19T00:00:00.0000";
+      m_goodiEventData->setKey("DATE-OBS", date_start);
+      m_goodiEventData->setKey("DATE-END", date_stop);
+      double duration = gti.front().second - gti.front().first;
+      m_goodiEventData->setKey("TSTART", gti.front().first);
+      m_goodiEventData->setKey("TSTOP", gti.front().second);
+      m_goodiEventData->setKey("ONTIME", duration);
+      m_goodiEventData->setKey("TELAPSE", duration);
 
 // Set the sizes of the valarray data for the multiword columns,
 // GEO_OFFSET, BARY_OFFSET, etc..
