@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.49 2004/12/03 06:44:18 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.50 2004/12/03 19:03:22 jchiang Exp $
  */
 
 #include <cmath>
@@ -224,8 +224,7 @@ void EventContainer::writeEvents() {
    }
    writeDateKeywords(my_table, m_startTime, stop_time);
 
-// Fill the GTI extension, with the entire observation (as ascertained
-// from the first and last events) in a single GTI.
+// Fill the GTI extension, with the entire observation in a single GTI.
    tip::Table * gti_table = 
       tip::IFileSvc::instance().editTable(ft1File, "GTI");
    gti_table->setNumRecords(1);
@@ -234,10 +233,14 @@ void EventContainer::writeEvents() {
    row["stop"].set(stop_time);
    writeDateKeywords(gti_table, m_startTime, stop_time);
 
-   m_cuts->addGtiCut(*gti_table);
+   dataSubselector::Cuts * cuts = new dataSubselector::Cuts();
    if (m_cuts) {
-      m_cuts->writeDssKeywords(my_table->getHeader());
+      cuts = new dataSubselector::Cuts(*m_cuts);
    }
+   cuts->addGtiCut(*gti_table);
+   cuts->writeDssKeywords(my_table->getHeader());
+
+   delete cuts;
    delete my_table;
    delete gti_table;
 
