@@ -2,7 +2,7 @@
  * @file ContainerBase.cxx
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ContainerBase.cxx,v 1.1 2004/08/26 23:07:14 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ContainerBase.cxx,v 1.2 2004/10/04 18:32:41 jchiang Exp $
  */
 
 #include <ctime>
@@ -43,7 +43,7 @@ void ContainerBase::writeDateKeywords(tip::Extension * table,
       header["DATE"].set(current_time.getGregorianDate());
    } catch (...) {
    }
-   astro::JulianDate mission_start(2005, 7, 18, 0);
+   astro::JulianDate mission_start(2006, 12, 31, 23.99888);
    astro::JulianDate date_start(mission_start + start_time/secsPerDay);
    astro::JulianDate date_stop(mission_start + stop_time/secsPerDay);
    try {
