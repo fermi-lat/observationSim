@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: cohen  Sun Aug 24 14:59:00 PDT 2003
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+use of IExternal/python
+    *
+------------------------------------------------------------
 User: cohen  Sun Aug 24 13:52:20 PDT 2003
 observationSim/observationSim
 
