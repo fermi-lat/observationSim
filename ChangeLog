@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Apr 12 12:53:29 PDT 2004
+observationSim/src/test
+
+Modified Files:
+	main.cxx obsSim.cxx 
+Log Message:
+tip conversion; write GTI and header DATE keywords
+    *
+------------------------------------------------------------
 User: jchiang  Mon Apr 12 12:53:28 PDT 2004
 observationSim/src
 
