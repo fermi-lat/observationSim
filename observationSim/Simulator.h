@@ -2,7 +2,7 @@
  * @file Simulator.h
  * @brief Declaration for Simulator class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.8 2003/07/15 01:01:29 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.9 2003/08/02 03:58:24 jchiang Exp $
  */
 
 #ifndef observationSim_Simulator_h
@@ -12,8 +12,8 @@
 #include <string>
 #include <iostream>
 #include "CLHEP/Geometry/Vector3D.h"
-#include "FluxSvc/../src/CompositeSource.h"
-#include "FluxSvc/../src/FluxMgr.h"
+#include "flux/../src/CompositeSource.h"
+#include "flux/FluxMgr.h"
 
 #include "latResponse/Irfs.h"
 
@@ -36,7 +36,7 @@ class Roi;
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.8 2003/07/15 01:01:29 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.9 2003/08/02 03:58:24 jchiang Exp $
  */
 
 class Simulator {
