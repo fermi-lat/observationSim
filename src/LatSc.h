@@ -3,7 +3,7 @@
  * @brief Declaration for the LAT spacecraft object.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.h,v 1.1 2003/07/01 05:13:45 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.h,v 1.2 2003/07/02 05:17:52 jchiang Exp $
  */
 
 #ifndef observationSim_LatSc_h
@@ -16,12 +16,12 @@ namespace observationSim {
 /**
  * @class LatSc
  *
- * @brief Provide spacecraft attitude and orbital position informatio
+ * @brief Provide spacecraft attitude and orbital position information
  * for the LAT.
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.h,v 1.1 2003/07/01 05:13:45 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.h,v 1.2 2003/07/02 05:17:52 jchiang Exp $
  */
 
 class LatSc : public Spacecraft {
