@@ -3,7 +3,7 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.6 2003/07/01 05:13:45 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.7 2003/07/02 05:17:51 jchiang Exp $
  */
 
 #include "CLHEP/Random/RandomEngine.h"
@@ -90,7 +90,7 @@ int EventContainer::addEvent(EventSource *event,
 // the LAT geometry as embodied in the various FluxSvc and astro
 // classes (e.g., GPS, EarthOrbit, EarthCoordinate), launchDir is
 // accessible only as a Hep3Vector in LAT coordinates.  Therefore, we
-// are forced to cheat and use an LatSc object explicitly in order to
+// are forced to cheat and use a LatSc object explicitly in order to
 // recover the source direction in J2000 coordinates.
    LatSc latSpacecraft;
    HepRotation rotMatrix = latSpacecraft.InstrumentToCelestial(time);
