@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.7 2003/07/10 17:27:32 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.8 2003/07/15 01:01:29 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -12,8 +12,8 @@
 #include <string>
 #include <vector>
 
-#include "FluxSvc/../src/EventSource.h"
-#include "FluxSvc/../src/FluxMgr.h"
+#include "flux/EventSource.h"
+#include "flux/FluxMgr.h"
 
 #include "astro/SkyDir.h"
 
@@ -31,7 +31,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.7 2003/07/10 17:27:32 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.8 2003/07/15 01:01:29 jchiang Exp $
  */
 
 class EventContainer {
