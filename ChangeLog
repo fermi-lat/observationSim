@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Jul  8 17:22:24 PDT 2003
+observationSim/xml
+
+Modified Files:
+	source_library.xml 
+Log Message:
+add entry for galdiffusemap and modify requirements to link to MapFlux
+    *
+------------------------------------------------------------
+User: jchiang  Tue Jul  8 17:22:24 PDT 2003
 observationSim/src
 
 Modified Files:
