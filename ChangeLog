@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Oct 29 14:17:24 PDT 2004
+observationSim/observationSim
+
+Modified Files:
+	ScDataContainer.h Simulator.h 
+Log Message:
+disable writing of ScData file if pointing history file is supplied
+    *
+------------------------------------------------------------
 User: jchiang  Tue Oct 19 12:25:51 PDT 2004
 observationSim/doc
 
