@@ -3,7 +3,7 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.3 2003/06/19 17:53:24 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.4 2003/06/21 23:27:03 richard Exp $
  */
 
 #include "CLHEP/Geometry/Vector3D.h"
@@ -76,8 +76,8 @@ void ScDataContainer::addScData(EventSource *event, bool flush) {
 
       m_scData.push_back(ScData(time, gps->RAZ(), gps->DECZ(), 
                                 gps->lon(), gps->lat(), 
-								astro::SkyDir(zAxis,astro::SkyDir::CELESTIAL), 
-								astro::SkyDir(xAxis,astro::SkyDir::CELESTIAL),
+                                astro::SkyDir(zAxis,astro::SkyDir::CELESTIAL), 
+                                astro::SkyDir(xAxis,astro::SkyDir::CELESTIAL),
                                 static_cast<int>(earthCoord.insideSAA())));
    }
    if (flush) writeScData();
