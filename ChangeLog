@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Thu Aug 26 16:07:14 PDT 2004
+observationSim/observationSim
+
+Modified Files:
+	EventContainer.h ScDataContainer.h 
+Added Files:
+	ContainerBase.h 
+Log Message:
+refactor Container classes
+    *
+------------------------------------------------------------
 User: jchiang  Thu Aug 26 14:58:57 PDT 2004
 observationSim/src/test
 
