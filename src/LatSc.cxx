@@ -3,7 +3,7 @@
  * @brief Implementation of LatSc class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.cxx,v 1.5 2003/08/20 22:55:25 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.cxx,v 1.6 2003/10/13 19:04:19 jchiang Exp $
  */
 
 #include "astro/EarthCoordinate.h"
@@ -58,6 +58,7 @@ HepRotation LatSc::InstrumentToCelestial(double time) {
 // // Try to use astro::PointingTransform class.
 
 //    GPS *gps = GPS::instance();
+//    gps->getPointingCharacteristics(time);
 //    astro::SkyDir xAxis(gps->RAX(), gps->DECX());
 //    astro::SkyDir zAxis(gps->RAZ(), gps->DECZ());
 
