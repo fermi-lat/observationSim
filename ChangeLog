@@ -1,5 +1,16 @@
 ------------------------------------------------------------
 User: jchiang  Sat Apr 10 08:14:34 PDT 2004
+observationSim/observationSim
+
+Modified Files:
+	EventContainer.h ScDataContainer.h 
+Removed Files:
+	useGoodiNames.h 
+Log Message:
+more tip conversion
+    *
+------------------------------------------------------------
+User: jchiang  Sat Apr 10 08:14:34 PDT 2004
 observationSim/data
 
 Added Files:
