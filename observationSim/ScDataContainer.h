@@ -2,7 +2,7 @@
  * @file ScDataContainer.h
  * @brief Declaration for ScDataContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.11 2004/08/26 21:58:54 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.12 2004/08/26 23:07:13 jchiang Exp $
  */
 
 #ifndef observationSim_ScDataContainer_h
@@ -28,7 +28,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.11 2004/08/26 21:58:54 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.12 2004/08/26 23:07:13 jchiang Exp $
  */
 
 class ScDataContainer : public ContainerBase {
@@ -59,9 +59,6 @@ public:
    double simTime() {return m_scData[m_scData.size()-1].time();}
 
 private:
-
-   /// The maximum number of entries in the m_scData vector.
-   unsigned int m_maxNumEntries;
 
    /// The ScData buffer.
    std::vector<ScData> m_scData;
