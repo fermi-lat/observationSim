@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Jul 20 21:08:06 PDT 2004
+observationSim/src/test
+
+Modified Files:
+	main.cxx 
+Log Message:
+use irfs/irfInterface; tagging v3r7
+    *
+------------------------------------------------------------
+User: jchiang  Tue Jul 20 21:08:06 PDT 2004
 observationSim/src/obsSim
 
 Modified Files:
