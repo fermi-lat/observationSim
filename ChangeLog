@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Nov 25 17:54:21 PST 2003
+observationSim/src
+
+Modified Files:
+	ScDataContainer.cxx 
+Log Message:
+use Goodi for standard build; tagging v2r4
+    *
+------------------------------------------------------------
+User: jchiang  Tue Nov 25 17:54:21 PST 2003
 observationSim/doc
 
 Modified Files:
