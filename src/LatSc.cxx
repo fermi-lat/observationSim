@@ -3,7 +3,7 @@
  * @brief Implementation of LatSc class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.cxx,v 1.11 2004/09/27 18:00:24 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.cxx,v 1.12 2004/09/27 19:17:01 jchiang Exp $
  */
 
 #include "astro/EarthCoordinate.h"
@@ -65,6 +65,7 @@ void LatSc::getScPosition(double time, std::vector<double> & position) {
 }
 
 void LatSc::getZenith(double time, double & ra, double & dec) {
+   GPS::instance()->getPointingCharacteristics(time);
    ra = GPS::instance()->RAZenith();
    dec = GPS::instance()->DECZenith();
 }
