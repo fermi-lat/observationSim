@@ -3,7 +3,7 @@
  * @brief Isotropic diffuse emission
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Isotropic.cxx,v 1.1 2004/04/23 22:52:30 jchiang Exp $
  */
 
 #include <cmath>
@@ -85,7 +85,7 @@ std::pair<double, double> Isotropic::dir(double energy) {
          theta = M_PI;
       }
    }
-   double lat = M_PI/2. - theta;
+   double lat = (M_PI/2. - theta)*180./M_PI;
 
    return std::make_pair(lon, lat);
 }
