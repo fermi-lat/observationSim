@@ -2,7 +2,7 @@
  * @file ScDataContainer.h
  * @brief Declaration for ScDataContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.6 2003/07/10 17:27:32 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.7 2003/10/02 20:59:21 jchiang Exp $
  */
 
 #ifndef observationSim_ScDataContainer_h
@@ -33,7 +33,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.6 2003/07/10 17:27:32 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.7 2003/10/02 20:59:21 jchiang Exp $
  */
 
 class ScDataContainer {
@@ -83,9 +83,6 @@ private:
 
    /// Goodi Spacecraft data object pointer.
    Goodi::ISpacecraftData *m_goodiScData;
-
-   /// Goodi I/O service object pointer.
-   Goodi::IDataIOService *m_goodiIoService;
 
    /// The ScData buffer.
    std::vector<ScData> m_scData;
