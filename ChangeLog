@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Apr 11 12:03:20 PDT 2005
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+fixes for pointing history file use; tagging v5r7
+    *
+------------------------------------------------------------
 TAG
 Tag name: v5r6p7, operation: add
 Package: observationSim
