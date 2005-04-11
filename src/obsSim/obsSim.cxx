@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.34 2005/02/22 02:28:56 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.35 2005/03/08 03:41:15 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -149,7 +149,6 @@ void ObsSim::checkOutputFiles() {
    }
 }
 
-
 void ObsSim::setRandomSeed() {
 // Set the random number seed in the CLHEP random number engine.
 // We only do this once per run, so we set it using the constructor.
@@ -292,7 +291,9 @@ void ObsSim::generateData() {
                                   spacecraft);
    }
 
+   if (writeScData) {
 // Pad with one more row of ScData.
-   double time = scData.simTime() + 30.;
-   scData.addScData(time, spacecraft);
+      double time = scData.simTime() + 30.;
+      scData.addScData(time, spacecraft);
+   }
 }
