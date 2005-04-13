@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Apr 12 23:38:02 PDT 2005
+observationSim/src
+
+Modified Files:
+	ContainerBase.cxx 
+Log Message:
+remove unused variable
+    *
+------------------------------------------------------------
 TAG
 Tag name: v5r7, operation: add
 Package: observationSim
