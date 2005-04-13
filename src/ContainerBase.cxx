@@ -2,7 +2,7 @@
  * @file ContainerBase.cxx
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ContainerBase.cxx,v 1.4 2005/03/21 20:21:29 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ContainerBase.cxx,v 1.5 2005/04/06 20:38:57 jchiang Exp $
  */
 
 #include <ctime>
@@ -51,7 +51,6 @@ void ContainerBase::writeDateKeywords(tip::Extension * table,
       header["DATE-END"].set(date_stop.getGregorianDate());
    } catch (...) {
    }
-   double duration = stop_time - start_time;
    try {
       header["TSTART"].set(start_time);
       header["TSTOP"].set(stop_time);
