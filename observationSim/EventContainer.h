@@ -2,13 +2,14 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.25 2005/01/12 01:02:16 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.26 2005/02/07 03:25:36 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
 #define observationSim_EventContainer_h
 
 #include <fstream>
+#include <map>
 #include <string>
 #include <vector>
 
@@ -40,7 +41,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.25 2005/01/12 01:02:16 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.26 2005/02/07 03:25:36 jchiang Exp $
  */
 
 class EventContainer : public ContainerBase {
@@ -87,7 +88,12 @@ public:
 
    /// Return a const reference to m_events for processing by Python
    /// of the data contained therein.
-   const std::vector<Event> &getEvents() {return m_events;}  
+   const std::vector<Event> & getEvents() const {return m_events;}
+
+   /// Access to the map of event IDs.
+   const std::map<std::string, int> & eventIds() const {
+      return m_eventIds;
+   }
 
 private:
 
@@ -104,8 +110,14 @@ private:
    /// The Event buffer.
    std::vector<Event> m_events;
 
+   /// Event IDs keyed by source name.
+   std::map<std::string, int> m_eventIds;
+
    /// This routine contains the constructor implementation.
    void init();
+
+   /// Set the event ID for the named source, if it does not already exist.
+   void setEventId(const std::string & name);
 
    /// Return the zenith for the current spacecraft location.
    astro::SkyDir ScZenith(double time) const;
