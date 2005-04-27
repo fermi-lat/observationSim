@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Apr 27 14:08:41 PDT 2005
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx 
+Log Message:
+output a map of event IDs and fill column in FT1 file
+    *
+------------------------------------------------------------
 User: jchiang  Wed Apr 27 14:08:40 PDT 2005
 observationSim/observationSim
 
