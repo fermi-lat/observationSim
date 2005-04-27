@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Apr 26 17:06:19 PDT 2005
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+use SpectrumFactoryLoader
+    *
+------------------------------------------------------------
 User: jchiang  Tue Apr 12 23:38:02 PDT 2005
 observationSim/src
 
