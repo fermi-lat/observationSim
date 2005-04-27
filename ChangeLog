@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Apr 26 17:06:19 PDT 2005
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+use SpectrumFactoryLoader
+    *
+------------------------------------------------------------
+User: jchiang  Tue Apr 26 17:06:19 PDT 2005
 observationSim/cmt
 
 Modified Files:
