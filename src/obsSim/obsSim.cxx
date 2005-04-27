@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.35 2005/03/08 03:41:15 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.36 2005/04/11 19:03:23 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -32,24 +32,14 @@
 
 #include "dataSubselector/Cuts.h"
 
+#include "celestialSources/SpectrumFactoryLoader.h"
+
 #include "observationSim/Simulator.h"
 #include "observationSim/EventContainer.h"
 #include "observationSim/ScDataContainer.h"
 
 #include "LatSc.h"
 #include "Verbosity.h"
-
-ISpectrumFactory & GaussianSourceFactory();
-ISpectrumFactory & GRBmanagerFactory();
-ISpectrumFactory & IsotropicFactory();
-ISpectrumFactory & MapSourceFactory();
-ISpectrumFactory & MapCubeFactory();
-ISpectrumFactory & PeriodicSourceFactory();
-ISpectrumFactory & PulsarFactory();
-ISpectrumFactory & SimpleTransientFactory();
-ISpectrumFactory & SpectralTransientFactory();
-ISpectrumFactory & TransientTemplateFactory();
-ISpectrumFactory & PulsarSpectrumFactory();
 
 using st_facilities::Util;
 
@@ -157,17 +147,7 @@ void ObsSim::setRandomSeed() {
 }
 
 void ObsSim::createFactories() {
-   GaussianSourceFactory();
-   GRBmanagerFactory();
-   IsotropicFactory();
-   MapSourceFactory();
-   MapCubeFactory();
-   PeriodicSourceFactory();
-   PulsarFactory();
-   SimpleTransientFactory();
-   SpectralTransientFactory();
-   TransientTemplateFactory();
-   PulsarSpectrumFactory();
+   SpectrumFactoryLoader foo;
 }
 
 void ObsSim::setXmlFiles() {

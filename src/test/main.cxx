@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.33 2004/08/26 21:58:57 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.34 2004/11/27 15:39:29 jchiang Exp $
  */
 #ifdef TRAP_FPE
 #include <fenv.h>
@@ -16,19 +16,12 @@
 #include "irfInterface/IrfsFactory.h"
 #include "irfLoader/Loader.h"
 
+#include "celestialSources/SpectrumFactoryLoader.h"
+
 #include "observationSim/Simulator.h"
 #include "observationSim/EventContainer.h"
 #include "observationSim/ScDataContainer.h"
 #include "LatSc.h"
-
-ISpectrumFactory & GaussianSourceFactory();
-ISpectrumFactory & GRBmanagerFactory();
-ISpectrumFactory & IsotropicFactory();
-ISpectrumFactory & MapSourceFactory();
-ISpectrumFactory & PeriodicSourceFactory();
-ISpectrumFactory & PulsarFactory();
-ISpectrumFactory & SimpleTransientFactory();
-ISpectrumFactory & TransientTemplateFactory();
 
 void help();
 
@@ -142,12 +135,5 @@ void help() {
 }
 
 void load_sources() {
-   GaussianSourceFactory();
-   GRBmanagerFactory();
-   IsotropicFactory();
-   MapSourceFactory();
-   PeriodicSourceFactory();
-   PulsarFactory();
-   SimpleTransientFactory();
-   TransientTemplateFactory();
+   SpectrumFactoryLoader foo;
 }
