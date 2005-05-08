@@ -1,5 +1,15 @@
 ------------------------------------------------------------
 User: jchiang  Sun May  8 14:15:49 PDT 2005
+observationSim/src
+
+Modified Files:
+	EgretSc.h EventContainer.cxx LatSc.cxx LatSc.h 
+	ScDataContainer.cxx 
+Log Message:
+set SAA flags
+    *
+------------------------------------------------------------
+User: jchiang  Sun May  8 14:15:49 PDT 2005
 observationSim/observationSim
 
 Modified Files:
