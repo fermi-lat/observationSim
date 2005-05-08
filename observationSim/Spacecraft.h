@@ -3,7 +3,7 @@
  * @brief Declaration of Spacecraft base class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Spacecraft.h,v 1.3 2004/09/27 18:00:22 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Spacecraft.h,v 1.4 2004/09/27 19:17:00 jchiang Exp $
  */
 
 #ifndef observationSim_Spacecraft_h
@@ -23,7 +23,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Spacecraft.h,v 1.3 2004/09/27 18:00:22 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Spacecraft.h,v 1.4 2004/09/27 19:17:00 jchiang Exp $
  */
 
 class Spacecraft {
@@ -47,8 +47,8 @@ public:
    /// Rotation matrix from instrument to J2000 coordinates
    virtual HepRotation InstrumentToCelestial(double time) = 0;
 
-   /// Unity if in SAA, zero otherwise.
-   virtual int inSaa(double time) = 0;
+   /// true if in SAA
+   virtual bool inSaa(double time) = 0;
 
    /// Spacecraft position in geocentric coordinates (km)
    virtual void getScPosition(double time,

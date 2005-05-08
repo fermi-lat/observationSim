@@ -3,7 +3,7 @@
  * @brief Declaration for the LAT spacecraft object.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.h,v 1.4 2004/09/27 18:00:24 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.h,v 1.5 2004/09/27 19:17:01 jchiang Exp $
  */
 
 #ifndef observationSim_LatSc_h
@@ -21,7 +21,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.h,v 1.4 2004/09/27 18:00:24 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.h,v 1.5 2004/09/27 19:17:01 jchiang Exp $
  */
 
 class LatSc : public Spacecraft {
@@ -40,7 +40,7 @@ public:
 
    virtual HepRotation InstrumentToCelestial(double time);
 
-   virtual int inSaa(double time);
+   virtual bool inSaa(double time);
 
    virtual void getScPosition(double time, std::vector<double> & scPosition);
 
