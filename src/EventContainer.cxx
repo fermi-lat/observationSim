@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.58 2005/04/27 21:08:41 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.59 2005/05/08 21:15:49 jchiang Exp $
  */
 
 #include <cmath>
@@ -213,6 +213,7 @@ void EventContainer::writeEvents() {
    tip::IFileSvc::instance().createFile(ft1File, m_ftTemplate);
    tip::Table * my_table = 
       tip::IFileSvc::instance().editTable(ft1File, "EVENTS");
+   my_table->appendField("MC_SRC_ID", "1I");
    my_table->setNumRecords(m_events.size());
    tip::Table::Iterator it = my_table->begin();
    tip::Table::Record & row = *it;
@@ -242,7 +243,7 @@ void EventContainer::writeEvents() {
       for (int i = 0; i < 3; i++) {
          calibVersion[i] = 1;
       }
-      row["event_id"].set(evt->eventId());
+      row["mc_src_id"].set(evt->eventId());
    }
    double stop_time;
    if (m_stopTime <= m_startTime) {
