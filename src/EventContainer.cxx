@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.57 2005/04/06 20:38:57 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.58 2005/04/27 21:08:41 jchiang Exp $
  */
 
 #include <cmath>
@@ -152,9 +152,7 @@ bool EventContainer::addEvent(EventSource *event,
    if ( RandFlat::shoot() < m_prob
         && (respPtr = ::drawRespPtr(respPtrs, event->totalArea()*1e4, 
                                     energy, sourceDir, zAxis, xAxis))
-      ) {
-// Turn off SAA for DC1.
-//         && !spacecraft->inSaa(time) ) {
+        && !spacecraft->inSaa(time) ) {
 
       astro::SkyDir appDir 
          = respPtr->psf()->appDir(energy, sourceDir, zAxis, xAxis);
