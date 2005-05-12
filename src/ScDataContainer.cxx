@@ -3,7 +3,7 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.28 2004/10/29 21:17:25 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.29 2005/05/08 21:15:49 jchiang Exp $
  */
 
 #include <sstream>
@@ -104,6 +104,9 @@ void ScDataContainer::writeScData() {
          row["ra_zenith"].set(sc->raZenith());
          row["dec_zenith"].set(sc->decZenith());
          row["in_saa"].set(sc->inSaa());
+         if (sc->inSaa()) {
+            row["livetime"].set(0);
+         }
       }
       writeDateKeywords(my_table, start_time, stop_time);
       delete my_table;
