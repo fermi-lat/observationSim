@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed May 11 22:10:41 PDT 2005
+observationSim/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+set livetime to zero during saa
+    *
+------------------------------------------------------------
+User: jchiang  Wed May 11 22:10:41 PDT 2005
 observationSim/cmt
 
 Modified Files:
