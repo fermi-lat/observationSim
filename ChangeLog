@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed May 11 22:10:42 PDT 2005
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+set livetime to zero during saa
+    *
+------------------------------------------------------------
+User: jchiang  Wed May 11 22:10:42 PDT 2005
 observationSim/src
 
 Modified Files:
