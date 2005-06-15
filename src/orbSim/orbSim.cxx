@@ -3,7 +3,7 @@
  * @brief A prototype O1 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.8 2005/02/01 00:04:13 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.9 2005/03/08 03:41:15 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -60,7 +60,7 @@ private:
    void generateData();
 };
 
-st_app::StAppFactory<OrbSim> myAppFactory;
+st_app::StAppFactory<OrbSim> myAppFactory("gtorbsim");
 
 void OrbSim::run() {
    defineRockTypes();
@@ -135,8 +135,8 @@ void OrbSim::createSimulator() {
       astro::SkyDir dir(ra, dec);
 // GPS wants (l, b) for the rotation angles in pointing mode, but
 // they must be in radians!
-      GPS::instance()->rotateAngles(std::make_pair(dir.l()*M_PI/180., 
-                                                   dir.b()*M_PI/180.));
+      astro::GPS::instance()->rotateAngles(std::make_pair(dir.l()*M_PI/180., 
+                                                          dir.b()*M_PI/180.));
    }
 }
 

@@ -2,7 +2,7 @@
  * @file Simulator.h
  * @brief Declaration for Simulator class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.21 2004/12/02 23:48:14 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.22 2005/04/11 19:03:22 jchiang Exp $
  */
 
 #ifndef observationSim_Simulator_h
@@ -43,7 +43,7 @@ class ScDataContainer;
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.21 2004/12/02 23:48:14 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.22 2005/04/11 19:03:22 jchiang Exp $
  */
 
 class Simulator {
@@ -86,7 +86,7 @@ public:
 
    /// Set the pointing history file.
    void setPointingHistoryFile(const std::string &filename) {
-      m_fluxMgr->setRockType(GPS::HISTORY, 0);
+      m_fluxMgr->setRockType(astro::GPS::HISTORY, 0);
       m_fluxMgr->setPointingHistoryFile(filename);
       m_usePointingHistory = true;
    }   
