@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Jun 15 15:36:53 PDT 2005
+observationSim/src/orbSim
+
+Modified Files:
+	orbSim.cxx 
+Log Message:
+change GPS to astro::GPS; pass app names to StAppFactory; tagging v5r8p3
+    *
+------------------------------------------------------------
 User: jchiang  Wed Jun 15 15:36:52 PDT 2005
 observationSim/src/obsSim
 
