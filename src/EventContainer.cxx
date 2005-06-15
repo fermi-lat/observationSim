@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.59 2005/05/08 21:15:49 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.60 2005/05/08 21:37:38 jchiang Exp $
  */
 
 #include <cmath>
@@ -185,7 +185,7 @@ void EventContainer::setEventId(const std::string & name) {
 }
 
 astro::SkyDir EventContainer::ScZenith(double time) const {
-   GPS *gps = GPS::instance();
+   astro::GPS * gps = astro::GPS::instance();
    gps->getPointingCharacteristics(time);
    double lon_zenith = gps->RAZenith()*M_PI/180.;
    double lat_zenith = gps->DECZenith()*M_PI/180.;

@@ -4,7 +4,7 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.40 2005/01/05 03:18:41 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.41 2005/04/11 19:03:23 jchiang Exp $
  */
 
 #include <algorithm>
@@ -69,7 +69,7 @@ void Simulator::init(const std::vector<std::string> &sourceNames,
    m_fluxMgr->setExpansion(1.);    // is this already the default?
 
 // Set the start of the simulation time in GPS:
-   GPS::instance()->time(m_absTime);
+   astro::GPS::instance()->time(m_absTime);
 
    if (pointingHistory != "none" && pointingHistory != "") {
 // Use pointing history file.
