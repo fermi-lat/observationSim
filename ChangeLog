@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Aug 16 10:51:09 PDT 2005
+observationSim/pfiles
+
+Modified Files:
+	gtobssim.par 
+Log Message:
+do not write TSTART and TSTOP in PHDU
+    *
+------------------------------------------------------------
 User: jchiang  Tue Aug 16 10:51:08 PDT 2005
 observationSim/observationSim
 
