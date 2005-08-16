@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Aug 16 10:51:08 PDT 2005
+observationSim/observationSim
+
+Modified Files:
+	ContainerBase.h 
+Log Message:
+do not write TSTART and TSTOP in PHDU
+    *
+------------------------------------------------------------
 User: jchiang  Tue Aug 16 10:51:07 PDT 2005
 observationSim/data
 
