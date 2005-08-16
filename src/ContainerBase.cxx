@@ -2,7 +2,7 @@
  * @file ContainerBase.cxx
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ContainerBase.cxx,v 1.5 2005/04/06 20:38:57 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ContainerBase.cxx,v 1.6 2005/04/13 06:38:02 jchiang Exp $
  */
 
 #include <ctime>
@@ -35,7 +35,8 @@ std::string ContainerBase::outputFileName() const {
 
 void ContainerBase::writeDateKeywords(tip::Extension * table, 
                                       double start_time, 
-                                      double stop_time) {
+                                      double stop_time,
+                                      bool extension) {
    static double secsPerDay(8.64e4);
    tip::Header & header = table->getHeader();
    astro::JulianDate current_time = currentTime();
@@ -51,10 +52,13 @@ void ContainerBase::writeDateKeywords(tip::Extension * table,
       header["DATE-END"].set(date_stop.getGregorianDate());
    } catch (...) {
    }
-   try {
-      header["TSTART"].set(start_time);
-      header["TSTOP"].set(stop_time);
-   } catch (...) {
+   if (extension) {
+// Do not write these keywords if this is the primary HDU.
+      try {
+         header["TSTART"].set(start_time);
+         header["TSTOP"].set(stop_time);
+      } catch (...) {
+      }
    }
 }
 
