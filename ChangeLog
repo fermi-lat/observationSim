@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Aug 16 14:08:59 PDT 2005
+observationSim/data
+
+Modified Files:
+	ft1.tpl ft2.tpl 
+Log Message:
+use new templates, except retain Ext1 extension name in ft2.tpl
+    *
+------------------------------------------------------------
 User: jchiang  Tue Aug 16 10:51:10 PDT 2005
 observationSim/src
 
