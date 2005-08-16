@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Aug 16 10:51:07 PDT 2005
+observationSim/data
+
+Modified Files:
+	ft1.tpl 
+Log Message:
+do not write TSTART and TSTOP in PHDU
+    *
+------------------------------------------------------------
 User: jchiang  Wed Jun 15 17:33:11 PDT 2005
 observationSim/pfiles
 
