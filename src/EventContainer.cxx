@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.60 2005/05/08 21:37:38 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.61 2005/06/15 22:36:51 jchiang Exp $
  */
 
 #include <cmath>
@@ -279,7 +279,7 @@ void EventContainer::writeEvents() {
 
 // Take care of date keywords in primary header.
    tip::Image * phdu = tip::IFileSvc::instance().editImage(ft1File, "");
-   writeDateKeywords(phdu, m_startTime, stop_time);
+   writeDateKeywords(phdu, m_startTime, stop_time, false);
    delete phdu;
 
    st_facilities::FitsUtil::writeChecksums(ft1File);
