@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Aug 16 21:02:34 PDT 2005
+observationSim/observationSim
+
+Modified Files:
+	EventContainer.h 
+Log Message:
+write GTIs and date-obs keywords to reflect artificial partitioning of event files; remove genericSources doxygen; tagging v5r9
+    *
+------------------------------------------------------------
+User: jchiang  Tue Aug 16 21:02:34 PDT 2005
 observationSim/doc
 
 Modified Files:
