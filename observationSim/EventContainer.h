@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.26 2005/02/07 03:25:36 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.27 2005/04/27 21:08:40 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -41,7 +41,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.26 2005/02/07 03:25:36 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.27 2005/04/27 21:08:40 jchiang Exp $
  */
 
 class EventContainer : public ContainerBase {
@@ -126,7 +126,7 @@ private:
    double earthAzimuthAngle(double ra, double dec, double time) const;
 
    /// A routine to unpack and write the Event buffer to an FT1 file.
-   void writeEvents();
+   void writeEvents(double obsStopTime=-1.);
 
 };
 

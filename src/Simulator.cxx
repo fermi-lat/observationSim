@@ -4,7 +4,7 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.41 2005/04/11 19:03:23 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.42 2005/06/15 22:36:51 jchiang Exp $
  */
 
 #include <algorithm>
@@ -87,12 +87,11 @@ void Simulator::init(const std::vector<std::string> &sourceNames,
    } else {
 // Use the default rocking strategy.
       setRocking();
-
    }
 
 // Set the LAT sphere cross-sectional area.
    try {
-      EventSource *defaultSource = m_fluxMgr->source("default");
+      EventSource * defaultSource = m_fluxMgr->source("default");
       defaultSource->totalArea(totalArea);
       delete defaultSource;
    } catch(...) {
