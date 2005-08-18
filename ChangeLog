@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Aug 18 09:51:48 PDT 2005
+observationSim/data
+
+Modified Files:
+	ft1.tpl 
+Log Message:
+remove extraneous and incorrect DSS keywords from template file
+    *
+------------------------------------------------------------
 TAG
 Tag name: v5r9, operation: add
 Package: observationSim
