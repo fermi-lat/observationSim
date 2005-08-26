@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Fri Aug 26 08:55:53 PDT 2005
+observationSim/src/orbSim
+
+Modified Files:
+	orbSim.cxx 
+Log Message:
+set livetime frac through Spacecraft class
+    *
+------------------------------------------------------------
+User: jchiang  Fri Aug 26 08:55:53 PDT 2005
 observationSim/src/obsSim
 
 Modified Files:
