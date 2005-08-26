@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Aug 25 22:28:13 PDT 2005
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+handle livetime fractions
+    *
+------------------------------------------------------------
 User: jchiang  Thu Aug 25 22:28:12 PDT 2005
 observationSim/src
 
