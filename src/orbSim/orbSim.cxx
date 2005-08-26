@@ -3,7 +3,7 @@
  * @brief A prototype O1 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.10 2005/06/15 22:36:53 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.11 2005/08/26 05:28:13 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -145,9 +145,9 @@ void OrbSim::generateData() {
    std::string prefix = m_pars["outfile_prefix"];
    observationSim::EventContainer events(prefix + "_events", 0, nMaxRows);
    observationSim::ScDataContainer scData(prefix + "_scData", nMaxRows);
-   double frac = m_pars["livetime_frac"];
-   scData.setLivetimeFrac(frac);
    observationSim::Spacecraft * spacecraft = new observationSim::LatSc();
+   double frac = m_pars["livetime_frac"];
+   spacecraft->setLivetimeFrac(frac);
    if (observationSim::print_output()) {
       std::cout << "Generating pointing history for a simulation time of "
                 << m_count << " seconds...." << std::endl;
