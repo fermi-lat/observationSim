@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Aug 26 08:55:52 PDT 2005
+observationSim/src
+
+Modified Files:
+	LatSc.cxx LatSc.h ScDataContainer.cxx 
+Log Message:
+set livetime frac through Spacecraft class
+    *
+------------------------------------------------------------
 User: jchiang  Fri Aug 26 08:55:51 PDT 2005
 observationSim/pfiles
 
