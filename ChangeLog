@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Aug 25 22:28:12 PDT 2005
+observationSim/pfiles
+
+Modified Files:
+	gtobssim.par gtorbsim.par 
+Log Message:
+handle livetime fractions
+    *
+------------------------------------------------------------
+User: jchiang  Thu Aug 25 22:28:12 PDT 2005
 observationSim/observationSim
 
 Modified Files:
