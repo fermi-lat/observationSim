@@ -3,7 +3,7 @@
  * @brief Declaration of Spacecraft base class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Spacecraft.h,v 1.4 2004/09/27 19:17:00 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Spacecraft.h,v 1.5 2005/05/08 21:15:49 jchiang Exp $
  */
 
 #ifndef observationSim_Spacecraft_h
@@ -23,7 +23,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Spacecraft.h,v 1.4 2004/09/27 19:17:00 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Spacecraft.h,v 1.5 2005/05/08 21:15:49 jchiang Exp $
  */
 
 class Spacecraft {
@@ -55,6 +55,10 @@ public:
                               std::vector<double> & scPosition) = 0;
 
    virtual void getZenith(double time, double & ra, double & dec) = 0;
+
+   virtual double livetimeFrac(double) const {
+      return 1;
+   }
 
 };
 
