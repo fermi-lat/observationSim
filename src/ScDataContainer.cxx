@@ -3,7 +3,7 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.30 2005/05/12 05:10:42 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.31 2005/08/26 05:28:12 jchiang Exp $
  */
 
 #include <sstream>
@@ -58,12 +58,14 @@ void ScDataContainer::addScData(double time, Spacecraft * spacecraft,
       spacecraft->getScPosition(time, scPosition);
       double raZenith, decZenith;
       spacecraft->getZenith(time, raZenith, decZenith);
+      double livetimeFrac = spacecraft->livetimeFrac(time);
 
       m_scData.push_back(ScData(time, zAxis.ra(), zAxis.dec(), 
                                 spacecraft->EarthLon(time), 
                                 spacecraft->EarthLat(time),
                                 zAxis, xAxis, spacecraft->inSaa(time),
-                                scPosition, raZenith, decZenith));
+                                scPosition, raZenith, decZenith,
+                                livetimeFrac));
    } catch (std::exception & eObj) {
       if (!st_facilities::Util::expectedException(eObj,"Time out of Range!")) {
          throw;
@@ -95,8 +97,8 @@ void ScDataContainer::writeScData() {
             row["stop"].set(stop_time);
             interval = stop_time - sc->time();
          }
-         row["livetime"].set(m_livetime_frac*interval);
-         row["deadtime"].set(interval*(1. - m_livetime_frac));
+         row["livetime"].set(sc->livetimeFrac()*interval);
+         row["deadtime"].set(interval*(1. - sc->livetimeFrac()));
          row["lat_geo"].set(sc->lat());
          row["lon_geo"].set(sc->lon());
          row["ra_scz"].set(sc->zAxis().ra());

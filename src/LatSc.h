@@ -3,7 +3,7 @@
  * @brief Declaration for the LAT spacecraft object.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.h,v 1.6 2005/05/08 21:15:49 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.h,v 1.7 2005/08/26 05:28:12 jchiang Exp $
  */
 
 #ifndef observationSim_LatSc_h
@@ -21,7 +21,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.h,v 1.6 2005/05/08 21:15:49 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.h,v 1.7 2005/08/26 05:28:12 jchiang Exp $
  */
 
 class LatSc : public Spacecraft {
@@ -47,6 +47,8 @@ public:
    virtual void getZenith(double time, double & ra, double & dec);
 
    virtual double livetimeFrac(double time) const;
+
+   virtual void setLivetimeFrac(double frac);
 
 };
 

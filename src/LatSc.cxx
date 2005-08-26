@@ -3,7 +3,7 @@
  * @brief Implementation of LatSc class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.cxx,v 1.16 2005/06/15 22:36:51 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.cxx,v 1.17 2005/08/26 05:28:12 jchiang Exp $
  */
 
 #include "astro/EarthCoordinate.h"
@@ -73,6 +73,10 @@ void LatSc::getZenith(double time, double & ra, double & dec) {
 double LatSc::livetimeFrac(double time) const {
    astro::GPS::instance()->getPointingCharacteristics(time);
    return astro::GPS::instance()->livetime_frac();
+}
+
+void LatSc::setLivetimeFrac(double frac) {
+   astro::GPS::instance()->setLivetime_frac(frac);
 }
 
 } // namespace observationSim

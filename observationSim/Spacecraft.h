@@ -3,7 +3,7 @@
  * @brief Declaration of Spacecraft base class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Spacecraft.h,v 1.5 2005/05/08 21:15:49 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Spacecraft.h,v 1.6 2005/08/26 05:28:12 jchiang Exp $
  */
 
 #ifndef observationSim_Spacecraft_h
@@ -23,7 +23,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Spacecraft.h,v 1.5 2005/05/08 21:15:49 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Spacecraft.h,v 1.6 2005/08/26 05:28:12 jchiang Exp $
  */
 
 class Spacecraft {
@@ -59,6 +59,8 @@ public:
    virtual double livetimeFrac(double) const {
       return 1;
    }
+
+   virtual void setLivetimeFrac(double) {};
 
 };
 
