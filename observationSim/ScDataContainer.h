@@ -2,7 +2,7 @@
  * @file ScDataContainer.h
  * @brief Declaration for ScDataContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.14 2004/09/15 02:00:37 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.15 2004/10/29 21:17:24 jchiang Exp $
  */
 
 #ifndef observationSim_ScDataContainer_h
@@ -28,7 +28,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.14 2004/09/15 02:00:37 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.15 2004/10/29 21:17:24 jchiang Exp $
  */
 
 class ScDataContainer : public ContainerBase {
@@ -40,7 +40,8 @@ public:
    ///        buffer before a FITS file is written.
    ScDataContainer(const std::string &filename, 
                    int maxNumEntries=20000, bool writeData=true) : 
-      ContainerBase(filename, maxNumEntries), m_writeData(writeData) {
+      ContainerBase(filename, maxNumEntries), m_writeData(writeData),
+      m_livetime_frac(1.) {
       init();
    }
 
@@ -58,7 +59,19 @@ public:
    void addScData(double time, Spacecraft *spacecraft, bool flush=false);
 
    /// The simulation time of the most recently added entry.
-   double simTime() {return m_scData[m_scData.size()-1].time();}
+   double simTime() {
+      return m_scData[m_scData.size()-1].time();
+   }
+
+   void setLivetimeFrac(double frac) {
+      if (frac < 0) {
+         m_livetime_frac = 0;
+      } else if (frac > 1) {
+         m_livetime_frac = 1.;
+      } else {
+         m_livetime_frac = frac;
+      }
+   }
 
 private:
 
@@ -67,6 +80,9 @@ private:
 
    /// Flag if ScData is to be written out to FT2 files.
    bool m_writeData;
+
+   /// Livetime fraction
+   double m_livetime_frac;
 
    /// This routine contains the constructor implementation.
    void init();
