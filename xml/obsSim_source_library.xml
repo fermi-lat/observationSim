@@ -1,4 +1,4 @@
-<!-- $Header: /nfs/slac/g/glast/ground/cvs/observationSim/xml/obsSim_source_library.xml,v 1.15 2004/11/30 18:17:42 jchiang Exp $
+<!-- $Header: /nfs/slac/g/glast/ground/cvs/observationSim/xml/obsSim_source_library.xml,v 1.16 2005/08/20 16:13:35 jchiang Exp $
 -->
 <!-- *********************************************************************** -->
 <source_library title="photons">
@@ -150,7 +150,7 @@
       </spectrum>
    </source>
 
-   <source name="PKS0528p134">
+   <source name="PKS0528p134" flux="0.0980184334659">
       <spectrum escale="MeV">
          <particle name="gamma">
             <power_law emin="20.0" emax="1000000.0" gamma="2.46"/>
