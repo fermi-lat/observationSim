@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.42 2005/08/26 05:28:13 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.43 2005/08/26 15:55:52 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -234,6 +234,7 @@ void ObsSim::createSimulator() {
 void ObsSim::generateData() {
    long nMaxRows = m_pars["max_numrows"];
    std::string prefix = m_pars["outfile_prefix"];
+   std::string ev_table = m_pars["evtable"];
    dataSubselector::Cuts * cuts = new dataSubselector::Cuts;
    cuts->addRangeCut("ENERGY", "MeV", m_pars["emin"], m_pars["emax"]);
    if (m_pars["use_acceptance_cone"]) {
@@ -247,12 +248,15 @@ void ObsSim::generateData() {
       double sim_time(m_pars["simulation_time"]);  // yes, this is BS.
       stop_time = start_time + sim_time;
    }
-   observationSim::EventContainer events(prefix + "_events", cuts, nMaxRows,
+   observationSim::EventContainer events(prefix + "_events", ev_table,
+                                         cuts, nMaxRows,
                                          start_time, stop_time);
    std::string pointingHistory = m_pars["scfile"];
+   std::string sc_table = m_pars["sctable"];
    bool writeScData = (pointingHistory == "" || pointingHistory == "none");
-   observationSim::ScDataContainer scData(prefix + "_scData", nMaxRows,
-                                          writeScData);
+   observationSim::ScDataContainer scData(prefix + "_scData", sc_table,
+                                          nMaxRows, writeScData);
+                                          
    observationSim::Spacecraft * spacecraft = new observationSim::LatSc();
    double frac = m_pars["livetime_frac"];
    spacecraft->setLivetimeFrac(frac);

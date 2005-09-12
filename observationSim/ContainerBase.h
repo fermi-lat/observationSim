@@ -3,7 +3,7 @@
  * @brief Base class for observationSim Event and ScData containers.
  * @author J. Chiang <jchiang@slac.stanford.edu>
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ContainerBase.h,v 1.2 2004/10/04 18:32:40 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ContainerBase.h,v 1.3 2005/08/16 17:51:08 jchiang Exp $
  */
 
 #ifndef observationSim_ContainerBase_h
@@ -22,20 +22,25 @@ namespace observationSim {
 /**
  * @class ContainerBase
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ContainerBase.h,v 1.2 2004/10/04 18:32:40 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ContainerBase.h,v 1.3 2005/08/16 17:51:08 jchiang Exp $
  */
 
 class ContainerBase {
 
 public:
    
-   ContainerBase(const std::string & filename, unsigned int maxNumEntries) 
-      : m_filename(filename), m_maxNumEntries(maxNumEntries), m_fileNum(0) {} 
+   ContainerBase(const std::string & filename, const std::string & tablename,
+                 unsigned int maxNumEntries) 
+      : m_filename(filename), m_tablename(tablename),
+        m_maxNumEntries(maxNumEntries), m_fileNum(0) {} 
 
 protected:
 
    /// Root name for the FITS binary table output files.
    std::string m_filename;
+
+   /// Extension name of FITS binary table
+   std::string m_tablename;
 
    /// The maximum number of rows to accumulate before the data are
    /// written to a FITS file and the data buffer is flushed.

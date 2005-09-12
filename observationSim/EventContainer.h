@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.27 2005/04/27 21:08:40 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.28 2005/08/17 04:02:34 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -41,7 +41,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.27 2005/04/27 21:08:40 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.28 2005/08/17 04:02:34 jchiang Exp $
  */
 
 class EventContainer : public ContainerBase {
@@ -51,12 +51,13 @@ public:
    /// @param filename The root name of the output FITS file.
    /// @param maxNumEvents The maximum size of the Event buffer before
    ///        a FITS file is written.
-   EventContainer(const std::string &filename, 
+   EventContainer(const std::string & filename, 
+                  const std::string & tablename,
                   dataSubselector::Cuts * cuts=0,
                   unsigned int maxNumEvents=20000,
                   double startTime=0, double stopTime=0) : 
-      ContainerBase(filename, maxNumEvents), m_prob(1), m_cuts(cuts),
-      m_startTime(startTime), m_stopTime(stopTime) {
+      ContainerBase(filename, tablename, maxNumEvents), m_prob(1), 
+      m_cuts(cuts), m_startTime(startTime), m_stopTime(stopTime) {
       init();
    }
 

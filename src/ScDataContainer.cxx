@@ -3,7 +3,7 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.31 2005/08/26 05:28:12 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.32 2005/08/26 15:55:52 jchiang Exp $
  */
 
 #include <sstream>
@@ -79,7 +79,7 @@ void ScDataContainer::writeScData() {
       std::string ft2File = outputFileName();
       tip::IFileSvc::instance().createFile(ft2File, m_ftTemplate);
       tip::Table * my_table = 
-         tip::IFileSvc::instance().editTable(ft2File, "Ext1");
+         tip::IFileSvc::instance().editTable(ft2File, m_tablename);
       int npts = m_scData.size();
       my_table->setNumRecords(npts);
       tip::Table::Iterator it = my_table->begin();
