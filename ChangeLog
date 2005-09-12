@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Sep 12 15:18:38 PDT 2005
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+use sctable, evtable instead of hard wired values
+    *
+------------------------------------------------------------
 User: jchiang  Mon Sep 12 15:18:37 PDT 2005
 observationSim
 
