@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.43 2005/08/26 15:55:52 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.44 2005/09/12 22:18:43 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -165,7 +165,7 @@ void ObsSim::setXmlFiles() {
          m_xmlSourceFiles.push_back(xmlFiles);
       } else {
          std::vector<std::string> files;
-         Util::readLines(xmlFiles, files);
+         Util::readLines(xmlFiles, files, "#", true);
          for (unsigned int i=0; i < files.size(); i++) {
             facilities::Util::expandEnvVar(&files[i]);
             if (Util::fileExists(files[i])) {
@@ -186,7 +186,7 @@ void ObsSim::setXmlFiles() {
 void ObsSim::readSrcNames() {
    std::string srcListFile = m_pars["source_list"];
    if (Util::fileExists(srcListFile)) { 
-      Util::readLines(srcListFile, m_srcNames);
+      Util::readLines(srcListFile, m_srcNames, "#", true);
       if (m_srcNames.size() == 0) {
          throw std::invalid_argument("No sources given in " + srcListFile);
       }
@@ -224,7 +224,7 @@ void ObsSim::createSimulator() {
    double maxSimTime = 3.155e8;
    try {
       maxSimTime = m_pars["max_simulation_time"];
-   } catch (std::exception & eObj) {
+   } catch (std::exception &) {
    }
    m_simulator = new observationSim::Simulator(m_srcNames, m_xmlSourceFiles, 
                                                totalArea, startTime, 
