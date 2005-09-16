@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Sep 15 23:31:11 PDT 2005
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+set table name
+    *
+------------------------------------------------------------
 TAG
 Tag name: v5r9p4, operation: add
 Package: observationSim
