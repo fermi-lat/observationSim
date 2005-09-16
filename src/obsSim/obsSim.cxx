@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.44 2005/09/12 22:18:43 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.45 2005/09/14 18:05:33 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -20,6 +20,7 @@
 
 #include "facilities/Util.h"
 
+#include "astro/GPS.h"
 #include "astro/SkyDir.h"
 
 #include "irfInterface/IrfsFactory.h"
@@ -253,6 +254,7 @@ void ObsSim::generateData() {
                                          start_time, stop_time);
    std::string pointingHistory = m_pars["scfile"];
    std::string sc_table = m_pars["sctable"];
+   astro::GPS::instance()->setScTableName(sc_table);
    bool writeScData = (pointingHistory == "" || pointingHistory == "none");
    observationSim::ScDataContainer scData(prefix + "_scData", sc_table,
                                           nMaxRows, writeScData);
