@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Oct 21 19:30:54 PDT 2005
+observationSim/xml
+
+Modified Files:
+	obsSim_source_library.xml 
+Log Message:
+add galprop model to standard set of sources
+    *
+------------------------------------------------------------
 TAG
 Tag name: v5r9p5, operation: add
 Package: observationSim
