@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Oct 26 11:41:40 PDT 2005
+observationSim/src
+
+Modified Files:
+	Simulator.cxx 
+Log Message:
+rely on flux to insert the first entry in the pointing history file
+    *
+------------------------------------------------------------
 User: jchiang  Wed Oct 26 11:41:00 PDT 2005
 observationSim/xml
 
