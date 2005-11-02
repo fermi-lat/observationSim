@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Nov  2 15:00:10 PST 2005
+observationSim/pfiles
+
+Modified Files:
+	gtorbsim.par 
+Log Message:
+set correct allowed range for Declination
+    *
+------------------------------------------------------------
 User: jchiang  Wed Oct 26 11:41:40 PDT 2005
 observationSim/src
 
