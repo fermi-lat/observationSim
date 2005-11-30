@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Nov 30 13:57:25 PST 2005
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx ScDataContainer.cxx 
+Log Message:
+use fitsGen template files; use .txt extension rather than .dat extension
+    *
+------------------------------------------------------------
 User: jchiang  Wed Nov 30 13:57:24 PST 2005
 observationSim/data
 
