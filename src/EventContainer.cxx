@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.64 2005/08/26 05:28:12 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.65 2005/09/12 22:18:42 jchiang Exp $
  */
 
 #include <cmath>
@@ -106,12 +106,12 @@ EventContainer::~EventContainer() {
 void EventContainer::init() {
    m_events.clear();
    
-   char * root_path = std::getenv("OBSERVATIONSIMROOT");
+   char * root_path = std::getenv("FITSGENROOT");
    if (root_path != 0) {
       m_ftTemplate = std::string(root_path) + "/data/ft1.tpl";
    } else {
-      throw std::runtime_error(std::string("Environment variable ")
-                               + "OBSERVATIONSIMROOT not set.");
+      throw std::runtime_error("Environment variable "
+                               "FITSGENROOT not set.");
    }
 }
 

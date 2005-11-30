@@ -3,7 +3,7 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.32 2005/08/26 15:55:52 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.33 2005/09/12 22:18:42 jchiang Exp $
  */
 
 #include <sstream>
@@ -34,12 +34,12 @@ ScDataContainer::~ScDataContainer() {
 void ScDataContainer::init() {
    m_scData.clear();
 
-   char * root_path = std::getenv("OBSERVATIONSIMROOT");
+   char * root_path = std::getenv("FITSGENROOT");
    if (root_path != 0) {
       m_ftTemplate = std::string(root_path) + "/data/ft2.tpl";
    } else {
-      throw std::runtime_error(std::string("Environment variable ") 
-                               + "OBSERVATIONSIMROOT not set.");
+      throw std::runtime_error("Environment variable "
+                               "FITSGENROOT not set.");
    }
 }
 

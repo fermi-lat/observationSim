@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.45 2005/09/14 18:05:33 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.46 2005/09/16 06:31:11 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -301,7 +301,7 @@ saveEventIds(const observationSim::EventContainer & events) const {
    }
    
    std::string event_id_file = m_pars["outfile_prefix"];
-   event_id_file += "_srcIds.dat";
+   event_id_file += "_srcIds.txt";
    std::ofstream outputFile(event_id_file.c_str());
    for (unsigned int i = 0; i < nsrcs; i++) {
       outputFile << i << "  "
