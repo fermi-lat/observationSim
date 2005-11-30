@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Nov 30 13:57:24 PST 2005
+observationSim/data
+
+Removed Files:
+	ft1.tpl ft2.tpl obsSim.par 
+Log Message:
+use fitsGen template files; use .txt extension rather than .dat extension
+    *
+------------------------------------------------------------
 User: jchiang  Wed Nov 30 13:57:23 PST 2005
 observationSim/cmt
 
