@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Nov 30 13:57:23 PST 2005
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+use fitsGen template files; use .txt extension rather than .dat extension
+    *
+------------------------------------------------------------
 TAG
 Tag name: v5r9p6, operation: add
 Package: observationSim
