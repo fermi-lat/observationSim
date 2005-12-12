@@ -1,4 +1,4 @@
-<!-- $Header: /nfs/slac/g/glast/ground/cvs/observationSim/xml/obsSim_source_library.xml,v 1.18 2005/10/22 02:30:54 jchiang Exp $
+<!-- $Header: /nfs/slac/g/glast/ground/cvs/observationSim/xml/obsSim_source_library.xml,v 1.19 2005/10/26 18:40:59 jchiang Exp $
 -->
 <!-- *********************************************************************** -->
 <source_library title="photons">
@@ -157,7 +157,7 @@
    <source name="Geminga_Pulsar">
       <spectrum escale="MeV">
          <SpectrumClass name="Pulsar"
-          params="0.133,1.66,0.2371,1.098e-14,0,$(OBSERVATIONSIMROOT)/data/GemingaTemplate.dat,0,20,2e5"/>
+          params="0.102,1.66,0.2371,1.098e-14,0,$(OBSERVATIONSIMROOT)/data/GemingaTemplate.dat,0,20,2e5"/>
          <celestial_dir ra="98.49" dec="17.86"/>
       </spectrum>
    </source>
