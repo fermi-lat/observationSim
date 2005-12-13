@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.66 2005/11/30 21:57:25 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.67 2005/12/12 02:00:28 jchiang Exp $
  */
 
 #include <cmath>
@@ -20,11 +20,6 @@
 #include "CLHEP/Random/JamesRandom.h"
 #include "CLHEP/Random/RandFlat.h"
 #include "CLHEP/Geometry/Vector3D.h"
-
-#include "tip/IFileSvc.h"
-#include "tip/Image.h"
-#include "tip/Table.h"
-#include "tip/Header.h"
 
 #include "astro/SkyDir.h"
 #include "astro/GPS.h"
@@ -241,8 +236,8 @@ void EventContainer::writeEvents(double obsStopTime) {
       ft1["phi"].set(evt->phi());
       ft1["zenith_angle"].set(evt->zenAngle());
       ft1["earth_azimuth_angle"].set(earthAzimuthAngle(ra, dec, time));
-      ft1["event_class"].set(evt->convLayer());
-      ft1["conversion_type"].set(evt->convLayer());      
+      ft1["event_class"].set(evt->eventType());
+      ft1["conversion_type"].set(evt->eventType());
       ft1["mc_src_id"].set(evt->eventId());
    }
 
