@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Dec 12 21:43:51 PST 2005
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+use v* in req file; tagging v6r0p1
+    *
+------------------------------------------------------------
 TAG
 Tag name: v6, operation: add
 Package: observationSim
