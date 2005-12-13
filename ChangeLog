@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Dec 12 21:30:19 PST 2005
+observationSim/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+use fitsGen::Ft[12]File classes, new ft1 def; tagging v6
+    *
+------------------------------------------------------------
+User: jchiang  Mon Dec 12 21:30:19 PST 2005
 observationSim/cmt
 
 Modified Files:
