@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Dec 13 17:36:42 PST 2005
+observationSim/pfiles
+
+Modified Files:
+	gtobssim.par 
+Log Message:
+include start_date parameter
+    *
+------------------------------------------------------------
 User: jchiang  Tue Dec 13 17:36:40 PST 2005
 observationSim/observationSim
 
