@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Dec 13 17:36:40 PST 2005
+observationSim/observationSim
+
+Modified Files:
+	Simulator.h 
+Log Message:
+include start_date parameter
+    *
+------------------------------------------------------------
 TAG
 Tag name: v6r0p1, operation: add
 Package: observationSim
