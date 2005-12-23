@@ -3,7 +3,7 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.34 2005/11/30 21:57:25 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.35 2005/12/13 05:30:19 jchiang Exp $
  */
 
 #include <sstream>
@@ -31,14 +31,6 @@ ScDataContainer::~ScDataContainer() {
 
 void ScDataContainer::init() {
    m_scData.clear();
-
-   char * root_path = std::getenv("FITSGENROOT");
-   if (root_path != 0) {
-      m_ftTemplate = std::string(root_path) + "/data/ft2.tpl";
-   } else {
-      throw std::runtime_error("Environment variable "
-                               "FITSGENROOT not set.");
-   }
 }
 
 void ScDataContainer::addScData(EventSource * event, Spacecraft * spacecraft,
@@ -77,7 +69,7 @@ void ScDataContainer::writeScData() {
       std::string ft2File = outputFileName();
       long npts(m_scData.size());
 
-      fitsGen::Ft2File ft2(ft2File, npts);
+      fitsGen::Ft2File ft2(ft2File, npts, m_tablename);
 
       double start_time = m_scData.begin()->time();
       double stop_time = 2.*m_scData[npts-1].time() - m_scData[npts-2].time();
