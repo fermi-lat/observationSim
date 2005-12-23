@@ -3,7 +3,7 @@
  * @brief Base class for observationSim Event and ScData containers.
  * @author J. Chiang <jchiang@slac.stanford.edu>
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ContainerBase.h,v 1.3 2005/08/16 17:51:08 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ContainerBase.h,v 1.4 2005/09/12 22:18:40 jchiang Exp $
  */
 
 #ifndef observationSim_ContainerBase_h
@@ -22,7 +22,7 @@ namespace observationSim {
 /**
  * @class ContainerBase
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ContainerBase.h,v 1.3 2005/08/16 17:51:08 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ContainerBase.h,v 1.4 2005/09/12 22:18:40 jchiang Exp $
  */
 
 class ContainerBase {
@@ -50,9 +50,6 @@ protected:
    /// number is formatted appropriately and appended to the root
    /// filename given in the constructor.
    long m_fileNum;
-
-   /// Name of the FT1/2 template file.
-   std::string m_ftTemplate;
 
    /// Return an output filename, based on the root name, m_filename,
    /// and the counter index, m_fileNum.
