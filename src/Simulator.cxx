@@ -4,7 +4,7 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.44 2005/10/26 18:41:40 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.45 2005/12/14 01:36:43 jchiang Exp $
  */
 
 #include <algorithm>
@@ -132,25 +132,27 @@ void Simulator::init(const std::vector<std::string> &sourceNames,
       exit(-1);
    }
 
+   if (pointingHistory == "none" || pointingHistory == "") {
 // Add a "timetick30s" source to the m_source object.
-   EventSource *clock;
-   try {
-      clock = m_fluxMgr->source("obsSim_timetick30s");
-   } catch(...) {
-      std::cerr << "Simulator::Simulator: \n"
-                << "Failed to create a obsSim_timetick30s source." 
-                << std::endl;
-      listSources();
-      exit(-1);
-   }
-   try {
-      m_source->addSource(clock);
-   } catch(...) {
-      std::cerr << "Failed to add a timetick30s source to the "
-                << "CompositeSource object."
-                << std::endl;
-      listSources();
-      exit(-1);
+      EventSource *clock;
+      try {
+         clock = m_fluxMgr->source("obsSim_timetick30s");
+      } catch(...) {
+         std::cerr << "Simulator::Simulator: \n"
+                   << "Failed to create a obsSim_timetick30s source." 
+                   << std::endl;
+         listSources();
+         exit(-1);
+      }
+      try {
+         m_source->addSource(clock);
+      } catch(...) {
+         std::cerr << "Failed to add a timetick30s source to the "
+                   << "CompositeSource object."
+                   << std::endl;
+         listSources();
+         exit(-1);
+      }
    }
 }
 
