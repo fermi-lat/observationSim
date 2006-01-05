@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Jan  5 15:24:34 PST 2006
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+do not use timetick30s source is pointing history file is used; tagging v6r1p2
+    *
+------------------------------------------------------------
 TAG
 Tag name: v6r1p1, operation: add
 Package: observationSim
