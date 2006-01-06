@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Jan  6 14:46:32 PST 2006
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx 
+Log Message:
+fix offset problem for DATE keywords in FT1
+    *
+------------------------------------------------------------
 TAG
 Tag name: v6r1p2, operation: add
 Package: observationSim
