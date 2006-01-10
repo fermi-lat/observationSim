@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Jan  9 16:39:33 PST 2006
+observationSim/xml
+
+Modified Files:
+	obsSim_source_library.xml 
+Log Message:
+update to use current diffuse model files in EXTFILESSYS
+    *
+------------------------------------------------------------
 TAG
 Tag name: v6r1p3, operation: add
 Package: observationSim
