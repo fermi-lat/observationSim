@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sat Jan 28 10:49:15 PST 2006
+observationSim/src
+
+Modified Files:
+	Simulator.cxx 
+Log Message:
+handle new exception for event times past the end of the pointing history file
+    *
+------------------------------------------------------------
 User: jchiang  Sat Jan 28 10:49:13 PST 2006
 observationSim/pfiles
 
