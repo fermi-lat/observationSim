@@ -4,7 +4,7 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.45 2005/12/14 01:36:43 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.46 2006/01/05 23:24:36 jchiang Exp $
  */
 
 #include <algorithm>
@@ -249,7 +249,9 @@ void Simulator::makeEvents(EventContainer &events,
          }
       } // while (!done())
    } catch (std::exception & eObj) {
-      if (!st_facilities::Util::expectedException(eObj,"Time out of Range!")
+      if ( (!st_facilities::Util::expectedException(eObj,"Time out of Range!")
+            && !st_facilities::Util::expectedException(eObj,
+               "time is beyond end of history file"))
 // This latter check is an ugly kluge necessary because one does not (yet)
 // have access to the start and stop times of the pointing history via
 // astro's GPS:
