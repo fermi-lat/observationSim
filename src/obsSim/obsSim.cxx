@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.50 2006/01/29 20:59:03 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.51 2006/01/29 21:19:06 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -63,7 +63,7 @@ public:
       }
    }
    virtual void run();
-   virtual void banner() const {}
+   virtual void banner() const;
 private:
    st_app::AppParGroup & m_pars;
    double m_count;
@@ -87,6 +87,15 @@ private:
 };
 
 st_app::StAppFactory<ObsSim> myAppFactory("gtobssim");
+
+std::string ObsSim::s_cvs_id("$Name:  $");
+
+void ObsSim::banner() const {
+   int verbosity = m_pars["chatter"];
+   if (verbosity > 2) {
+      st_app::StApp::banner();
+   }
+}
 
 void ObsSim::run() {
    promptForParameters();
