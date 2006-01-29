@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sun Jan 29 13:33:37 PST 2006
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+add banner reimp; define s_cvs_id
+    *
+------------------------------------------------------------
 User: jchiang  Sun Jan 29 13:19:07 PST 2006
 observationSim/src/orbSim
 
