@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.48 2005/12/14 01:36:44 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.49 2005/12/23 19:53:18 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -49,6 +49,7 @@ class ObsSim : public st_app::StApp {
 public:
    ObsSim() : st_app::StApp(), m_pars(st_app::StApp::getParGroup("gtobssim")),
               m_simulator(0) {
+      setVersion(s_cvs_id);
    }
    virtual ~ObsSim() throw() {
       try {

@@ -3,7 +3,7 @@
  * @brief A prototype O1 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.12 2005/08/26 15:55:53 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.13 2005/09/12 22:18:44 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -35,6 +35,7 @@ class OrbSim : public st_app::StApp {
 public:
    OrbSim() : st_app::StApp(), m_pars(st_app::StApp::getParGroup("gtorbsim")),
               m_simulator(0) {
+      setVersion(s_cvs_id);
    }
    virtual ~OrbSim() throw() {
       try {
