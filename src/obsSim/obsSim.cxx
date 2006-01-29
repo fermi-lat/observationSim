@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.49 2005/12/23 19:53:18 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.50 2006/01/29 20:59:03 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -82,6 +82,8 @@ private:
    void createSimulator();
    void generateData();
    void saveEventIds(const observationSim::EventContainer & events) const;
+
+   static std::string s_cvs_id;
 };
 
 st_app::StAppFactory<ObsSim> myAppFactory("gtobssim");

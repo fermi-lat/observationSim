@@ -3,7 +3,7 @@
  * @brief A prototype O1 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.13 2005/09/12 22:18:44 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.14 2006/01/29 20:59:04 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -59,6 +59,8 @@ private:
    void checkOutputFiles();
    void createSimulator();
    void generateData();
+
+   static std::string s_cvs_id;
 };
 
 st_app::StAppFactory<OrbSim> myAppFactory("gtorbsim");
