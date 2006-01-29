@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sun Jan 29 13:19:06 PST 2006
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+declare s_cvs_id
+    *
+------------------------------------------------------------
 TAG
 Tag name: v6r1p4, operation: add
 Package: observationSim
