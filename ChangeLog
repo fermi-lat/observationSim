@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sun Jan 29 12:59:03 PST 2006
+observationSim/pfiles
+
+Modified Files:
+	gtobssim.par gtorbsim.par 
+Log Message:
+changes to enable gui, set version number
+    *
+------------------------------------------------------------
 User: jchiang  Sat Jan 28 10:49:15 PST 2006
 observationSim/src
 
