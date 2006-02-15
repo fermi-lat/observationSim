@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Feb 15 11:03:05 PST 2006
+observationSim/xml
+
+Modified Files:
+	obsSim_source_library.xml 
+Log Message:
+update galprop diffuse
+    *
+------------------------------------------------------------
 TAG
 Tag name: v6r1p5, operation: add
 Package: observationSim
