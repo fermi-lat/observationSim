@@ -3,7 +3,7 @@ version v6r1p6
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.149 2006/01/29 23:38:52 jchiang Exp $
+# $Id: requirements,v 1.150 2006/02/20 18:28:14 jchiang Exp $
 
 use STpolicy v*
 use cfitsio v* IExternal
@@ -27,8 +27,8 @@ apply_pattern ST_app_withDir name=gtorbsim dir=orbSim
 
 private
 
-use hoops v0r*
-use st_app v1r*
+use hoops v*
+use st_app v*
 
 macro observationSim_cppflags "" \
       Linux "-I ../src " \
