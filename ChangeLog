@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Feb 20 19:59:42 PST 2006
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+get rid of those **** version numbers
+    *
+------------------------------------------------------------
 TAG
 Tag name: v6r1p6, operation: add
 Package: observationSim
