@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Feb 27 15:37:14 PST 2006
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+prompt for start_date; tagging v6r1p8
+    *
+------------------------------------------------------------
 TAG
 Tag name: v6r1p7, operation: add
 Package: observationSim
