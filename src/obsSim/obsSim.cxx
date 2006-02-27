@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.51 2006/01/29 21:19:06 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.52 2006/01/29 21:33:36 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -119,6 +119,7 @@ void ObsSim::promptForParameters() {
    m_pars.Prompt("scfile");
    m_pars.Prompt("outfile_prefix");
    m_pars.Prompt("simulation_time");
+   m_pars.Prompt("start_date");
    m_pars.Prompt("use_acceptance_cone");
    if (m_pars["use_acceptance_cone"]) {
       m_pars.Prompt("ra");
