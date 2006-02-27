@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Feb 27 15:37:14 PST 2006
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+prompt for start_date; tagging v6r1p8
+    *
+------------------------------------------------------------
+User: jchiang  Mon Feb 27 15:37:14 PST 2006
 observationSim/doc
 
 Modified Files:
