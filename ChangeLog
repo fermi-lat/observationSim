@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Mar 13 09:14:31 PST 2006
+observationSim/src
+
+Modified Files:
+	Verbosity.cxx Verbosity.h 
+Log Message:
+use st_facilities/libStApiExports.h
+    *
+------------------------------------------------------------
 User: jchiang  Mon Mar 13 09:14:30 PST 2006
 observationSim/cmt
 
