@@ -3,7 +3,7 @@ version v6r1p8
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.152 2006/02/21 21:23:33 jchiang Exp $
+# $Id: requirements,v 1.153 2006/02/27 23:37:13 jchiang Exp $
 
 use STpolicy v*
 use cfitsio v* IExternal
@@ -20,8 +20,11 @@ use fitsGen v*
 
 macro_append ROOT_linkopts " $(ROOT_GUI_libs)"
 
-apply_pattern ST_library option=" -no_share "
+#apply_pattern ST_library option=" -no_share "
+apply_pattern ST_library
+apply_pattern shared_st_library
 apply_pattern ST_pfiles
+
 apply_pattern ST_app_withDir name=gtobssim dir=obsSim
 apply_pattern ST_app_withDir name=gtorbsim dir=orbSim
 
