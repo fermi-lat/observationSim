@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Mar 15 13:47:08 PST 2006
+observationSim/src
+
+Modified Files:
+	EgretSc.h 
+Log Message:
+implement undefined member functions
+    *
+------------------------------------------------------------
 User: jchiang  Mon Mar 13 09:14:31 PST 2006
 observationSim/src
 
