@@ -3,11 +3,13 @@
  * @brief Declaration for the EGRET spacecraft object.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EgretSc.h,v 1.4 2004/09/27 19:17:01 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EgretSc.h,v 1.5 2005/05/08 21:15:49 jchiang Exp $
  */
 
 #ifndef observationSim_EgretSc_h
 #define observationSim_EgretSc_h
+
+#include <stdexcept>
 
 #include "observationSim/Spacecraft.h"
 
@@ -24,7 +26,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EgretSc.h,v 1.4 2004/09/27 19:17:01 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EgretSc.h,v 1.5 2005/05/08 21:15:49 jchiang Exp $
  */
 
 class EgretSc : public Spacecraft {
@@ -54,9 +56,18 @@ public:
 
    virtual bool inSaa(double) {return m_inSaa;}
 
-   virtual void getScPosition(double time, std::vector<double> & scPosition);
+   virtual void getScPosition(double time, std::vector<double> & scPosition) {
+      (void)(time);
+      (void)(scPosition);
+      throw std::runtime_error("EgretSc::getScPosition: not implemented");
+   }
 
-   virtual void getZenith(double time, double & ra, double & dec);
+   virtual void getZenith(double time, double & ra, double & dec) {
+      (void)(time);
+      (void)(ra);
+      (void)(dec);
+      throw std::runtime_error("EgretSc::getZenith: not implemented");
+   }
 
 private:
 
