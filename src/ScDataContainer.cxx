@@ -3,13 +3,11 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.35 2005/12/13 05:30:19 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.36 2005/12/23 19:53:18 jchiang Exp $
  */
 
 #include <sstream>
 #include <stdexcept>
-
-#include "CLHEP/Geometry/Vector3D.h"
 
 #include "st_facilities/FitsUtil.h"
 #include "st_facilities/Util.h"

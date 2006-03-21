@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.69 2005/12/23 19:53:18 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.70 2006/01/06 22:46:32 jchiang Exp $
  */
 
 #include <cmath>
@@ -16,10 +16,12 @@
 #include <stdexcept>
 #include <utility>
 
-#include "CLHEP/Random/RandomEngine.h"
-#include "CLHEP/Random/JamesRandom.h"
 #include "CLHEP/Random/RandFlat.h"
 #include "CLHEP/Geometry/Vector3D.h"
+
+using CLHEP::RandFlat;
+using CLHEP::Hep3Vector;
+using CLHEP::HepRotation;
 
 #include "astro/SkyDir.h"
 #include "astro/GPS.h"

@@ -4,15 +4,13 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.46 2006/01/05 23:24:36 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.47 2006/01/28 18:49:15 jchiang Exp $
  */
 
 #include <algorithm>
 #include <fstream>
 #include <iostream>
 #include <string>
-
-#include "CLHEP/Geometry/Vector3D.h"
 
 #include "facilities/Util.h"
 
