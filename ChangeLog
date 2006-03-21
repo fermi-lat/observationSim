@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Mar 21 13:10:50 PST 2006
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+add using CLHEP:: where needed; tagging v6r2p1
+    *
+------------------------------------------------------------
 TAG
 Tag name: v6r2, operation: add
 Package: observationSim
