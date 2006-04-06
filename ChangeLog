@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Apr  6 09:16:41 PDT 2006
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+back off on shared lib build; tagging v6r2p2
+    *
+------------------------------------------------------------
 TAG
 Tag name: v6r2p1, operation: add
 Package: observationSim
