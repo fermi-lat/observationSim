@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Apr 14 09:01:20 PDT 2006
+observationSim/pfiles
+
+Modified Files:
+	gtorbsim.par 
+Log Message:
+remove evtable from gtorbsim parfile and set to EVENTS in gtorbsim app
+    *
+------------------------------------------------------------
 TAG
 Tag name: v6r2p2, operation: add
 Package: observationSim
