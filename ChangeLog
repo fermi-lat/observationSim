@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Apr 14 09:01:21 PDT 2006
+observationSim/src/orbSim
+
+Modified Files:
+	orbSim.cxx 
+Log Message:
+remove evtable from gtorbsim parfile and set to EVENTS in gtorbsim app
+    *
+------------------------------------------------------------
 User: jchiang  Fri Apr 14 09:01:20 PDT 2006
 observationSim/pfiles
 
