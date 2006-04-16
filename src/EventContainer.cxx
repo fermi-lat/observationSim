@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.70 2006/01/06 22:46:32 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.71 2006/03/21 21:10:50 jchiang Exp $
  */
 
 #include <cmath>
@@ -40,7 +40,7 @@ using CLHEP::HepRotation;
 
 #include "observationSim/EventContainer.h"
 #include "observationSim/Spacecraft.h"
-#include "Verbosity.h"
+//#include "Verbosity.h"
 
 namespace {
    double my_acos(double mu) {
