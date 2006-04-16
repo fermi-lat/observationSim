@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sun Apr 16 15:34:52 PDT 2006
+observationSim/observationSim
+
+Modified Files:
+	Simulator.h 
+Log Message:
+use st_stream
+    *
+------------------------------------------------------------
 User: jchiang  Fri Apr 14 09:01:21 PDT 2006
 observationSim/src/orbSim
 
