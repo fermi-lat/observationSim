@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Apr 20 08:16:21 PDT 2006
+observationSim/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+overcome flux package's inability to return an event time of zero; tagging v6r2p4
+    *
+------------------------------------------------------------
 User: jchiang  Thu Apr 20 08:16:20 PDT 2006
 observationSim/cmt
 
