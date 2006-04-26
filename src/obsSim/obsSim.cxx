@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.54 2006/04/16 22:34:53 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.55 2006/04/26 01:12:17 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -178,6 +178,7 @@ void ObsSim::createFactories() {
 }
 
 void ObsSim::setXmlFiles() {
+   m_xmlSourceFiles.clear();
 // observationSim::Simulator requires a specific "TimeCandle" source,
 // so time_source.xml must always be loaded.
    m_xmlSourceFiles.push_back("$(OBSERVATIONSIMROOT)/xml/time_source.xml");
