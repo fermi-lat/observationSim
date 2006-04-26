@@ -4,7 +4,7 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.48 2006/03/21 21:10:50 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.49 2006/04/16 22:34:52 jchiang Exp $
  */
 
 #include <algorithm>
@@ -30,7 +30,6 @@
 #include "observationSim/ScDataContainer.h"
 #include "observationSim/Simulator.h"
 #include "LatSc.h"
-//#include "Verbosity.h"
 
 namespace observationSim {
 

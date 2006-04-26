@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.71 2006/03/21 21:10:50 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.72 2006/04/16 22:34:52 jchiang Exp $
  */
 
 #include <cmath>
@@ -40,7 +40,6 @@ using CLHEP::HepRotation;
 
 #include "observationSim/EventContainer.h"
 #include "observationSim/Spacecraft.h"
-//#include "Verbosity.h"
 
 namespace {
    double my_acos(double mu) {
@@ -54,10 +53,10 @@ namespace {
    }
 
    irfInterface::Irfs* drawRespPtr(std::vector<irfInterface::Irfs*> &respPtrs,
-                                  double area, double energy, 
-                                  astro::SkyDir &sourceDir,
-                                  astro::SkyDir &zAxis,
-                                  astro::SkyDir &xAxis) {
+                                   double area, double energy, 
+                                   astro::SkyDir &sourceDir,
+                                   astro::SkyDir &zAxis,
+                                   astro::SkyDir &xAxis) {
    
 // Build a vector of effective area accumulated over the vector
 // of response object pointers.
