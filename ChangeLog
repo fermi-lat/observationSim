@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Apr 25 18:12:16 PDT 2006
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+use Aeff::upperLimit; tagging v6r2p5
+    *
+------------------------------------------------------------
 TAG
 Tag name: v6r2p4, operation: add
 Package: observationSim
