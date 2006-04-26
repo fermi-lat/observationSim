@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Apr 25 22:03:06 PDT 2006
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+clear ObsSim::m_xmlSourceFiles before loading; tagging v6r2p6
+    *
+------------------------------------------------------------
 TAG
 Tag name: v6r2p5, operation: add
 Package: observationSim
