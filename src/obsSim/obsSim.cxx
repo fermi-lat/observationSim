@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.53 2006/02/27 23:37:14 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.54 2006/04/16 22:34:53 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -43,7 +43,16 @@
 #include "observationSim/ScDataContainer.h"
 
 #include "LatSc.h"
-//#include "Verbosity.h"
+
+namespace {
+   double maxEffArea(const std::vector<irfInterface::Irfs *> & irfs) {
+      double total(0);
+      for (size_t i=0; i < irfs.size(); i++) {
+         total += irfs.at(i)->aeff()->upperLimit();
+      }
+      return total;
+   }
+}
 
 using st_facilities::Util;
 
@@ -105,7 +114,6 @@ void ObsSim::banner() const {
 void ObsSim::run() {
    promptForParameters();
    checkOutputFiles();
-//   observationSim::Verbosity::instance(m_pars["chatter"]);
    setRandomSeed();
    createFactories();
    setXmlFiles();
@@ -237,7 +245,7 @@ void ObsSim::createResponseFuncs() {
 }   
 
 void ObsSim::createSimulator() {
-   double totalArea = m_pars["max_effarea"];
+   double totalArea(::maxEffArea(m_respPtrs)/1e4);
    double startTime = m_pars["start_time"];
    std::string pointingHistory = m_pars["scfile"];
    std::string sc_table = m_pars["sctable"];
