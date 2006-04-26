@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Apr 25 18:12:17 PDT 2006
+observationSim/pfiles
+
+Modified Files:
+	gtobssim.par 
+Log Message:
+use Aeff::upperLimit; tagging v6r2p5
+    *
+------------------------------------------------------------
 User: jchiang  Tue Apr 25 18:12:16 PDT 2006
 observationSim/doc
 
