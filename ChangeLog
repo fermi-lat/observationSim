@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Apr 25 22:03:07 PDT 2006
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+clear ObsSim::m_xmlSourceFiles before loading; tagging v6r2p6
+    *
+------------------------------------------------------------
+User: jchiang  Tue Apr 25 22:03:07 PDT 2006
 observationSim/src
 
 Modified Files:
