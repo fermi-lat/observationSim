@@ -4,7 +4,7 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.49 2006/04/16 22:34:52 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.50 2006/04/26 05:03:07 jchiang Exp $
  */
 
 #include <algorithm>
@@ -80,6 +80,7 @@ void Simulator::init(const std::vector<std::string> &sourceNames,
                              << "Using default rocking strategy." 
                              << std::endl;
          setRocking();
+         pointingHistory = "none";
       }
    } else {
 // Use the default rocking strategy.
