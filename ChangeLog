@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Apr 27 15:05:19 PDT 2006
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+write out scData file if input scfile is not found and default pointing strategy is used
+    *
+------------------------------------------------------------
 User: jchiang  Thu Apr 27 15:05:17 PDT 2006
 observationSim/src
 
