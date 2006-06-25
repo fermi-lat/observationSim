@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sat Jun 24 22:09:51 PDT 2006
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+save incident and accepted events; tagging v6r3
+    *
+------------------------------------------------------------
 TAG
 Tag name: v6r2p7, operation: add
 Package: observationSim
