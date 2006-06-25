@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.28 2005/08/17 04:02:34 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.29 2005/09/12 22:18:40 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -41,7 +41,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.28 2005/08/17 04:02:34 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.29 2005/09/12 22:18:40 jchiang Exp $
  */
 
 class EventContainer : public ContainerBase {
@@ -91,9 +91,18 @@ public:
    /// of the data contained therein.
    const std::vector<Event> & getEvents() const {return m_events;}
 
+   /// struct to contain event summary for a given source
+   class SourceSummary {
+   public:
+      SourceSummary(int idnum=0) : id(idnum), incidentNum(0), acceptedNum(0) {}
+      int id;
+      unsigned long incidentNum;
+      unsigned long acceptedNum;
+   };
+
    /// Access to the map of event IDs.
-   const std::map<std::string, int> & eventIds() const {
-      return m_eventIds;
+   const std::map<std::string, SourceSummary> & eventIds() const {
+      return m_srcSummaries;
    }
 
 private:
@@ -111,8 +120,8 @@ private:
    /// The Event buffer.
    std::vector<Event> m_events;
 
-   /// Event IDs keyed by source name.
-   std::map<std::string, int> m_eventIds;
+   /// Event summaries keyed by source name.
+   std::map<std::string, SourceSummary> m_srcSummaries;
 
    /// This routine contains the constructor implementation.
    void init();
