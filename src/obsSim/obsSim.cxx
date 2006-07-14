@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.58 2006/06/25 05:09:52 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.59 2006/07/14 04:59:41 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -289,6 +289,7 @@ void ObsSim::generateData() {
    observationSim::EventContainer events(prefix + "_events", ev_table,
                                          cuts, nMaxRows,
                                          start_time, stop_time);
+   events.setAppName("gtobssim");
    events.setVersion(getVersion());
    std::string pointingHistory = m_pars["scfile"];
    facilities::Util::expandEnvVar(&pointingHistory);
@@ -297,7 +298,8 @@ void ObsSim::generateData() {
    std::string sc_table = m_pars["sctable"];
    observationSim::ScDataContainer scData(prefix + "_scData", sc_table,
                                           nMaxRows, writeScData);
-                                          
+   scData.setAppName("gtobssim");
+   scData.setVersion(getVersion());
    observationSim::Spacecraft * spacecraft = new observationSim::LatSc();
    double frac = m_pars["livetime_frac"];
    spacecraft->setLivetimeFrac(frac);

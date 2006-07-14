@@ -3,7 +3,7 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.37 2006/03/21 21:10:50 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.38 2006/04/20 15:16:21 jchiang Exp $
  */
 
 #include <sstream>
@@ -108,6 +108,11 @@ void ScDataContainer::writeScData() {
             ft2["deadtime"].set(interval);
          }
       }
+      ft2.setPhduKeyword("FILENAME", ft2File);
+      ft2.setPhduKeyword("VERSION", 1);
+      ft2.setPhduKeyword("CREATOR", creator());
+      ft2.setPhduKeyword("SOFTWARE", m_softwareVersion);
+
       ft2.close();
 
       st_facilities::FitsUtil::writeChecksums(ft2File);
