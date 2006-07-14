@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Fri Jul 14 08:57:08 PDT 2006
+observationSim/src/orbSim
+
+Modified Files:
+	orbSim.cxx 
+Log Message:
+move app name and versioning access to ContainerBase
+    *
+------------------------------------------------------------
+User: jchiang  Fri Jul 14 08:57:08 PDT 2006
 observationSim/src/obsSim
 
 Modified Files:
