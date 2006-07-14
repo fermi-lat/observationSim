@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Jul 14 08:57:08 PDT 2006
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx ScDataContainer.cxx 
+Log Message:
+move app name and versioning access to ContainerBase
+    *
+------------------------------------------------------------
 User: jchiang  Fri Jul 14 08:57:07 PDT 2006
 observationSim/observationSim
 
