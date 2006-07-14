@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.29 2005/09/12 22:18:40 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.30 2006/06/25 05:09:52 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -41,7 +41,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.29 2005/09/12 22:18:40 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.30 2006/06/25 05:09:52 jchiang Exp $
  */
 
 class EventContainer : public ContainerBase {
@@ -57,7 +57,8 @@ public:
                   unsigned int maxNumEvents=20000,
                   double startTime=0, double stopTime=0) : 
       ContainerBase(filename, tablename, maxNumEvents), m_prob(1), 
-      m_cuts(cuts), m_startTime(startTime), m_stopTime(stopTime) {
+      m_cuts(cuts), m_startTime(startTime), m_stopTime(stopTime),
+      m_softwareVersion("") {
       init();
    }
 
@@ -86,6 +87,10 @@ public:
    /// of the livetime to elapsed time for a given observation
    /// interval.
    void setAcceptanceProb(double prob) {m_prob = prob;}
+
+   void setVersion(const std::string & version) {
+      m_softwareVersion = version;
+   }
 
    /// Return a const reference to m_events for processing by Python
    /// of the data contained therein.
@@ -116,6 +121,8 @@ private:
 
    double m_startTime;
    double m_stopTime;
+
+   std::string m_softwareVersion;
 
    /// The Event buffer.
    std::vector<Event> m_events;

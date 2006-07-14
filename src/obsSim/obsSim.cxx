@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.57 2006/04/27 22:05:18 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.58 2006/06/25 05:09:52 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -289,6 +289,7 @@ void ObsSim::generateData() {
    observationSim::EventContainer events(prefix + "_events", ev_table,
                                          cuts, nMaxRows,
                                          start_time, stop_time);
+   events.setVersion(getVersion());
    std::string pointingHistory = m_pars["scfile"];
    facilities::Util::expandEnvVar(&pointingHistory);
    bool writeScData = (pointingHistory == "" || pointingHistory == "none"
