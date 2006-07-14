@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.74 2006/06/25 05:09:52 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.75 2006/07/14 04:59:40 jchiang Exp $
  */
 
 #include <cmath>
@@ -263,12 +263,11 @@ void EventContainer::writeEvents(double obsStopTime) {
 
    cuts->addGtiCut(gti);
    cuts->writeDssKeywords(ft1.header());
-   
-   std::ostringstream creator;
-   creator << "gtobssim " << m_softwareVersion;
-   ft1.setPhduKeyword("CREATOR", creator.str());
-   ft1.setPhduKeyword("SOFTWARE", m_softwareVersion);
+
    ft1.setPhduKeyword("FILENAME", ft1File);
+   ft1.setPhduKeyword("VERSION", 1);
+   ft1.setPhduKeyword("CREATOR", creator());
+   ft1.setPhduKeyword("SOFTWARE", m_softwareVersion);
 
    ft1.close();
 
