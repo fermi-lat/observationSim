@@ -3,7 +3,7 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.38 2006/04/20 15:16:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.39 2006/07/14 15:57:07 jchiang Exp $
  */
 
 #include <sstream>
@@ -111,7 +111,6 @@ void ScDataContainer::writeScData() {
       ft2.setPhduKeyword("FILENAME", ft2File);
       ft2.setPhduKeyword("VERSION", 1);
       ft2.setPhduKeyword("CREATOR", creator());
-      ft2.setPhduKeyword("SOFTWARE", m_softwareVersion);
 
       ft2.close();
 

@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.75 2006/07/14 04:59:40 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.76 2006/07/14 15:57:07 jchiang Exp $
  */
 
 #include <cmath>
@@ -267,7 +267,6 @@ void EventContainer::writeEvents(double obsStopTime) {
    ft1.setPhduKeyword("FILENAME", ft1File);
    ft1.setPhduKeyword("VERSION", 1);
    ft1.setPhduKeyword("CREATOR", creator());
-   ft1.setPhduKeyword("SOFTWARE", m_softwareVersion);
 
    ft1.close();
 
