@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.31 2006/07/14 04:59:40 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.32 2006/07/14 15:57:06 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -41,7 +41,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.31 2006/07/14 04:59:40 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.32 2006/07/14 15:57:06 jchiang Exp $
  */
 
 class EventContainer : public ContainerBase {
@@ -127,7 +127,7 @@ private:
    void init();
 
    /// Set the event ID for the named source, if it does not already exist.
-   void setEventId(const std::string & name);
+   void setEventId(const std::string & name, int eventId);
 
    /// Return the zenith for the current spacecraft location.
    astro::SkyDir ScZenith(double time) const;
