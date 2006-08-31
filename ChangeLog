@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Aug 30 23:09:27 PDT 2006
+observationSim/observationSim
+
+Modified Files:
+	EventContainer.h 
+Log Message:
+attempt to use GLEAM mechanism for setting the mc_src_id
+    *
+------------------------------------------------------------
 TAG
 Tag name: v6r3p3, operation: add
 Package: observationSim
