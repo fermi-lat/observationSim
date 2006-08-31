@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Aug 30 23:09:27 PDT 2006
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+attempt to use GLEAM mechanism for setting the mc_src_id
+    *
+------------------------------------------------------------
+User: jchiang  Wed Aug 30 23:09:27 PDT 2006
 observationSim/src
 
 Modified Files:
