@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.77 2006/07/18 14:42:20 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.78 2006/08/31 06:09:27 jchiang Exp $
  */
 
 #include <cmath>
@@ -127,7 +127,7 @@ bool EventContainer::addEvent(EventSource *event,
    astro::SkyDir xAxis = spacecraft->xAxis(time);
 
    std::string srcName(event->name());
-   setEventId(srcName, event->numSource());
+   setEventId(srcName, event->code());
 
    m_srcSummaries[srcName].incidentNum += 1;
    if (alwaysAccept) {
