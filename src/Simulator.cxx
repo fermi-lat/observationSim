@@ -4,7 +4,7 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.50 2006/04/26 05:03:07 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.51 2006/04/27 22:05:17 jchiang Exp $
  */
 
 #include <algorithm>
@@ -203,6 +203,7 @@ void Simulator::makeEvents(EventContainer &events,
 // The following line is where the "Time out of Range!" exception is 
 // thrown by astro's GPS class:
             m_newEvent = m_source->event(m_absTime);
+            m_newEvent->code(m_source->numSource()); // THB minimal kluge: save the code using 
             m_interval = m_source->interval(m_absTime);
          }
 
