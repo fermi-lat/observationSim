@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sun Sep 17 17:48:13 PDT 2006
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx Simulator.cxx 
+Log Message:
+klugy mod to reproduce Gleam source numbering.
+    *
+------------------------------------------------------------
 User: jchiang  Wed Aug 30 23:09:27 PDT 2006
 observationSim/src/obsSim
 
