@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.78 2006/08/31 06:09:27 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.79 2006/09/18 00:48:13 burnett Exp $
  */
 
 #include <cmath>
@@ -75,7 +75,7 @@ namespace {
       std::partial_sum(effAreas.begin(), effAreas.end(), effAreas.begin());
 
 // The total effective area.
-      double effAreaTot = *(effAreas.end() - 1);
+      double effAreaTot(effAreas.back());
 
 // Generate a random deviate from the interval [0, area) to ascertain
 // which response object to use.
