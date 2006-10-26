@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Oct 26 16:09:23 PDT 2006
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx 
+Log Message:
+change mc_src_id field to 4 byte int
+    *
+------------------------------------------------------------
 TAG
 Tag name: v6r3p6, operation: add
 Package: observationSim
