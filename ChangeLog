@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Fri Nov  3 13:18:45 PST 2006
+observationSim/src
+
+Modified Files:
+	Simulator.cxx 
+Log Message:
+workaround for time query beyond end of ft2 file problem.
+
+    *
+------------------------------------------------------------
 User: jchiang  Thu Oct 26 16:09:23 PDT 2006
 observationSim/src
 
