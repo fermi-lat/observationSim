@@ -4,7 +4,7 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.51 2006/04/27 22:05:17 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.52 2006/09/18 00:48:13 burnett Exp $
  */
 
 #include <algorithm>
@@ -194,7 +194,7 @@ void Simulator::makeEvents(EventContainer &events,
 
 // Enclose loop in outer try block, catching a GPS-thrown exception when
 // time exceeds pointing history database.
-   try {
+  try {
 // Loop over event generation steps until done.
       while (!done()) {
 
@@ -242,13 +242,17 @@ void Simulator::makeEvents(EventContainer &events,
          }
       } // while (!done())
    } catch (std::exception & eObj) {
-      if ( (!st_facilities::Util::expectedException(eObj,"Time out of Range!")
-            && !st_facilities::Util::expectedException(eObj,
-               "time is beyond end of history file"))
-// This latter check is an ugly kluge necessary because one does not (yet)
-// have access to the start and stop times of the pointing history via
-// astro's GPS:
-          || (m_useSimTime && m_elapsedTime < 0.9*m_simTime)) {
+//       if ( (!st_facilities::Util::expectedException(eObj,"Time out of Range!")
+//             && !st_facilities::Util::expectedException(eObj,
+//                "time is beyond end of history file"))
+// // This latter check is an ugly kluge necessary because one does not (yet)
+// // have access to the start and stop times of the pointing history via
+// // astro's GPS:
+//           || (m_useSimTime && m_elapsedTime < 0.9*m_simTime)) {
+//          throw;
+//       }
+      if (!st_facilities::Util::
+          expectedException(eObj, "time is beyond end of history file")) {
          throw;
       }
    }
