@@ -1,4 +1,65 @@
 ------------------------------------------------------------
+TAG
+Tag name: v6r3p8, operation: add
+Package: observationSim
+User: jchiang  Sat Nov  4 14:31:24 2006
+Files:
+  observationSim/.cvsignore  1.3
+  observationSim/ChangeLog  1.803
+  observationSim/cmt/.cvsignore  1.1.1.1
+  observationSim/cmt/requirements  1.171
+  observationSim/cmt/Makefile  1.1.1.1
+  observationSim/data/3c279Template.dat  1.1
+  observationSim/data/pointing_history.txt  1.1
+  observationSim/data/GemingaTemplate.dat  1.1
+  observationSim/data/xml_files.dat  1.2
+  observationSim/data/source_names.dat  1.8
+  observationSim/data/pks1622-297_Template.dat  1.1
+  observationSim/data/CrabTemplate.dat  1.2
+  observationSim/doc/.cvsignore  1.1.1.1
+  observationSim/doc/results.ps  1.1.1.1
+  observationSim/doc/release.notes  1.117
+  observationSim/doc/Doxyfile  1.33
+  observationSim/observationSim/ScDataContainer.h  1.18
+  observationSim/observationSim/EventContainer.h  1.33
+  observationSim/observationSim/Event.h  1.8
+  observationSim/observationSim/Simulator.h  1.25
+  observationSim/observationSim/ScData.h  1.8
+  observationSim/observationSim/Spacecraft.h  1.7
+  observationSim/observationSim/ContainerBase.h  1.6
+  observationSim/pfiles/gtobssim.par  1.14
+  observationSim/pfiles/gtorbsim.par  1.8
+  observationSim/python/test.py  1.6
+  observationSim/python/latSim.py  1.5
+  observationSim/python/observationSim.i  1.3
+  observationSim/src/Simulator.cxx  1.54
+  observationSim/src/LatSc.cxx  1.18
+  observationSim/src/EgretSc.cxx  1.2
+  observationSim/src/ScDataContainer.cxx  1.40
+  observationSim/src/LatSc.h  1.8
+  observationSim/src/EgretSc.h  1.6
+  observationSim/src/mainpage.h  1.11
+  observationSim/src/EventContainer.cxx  1.81
+  observationSim/src/ContainerBase.cxx  1.7
+  observationSim/src/obsSim/obsSim.cxx  1.62
+  observationSim/src/orbSim/orbSim.cxx  1.20
+  observationSim/src/test/.cvsignore  1.1.1.1
+  observationSim/src/test/main.cxx  1.37
+  observationSim/xml/test_sources_v2.xml  1.1
+  observationSim/xml/obsSim_source_library.xml  1.22
+  observationSim/xml/time_source.xml  1.2
+  observationSim/xml/xmlFiles.dat  1.2
+  observationSim/xml/3EG_catalog.txt_orig  1.1
+  observationSim/xml/3EG_catalog.txt  1.4
+  observationSim/xml/3EG_to_xml.py  1.3
+  observationSim/xml/bpl_source.py  1.1
+  observationSim/xml/test_sources.xml  1.2
+  observationSim/xml/3EG_catalog.xml  1.1.1.1
+  observationSim/xml/xmlFiles.txt  1.1
+  observationSim/xml/3EG_catalog_20-1e6MeV.xml  1.5
+
+    *
+------------------------------------------------------------
 User: jchiang  Sat Nov  4 14:31:06 PST 2006
 observationSim/src
 
