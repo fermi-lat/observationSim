@@ -4,7 +4,7 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.52 2006/09/18 00:48:13 burnett Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.53 2006/11/03 21:18:44 jchiang Exp $
  */
 
 #include <algorithm>
@@ -252,7 +252,8 @@ void Simulator::makeEvents(EventContainer &events,
 //          throw;
 //       }
       if (!st_facilities::Util::
-          expectedException(eObj, "time is beyond end of history file")) {
+          expectedException(eObj, "time is beyond end of history file")
+          && !(m_useSimTime && m_elapsedTime > 0.9*m_simTime)) {
          throw;
       }
    }
