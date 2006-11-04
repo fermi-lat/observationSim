@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sat Nov  4 14:31:05 PST 2006
+observationSim/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+more workarounds for poorly written code in flux/CompositeSource; tagging v6r3p8
+    *
+------------------------------------------------------------
+User: jchiang  Sat Nov  4 14:31:05 PST 2006
 observationSim/cmt
 
 Modified Files:
