@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Nov  6 15:59:59 PST 2006
+observationSim/observationSim
+
+Modified Files:
+	Simulator.h Spacecraft.h 
+Log Message:
+changes for astro v2r2
+    *
+------------------------------------------------------------
 TAG
 Tag name: v6r3p8, operation: add
 Package: observationSim
