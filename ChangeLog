@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Nov  6 15:59:59 PST 2006
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx LatSc.cxx LatSc.h Simulator.cxx 
+Log Message:
+changes for astro v2r2
+    *
+------------------------------------------------------------
+User: jchiang  Mon Nov  6 15:59:59 PST 2006
 observationSim/observationSim
 
 Modified Files:
