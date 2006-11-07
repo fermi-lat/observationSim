@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.61 2006/08/31 06:09:27 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.62 2006/10/18 22:18:17 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -251,7 +251,7 @@ void ObsSim::createSimulator() {
    double startTime = m_pars["start_time"];
    std::string pointingHistory = m_pars["scfile"];
    std::string sc_table = m_pars["sctable"];
-   astro::GPS::instance()->setScTableName(sc_table);
+//   astro::GPS::instance()->setScTableName(sc_table);
    std::string startDate = m_pars["start_date"];
    facilities::Timestamp start(startDate);
    double offset((astro::JulianDate(start.getJulian()) 
