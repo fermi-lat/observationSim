@@ -2,7 +2,7 @@
  * @file Simulator.h
  * @brief Declaration for Simulator class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.24 2005/12/14 01:36:40 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.25 2006/04/16 22:34:52 jchiang Exp $
  */
 
 #ifndef observationSim_Simulator_h
@@ -45,7 +45,7 @@ class ScDataContainer;
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.24 2005/12/14 01:36:40 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.25 2006/04/16 22:34:52 jchiang Exp $
  */
 
 class Simulator {
@@ -104,7 +104,7 @@ public:
    ///        per orbit.
    /// @param angle Rocking angle in degrees.
    void setRocking(int rockType = 3, double angle = 35.) {
-      m_fluxMgr->setRockType(rockType, angle);
+      m_fluxMgr->setRockType(s_rockTypes.at(rockType), angle);
       m_usePointingHistory = false; 
    }
 
@@ -170,6 +170,8 @@ private:
    FluxMgr * m_fluxMgr;
    CompositeSource * m_source;
    EventSource * m_newEvent;
+
+   static std::vector<astro::GPS::RockType> s_rockTypes;
 
    double m_interval;
    

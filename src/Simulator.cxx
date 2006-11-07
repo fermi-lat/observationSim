@@ -4,7 +4,7 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.53 2006/11/03 21:18:44 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.54 2006/11/04 22:31:06 jchiang Exp $
  */
 
 #include <algorithm>
@@ -32,6 +32,16 @@
 #include "LatSc.h"
 
 namespace observationSim {
+
+astro::GPS::RockType rockTypes[] = {astro::GPS::NONE, 
+                                    astro::GPS::UPDOWN,
+                                    astro::GPS::SLEWING,
+                                    astro::GPS::ONEPERORBIT,
+                                    astro::GPS::EXPLICIT,
+                                    astro::GPS::POINT,
+                                    astro::GPS::HISTORY};
+std::vector<astro::GPS::RockType> Simulator::s_rockTypes(rockTypes, 
+                                                         rockTypes + 7);
 
 Simulator::~Simulator() {
    delete m_fluxMgr;
