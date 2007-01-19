@@ -3,7 +3,7 @@ version v6r3p9
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.171 2006/11/04 22:31:05 jchiang Exp $
+# $Id: requirements,v 1.172 2006/11/07 22:26:00 jchiang Exp $
 
 use STpolicy v*
 use cfitsio v* IExternal
@@ -14,7 +14,7 @@ use astro v*
 use flux v*
 use st_facilities v*
 use celestialSources v*
-use irfLoader v* irfs
+use irfs v*
 use dataSubselector v*
 use fitsGen v*
 

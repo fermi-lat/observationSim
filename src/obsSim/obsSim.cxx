@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.62 2006/10/18 22:18:17 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.63 2006/11/07 00:00:00 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -26,6 +26,8 @@
 #include "astro/GPS.h"
 #include "astro/JulianDate.h"
 #include "astro/SkyDir.h"
+
+#include "irfs/Loader.h"
 
 #include "irfInterface/IrfsFactory.h"
 #include "irfLoader/Loader.h"
@@ -175,6 +177,7 @@ void ObsSim::setRandomSeed() {
 
 void ObsSim::createFactories() {
    SpectrumFactoryLoader foo;
+   irfs::Loader();
 }
 
 void ObsSim::setXmlFiles() {
