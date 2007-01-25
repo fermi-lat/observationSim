@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.64 2007/01/19 23:15:38 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.65 2007/01/23 01:37:33 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -268,6 +268,9 @@ void ObsSim::createSimulator() {
                                                totalArea, startTime, 
                                                pointingHistory, maxSimTime,
                                                offset);
+
+   int id_offset = m_pars["srcid_offset"];
+   m_simulator->setIdOffset(id_offset);
 }
 
 void ObsSim::generateData() {

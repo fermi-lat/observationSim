@@ -2,7 +2,7 @@
  * @file Simulator.h
  * @brief Declaration for Simulator class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.25 2006/04/16 22:34:52 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.26 2006/11/06 23:59:58 jchiang Exp $
  */
 
 #ifndef observationSim_Simulator_h
@@ -45,7 +45,7 @@ class ScDataContainer;
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.25 2006/04/16 22:34:52 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Simulator.h,v 1.26 2006/11/06 23:59:58 jchiang Exp $
  */
 
 class Simulator {
@@ -156,6 +156,10 @@ public:
                        EventContainer *allEvents=0) {
       m_maxNumEvents = numberOfEvents;
       makeEvents(events, scData, respPtrs, spacecraft, false, allEvents);
+   }
+
+   void setIdOffset(int id) {
+      m_fluxMgr->setIdOffset(id);
    }
 
 protected:
