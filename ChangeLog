@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Jan 24 22:55:59 PST 2007
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+add srcid_offset; tagging v6r3p10
+    *
+------------------------------------------------------------
+User: jchiang  Wed Jan 24 22:55:59 PST 2007
 observationSim/pfiles
 
 Modified Files:
