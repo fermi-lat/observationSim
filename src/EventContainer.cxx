@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.81 2006/10/26 23:09:22 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.82 2006/11/06 23:59:59 jchiang Exp $
  */
 
 #include <cmath>
@@ -153,8 +153,11 @@ bool EventContainer::addEvent(EventSource *event,
 
       astro::SkyDir appDir 
          = respPtr->psf()->appDir(energy, sourceDir, zAxis, xAxis);
-      double appEnergy 
-         = respPtr->edisp()->appEnergy(energy, sourceDir, zAxis, xAxis);
+      double appEnergy(energy);
+      if (m_applyEdisp) {
+         appEnergy =
+            respPtr->edisp()->appEnergy(energy, sourceDir, zAxis, xAxis);
+      }
 
       std::map<std::string, double> evtParams;
       evtParams["ENERGY"] = appEnergy;
