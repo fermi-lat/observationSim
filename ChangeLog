@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Feb 19 22:07:12 PST 2007
+observationSim/pfiles
+
+Modified Files:
+	gtobssim.par 
+Log Message:
+add apply_edisp option; tagging v6r4
+    *
+------------------------------------------------------------
+User: jchiang  Mon Feb 19 22:07:12 PST 2007
 observationSim/observationSim
 
 Modified Files:
