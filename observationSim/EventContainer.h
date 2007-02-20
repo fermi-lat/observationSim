@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.32 2006/07/14 15:57:06 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.33 2006/08/31 06:09:26 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -41,7 +41,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.32 2006/07/14 15:57:06 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.33 2006/08/31 06:09:26 jchiang Exp $
  */
 
 class EventContainer : public ContainerBase {
@@ -55,9 +55,11 @@ public:
                   const std::string & tablename,
                   dataSubselector::Cuts * cuts=0,
                   unsigned int maxNumEvents=20000,
-                  double startTime=0, double stopTime=0) : 
+                  double startTime=0, double stopTime=0,
+                  bool applyEdisp=true) : 
       ContainerBase(filename, tablename, maxNumEvents), m_prob(1), 
-      m_cuts(cuts), m_startTime(startTime), m_stopTime(stopTime) {
+      m_cuts(cuts), m_startTime(startTime), m_stopTime(stopTime),
+      m_applyEdisp(applyEdisp) {
       init();
    }
 
@@ -116,6 +118,8 @@ private:
 
    double m_startTime;
    double m_stopTime;
+
+   bool m_applyEdisp;
 
    /// The Event buffer.
    std::vector<Event> m_events;

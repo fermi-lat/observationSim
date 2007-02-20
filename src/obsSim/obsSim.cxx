@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.65 2007/01/23 01:37:33 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.66 2007/01/25 06:55:59 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -290,9 +290,10 @@ void ObsSim::generateData() {
       double sim_time(m_pars["simulation_time"]);  // yes, this is BS.
       stop_time = start_time + sim_time;
    }
+   bool applyEdisp = m_pars["apply_edisp"];
    observationSim::EventContainer events(prefix + "_events", ev_table,
                                          cuts, nMaxRows,
-                                         start_time, stop_time);
+                                         start_time, stop_time, applyEdisp);
    events.setAppName("gtobssim");
    events.setVersion(getVersion());
    std::string pointingHistory = m_pars["scfile"];
