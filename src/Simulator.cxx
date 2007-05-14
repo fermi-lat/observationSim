@@ -4,7 +4,7 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.56 2007/02/20 06:07:12 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.57 2007/02/23 02:57:35 jchiang Exp $
  */
 
 #include <algorithm>
@@ -207,19 +207,27 @@ void Simulator::makeEvents(EventContainer &events,
 
 // Check if we need a new event from m_source.
       if (m_newEvent == 0) {
-// The following line is where the "Time out of Range!" exception is 
-// thrown by astro's GPS class:
-         try {
-            m_newEvent = m_source->event(m_absTime);
-            m_newEvent->code(m_source->numSource());
-            m_interval = m_source->interval(m_absTime);
-         } catch (std::exception & eObj) {
-            if (st_facilities::Util::expectedException(eObj, 
-                                                       "Time out of Range")) {
-               break;
-            }
-            throw;
+         m_newEvent = m_source->event(m_absTime);
+         if (!m_newEvent->enabled()) { 
+// There are no more events from any sources (allegedly), so we
+// exit the loop.
+            break;
          }
+         m_newEvent->code(m_source->numSource());
+         m_interval = m_source->interval(m_absTime);
+// // The following line is where the "Time out of Range!" exception is 
+// // thrown by astro's GPS class:
+//          try {
+//             m_newEvent = m_source->event(m_absTime);
+//             m_newEvent->code(m_source->numSource());
+//             m_interval = m_source->interval(m_absTime);
+//          } catch (std::exception & eObj) {
+//             if (st_facilities::Util::expectedException(eObj, 
+//                                                        "Time out of Range")) {
+//                break;
+//             }
+//             throw;
+//          }
       }
 
 // Process m_newEvent either if we are accumulating counts or if the
