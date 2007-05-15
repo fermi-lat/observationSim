@@ -4,7 +4,7 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.57 2007/02/23 02:57:35 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.58 2007/05/14 02:36:25 jchiang Exp $
  */
 
 #include <algorithm>
@@ -15,6 +15,8 @@
 #include "facilities/Util.h"
 
 #include "st_facilities/Util.h"
+
+#include "astro/PointingHistory.h"
 
 #include "flux/EventSource.h"
 #include "flux/CompositeSource.h"
@@ -207,27 +209,25 @@ void Simulator::makeEvents(EventContainer &events,
 
 // Check if we need a new event from m_source.
       if (m_newEvent == 0) {
-         m_newEvent = m_source->event(m_absTime);
-         if (!m_newEvent->enabled()) { 
+// Unfortunately, we need to check for the
+// astro::PointingHistory::TimeRangeError in case we are using a
+// pointing history file since steady sources can still request a
+// time beyond the end time of that file.
+         try {
+            m_newEvent = m_source->event(m_absTime);
+            if (!m_newEvent->enabled()) { 
 // There are no more events from any sources (allegedly), so we
 // exit the loop.
+               break;
+            }
+            m_newEvent->code(m_source->numSource());
+            m_interval = m_source->interval(m_absTime);
+         } catch (astro::PointingHistory::TimeRangeError & eObj) {
+            m_formatter->info(4) << "Caught TimeRangeError: " 
+                                 << eObj.what() << "\n"
+                                 << "Exiting." << std::endl;
             break;
          }
-         m_newEvent->code(m_source->numSource());
-         m_interval = m_source->interval(m_absTime);
-// // The following line is where the "Time out of Range!" exception is 
-// // thrown by astro's GPS class:
-//          try {
-//             m_newEvent = m_source->event(m_absTime);
-//             m_newEvent->code(m_source->numSource());
-//             m_interval = m_source->interval(m_absTime);
-//          } catch (std::exception & eObj) {
-//             if (st_facilities::Util::expectedException(eObj, 
-//                                                        "Time out of Range")) {
-//                break;
-//             }
-//             throw;
-//          }
       }
 
 // Process m_newEvent either if we are accumulating counts or if the
