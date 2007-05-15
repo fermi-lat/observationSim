@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon May 14 17:30:24 PDT 2007
+observationSim/src
+
+Modified Files:
+	Simulator.cxx 
+Log Message:
+restore try/catch block for astro::PointingHistory::TimeRangeError in Simulator.cxx; tagging v6r4p3
+    *
+------------------------------------------------------------
+User: jchiang  Mon May 14 17:30:24 PDT 2007
 observationSim/doc
 
 Modified Files:
