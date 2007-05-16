@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed May 16 11:06:24 PDT 2007
+observationSim/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+accomodate fitsGen/data/ft2.tpl changes: delete DEADTIME, fill GEOMAG_LAT; update documentation of ScData::position(); tagging v6r4p4
+    *
+------------------------------------------------------------
 User: jchiang  Wed May 16 11:06:23 PDT 2007
 observationSim/cmt
 
