@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed May 16 13:41:45 PDT 2007
+observationSim/src
+
+Modified Files:
+	ScDataContainer.cxx 
+Log Message:
+missed an instance of attempted DEADTIME access; tagging v6r4p5
+    *
+------------------------------------------------------------
+User: jchiang  Wed May 16 13:41:45 PDT 2007
 observationSim/doc
 
 Modified Files:
