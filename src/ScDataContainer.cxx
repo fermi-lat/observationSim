@@ -3,7 +3,7 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.39 2006/07/14 15:57:07 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.40 2006/07/18 14:42:20 jchiang Exp $
  */
 
 #include <sstream>
@@ -20,6 +20,16 @@
 
 #include "observationSim/EventContainer.h"
 #include "observationSim/ScDataContainer.h"
+
+namespace {
+   double geomag_lat(const std::vector<double> & scPosition,
+                     double met) {
+      CLHEP::Hep3Vector pos(scPosition.at(0)/1e3, scPosition.at(1)/1e3,
+                            scPosition.at(2)/1e3);
+      astro::EarthCoordinate coord(pos, met);
+      return coord.geolat();
+   }
+}
 
 namespace observationSim {
 
@@ -92,9 +102,10 @@ void ScDataContainer::writeScData() {
             interval = stop_time - sc->time();
          }
          ft2["livetime"].set(sc->livetimeFrac()*interval);
-         ft2["deadtime"].set(interval*(1. - sc->livetimeFrac()));
          ft2["lat_geo"].set(sc->lat());
          ft2["lon_geo"].set(sc->lon());
+         double met((ft2["start"].get() + ft2["stop"].get())/2.);
+         ft2["geomag_lat"].set(::geomag_lat(sc->position(), met));
          ft2["ra_scz"].set(sc->zAxis().ra());
          ft2["dec_scz"].set(sc->zAxis().dec());
          ft2["ra_scx"].set(sc->xAxis().ra());
