@@ -3,7 +3,7 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.40 2006/07/18 14:42:20 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.41 2007/05/16 18:06:24 jchiang Exp $
  */
 
 #include <sstream>
@@ -116,7 +116,6 @@ void ScDataContainer::writeScData() {
          ft2["in_saa"].set(sc->inSaa());
          if (sc->inSaa()) {
             ft2["livetime"].set(0);
-            ft2["deadtime"].set(interval);
          }
       }
       ft2.setPhduKeyword("FILENAME", ft2File);
