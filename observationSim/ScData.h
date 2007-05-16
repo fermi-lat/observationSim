@@ -2,7 +2,7 @@
  * @file ScData.h
  * @brief Simple data structure to hold ScData data.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScData.h,v 1.7 2005/05/08 21:15:49 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScData.h,v 1.8 2005/08/26 15:55:49 jchiang Exp $
  */
 
 #ifndef observationSim_ScData_h
@@ -17,7 +17,7 @@ namespace observationSim {
  * @brief Simple data structure to hold ScData data.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScData.h,v 1.7 2005/05/08 21:15:49 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScData.h,v 1.8 2005/08/26 15:55:49 jchiang Exp $
  */
 
 class ScData {
@@ -58,7 +58,7 @@ public:
    /// Flag to indicate if the spacecraft is in the SAA.
    bool inSaa() const {return m_inSaa;}
 
-   /// The spacecraft position in geocentric coordinates (km).
+   /// The spacecraft position in geocentric coordinates (m).
    const std::vector<double> & position() const {return m_position;}
 
    double raZenith() const {return m_raZenith;}
