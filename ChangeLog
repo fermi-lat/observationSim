@@ -1,22 +1,4 @@
 ------------------------------------------------------------
-User: burnett  Tue Jun 12 16:03:04 PDT 2007
-observationSim/doc
-
-Modified Files:
-	release.notes 
-Log Message:
-modify code to properly implement pointed mode.
-    *
-------------------------------------------------------------
-User: burnett  Tue Jun 12 16:03:04 PDT 2007
-observationSim/cmt
-
-Modified Files:
-	requirements 
-Log Message:
-modify code to properly implement pointed mode.
-    *
-------------------------------------------------------------
 TAG
 Tag name: v6r4p5, operation: add
 Package: observationSim
