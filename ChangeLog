@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Tue Jun 12 16:03:05 PDT 2007
+observationSim/src/orbSim
+
+Modified Files:
+	orbSim.cxx 
+Log Message:
+modify code to properly implement pointed mode.
+    *
+------------------------------------------------------------
 User: burnett  Tue Jun 12 16:03:04 PDT 2007
 observationSim/doc
 
