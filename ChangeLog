@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Jun 25 08:32:56 PDT 2007
+observationSim/pfiles
+
+Modified Files:
+	gtobssim.par 
+Log Message:
+remove enumeration from rspfunc list
+    *
+------------------------------------------------------------
 TAG
 Tag name: v6r5, operation: add
 Package: observationSim
