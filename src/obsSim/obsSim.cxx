@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.67 2007/02/20 06:07:12 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.68 2007/07/03 22:48:49 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -241,8 +241,13 @@ void ObsSim::createResponseFuncs() {
          m_respPtrs.push_back(irf);
       }
    } else {
-      throw std::invalid_argument("Invalid response function choice: "
-                                  + responseFuncs);
+      std::ostringstream message;
+      message << "Invalid response function choice: " << responseFuncs << "\n"
+              << "Valid choices are \n";
+      for (it = responseIds.begin(); it != responseIds.end(); ++it) {
+         message << "   " << it->first << "\n";
+      }
+      throw std::invalid_argument(message.str());
    }
 }   
 
