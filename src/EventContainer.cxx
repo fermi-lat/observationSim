@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.82 2006/11/06 23:59:59 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.83 2007/02/20 06:07:12 jchiang Exp $
  */
 
 #include <cmath>
@@ -56,7 +56,8 @@ namespace {
                                    double area, double energy, 
                                    astro::SkyDir &sourceDir,
                                    astro::SkyDir &zAxis,
-                                   astro::SkyDir &xAxis) {
+                                   astro::SkyDir &xAxis, 
+                                   double time) {
    
 // Build a vector of effective area accumulated over the vector
 // of response object pointers.
@@ -66,7 +67,8 @@ namespace {
       std::vector<double>::iterator eaIt = effAreas.begin();
       std::vector<irfInterface::Irfs *>::iterator respIt = respPtrs.begin();
       while (eaIt != effAreas.end() && respIt != respPtrs.end()) {
-         *eaIt = (*respIt)->aeff()->value(energy, sourceDir, zAxis, xAxis);
+         *eaIt = (*respIt)->aeff()->value(energy, sourceDir, zAxis, xAxis,
+                                          time);
          eaIt++;
          respIt++;
       }
@@ -147,16 +149,16 @@ bool EventContainer::addEvent(EventSource *event,
    bool accepted(false);
    if ( RandFlat::shoot() < m_prob
         && (respPtr = ::drawRespPtr(respPtrs, event->totalArea()*1e4, 
-                                    energy, sourceDir, zAxis, xAxis))
+                                    energy, sourceDir, zAxis, xAxis, time))
         && !spacecraft->inSaa(time) 
         && RandFlat::shoot() < spacecraft->livetimeFrac(time) ) {
 
       astro::SkyDir appDir 
-         = respPtr->psf()->appDir(energy, sourceDir, zAxis, xAxis);
+         = respPtr->psf()->appDir(energy, sourceDir, zAxis, xAxis, time);
       double appEnergy(energy);
       if (m_applyEdisp) {
          appEnergy =
-            respPtr->edisp()->appEnergy(energy, sourceDir, zAxis, xAxis);
+            respPtr->edisp()->appEnergy(energy, sourceDir, zAxis, xAxis, time);
       }
 
       std::map<std::string, double> evtParams;
