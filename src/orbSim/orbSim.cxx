@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.21 2007/06/12 23:03:05 burnett Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.22 2007/07/03 22:48:49 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -92,7 +92,7 @@ void OrbSim::promptForParameters() {
    m_pars.Prompt("obsmode");
    std::string pointing_strategy = m_pars["obsmode"];
    if (pointing_strategy != "POINT") {
-      m_pars.Prompt("rocking_angle");
+      m_pars.Prompt("rangle");
    } else {
       m_pars.Prompt("ra");
       m_pars.Prompt("dec");
