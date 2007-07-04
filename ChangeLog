@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Jul  3 17:18:02 PDT 2007
+observationSim/src/orbSim
+
+Modified Files:
+	orbSim.cxx 
+Log Message:
+parameter name changes
+    *
+------------------------------------------------------------
+User: jchiang  Tue Jul  3 17:18:02 PDT 2007
 observationSim/src/obsSim
 
 Modified Files:
