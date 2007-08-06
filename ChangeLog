@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: golpa  Mon Aug  6 08:47:02 PDT 2007
+observationSim
+
+Added Files:
+	SConscript observationSimLib.py 
+Log Message:
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: v7, operation: add
 Package: observationSim
