@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+TAG
+Tag name: v6r5, operation: add
+Package: observationSim
+User: golpa  Mon Aug  6 08:47:08 2007
+Files:
+  observationSim/SConscript  1.1
+
+    *
+------------------------------------------------------------
 User: golpa  Mon Aug  6 08:47:02 PDT 2007
 observationSim
 
