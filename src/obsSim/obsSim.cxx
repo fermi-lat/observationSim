@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.69 2007/07/03 22:51:10 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.70 2007/07/04 00:18:02 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -31,6 +31,8 @@
 #include "irfLoader/Loader.h"
 
 #include "st_facilities/Util.h"
+
+#include "facilities/commonUtilities.h"
 
 #include "flux/Spectrum.h"
 
@@ -181,13 +183,13 @@ void ObsSim::setXmlFiles() {
    m_xmlSourceFiles.clear();
 // observationSim::Simulator requires a specific "TimeCandle" source,
 // so time_source.xml must always be loaded.
-   m_xmlSourceFiles.push_back("$(OBSERVATIONSIMROOT)/xml/time_source.xml");
+   m_xmlSourceFiles.push_back(facilities::commonUtilities::joinPath(facilities::commonUtilities::getXmlPath("observationSim"), "time_source.xml"));
 
 // Fetch any user-specified xml file of flux-style source definitions,
 // replacing the default list.
    std::string xmlFiles = m_pars["infile"];
    if (xmlFiles == "none" || xmlFiles == "") { // use the default
-      xmlFiles = "$(OBSERVATIONSIMROOT)/xml/xmlFiles.dat";
+     xmlFiles = facilities::commonUtilities::joinPath(facilities::commonUtilities::getXmlPath("observationSim"), "xmlFiles.dat");
    }
    facilities::Util::expandEnvVar(&xmlFiles);
    if (Util::fileExists(xmlFiles)) {

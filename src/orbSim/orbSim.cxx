@@ -3,7 +3,7 @@
  * @brief A prototype O2 application.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.22 2007/07/03 22:48:49 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/orbSim/orbSim.cxx,v 1.23 2007/07/04 00:18:02 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -21,6 +21,8 @@
 #include "st_app/StAppFactory.h"
 
 #include "st_facilities/Util.h"
+
+#include "facilities/commonUtilities.h"
 
 #include "astro/GPS.h"
 #include "astro/SkyDir.h"
@@ -132,7 +134,7 @@ void OrbSim::createSimulator() {
    std::vector<std::string> srcNames;
    srcNames.push_back("null_source");
    std::vector<std::string> xmlSourceFiles;
-   xmlSourceFiles.push_back("$(OBSERVATIONSIMROOT)/xml/time_source.xml");
+   xmlSourceFiles.push_back(facilities::commonUtilities::joinPath(facilities::commonUtilities::getXmlPath("observationSim"), "time_source.xml"));
    double totalArea(1.21);
    m_simulator = new observationSim::Simulator(srcNames, xmlSourceFiles, 
                                                totalArea, startTime, 

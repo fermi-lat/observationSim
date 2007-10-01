@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.36 2005/09/12 22:18:45 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.37 2006/01/09 22:32:52 jchiang Exp $
  */
 #ifdef TRAP_FPE
 #include <fenv.h>
@@ -23,6 +23,8 @@
 #include "observationSim/ScDataContainer.h"
 #include "LatSc.h"
 
+#include "facilities/commonUtilities.h"
+
 void help();
 
 void load_sources();
@@ -35,13 +37,13 @@ int main(int iargc, char * argv[]) {
    try {
 // Create list of xml input files for source definitions.
    std::vector<std::string> fileList;
-   std::string xml_list("$(OBSERVATIONSIMROOT)/xml/obsSim_source_library.xml");
+   std::string xml_list(facilities::commonUtilities::joinPath(facilities::commonUtilities::getXmlPath("observationSim"), "obsSim_source_library.xml"));
    fileList.push_back(xml_list);
-   xml_list = "$(OBSERVATIONSIMROOT)/xml/3EG_catalog_20-1e6MeV.xml";
+   xml_list = facilities::commonUtilities::joinPath(facilities::commonUtilities::getXmlPath("observationSim"), "3EG_catalog_20-1e6MeV.xml");
    fileList.push_back(xml_list);
-   xml_list = "$(GRBROOT)/xml/GRB_user_library.xml";
+   xml_list = facilities::commonUtilities::joinPath(facilities::commonUtilities::getXmlPath("GRB"), "GRB_user_library.xml");
    fileList.push_back(xml_list);
-   xml_list = "$(OBSERVATIONSIMROOT)/xml/time_source.xml";
+   xml_list = facilities::commonUtilities::joinPath(facilities::commonUtilities::getXmlPath("observationSim"), "time_source.xml");
    fileList.push_back(xml_list);
 
    load_sources();
