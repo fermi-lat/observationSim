@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: golpa  Mon Oct  1 08:28:44 PDT 2007
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+Use commonUtilities
+    *
+------------------------------------------------------------
 User: golpa  Mon Aug  6 08:52:07 PDT 2007
 observationSim
 
