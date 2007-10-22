@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Oct 22 08:25:56 PDT 2007
+observationSim/src
+
+Modified Files:
+	LatSc.cxx 
+Log Message:
+allow saa to be disabled using env var
+    *
+------------------------------------------------------------
 TAG
 Tag name: v7r0p1, operation: add
 Package: observationSim
