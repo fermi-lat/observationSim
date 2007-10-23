@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Oct 23 16:32:30 PDT 2007
+observationSim/src
+
+Modified Files:
+	LatSc.cxx 
+Log Message:
+astro::EarthCoordinate interface change
+    *
+------------------------------------------------------------
 TAG
 Tag name: v7r0p2, operation: add
 Package: observationSim
