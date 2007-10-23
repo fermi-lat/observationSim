@@ -3,7 +3,7 @@
  * @brief Implementation of LatSc class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.cxx,v 1.19 2006/11/06 23:59:59 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/LatSc.cxx,v 1.20 2007/10/22 15:25:56 jchiang Exp $
  */
 
 #include "astro/EarthCoordinate.h"
@@ -49,8 +49,8 @@ bool LatSc::inSaa(double time) {
    if (::getenv("DISABLE_SAA")) {
       return false;
    }
-   astro::EarthCoordinate earthCoord( EarthLat(time), EarthLon(time) );
-   return earthCoord.insideSAA();
+   astro::GPS * gps(astro::GPS::instance());
+   return gps->earthpos(time).insideSAA();
 }
 
 void LatSc::getScPosition(double time, std::vector<double> & position) {
