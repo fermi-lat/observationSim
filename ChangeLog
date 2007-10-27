@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Oct 26 22:59:55 PDT 2007
+observationSim/src
+
+Modified Files:
+	LatSc.cxx LatSc.h 
+Log Message:
+read LIVETIME when supplied with an input FT2 file and us computed livetime fraction
+    *
+------------------------------------------------------------
 TAG
 Tag name: v7r0p3, operation: add
 Package: observationSim
