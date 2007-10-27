@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Fri Oct 26 22:59:55 PDT 2007
+observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+read LIVETIME when supplied with an input FT2 file and us computed livetime fraction
+    *
+------------------------------------------------------------
+User: jchiang  Fri Oct 26 22:59:55 PDT 2007
 observationSim/src
 
 Modified Files:
