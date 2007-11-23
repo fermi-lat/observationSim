@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: golpa  Fri Nov 23 10:34:04 PST 2007
+observationSim/xml
+
+Modified Files:
+	obsSim_source_library.xml xmlFiles.dat xmlFiles.txt 
+Log Message:
+changes to stop using <PACKAGE>ROOT variables
+    *
+------------------------------------------------------------
+User: golpa  Fri Nov 23 10:34:04 PST 2007
 observationSim/data
 
 Modified Files:
