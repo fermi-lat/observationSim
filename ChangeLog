@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: golpa  Fri Nov 23 10:34:04 PST 2007
+observationSim/data
+
+Modified Files:
+	xml_files.dat 
+Log Message:
+changes to stop using <PACKAGE>ROOT variables
+    *
+------------------------------------------------------------
 TAG
 Tag name: v7r1, operation: add
 Package: observationSim
