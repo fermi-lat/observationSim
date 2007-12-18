@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.83 2007/02/20 06:07:12 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.84 2007/07/03 22:51:09 jchiang Exp $
  */
 
 #include <cmath>
@@ -121,6 +121,9 @@ bool EventContainer::addEvent(EventSource *event,
    double arg = launchDir.z();
    double flux_theta = ::my_acos(arg);
    double flux_phi = atan2(launchDir.y(), launchDir.x());
+   if (flux_phi < 0) {
+      flux_phi += 2.*M_PI;
+   }
 
    HepRotation rotMatrix = spacecraft->InstrumentToCelestial(time);
    astro::SkyDir sourceDir(rotMatrix(-launchDir), astro::SkyDir::EQUATORIAL);
@@ -206,8 +209,12 @@ double EventContainer::earthAzimuthAngle(double ra, double dec,
    astro::SkyDir zen_x = astro::SkyDir(-tmp());
    astro::SkyDir zen_y = zen_x;
    zen_y().rotate(zen_z(), M_PI/2.);
-   double azimuth = std::atan2(zen_y().dot(appDir()), zen_x().dot(appDir()));
-   return azimuth*180./M_PI;
+   double azimuth = (std::atan2(zen_y().dot(appDir()), zen_x().dot(appDir()))
+                     *180./M_PI);
+   if (azimuth < 0) {
+      azimuth += 360.;
+   }
+   return azimuth;
 }
 
 void EventContainer::writeEvents(double obsStopTime) {
