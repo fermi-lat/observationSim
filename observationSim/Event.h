@@ -2,7 +2,7 @@
  * @file Event.h
  * @brief Simple data structure to hold Event data.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Event.h,v 1.7 2005/01/12 01:02:16 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Event.h,v 1.8 2005/04/27 21:08:40 jchiang Exp $
  */
 
 #ifndef observationSim_Event_h
@@ -18,7 +18,7 @@ namespace observationSim {
  * @brief Simple data structure to hold Event data.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Event.h,v 1.7 2005/01/12 01:02:16 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Event.h,v 1.8 2005/04/27 21:08:40 jchiang Exp $
  */
 
 class Event {
@@ -67,8 +67,11 @@ public:
    double phi() const {
       Hep3Vector yAxis = zAxis().dir().cross(xAxis().dir());
       double my_phi = atan2(appDir().dir().dot(yAxis),
-                            appDir().dir().dot(xAxis().dir()));
-      return my_phi*180./M_PI;
+                            appDir().dir().dot(xAxis().dir()))*180./M_PI;
+      if (my_phi < 0) {
+         my_phi += 360.;
+      }
+      return my_phi;
    }
 
    /// Apparent azimuthal angle wrt spacecraft x-axis (degrees)
