@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Jan  7 10:35:03 PST 2008
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx Simulator.cxx 
+Log Message:
+disable gtorbsim build (because of flux/EventSource behavior change and forthcoming gttakosim
+    *
+------------------------------------------------------------
+User: jchiang  Mon Jan  7 10:35:03 PST 2008
 observationSim/cmt
 
 Modified Files:
