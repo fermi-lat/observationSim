@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Jan  7 10:35:03 PST 2008
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+disable gtorbsim build (because of flux/EventSource behavior change and forthcoming gttakosim
+    *
+------------------------------------------------------------
 TAG
 Tag name: v7r1p2, operation: add
 Package: observationSim
