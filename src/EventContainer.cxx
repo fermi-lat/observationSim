@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.84 2007/07/03 22:51:09 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.85 2007/12/18 18:45:51 jchiang Exp $
  */
 
 #include <cmath>
@@ -169,6 +169,10 @@ bool EventContainer::addEvent(EventSource *event,
       evtParams["RA"] = appDir.ra();
       evtParams["DEC"] = appDir.dec();
       if (m_cuts == 0 || m_cuts->accept(evtParams)) {
+//          if (m_events.size() > 0 && m_events.back().time() == time) {
+//             throw std::runtime_error("EventContainer::observationSim:\n"
+//                                      "identical event times.");
+//          }
          m_srcSummaries[srcName].acceptedNum += 1;
          m_events.push_back( Event(time, appEnergy, 
                                    appDir, sourceDir, zAxis, xAxis,
