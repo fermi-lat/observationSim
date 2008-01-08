@@ -4,7 +4,7 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.59 2007/05/15 00:30:24 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.60 2008/01/07 18:35:03 jchiang Exp $
  */
 
 #include <algorithm>
@@ -199,10 +199,10 @@ void Simulator::makeEvents(EventContainer &events,
    m_useSimTime = useSimTime;
    m_elapsedTime = 0.;
 
-   if (!m_usePointingHistory) {
-// Insert the very first entry in the scData file.
-      scData.addScData(m_absTime, spacecraft);
-   }
+//    if (!m_usePointingHistory) {
+// // Insert the very first entry in the scData file.
+//       scData.addScData(m_absTime, spacecraft);
+//    }
 
 // Loop over event generation steps until done.
    while (!done()) {
