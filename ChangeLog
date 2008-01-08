@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Jan  8 14:19:55 PST 2008
+observationSim/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+use string for FT2 file type in gtobssim.par; tagging v7r2p1
+    *
+------------------------------------------------------------
 User: jchiang  Tue Jan  8 14:19:54 PST 2008
 observationSim/cmt
 
