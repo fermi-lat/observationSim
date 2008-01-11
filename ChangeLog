@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Jan 11 15:47:35 PST 2008
+observationSim/observationSim
+
+Modified Files:
+	Event.h 
+Log Message:
+use conversion_type and new event_class def
+    *
+------------------------------------------------------------
 TAG
 Tag name: v7r2p1, operation: add
 Package: observationSim
