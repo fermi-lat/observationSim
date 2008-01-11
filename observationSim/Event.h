@@ -2,7 +2,7 @@
  * @file Event.h
  * @brief Simple data structure to hold Event data.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Event.h,v 1.8 2005/04/27 21:08:40 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Event.h,v 1.9 2007/12/18 18:45:50 jchiang Exp $
  */
 
 #ifndef observationSim_Event_h
@@ -18,7 +18,7 @@ namespace observationSim {
  * @brief Simple data structure to hold Event data.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Event.h,v 1.8 2005/04/27 21:08:40 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Event.h,v 1.9 2007/12/18 18:45:50 jchiang Exp $
  */
 
 class Event {
@@ -59,6 +59,20 @@ public:
 
    /// Event type (for ascertaining which set of IRFs to use).
    int eventType() const {return m_eventType;}
+
+   /// Event class (0, 1, 2,...)
+   /// Computed from m_eventType assuming IRFs are ordered front, back, 
+   /// front, back,....
+   int eventClass() const {
+      return m_eventType/2;
+   }
+
+   /// Conversion type (0=front, 1=back), 
+   /// Computed from m_eventType assuming IRF event types are ordered 
+   /// front, back, front, back,....
+   int conversionType() const {
+      return m_eventType % 2;
+   }
 
    /// True photon energy in MeV.
    double trueEnergy() const {return m_trueEnergy;}
