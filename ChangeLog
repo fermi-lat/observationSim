@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Jan 14 09:18:49 PST 2008
+observationSim/pfiles
+
+Modified Files:
+	gtobssim.par 
+Log Message:
+use file type for scfile
+    *
+------------------------------------------------------------
 User: jchiang  Fri Jan 11 15:47:36 PST 2008
 observationSim/src
 
