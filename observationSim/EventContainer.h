@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.33 2006/08/31 06:09:26 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.34 2007/02/20 06:07:12 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -41,7 +41,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.33 2006/08/31 06:09:26 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.34 2007/02/20 06:07:12 jchiang Exp $
  */
 
 class EventContainer : public ContainerBase {
@@ -68,18 +68,16 @@ public:
    /// @param event A pointer to the current EventSource object
    ///        that was provided by the FluxMgr object.
    /// @param respPtrs A vector of pointers to response 
-   ///        function containers.
+   ///        function containers.  If respPtrs is empty, then
+   ///        accept the event unconditionally without applying
+   ///        PSF or energy dispersion.
    /// @param spacecraft A pointer to an object that provides methods 
    ///        for accessing spacecraft orbit and attitude information.
    /// @param flush A flag to indicate whether to write the accumulated
    ///        Event data and then flush the buffers.
-   /// @param alwaysAccept If true, the event is accepted without
-   ///        regard to the response info, i.e., true energies and 
-   ///        directions are saved.
-   bool addEvent(EventSource *event, 
-                 std::vector<irfInterface::Irfs *> &respPtrs, 
-                 Spacecraft *spacecraft, bool flush=false, 
-                 bool alwaysAccept=false);
+   bool addEvent(EventSource * event, 
+                 std::vector<irfInterface::Irfs *> & respPtrs, 
+                 Spacecraft * spacecraft, bool flush=false);
 
    /// The number of events in the container.
    long numEvents() {return m_events.size();}
