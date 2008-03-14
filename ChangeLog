@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Mar 13 22:20:47 PDT 2008
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx Simulator.cxx 
+Log Message:
+add option to run gtobssim without IRFs; clean up Simulator, EventContainer interfaces
+    *
+------------------------------------------------------------
+User: jchiang  Thu Mar 13 22:20:47 PDT 2008
 observationSim/pfiles
 
 Modified Files:
