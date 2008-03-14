@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.37 2006/01/09 22:32:52 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.38 2007/10/01 15:28:44 golpa Exp $
  */
 #ifdef TRAP_FPE
 #include <fenv.h>
@@ -91,7 +91,7 @@ int main(int iargc, char * argv[]) {
    }
 
 // Create the Simulator object
-   observationSim::Simulator my_simulator(sourceNames, fileList);
+   observationSim::Simulator my_simulator(sourceNames, fileList, 1.21);
 
 // Allow for multiple IRFs.
    irfLoader::Loader::go();
