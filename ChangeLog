@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Mar 13 23:41:40 PDT 2008
+observationSim/src/test
+
+Modified Files:
+	main.cxx 
+Log Message:
+bug-fix; tagging v8r0p1
+    *
+------------------------------------------------------------
+User: jchiang  Thu Mar 13 23:41:40 PDT 2008
 observationSim/doc
 
 Modified Files:
