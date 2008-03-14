@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Mar 13 17:22:04 PDT 2008
+observationSim/src
+
+Modified Files:
+	ScDataContainer.cxx 
+Log Message:
+use Ft2File::setScAxes
+    *
+------------------------------------------------------------
 TAG
 Tag name: observationSim-07-02-01, operation: mov
 Package: observationSim
