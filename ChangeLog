@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: glastrm  Wed Mar 19 13:55:06 PDT 2008
+ScienceTools-scons/observationSim
+
+Modified Files:
+	SConscript 
+Log Message:
+Register data files
+    *
+------------------------------------------------------------
 TAG
 Tag name: observationSim-08-00-01, operation: add
 Package: observationSim
