@@ -1,6 +1,6 @@
 # -*- python -*-
 #
-# $Id: SConscript,v 1.2 2007/12/11 19:03:27 jchiang Exp $
+# $Id: SConscript,v 1.3 2008/02/26 05:14:32 glastrm Exp $
 Import('baseEnv')
 Import('listFiles')
 progEnv = baseEnv.Clone()
@@ -23,4 +23,5 @@ progEnv.Tool('registerObjects', package = 'observationSim',
              binaries = [gtobssimBin, gtorbsimBin], 
              testApps = [test_observationSimBin],
              includes = listFiles(['observationSim/*.h']), 
-             pfiles = listFiles(['pfiles/*.par']))
+             pfiles = listFiles(['pfiles/*.par']),
+             data = listFiles(['data/*'], recursive = True))
