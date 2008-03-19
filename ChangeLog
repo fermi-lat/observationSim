@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 TAG
+Tag name: observationSim-08-00-01, operation: mov
+Package: observationSim
+User: glast  Wed Mar 19 13:56:02 2008
+Files:
+  observationSim/SConscript  1.4
+
+    *
+------------------------------------------------------------
+TAG
 Tag name: v8r0p1, operation: mov
 Package: observationSim
 User: glast  Wed Mar 19 13:55:48 2008
