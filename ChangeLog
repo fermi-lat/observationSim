@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue May  6 08:51:39 PDT 2008
+observationSim/pfiles
+
+Removed Files:
+	gtorbsim.par 
+Log Message:
+remove gtorbsim code from repository
+    *
+------------------------------------------------------------
+User: jchiang  Tue May  6 08:51:39 PDT 2008
 observationSim/cmt
 
 Modified Files:
