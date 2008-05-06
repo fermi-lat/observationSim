@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue May  6 08:51:39 PDT 2008
+observationSim/src/orbSim
+
+Removed Files:
+	orbSim.cxx 
+Log Message:
+remove gtorbsim code from repository
+    *
+------------------------------------------------------------
+User: jchiang  Tue May  6 08:51:39 PDT 2008
 observationSim/pfiles
 
 Removed Files:
