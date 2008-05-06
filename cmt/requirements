@@ -3,7 +3,7 @@ version v8r0p1
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.193 2008/03/14 05:24:03 jchiang Exp $
+# $Id: requirements,v 1.194 2008/03/14 06:41:39 jchiang Exp $
 
 use STpolicy v*
 use cfitsio v* IExternal
@@ -26,7 +26,6 @@ apply_pattern ST_library option=" -no_share "
 apply_pattern ST_pfiles
 
 apply_pattern ST_app_withDir name=gtobssim dir=obsSim
-#apply_pattern ST_app_withDir name=gtorbsim dir=orbSim
 
 private
 
