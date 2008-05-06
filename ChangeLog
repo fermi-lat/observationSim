@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue May  6 08:51:39 PDT 2008
+observationSim/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+remove gtorbsim code from repository
+    *
+------------------------------------------------------------
 User: jchiang  Mon Mar 24 20:58:15 PDT 2008
 observationSim/src
 
