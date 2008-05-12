@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+TAG
+Tag name: v8r1, operation: mov
+Package: observationSim
+User: glastrm  Mon May 12 09:32:20 2008
+Files:
+  observationSim/SConscript  1.6
+
+    *
+------------------------------------------------------------
 User: glastrm  Mon May 12 09:32:09 PDT 2008
 observationSim
 
