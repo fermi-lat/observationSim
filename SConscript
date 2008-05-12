@@ -1,6 +1,6 @@
 # -*- python -*-
 #
-# $Id: SConscript,v 1.4 2008/03/19 20:55:06 glastrm Exp $
+# $Id: SConscript,v 1.5 2008/03/21 16:52:35 glastrm Exp $
 Import('baseEnv')
 Import('listFiles')
 progEnv = baseEnv.Clone()
@@ -16,11 +16,10 @@ test_observationSimBin = progEnv.Program('test_observationSim',
                                          listFiles(['src/test/*.cxx']))
 
 gtobssimBin = progEnv.Program('gtobssim', listFiles(['src/obsSim/*.cxx']))
-gtorbsimBin = progEnv.Program('gtorbsim', listFiles(['src/orbSim/*.cxx']))
 
 progEnv.Tool('registerObjects', package = 'observationSim', 
              libraries = [observationSimLib], 
-             binaries = [gtobssimBin, gtorbsimBin], 
+             binaries = [gtobssimBin], 
              testApps = [test_observationSimBin],
              includes = listFiles(['observationSim/*.h']), 
              pfiles = listFiles(['pfiles/*.par']),
