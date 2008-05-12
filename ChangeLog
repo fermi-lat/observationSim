@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: glastrm  Mon May 12 09:32:09 PDT 2008
+observationSim
+
+Modified Files:
+	SConscript 
+Log Message:
+Removed gtorbsim from SConscript file to match requirements file
+    *
+------------------------------------------------------------
 TAG
 Tag name: observationSim-08-01-00, operation: add
 Package: observationSim
