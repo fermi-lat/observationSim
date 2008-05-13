@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue May 13 14:26:01 PDT 2008
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx 
+Log Message:
+back off on using new event class defs
+    *
+------------------------------------------------------------
 TAG
 Tag name: observationSim-08-01-00, operation: mov
 Package: observationSim
