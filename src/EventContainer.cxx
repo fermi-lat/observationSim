@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.90 2008/05/13 21:26:01 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.91 2008/05/16 21:23:25 jchiang Exp $
  */
 
 #include <cmath>
@@ -175,7 +175,7 @@ bool EventContainer::addEvent(EventSource * event,
          double lat_deadtime(2.6e-5);
          if (m_events.size() > 0 &&
              (time - m_events.back().time()) < lat_deadtime) {
-            st_stream::StreamFormatter formatter("gtobssim", "", 2);
+            st_stream::StreamFormatter formatter("gtobssim", "", 3);
             formatter.info() << "Interval between consecutive events is "
                              << "less than the nominal LAT deadtime "
                              << "(26 microseconds).\n"
