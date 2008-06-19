@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+TAG
+Tag name: observationSim-08-01-03, operation: mov
+Package: observationSim
+User: glastrm  Thu Jun 19 16:27:37 2008
+Files:
+  observationSim/SConscript  1.7
+
+    *
+------------------------------------------------------------
 User: glastrm  Thu Jun 19 16:27:27 PDT 2008
 ScienceTools-scons/observationSim
 
