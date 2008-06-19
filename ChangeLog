@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: glastrm  Thu Jun 19 16:27:27 PDT 2008
+ScienceTools-scons/observationSim
+
+Modified Files:
+	SConscript 
+Log Message:
+Added Author and Version fields
+    *
+------------------------------------------------------------
 TAG
 Tag name: observationSim-08-01-03, operation: add
 Package: observationSim
