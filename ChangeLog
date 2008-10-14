@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Oct 14 09:30:45 PDT 2008
+observationSim/src
+
+Modified Files:
+	LatSc.cxx LatSc.h 
+Log Message:
+handle missing intervals from FT2 files
+    *
+------------------------------------------------------------
+User: jchiang  Tue Oct 14 09:30:45 PDT 2008
 observationSim/pfiles
 
 Modified Files:
