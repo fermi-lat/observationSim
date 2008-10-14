@@ -1,4 +1,12 @@
 ------------------------------------------------------------
+User: glastrm  Tue Oct 14 10:30:38 PDT 2008
+observationSim
+
+Modified Files:
+	SConscript 
+Log Message:
+    *
+------------------------------------------------------------
 TAG
 Tag name: v8r2, operation: add
 Package: observationSim
