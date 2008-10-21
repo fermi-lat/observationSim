@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Oct 21 12:50:30 PDT 2008
+observationSim/src
+
+Modified Files:
+	EventContainer.cxx LatSc.cxx 
+Log Message:
+correct logic errors in finding the right time interval in the FT2 file; return zero livetime frac if the requested event time lies outside of the FT2 file range; reorder the tests in EventContainer::addEvent, putting the least costly ones first
+    *
+------------------------------------------------------------
 TAG
 Tag name: observationSim-08-02-00, operation: add
 Package: observationSim
