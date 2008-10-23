@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Wed Oct 22 20:25:03 PDT 2008
+observationSim/xml
+
+Modified Files:
+	obsSim_source_library.xml 
+Log Message:
+replace extfilesys location for galprop model with GALPROP_MODEL env var
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: observationSim-08-03-00, operation: add
 Package: observationSim
