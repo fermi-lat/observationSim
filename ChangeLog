@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Wed Oct 22 20:48:07 PDT 2008
+observationSim/pfiles
+
+Modified Files:
+	gtobssim.par 
+Log Message:
+set emax to 3e5
+
+    *
+------------------------------------------------------------
 User: jchiang  Wed Oct 22 20:25:03 PDT 2008
 observationSim/xml
 
