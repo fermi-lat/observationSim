@@ -3,7 +3,7 @@
  * @brief Observation simulator using instrument response functions.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.72 2007/10/27 05:59:55 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.73 2008/03/14 05:20:47 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -95,7 +95,7 @@ private:
 
 st_app::StAppFactory<ObsSim> myAppFactory("gtobssim");
 
-std::string ObsSim::s_cvs_id("$Name: v7r1p1 $");
+std::string ObsSim::s_cvs_id("$Name:  $");
 
 void ObsSim::banner() const {
    int verbosity = m_pars["chatter"];
@@ -251,6 +251,7 @@ void ObsSim::createResponseFuncs() {
 
 void ObsSim::createSimulator() {
    double totalArea(maxEffArea());
+//   std::cout << "total area: " << totalArea << std::endl;
    double startTime = m_pars["tstart"];
    std::string pointingHistory = m_pars["scfile"];
    std::string sc_table = m_pars["sctable"];

@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.92 2008/05/21 15:11:54 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EventContainer.cxx,v 1.93 2008/10/21 19:50:30 jchiang Exp $
  */
 
 #include <cmath>
@@ -257,10 +257,7 @@ void EventContainer::writeEvents(double obsStopTime) {
       ft1["phi"].set(evt->phi());
       ft1["zenith_angle"].set(evt->zenAngle());
       ft1["earth_azimuth_angle"].set(earthAzimuthAngle(ra, dec, time));
-//
-// Not ready for this change yet.
-//      ft1["event_class"].set(evt->eventClass());
-      ft1["event_class"].set(evt->conversionType());
+      ft1["event_class"].set(evt->eventClass());
       ft1["conversion_type"].set(evt->conversionType());
       ft1["mc_src_id"].set(evt->eventId());
       ft1["mcenergy"].set(evt->trueEnergy());

@@ -1,9 +1,13 @@
 /** @file release.notes
     @brief package observationSim
     @brief Package coordinators: J. Chiang <jchiang@slac.stanford.edu>
-    $Id: release.notes,v 1.143 2008/10/14 16:50:59 jchiang Exp $
+    $Id: release.notes,v 1.144 2008/10/21 19:51:57 jchiang Exp $
 
     @verbatim
+    v8r4   21-Oct-08   JC   use binary search for finding FT2 intervals
+                            in LatSc::livetimefrac (this is much faster than
+                            computed index + linear search when operating on
+                            FT2 files with many SAA gaps).
     v8r3   21-Oct-08   JC   fix logic errors in selecting FT2 intervals
                             in LatSc::livetimeFrac
     v8r2   14-Oct-08   JC   account for unannounced behavior change in flux
