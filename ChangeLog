@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Thu Jun 11 09:49:10 PDT 2009
+observationSim/src
+
+Modified Files:
+	LatSc.cxx 
+Log Message:
+use binary search to find intervals for livetime calculation (more efficient than index calculation for ft2 files with many gaps)
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-15-01, operation: add
 Package: observationSim
