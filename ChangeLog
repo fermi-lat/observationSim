@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: elwinter  Thu Jul 30 10:05:47 PDT 2009
+observationSim/pfiles
+
+Modified Files:
+      Tag: ScienceToolsv9r15p2
+	gtobssim.par 
+Log Message:
+Imported changes from FSSC.
+    *
+------------------------------------------------------------
 TAG
 Tag name: observationSim-08-04-01, operation: add
 Package: observationSim
