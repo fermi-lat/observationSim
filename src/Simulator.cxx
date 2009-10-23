@@ -4,12 +4,13 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.61 2008/01/08 22:19:55 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.62 2008/03/14 05:20:47 jchiang Exp $
  */
 
 #include <algorithm>
 #include <fstream>
 #include <iostream>
+#include <sstream>
 #include <string>
 
 #include "facilities/Util.h"
@@ -75,7 +76,15 @@ void Simulator::init(const std::vector<std::string> &sourceNames,
 
 // Create the FluxMgr object, providing access to the sources in the
 // various xml files.
-   m_fluxMgr = new FluxMgr(fileList);
+   try {
+      m_fluxMgr = new FluxMgr(fileList);
+   } catch(...) {
+      std::ostringstream message;
+      message << "\nError reading in the xml model file.\n"
+              << "Please check that you are using the correct xml "
+              << "format for this tool." << std::endl;
+      throw std::runtime_error(message.str());
+   }      
    m_fluxMgr->setExpansion(1.);    // is this already the default?
 
 // Set the start of the simulation time in GPS:
