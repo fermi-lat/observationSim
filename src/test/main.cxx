@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.38 2007/10/01 15:28:44 golpa Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.39 2008/03/14 06:41:40 jchiang Exp $
  */
 #ifdef TRAP_FPE
 #include <fenv.h>
@@ -41,8 +41,10 @@ int main(int iargc, char * argv[]) {
    fileList.push_back(xml_list);
    xml_list = facilities::commonUtilities::joinPath(facilities::commonUtilities::getXmlPath("observationSim"), "3EG_catalog_20-1e6MeV.xml");
    fileList.push_back(xml_list);
+#ifndef BUILD_WITHOUT_ROOT
    xml_list = facilities::commonUtilities::joinPath(facilities::commonUtilities::getXmlPath("GRB"), "GRB_user_library.xml");
    fileList.push_back(xml_list);
+#endif
    xml_list = facilities::commonUtilities::joinPath(facilities::commonUtilities::getXmlPath("observationSim"), "time_source.xml");
    fileList.push_back(xml_list);
 
