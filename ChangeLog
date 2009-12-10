@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: vernaleo  Thu Dec 10 15:28:53 PST 2009
+observationSim/src/test
+
+Modified Files:
+	main.cxx 
+Log Message:
+Minor fix for the FSSC --without-root build option.
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-15-06, operation: add
 Package: observationSim
