@@ -3,9 +3,10 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.42 2007/05/16 20:41:45 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ScDataContainer.cxx,v 1.43 2008/03/14 00:22:04 jchiang Exp $
  */
 
+#include <cstdlib>
 #include <sstream>
 #include <stdexcept>
 
