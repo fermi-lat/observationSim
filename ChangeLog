@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: elwinter  Wed Dec 16 15:09:27 PST 2009
+observationSim/pfiles
+
+Modified Files:
+	gtobssim.par 
+Log Message:
+Changed default value of irfs parameter to P6_V3_DIFFUSE.
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: observationSim-08-04-03, operation: add
 Package: observationSim
