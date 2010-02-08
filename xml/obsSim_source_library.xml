@@ -1,5 +1,4 @@
-<?xml version='1.0' standalone='no'?>
-<!-- $Header: /nfs/slac/g/glast/ground/cvs/observationSim/xml/obsSim_source_library.xml,v 1.24 2008/10/23 03:25:03 jchiang Exp $
+<!-- $Header: /nfs/slac/g/glast/ground/cvs/observationSim/xml/obsSim_source_library.xml,v 1.25 2010/02/08 05:46:20 jchiang Exp $
 -->
 <!-- *********************************************************************** -->
 <source_library title="photons">
