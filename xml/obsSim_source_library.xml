@@ -1,4 +1,5 @@
-<!-- $Header: /nfs/slac/g/glast/ground/cvs/observationSim/xml/obsSim_source_library.xml,v 1.23 2007/11/23 18:34:04 golpa Exp $
+<?xml version='1.0' standalone='no'?>
+<!-- $Header: /nfs/slac/g/glast/ground/cvs/observationSim/xml/obsSim_source_library.xml,v 1.24 2008/10/23 03:25:03 jchiang Exp $
 -->
 <!-- *********************************************************************** -->
 <source_library title="photons">
@@ -118,7 +119,7 @@
               Total photon flux from the map (#/m^2/s) = 18.58 (10MeV-655GeV)
               Fits file (plate-carree only) = GP_gamma.fits
           -->
-         <SpectrumClass name="MapCube" params="127.923, $(GALPROP_MODEL)"/>
+         <SpectrumClass name="MapCube" params="8.30, $(GALPROP_MODEL)"/>
          <use_spectrum frame="galaxy"/>
       </spectrum>
    </source>
