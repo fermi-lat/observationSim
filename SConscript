@@ -1,6 +1,6 @@
 # -*- python -*-
 #
-# $Id: SConscript,v 1.15 2010/02/08 05:47:05 jchiang Exp $
+# $Id: SConscript,v 1.16 2010/02/08 06:13:46 jchiang Exp $
 # Authors: James Chiang <jchiang@slac.stanford.edu>
 # Version: observationSim-08-04-05
 Import('baseEnv')
@@ -8,7 +8,6 @@ Import('listFiles')
 progEnv = baseEnv.Clone()
 libEnv = baseEnv.Clone()
 
-libEnv.Tool('observationSimLib', depsOnly = 1)
 observationSimLib = libEnv.StaticLibrary('observationSim', 
                                          listFiles(['src/*.cxx']))
 
