@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.39 2008/03/14 06:41:40 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/test/main.cxx,v 1.40 2009/12/10 23:28:53 vernaleo Exp $
  */
 #ifdef TRAP_FPE
 #include <fenv.h>
@@ -100,12 +100,9 @@ int main(int iargc, char * argv[]) {
    irfInterface::IrfsFactory * myFactory 
       = irfInterface::IrfsFactory::instance();
    std::vector<irfInterface::Irfs *> respPtrs;
-   if (useCombined) {
-      respPtrs.push_back(myFactory->create("Glast25::Combined"));
-   } else { // use Front & Back
-      respPtrs.push_back(myFactory->create("Glast25::Front"));
-      respPtrs.push_back(myFactory->create("Glast25::Back"));
-   }
+
+   respPtrs.push_back(myFactory->create("DC1A::Front"));
+   respPtrs.push_back(myFactory->create("DC1A::Back"));
 
 // Generate the events and spacecraft data.
    observationSim::EventContainer events("test_events", "EVENTS");
