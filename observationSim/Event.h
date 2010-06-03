@@ -2,7 +2,7 @@
  * @file Event.h
  * @brief Simple data structure to hold Event data.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Event.h,v 1.9 2007/12/18 18:45:50 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/observationSim/Event.h,v 1.10 2008/01/11 23:47:35 jchiang Exp $
  */
 
 #ifndef observationSim_Event_h
@@ -18,7 +18,7 @@ namespace observationSim {
  * @brief Simple data structure to hold Event data.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/Event.h,v 1.9 2007/12/18 18:45:50 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/observationSim/Event.h,v 1.10 2008/01/11 23:47:35 jchiang Exp $
  */
 
 class Event {
@@ -79,7 +79,7 @@ public:
 
    /// Apparent inclination wrt spacecraft z-axis (degrees)
    double phi() const {
-      Hep3Vector yAxis = zAxis().dir().cross(xAxis().dir());
+      CLHEP::Hep3Vector yAxis = zAxis().dir().cross(xAxis().dir());
       double my_phi = atan2(appDir().dir().dot(yAxis),
                             appDir().dir().dot(xAxis().dir()))*180./M_PI;
       if (my_phi < 0) {
