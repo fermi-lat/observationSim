@@ -3,7 +3,7 @@
  * @brief Observation simulator using instrument response functions.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/obsSim/obsSim.cxx,v 1.73 2008/03/14 05:20:47 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.74 2009/06/11 17:01:59 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -95,7 +95,7 @@ private:
 
 st_app::StAppFactory<ObsSim> myAppFactory("gtobssim");
 
-std::string ObsSim::s_cvs_id("$Name:  $");
+std::string ObsSim::s_cvs_id("$Name: ScienceTools-LATEST-1-3156 $");
 
 void ObsSim::banner() const {
    int verbosity = m_pars["chatter"];
@@ -163,7 +163,7 @@ void ObsSim::setRandomSeed() {
 // Set the random number seed in the CLHEP random number engine.
 // We only do this once per run, so we set it using the constructor.
 // See <a href="http://wwwasd.web.cern.ch/wwwasd/lhc++/clhep/doxygen/html/Random_8h-source.html">CLHEP/Random/Random.h</a>.
-   HepRandom hepRandom(m_pars["seed"]);
+   CLHEP::HepRandom hepRandom(m_pars["seed"]);
 }
 
 void ObsSim::createFactories() {

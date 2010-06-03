@@ -3,7 +3,7 @@
  * @brief Declaration for the EGRET spacecraft object.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EgretSc.h,v 1.5 2005/05/08 21:15:49 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EgretSc.h,v 1.6 2006/03/15 21:47:07 jchiang Exp $
  */
 
 #ifndef observationSim_EgretSc_h
@@ -26,7 +26,7 @@ namespace observationSim {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/EgretSc.h,v 1.5 2005/05/08 21:15:49 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EgretSc.h,v 1.6 2006/03/15 21:47:07 jchiang Exp $
  */
 
 class EgretSc : public Spacecraft {
@@ -52,7 +52,7 @@ public:
    virtual double EarthLon(double) {return m_earthLon;}
    virtual double EarthLat(double) {return m_earthLat;}
 
-   virtual HepRotation InstrumentToCelestial(double);
+   virtual CLHEP::HepRotation InstrumentToCelestial(double);
 
    virtual bool inSaa(double) {return m_inSaa;}
 
