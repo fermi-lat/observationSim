@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Jun  2 21:16:37 PDT 2010
+ScienceTools-scons/observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+add CLHEP qualifiers
+    *
+------------------------------------------------------------
+User: jchiang  Wed Jun  2 21:16:37 PDT 2010
 ScienceTools-scons/observationSim/src
 
 Modified Files:
