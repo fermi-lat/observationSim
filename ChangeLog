@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Jun 16 15:44:52 PDT 2010
+ScienceTools-scons/observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+add includes for gcc4.4.3 build
+    *
+------------------------------------------------------------
 TAG
 Tag name: observationSim-08-04-08, operation: add
 Package: observationSim
