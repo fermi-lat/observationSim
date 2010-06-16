@@ -3,13 +3,14 @@
  * @brief Observation simulator using instrument response functions.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.74 2009/06/11 17:01:59 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.75 2010/06/03 04:16:37 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
 #include <fenv.h>
 #endif
 
+#include <cstdlib>
 #include <stdexcept>
 
 #include "CLHEP/Random/Random.h"
@@ -95,7 +96,7 @@ private:
 
 st_app::StAppFactory<ObsSim> myAppFactory("gtobssim");
 
-std::string ObsSim::s_cvs_id("$Name: ScienceTools-LATEST-1-3156 $");
+std::string ObsSim::s_cvs_id("$Name:  $");
 
 void ObsSim::banner() const {
    int verbosity = m_pars["chatter"];
