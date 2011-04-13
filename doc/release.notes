@@ -1,11 +1,12 @@
 /** @file release.notes
     @brief package observationSim
     @brief Package coordinators: J. Chiang <jchiang@slac.stanford.edu>
-    $Id: release.notes,v 1.154 2010/06/03 14:41:10 jchiang Exp $
+    $Id: release.notes,v 1.155 2010/10/21 22:50:53 jchiang Exp $
 
     @verbatim
     EOH
 
+ observationSim-08-04-10 12-Apr-2011 jchiang set DATA_QUAL and LAT_CONFIG columns to 1 so that standard gtmktime filter can be applied
  observationSim-08-04-09 21-Oct-2010 jchiang include <cstdlib> for gcc44
  observationSim-08-04-08 03-Jun-2010 jchiang add CLHEP qualifiers in prep for CLHEP 2.0.4.6
  observationSim-08-04-07 31-Mar-2010 jchiang use DC1A irfs in test program
