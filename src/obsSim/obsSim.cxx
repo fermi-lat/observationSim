@@ -3,7 +3,7 @@
  * @brief Observation simulator using instrument response functions.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.75 2010/06/03 04:16:37 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.76 2010/06/16 22:44:52 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -275,6 +275,15 @@ void ObsSim::createSimulator() {
 
    int id_offset = m_pars["offset"];
    m_simulator->setIdOffset(id_offset);
+
+   if (pointingHistory == "none" || pointingHistory == "") {
+      try {
+         double rocking_angle = m_pars["rockangle"];
+         m_simulator->setRocking(3, rocking_angle);
+      } catch (...) { // rockangle = INDEF
+         // do nothing (i.e., leave at default rocking of 35 deg)
+      }
+   }
 }
 
 void ObsSim::generateData() {
