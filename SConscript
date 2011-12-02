@@ -1,8 +1,8 @@
 # -*- python -*-
 #
-# $Id: SConscript,v 1.22 2011/04/13 04:49:24 jchiang Exp $
+# $Id: SConscript,v 1.23 2011/08/10 16:10:57 jchiang Exp $
 # Authors: James Chiang <jchiang@slac.stanford.edu>
-# Version: observationSim-08-04-11
+# Version: observationSim-08-05-00
 Import('baseEnv')
 Import('listFiles')
 progEnv = baseEnv.Clone()
