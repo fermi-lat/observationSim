@@ -3,7 +3,7 @@
  * @brief Observation simulator using instrument response functions.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.77 2011/08/10 16:10:42 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.78 2011/12/02 06:40:17 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -389,6 +389,10 @@ double ObsSim::maxEffArea() const {
    for (size_t i=0; i < m_respPtrs.size(); i++) {
       total += m_respPtrs.at(i)->aeff()->upperLimit();
    }
-   total *= 1.5; //head room for efficiency factor corrections at large ltfrac
+   if (m_respPtrs.front()->efficiencyFactor()) {
+// Provide head room for efficiency factor corrections at large
+// ltfrac.
+      total *= 1.5;
+   }
    return total/1e4;
 }
