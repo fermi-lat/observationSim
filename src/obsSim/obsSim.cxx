@@ -3,7 +3,7 @@
  * @brief Observation simulator using instrument response functions.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.79 2011/12/03 21:59:24 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.80 2011/12/10 20:06:19 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -11,6 +11,7 @@
 #endif
 
 #include <cstdlib>
+#include <memory>
 #include <stdexcept>
 
 #include "CLHEP/Random/Random.h"
