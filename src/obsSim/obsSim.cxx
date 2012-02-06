@@ -3,7 +3,7 @@
  * @brief Observation simulator using instrument response functions.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.80 2011/12/10 20:06:19 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.81 2011/12/13 03:02:32 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -417,6 +417,11 @@ void ObsSim::get_tstart(std::string scfile, const std::string & sctable) {
    facilities::Util::expandEnvVar(&scfile);
    std::auto_ptr<const tip::Table>
       sc_data(tip::IFileSvc::instance().readTable(scfile, sctable));
-   const tip::Header & header(sc_data->getHeader());
-   header["TSTART"].get(m_tstart);
+/// TSTART from the Fermi astroserver is unreliable.  Use START of
+/// first entry instead.
+//    const tip::Header & header(sc_data->getHeader());
+//    header["TSTART"].get(m_tstart);
+   tip::Table::ConstIterator it = sc_data->begin();
+   tip::ConstTableRecord & row = *it;
+   row["start"].get(m_tstart);
 }
