@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EventContainer.cxx,v 1.94 2009/06/11 17:01:59 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EventContainer.cxx,v 1.95 2011/12/02 06:40:17 jchiang Exp $
  */
 
 #include <cmath>
@@ -66,7 +66,7 @@ namespace {
 // of response object pointers.
 //
       double efficiency(1);
-      irfInterface::IEfficiencyFactor * efficiency_factor
+      const irfInterface::IEfficiencyFactor * efficiency_factor
          = respPtrs.front()->efficiencyFactor();
       if (efficiency_factor) {
          efficiency = efficiency_factor->value(energy, ltfrac);
