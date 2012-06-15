@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Jun 14 17:18:10 PDT 2012
+ScienceTools-scons/observationSim/src
+
+Modified Files:
+	ContainerBase.cxx EventContainer.cxx ScDataContainer.cxx 
+Log Message:
+write par file parameters to FT1 and FT2 headers
+    *
+------------------------------------------------------------
 User: jchiang  Thu Jun 14 17:18:09 PDT 2012
 ScienceTools-scons/observationSim/pfiles
 
