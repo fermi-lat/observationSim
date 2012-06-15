@@ -3,7 +3,7 @@
  * @brief Implementation for class that keeps track of events and when they
  * get written to a FITS file.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/ScDataContainer.cxx,v 1.44 2009/12/16 23:10:33 elwinter Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/ScDataContainer.cxx,v 1.45 2011/04/12 05:47:43 jchiang Exp $
  */
 
 #include <cstdlib>
@@ -35,7 +35,9 @@ namespace {
 namespace observationSim {
 
 ScDataContainer::~ScDataContainer() {
-   if (m_scData.size() > 0) writeScData();
+   if (m_scData.size() > 0) {
+      writeScData();
+   }
 }
 
 void ScDataContainer::init() {
@@ -76,7 +78,9 @@ void ScDataContainer::addScData(double time, Spacecraft * spacecraft,
          throw;
       }
    }
-   if (flush || m_scData.size() >= m_maxNumEntries) writeScData();
+   if (flush || m_scData.size() >= m_maxNumEntries) {
+      writeScData();
+   }
 }
 
 void ScDataContainer::writeScData() {
@@ -122,6 +126,8 @@ void ScDataContainer::writeScData() {
       ft2.setPhduKeyword("FILENAME", ft2File);
       ft2.setPhduKeyword("VERSION", 1);
       ft2.setPhduKeyword("CREATOR", creator());
+
+      writeParFileParams(ft2.header());
 
       ft2.close();
 

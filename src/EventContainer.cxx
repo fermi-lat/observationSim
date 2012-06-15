@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EventContainer.cxx,v 1.95 2011/12/02 06:40:17 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EventContainer.cxx,v 1.96 2012/02/08 18:14:15 jchiang Exp $
  */
 
 #include <cmath>
@@ -300,6 +300,8 @@ void EventContainer::writeEvents(double obsStopTime) {
    ft1.setPhduKeyword("FILENAME", ft1File);
    ft1.setPhduKeyword("VERSION", 1);
    ft1.setPhduKeyword("CREATOR", creator());
+
+   writeParFileParams(ft1.header());
 
    ft1.close();
 

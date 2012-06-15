@@ -2,13 +2,15 @@
  * @file ContainerBase.cxx
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/ContainerBase.cxx,v 1.6 2005/04/13 06:38:02 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/ContainerBase.cxx,v 1.7 2005/08/16 17:51:10 jchiang Exp $
  */
 
 #include <ctime>
 
 #include <sstream>
 #include <stdexcept>
+
+#include "st_app/AppParGroup.h"
 
 #include "tip/Extension.h"
 #include "tip/Header.h"
@@ -74,6 +76,51 @@ astro::JulianDate ContainerBase::currentTime() {
       throw std::runtime_error("ContainerBase::currentTime:\n"
                                + std::string("cannot be ascertained, ")
                                + "std::time returns a null value.");
+   }
+}
+
+void ContainerBase::write_par_as_string(tip::Header & header,
+                                        const std::string & keyword,
+                                        const std::string & parname) const {
+   std::string value = (*m_pars)[parname];
+   header[keyword].set(value);
+}
+                                           
+void ContainerBase::write_par_as_double(tip::Header & header,
+                                        const std::string & keyword,
+                                        const std::string & parname) const {
+   double value = (*m_pars)[parname];
+   header[keyword].set(value);
+}
+
+void ContainerBase::write_par_as_int(tip::Header & header,
+                                     const std::string & keyword,
+                                     const std::string & parname) const {
+   int value = (*m_pars)[parname];
+   header[keyword].set(value);
+}
+
+void ContainerBase::write_par_as_bool(tip::Header & header,
+                                      const std::string & keyword,
+                                      const std::string & parname) const {
+   bool value = (*m_pars)[parname];
+   header[keyword].set(value);
+}
+
+void ContainerBase::writeParFileParams(tip::Header & header) const {
+   if (!m_pars) {
+      return;
+   }
+   write_par_as_string(header, "SIMINFIL", "infile");
+   write_par_as_string(header, "SIMSRCLI", "srclist");
+   write_par_as_string(header, "SIMSCFIL", "scfile");
+   write_par_as_int(header, "SIMOFFSE", "offset");
+   write_par_as_bool(header, "SIMEDISP", "edisp");
+   write_par_as_string(header, "SIMIRFS", "irfs");
+   write_par_as_int(header, "SIMSEED", "seed");
+
+   if ((*m_pars)["irfs"] == "none") {
+      write_par_as_double(header, "SIMAREA", "area");
    }
 }
 
