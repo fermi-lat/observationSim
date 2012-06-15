@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Jun 14 17:18:10 PDT 2012
+ScienceTools-scons/observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+write par file parameters to FT1 and FT2 headers
+    *
+------------------------------------------------------------
+User: jchiang  Thu Jun 14 17:18:10 PDT 2012
 ScienceTools-scons/observationSim/src
 
 Modified Files:
