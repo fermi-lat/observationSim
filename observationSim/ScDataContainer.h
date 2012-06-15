@@ -2,7 +2,7 @@
  * @file ScDataContainer.h
  * @brief Declaration for ScDataContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.17 2005/08/26 15:55:49 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/observationSim/ScDataContainer.h,v 1.18 2005/09/12 22:18:40 jchiang Exp $
  */
 
 #ifndef observationSim_ScDataContainer_h
@@ -26,9 +26,6 @@ namespace observationSim {
  * @class ScDataContainer
  * @brief Stores and writes ScData to a FITS file.
  *
- * @author J. Chiang
- *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/ScDataContainer.h,v 1.17 2005/08/26 15:55:49 jchiang Exp $
  */
 
 class ScDataContainer : public ContainerBase {
@@ -40,8 +37,9 @@ public:
    ///        buffer before a FITS file is written.
    ScDataContainer(const std::string & filename, 
                    const std::string & tablename,
-                   int maxNumEntries=20000, bool writeData=true) : 
-      ContainerBase(filename, tablename, maxNumEntries),
+                   int maxNumEntries=20000, bool writeData=true,
+                   const st_app::AppParGroup * pars=0) : 
+      ContainerBase(filename, tablename, maxNumEntries, pars),
       m_writeData(writeData) {
       init();
    }

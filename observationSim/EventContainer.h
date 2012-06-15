@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.34 2007/02/20 06:07:12 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/observationSim/EventContainer.h,v 1.35 2008/03/14 05:20:46 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -39,9 +39,6 @@ namespace observationSim {
  * @class EventContainer
  * @brief Stores and writes Events to a FITS file.
  *
- * @author J. Chiang
- *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/observationSim/EventContainer.h,v 1.34 2007/02/20 06:07:12 jchiang Exp $
  */
 
 class EventContainer : public ContainerBase {
@@ -56,8 +53,9 @@ public:
                   dataSubselector::Cuts * cuts=0,
                   unsigned int maxNumEvents=20000,
                   double startTime=0, double stopTime=0,
-                  bool applyEdisp=true) : 
-      ContainerBase(filename, tablename, maxNumEvents), m_prob(1), 
+                  bool applyEdisp=true,
+                  const st_app::AppParGroup * pars=0) : 
+      ContainerBase(filename, tablename, maxNumEvents, pars), m_prob(1), 
       m_cuts(cuts), m_startTime(startTime), m_stopTime(stopTime),
       m_applyEdisp(applyEdisp) {
       init();

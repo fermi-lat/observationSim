@@ -3,7 +3,7 @@
  * @brief Observation simulator using instrument response functions.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.81 2011/12/13 03:02:32 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.82 2012/02/06 21:47:29 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -322,7 +322,8 @@ void ObsSim::generateData() {
    bool applyEdisp = m_pars["edisp"];
    observationSim::EventContainer events(prefix + "_events", ev_table,
                                          cuts, nMaxRows,
-                                         start_time, stop_time, applyEdisp);
+                                         start_time, stop_time, applyEdisp,
+                                         &m_pars);
    events.setAppName("gtobssim");
    events.setVersion(getVersion());
    std::string pointingHistory = m_pars["scfile"];
@@ -331,7 +332,7 @@ void ObsSim::generateData() {
                        || !st_facilities::Util::fileExists(pointingHistory));
    std::string sc_table = m_pars["sctable"];
    observationSim::ScDataContainer scData(prefix + "_scData", sc_table,
-                                          nMaxRows, writeScData);
+                                          nMaxRows, writeScData, &m_pars);
    scData.setAppName("gtobssim");
    scData.setVersion(getVersion());
    observationSim::Spacecraft * spacecraft(0);
