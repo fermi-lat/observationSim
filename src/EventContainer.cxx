@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EventContainer.cxx,v 1.97 2012/06/15 00:18:10 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EventContainer.cxx,v 1.98 2012/09/27 04:55:47 jchiang Exp $
  */
 
 #include <cmath>
@@ -116,6 +116,9 @@ EventContainer::~EventContainer() {
 
 void EventContainer::init() {
    m_events.clear();
+   if (!m_cuts) {
+      return;
+   }
    dataSubselector::BitMaskCut * bitMaskCut = m_cuts->bitMaskCut();
    if (bitMaskCut) {
       m_eventClass = 1 << bitMaskCut->bitPosition();
