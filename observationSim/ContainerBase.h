@@ -3,7 +3,7 @@
  * @brief Base class for observationSim Event and ScData containers.
  * @author J. Chiang <jchiang@slac.stanford.edu>
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/observationSim/ContainerBase.h,v 1.6 2006/07/14 15:57:06 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/observationSim/ContainerBase.h,v 1.7 2012/06/15 00:18:09 jchiang Exp $
  */
 
 #ifndef observationSim_ContainerBase_h
@@ -109,6 +109,10 @@ private:
    void write_par_as_int(tip::Header & header,
                          const std::string & keyword,
                          const std::string & parname) const;
+
+   void write_par_as_long(tip::Header & header,
+                          const std::string & keyword,
+                          const std::string & parname) const;
 
    void write_par_as_bool(tip::Header & header,
                           const std::string & keyword,

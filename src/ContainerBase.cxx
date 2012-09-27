@@ -2,7 +2,7 @@
  * @file ContainerBase.cxx
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/ContainerBase.cxx,v 1.7 2005/08/16 17:51:10 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/ContainerBase.cxx,v 1.8 2012/06/15 00:18:10 jchiang Exp $
  */
 
 #include <ctime>
@@ -100,6 +100,13 @@ void ContainerBase::write_par_as_int(tip::Header & header,
    header[keyword].set(value);
 }
 
+void ContainerBase::write_par_as_long(tip::Header & header,
+                                     const std::string & keyword,
+                                     const std::string & parname) const {
+   long value = (*m_pars)[parname];
+   header[keyword].set(value);
+}
+
 void ContainerBase::write_par_as_bool(tip::Header & header,
                                       const std::string & keyword,
                                       const std::string & parname) const {
@@ -117,7 +124,7 @@ void ContainerBase::writeParFileParams(tip::Header & header) const {
    write_par_as_int(header, "SIMOFFSE", "offset");
    write_par_as_bool(header, "SIMEDISP", "edisp");
    write_par_as_string(header, "SIMIRFS", "irfs");
-   write_par_as_int(header, "SIMSEED", "seed");
+   write_par_as_long(header, "SIMSEED", "seed");
 
    if ((*m_pars)["irfs"] == "none") {
       write_par_as_double(header, "SIMAREA", "area");
