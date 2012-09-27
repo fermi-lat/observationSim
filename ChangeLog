@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Sep 26 21:55:47 PDT 2012
+ScienceTools-scons/observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+add event class handling in EventContainer and write event_class using bit mask
+    *
+------------------------------------------------------------
+User: jchiang  Wed Sep 26 21:55:47 PDT 2012
 ScienceTools-scons/observationSim/src
 
 Modified Files:
