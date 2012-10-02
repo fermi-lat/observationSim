@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EventContainer.cxx,v 1.98 2012/09/27 04:55:47 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EventContainer.cxx,v 1.99 2012/09/27 05:11:37 jchiang Exp $
  */
 
 #include <cmath>
@@ -298,6 +298,11 @@ void EventContainer::writeEvents(double obsStopTime) {
       cuts = new dataSubselector::Cuts(*m_cuts);
    } else {
       cuts = new dataSubselector::Cuts();
+   }
+
+// Write PASS_VER keyword.
+   if (cuts->bitMaskCut()) {
+      ft1.header()["PASS_VER"].set(cuts->bitMaskCut()->pass_ver());
    }
 
 // Fill the GTI extension with the entire observation in a single GTI.
