@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EventContainer.cxx,v 1.99 2012/09/27 05:11:37 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EventContainer.cxx,v 1.100 2012/10/02 16:48:59 jchiang Exp $
  */
 
 #include <cmath>
@@ -70,7 +70,7 @@ namespace {
       const irfInterface::IEfficiencyFactor * efficiency_factor
          = respPtrs.front()->efficiencyFactor();
       if (efficiency_factor) {
-         efficiency = efficiency_factor->value(energy, ltfrac);
+         efficiency = efficiency_factor->value(energy, ltfrac, time);
       }
 // First, fill a vector with the individual values.
       std::vector<double> effAreas(respPtrs.size());
