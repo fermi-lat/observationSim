@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/test/main.cxx,v 1.41 2010/04/01 00:19:25 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/test/main.cxx,v 1.42 2012/11/11 03:23:33 jchiang Exp $
  */
 #ifdef TRAP_FPE
 #include <fenv.h>
@@ -21,6 +21,8 @@
 #include "irfLoader/Loader.h"
 
 #include "celestialSources/SpectrumFactoryLoader.h"
+
+#include "dataSubselector/Cuts.h"
 
 #include "observationSim/Simulator.h"
 #include "observationSim/EventContainer.h"
@@ -106,8 +108,11 @@ int main(int iargc, char * argv[]) {
    respPtrs.push_back(myFactory->create("DC1A::Front"));
    respPtrs.push_back(myFactory->create("DC1A::Back"));
 
+   dataSubselector::Cuts * cuts(new dataSubselector::Cuts);
+   cuts->setIrfs("DC1A");
+
 // Generate the events and spacecraft data.
-   observationSim::EventContainer events("test_events", "EVENTS");
+   observationSim::EventContainer events("test_events", "EVENTS", cuts);
    observationSim::ScDataContainer scData("test_scData", "SC_DATA");
 
 // The spacecraft object.
