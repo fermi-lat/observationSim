@@ -4,7 +4,7 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/observationSim/src/Simulator.cxx,v 1.62 2008/03/14 05:20:47 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/Simulator.cxx,v 1.63 2009/10/23 20:54:34 jchiang Exp $
  */
 
 #include <algorithm>
@@ -216,7 +216,7 @@ void Simulator::makeEvents(EventContainer &events,
             m_newEvent->code(m_source->numSource());
             m_interval = m_source->interval(m_absTime);
          } catch (astro::PointingHistory::TimeRangeError & eObj) {
-            m_formatter->info(4) << "Caught TimeRangeError: " 
+            m_formatter->info() << "Caught TimeRangeError: " 
                                  << eObj.what() << "\n"
                                  << "Exiting." << std::endl;
             break;
