@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EventContainer.cxx,v 1.100 2012/10/02 16:48:59 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EventContainer.cxx,v 1.101 2013/01/09 00:45:46 jchiang Exp $
  */
 
 #include <cmath>
@@ -240,18 +240,24 @@ astro::SkyDir EventContainer::ScZenith(double time) const {
 
 double EventContainer::earthAzimuthAngle(double ra, double dec, 
                                          double time) const {
-   astro::SkyDir appDir(ra, dec);
-   astro::SkyDir zen_z = ScZenith(time);
-   astro::SkyDir tmp = astro::SkyDir(zen_z.ra(), zen_z.dec() - 90.);
-   astro::SkyDir zen_x = astro::SkyDir(-tmp());
-   astro::SkyDir zen_y = zen_x;
-   zen_y().rotate(zen_z(), M_PI/2.);
-   double azimuth = (std::atan2(zen_y().dot(appDir()), zen_x().dot(appDir()))
-                     *180./M_PI);
-   if (azimuth < 0) {
-      azimuth += 360.;
+   // Calculation from FT1worker::Evaluate in AnalysisNtuple package.
+   astro::SkyDir sdir(ra, dec);
+   astro::SkyDir zenith(ScZenith(time));
+
+   Hep3Vector north_pole(0,0,1);
+   // East is perp to north_pole and zenith
+   Hep3Vector east_dir(north_pole.cross(zenith()).unit());
+   Hep3Vector north_dir(zenith().cross(east_dir));
+
+   double earth_azimuth = atan2(sdir().dot(east_dir), sdir().dot(north_dir));
+   if (earth_azimuth < 0) {
+      earth_azimuth += 2*M_PI; // to 0-360 deg.
    }
-   return azimuth;
+   if (fabs(earth_azimuth) < 1e-8) {
+      earth_azimuth = 0;
+   }
+   earth_azimuth *= 180./M_PI;
+   return earth_azimuth;
 }
 
 void EventContainer::writeEvents(double obsStopTime) {
