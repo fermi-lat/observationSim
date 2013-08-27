@@ -3,7 +3,7 @@
  * @brief Observation simulator using instrument response functions.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.84 2012/09/27 04:55:47 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.85 2012/11/11 03:23:32 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -314,6 +314,9 @@ void ObsSim::generateData() {
    // bit that is set in the EVENT_CLASS variable.
    std::string irfs = m_pars["irfs"];
    cuts->setIrfs(irfs);
+   // Remove the VersionCut containing the IRF_VERSION since that should
+   // not appear in an FT1 file.
+   cuts->removeVersionCut("IRF_VERSION");
 
    if (m_pars["use_ac"]) {
       cuts->addSkyConeCut(m_pars["ra"], m_pars["dec"], m_pars["radius"]);
