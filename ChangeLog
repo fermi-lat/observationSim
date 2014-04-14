@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Apr 14 09:16:19 PDT 2014
+ScienceTools-scons/observationSim/src
+
+Modified Files:
+	EventContainer.cxx 
+Log Message:
+changes to use bit-array columns for event_type and event_class, while remaining backwards compatible
+    *
+------------------------------------------------------------
+User: jchiang  Mon Apr 14 09:16:19 PDT 2014
 ScienceTools-scons/observationSim/observationSim
 
 Modified Files:
