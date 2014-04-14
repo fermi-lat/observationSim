@@ -1,11 +1,12 @@
 /** @file release.notes
     @brief package observationSim
     @brief Package coordinators: J. Chiang <jchiang@slac.stanford.edu>
-    $Id: release.notes,v 1.172 2013/08/03 15:00:46 jchiang Exp $
+    $Id: release.notes,v 1.173 2013/08/27 16:07:31 jchiang Exp $
 
     @verbatim
     EOH
 
+ observationSim-09-03-01 14-Apr-2014 jchiang Pass 8 bit masking support
  observationSim-09-03-00 27-Aug-2013 jchiang changes for FSSC-requested irfs handling
  observationSim-09-02-07 03-Aug-2013 jchiang use Earth Azimuth calculation from GLEAM
  observationSim-09-02-06 01-Jul-2013 jchiang set chatter level of TimeRangeError handling to 2 (default) in Simulator.cxx (from Jeremy)
