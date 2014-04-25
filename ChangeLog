@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Apr 25 09:54:30 PDT 2014
+ScienceTools-scons/observationSim/observationSim
+
+Modified Files:
+	EventContainer.h 
+Log Message:
+changes to support event type in FT1 file
+    *
+------------------------------------------------------------
 TAG
 Tag name: observationSim-09-03-01, operation: add
 Package: observationSim
