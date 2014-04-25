@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EventContainer.cxx,v 1.102 2013/08/03 15:00:15 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EventContainer.cxx,v 1.103 2014/04/14 16:16:19 jchiang Exp $
  */
 
 #include <cmath>
@@ -123,7 +123,11 @@ void EventContainer::init() {
    if (bitMaskCut) {
       m_eventClass = 1 << bitMaskCut->bitPosition();
    } else {
-      m_eventClass = 0;
+      /// Some toy numbers, just so these are not zero.
+      m_eventClass = 2;
+      m_eventType = 212;
+      // m_eventClass = 0;
+      // m_eventType = 0;
    }
 }
 
@@ -212,7 +216,8 @@ bool EventContainer::addEvent(EventSource * event,
             m_events.push_back( Event(time, appEnergy, 
                                       appDir, sourceDir, 
                                       zAxis, xAxis, ScZenith(time), 
-                                      convType=respPtr->irfID(), eventType=0,
+                                      convType=respPtr->irfID(),
+                                      eventType=m_eventType,
                                       energy, flux_theta, flux_phi,
                                       m_srcSummaries[srcName].id) );
             m_events.back().setEventClass(m_eventClass);
