@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Apr 25 09:55:10 PDT 2014
+observationSim
+
+Modified Files:
+	SConscript 
+Log Message:
+stag/GoGui_auto-tag
+    *
+------------------------------------------------------------
 User: jchiang  Fri Apr 25 09:54:30 PDT 2014
 ScienceTools-scons/observationSim/src
 
