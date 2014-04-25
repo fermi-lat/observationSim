@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/observationSim/EventContainer.h,v 1.36 2012/06/15 00:18:09 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/observationSim/EventContainer.h,v 1.37 2012/09/27 04:55:46 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -121,6 +121,7 @@ private:
    std::vector<Event> m_events;
    
    int m_eventClass;
+   int m_eventType;
 
    /// Event summaries keyed by source name.
    std::map<std::string, SourceSummary> m_srcSummaries;
