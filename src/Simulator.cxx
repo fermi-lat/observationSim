@@ -4,7 +4,7 @@
  * generating LAT photon events.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/Simulator.cxx,v 1.63 2009/10/23 20:54:34 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/Simulator.cxx,v 1.64 2013/06/28 20:48:20 jperkins Exp $
  */
 
 #include <algorithm>
@@ -231,11 +231,9 @@ void Simulator::makeEvents(EventContainer &events,
          m_elapsedTime += m_interval;
          m_fluxMgr->pass(m_interval);
          
-         std::string name = m_newEvent->fullTitle();
-         if (name.find("TimeTick") != std::string::npos) {
-            if (!m_usePointingHistory) {
-               scData.addScData(m_newEvent, spacecraft);
-            }
+         if (!m_usePointingHistory && 
+             m_newEvent->particleName() == "TimeTick") {
+            scData.addScData(m_newEvent, spacecraft);
          } else {
             if (events.addEvent(m_newEvent, respPtrs, spacecraft)) {
                m_numEvents++;
