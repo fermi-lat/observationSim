@@ -1,11 +1,12 @@
 /** @file release.notes
     @brief package observationSim
     @brief Package coordinators: J. Chiang <jchiang@slac.stanford.edu>
-    $Id: release.notes,v 1.174 2014/04/14 23:34:14 jchiang Exp $
+    $Id: release.notes,v 1.175 2014/04/25 16:55:10 jchiang Exp $
 
     @verbatim
     EOH
 
+ observationSim-09-03-03 06-Dec-2014 jchiang fix timetick problem OBS-23@JIRA
  observationSim-09-03-02 25-Apr-2014 jchiang changes to support event_type in FT1
  observationSim-09-03-01 14-Apr-2014 jchiang Pass 8 bit masking support
  observationSim-09-03-00 27-Aug-2013 jchiang changes for FSSC-requested irfs handling
