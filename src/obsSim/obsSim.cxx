@@ -3,7 +3,7 @@
  * @brief Observation simulator using instrument response functions.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.85 2012/11/11 03:23:32 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.86 2013/08/27 05:33:57 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -245,6 +245,9 @@ void ObsSim::createResponseFuncs() {
       const std::vector<std::string> & resps = it->second;
       for (size_t i = 0; i < resps.size(); i++) {
          irfInterface::Irfs * irf(myFactory->create(resps[i]));
+         m_formatter->info(3) << "Adding IRF: " << resps[i];
+         m_formatter->info(4) << ", with event_type bit " << irf->irfID();
+         m_formatter->info(3) << std::endl;
          m_respPtrs.push_back(irf);
       }
    } else {

@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EventContainer.cxx,v 1.103 2014/04/14 16:16:19 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EventContainer.cxx,v 1.104 2014/04/25 16:54:30 jchiang Exp $
  */
 
 #include <cmath>
@@ -210,14 +210,17 @@ bool EventContainer::addEvent(EventSource * event,
                              << eventId << std::endl;
             accepted = false;
          } else {
-            int convType;
+            int convType(0);
+            if (respPtr->irfID() == 1) {
+               convType = 1;
+            }
             int eventType;
             m_srcSummaries[srcName].acceptedNum += 1;
             m_events.push_back( Event(time, appEnergy, 
                                       appDir, sourceDir, 
                                       zAxis, xAxis, ScZenith(time), 
-                                      convType=respPtr->irfID(),
-                                      eventType=m_eventType,
+                                      convType,
+                                      eventType=(1 << respPtr->irfID()),
                                       energy, flux_theta, flux_phi,
                                       m_srcSummaries[srcName].id) );
             m_events.back().setEventClass(m_eventClass);
