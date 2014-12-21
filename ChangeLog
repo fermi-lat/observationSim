@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sat Dec 20 16:02:31 PST 2014
+ScienceTools-scons/observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+set event_type bit
+    *
+------------------------------------------------------------
+User: jchiang  Sat Dec 20 16:02:31 PST 2014
 ScienceTools-scons/observationSim/src
 
 Modified Files:
