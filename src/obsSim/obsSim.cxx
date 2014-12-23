@@ -3,7 +3,7 @@
  * @brief Observation simulator using instrument response functions.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.86 2013/08/27 05:33:57 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.87 2014/12/21 00:02:31 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -26,6 +26,7 @@
 #include "tip/IFileSvc.h"
 #include "tip/Table.h"
 
+#include "facilities/commonUtilities.h"
 #include "facilities/Timestamp.h"
 #include "facilities/Util.h"
 
@@ -38,8 +39,6 @@
 
 #include "st_facilities/Environment.h"
 #include "st_facilities/Util.h"
-
-#include "facilities/commonUtilities.h"
 
 #include "flux/Spectrum.h"
 
@@ -232,6 +231,16 @@ void ObsSim::createResponseFuncs() {
       = irfInterface::IrfsFactory::instance();
 
    std::string responseFuncs = m_pars["irfs"];
+   std::vector<std::string> tokens;
+   facilities::Util::stringTokenize(responseFuncs, "_", tokens);
+   if (tokens.size() > 3) {
+      throw std::runtime_error("Invalid IRF designation: " + responseFuncs);
+   }
+   std::string evtype = m_pars["evtype"];
+   if (evtype != "" && evtype !="none") {
+      responseFuncs += ("_" + evtype);
+   }
+   m_formatter->info(3) << "Using irfs: " << responseFuncs << std::endl;
 
    if (responseFuncs == "none") {
       m_respPtrs.clear();

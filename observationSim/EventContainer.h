@@ -2,7 +2,7 @@
  * @file EventContainer.h
  * @brief Declaration for EventContainer class.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/observationSim/EventContainer.h,v 1.37 2012/09/27 04:55:46 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/observationSim/EventContainer.h,v 1.38 2014/04/25 16:54:29 jchiang Exp $
  */
 
 #ifndef observationSim_EventContainer_h
@@ -54,12 +54,7 @@ public:
                   unsigned int maxNumEvents=20000,
                   double startTime=0, double stopTime=0,
                   bool applyEdisp=true,
-                  const st_app::AppParGroup * pars=0) : 
-      ContainerBase(filename, tablename, maxNumEvents, pars), m_prob(1), 
-      m_cuts(cuts), m_startTime(startTime), m_stopTime(stopTime),
-      m_applyEdisp(applyEdisp) {
-      init();
-   }
+                  const st_app::AppParGroup * pars=0);
 
    ~EventContainer();
 
