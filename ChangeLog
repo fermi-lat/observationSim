@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Dec 22 16:38:26 PST 2014
+ScienceTools-scons/observationSim/src/obsSim
+
+Modified Files:
+	obsSim.cxx 
+Log Message:
+add evtype option
+    *
+------------------------------------------------------------
+User: jchiang  Mon Dec 22 16:38:26 PST 2014
 ScienceTools-scons/observationSim/src
 
 Modified Files:
