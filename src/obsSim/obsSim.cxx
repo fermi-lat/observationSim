@@ -3,7 +3,7 @@
  * @brief Observation simulator using instrument response functions.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.88 2014/12/23 00:38:26 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/obsSim/obsSim.cxx,v 1.89 2015/01/05 21:00:25 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -336,6 +336,10 @@ void ObsSim::generateData() {
    dataSubselector::BitMaskCut * evtype_cut(0);
    try {
       std::string evtype = m_pars["evtype"];
+      if (evtype == "none") {
+         throw hoops::Hexception(12, "Don't add this cut for Front/Back", 
+                                 "", 0);
+      }
       if (!(evtype_cut = cuts->bitMaskCut("EVENT_TYPE"))) {
          // Get the inverse mapping
          std::map<std::string, std::pair<unsigned int, std::string> > 
