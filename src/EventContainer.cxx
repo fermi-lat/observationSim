@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EventContainer.cxx,v 1.105 2014/12/21 00:02:31 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EventContainer.cxx,v 1.106 2014/12/23 00:38:26 jchiang Exp $
  */
 
 #include <cmath>
@@ -325,7 +325,8 @@ void EventContainer::writeEvents(double obsStopTime) {
       ft1["zenith_angle"].set(evt->zenAngle());
       ft1["earth_azimuth_angle"].set(earthAzimuthAngle(ra, dec, time));
       if (ft1Template == "ft1_p7.tpl") {
-         ft1["event_class"].set(evt->eventClass());
+         int event_class(evt->eventClass());
+         ft1["event_class"].set(event_class);
       } else {
          tip::BitStruct event_class(evt->eventClass());
          ft1["event_class"].set(event_class);
