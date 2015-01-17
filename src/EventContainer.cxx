@@ -4,7 +4,7 @@
  * when they get written to a FITS file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EventContainer.cxx,v 1.106 2014/12/23 00:38:26 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/EventContainer.cxx,v 1.107 2015/01/08 21:07:57 jchiang Exp $
  */
 
 #include <cmath>
@@ -149,6 +149,7 @@ bool EventContainer::addEvent(EventSource * event,
    double time = event->time();
    double energy = event->energy();
    Hep3Vector launchDir = event->launchDir();
+   bool source_apply_edisp(event->applyEdisp());
 
    double arg = launchDir.z();
    double flux_theta = ::my_acos(arg);
@@ -197,7 +198,7 @@ bool EventContainer::addEvent(EventSource * event,
       astro::SkyDir appDir 
          = respPtr->psf()->appDir(energy, sourceDir, zAxis, xAxis, time);
       double appEnergy(energy);
-      if (m_applyEdisp) {
+      if (m_applyEdisp && source_apply_edisp) {
          appEnergy =
             respPtr->edisp()->appEnergy(energy, sourceDir, zAxis, xAxis, time);
       }
