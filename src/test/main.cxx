@@ -3,7 +3,7 @@
  * @brief Test program to exercise observationSim interface as a
  * prelude to the O2 tool.
  * @author J. Chiang
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/test/main.cxx,v 1.42 2012/11/11 03:23:33 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/observationSim/src/test/main.cxx,v 1.43 2013/02/11 17:10:16 jchiang Exp $
  */
 #ifdef TRAP_FPE
 #include <fenv.h>
@@ -38,7 +38,6 @@ int main(int iargc, char * argv[]) {
    feenableexcept (FE_INVALID|FE_DIVBYZERO|FE_OVERFLOW);
 #endif
 
-   try {
 // Create list of xml input files for source definitions.
    std::vector<std::string> fileList;
    std::string xml_list(facilities::commonUtilities::joinPath(st_facilities::Environment::xmlPath("observationSim"), "obsSim_source_library.xml"));
@@ -100,7 +99,7 @@ int main(int iargc, char * argv[]) {
    observationSim::Simulator my_simulator(sourceNames, fileList, 1.21);
 
 // Allow for multiple IRFs.
-   irfLoader::Loader::go();
+   irfLoader::Loader::go("DC1A");
    irfInterface::IrfsFactory * myFactory 
       = irfInterface::IrfsFactory::instance();
    std::vector<irfInterface::Irfs *> respPtrs;
@@ -129,10 +128,6 @@ int main(int iargc, char * argv[]) {
       my_simulator.generateEvents(count, events, scData, respPtrs, spacecraft);
    }
    std::cout << "Done." << std::endl;
-   } catch (std::exception & eObj) {
-      std::cout << eObj.what() << std::endl;
-      return 1;
-   }
 }
 
 void help() {
