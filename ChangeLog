@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Mar  6 11:21:40 PST 2015
+ScienceTools-scons/observationSim/src/test
+
+Modified Files:
+	main.cxx 
+Log Message:
+load only the DC1A irfs to speed up test program; remove outer try/catch block in test program and let the exceptions be fully exposed
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-10-00-02, operation: add
 Package: observationSim
