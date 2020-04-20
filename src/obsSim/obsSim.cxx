@@ -463,7 +463,7 @@ double ObsSim::maxEffArea() const {
 
 void ObsSim::get_tstart(std::string scfile, const std::string & sctable) {
    facilities::Util::expandEnvVar(&scfile);
-   std::auto_ptr<const tip::Table>
+   std::unique_ptr<const tip::Table>
       sc_data(tip::IFileSvc::instance().readTable(scfile, sctable));
 /// TSTART from the Fermi astroserver is unreliable.  Use START of
 /// first entry instead.
