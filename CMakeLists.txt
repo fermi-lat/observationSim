@@ -1,6 +1,6 @@
 ##### Library ######
 add_library(
-  observationSim STATIC
+  observationSim 
   src/ContainerBase.cxx
   src/EgretSc.cxx
   src/EventContainer.cxx
