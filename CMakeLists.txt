@@ -11,7 +11,7 @@ add_library(
 
 target_link_libraries(
   observationSim
-  PUBLIC astro CLHEP::CLHEP flux st_stream st_app tip irfInterface dataSubselector
+  PUBLIC astro CLHEP::GeometryS CLHEP::RandomS flux st_stream st_app tip irfInterface dataSubselector
   PRIVATE fitsGen
 )
 target_include_directories(
