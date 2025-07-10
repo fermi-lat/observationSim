@@ -21,6 +21,8 @@ target_include_directories(
 )
 
 ###### Executables ######
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
 add_executable(gtobssim src/obsSim/obsSim.cxx)
 target_link_libraries(gtobssim PRIVATE observationSim irfUtil irfLoader celestialSources)
 target_include_directories(
