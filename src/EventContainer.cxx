@@ -43,6 +43,7 @@ using CLHEP::HepRotation;
 
 #include "observationSim/EventContainer.h"
 #include "observationSim/Spacecraft.h"
+#include "general_util/generic_utils.h"
 
 namespace {
    double my_acos(double mu) {
@@ -362,7 +363,10 @@ void EventContainer::writeEvents(double obsStopTime) {
 
    ft1.setPhduKeyword("FILENAME", ft1File);
    ft1.setPhduKeyword("VERSION", 1);
-   ft1.setPhduKeyword("CREATOR", creator());
+   
+   // Update CREATOR value with: Tool name/Group/Version
+   std::string creator_version =  GenericUtils::creator_banner(creator());
+   ft1.setPhduKeyword("CREATOR", creator_version);
 
    writeParFileParams(ft1.header());
 

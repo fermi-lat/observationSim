@@ -21,6 +21,7 @@
 
 #include "observationSim/EventContainer.h"
 #include "observationSim/ScDataContainer.h"
+#include "general_util/generic_utils.h"
 
 namespace {
    double geomag_lat(const std::vector<double> & scPosition,
@@ -125,7 +126,10 @@ void ScDataContainer::writeScData() {
       }
       ft2.setPhduKeyword("FILENAME", ft2File);
       ft2.setPhduKeyword("VERSION", 1);
-      ft2.setPhduKeyword("CREATOR", creator());
+
+      // Update CREATOR value with: Tool name/Group/Version
+      std::string creator_version =  GenericUtils::creator_banner(creator());
+      ft2.setPhduKeyword("CREATOR", creator_version);
 
       writeParFileParams(ft2.header());
 

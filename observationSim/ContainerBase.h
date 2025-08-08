@@ -51,8 +51,9 @@ public:
       m_appName = appName;
    }
 
+   // Changed the return to be JUST the app name
    virtual std::string creator() {
-      return m_appName + " " + m_softwareVersion;
+      return m_appName;
    }
 
 protected:
