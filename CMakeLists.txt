@@ -11,7 +11,7 @@ add_library(
 
 target_link_libraries(
   observationSim
-  PUBLIC astro CLHEP::CLHEP flux st_stream st_app tip irfInterface dataSubselector
+  PUBLIC astro CLHEP::GeometryS CLHEP::RandomS flux st_stream st_app tip irfInterface dataSubselector
   PRIVATE fitsGen
 )
 target_include_directories(
@@ -21,6 +21,8 @@ target_include_directories(
 )
 
 ###### Executables ######
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
 add_executable(gtobssim src/obsSim/obsSim.cxx)
 target_link_libraries(gtobssim PRIVATE observationSim irfUtil irfLoader celestialSources)
 target_include_directories(
