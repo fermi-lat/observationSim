@@ -36,38 +36,38 @@ LatSc::LatSc(const std::string & ft2file) : Spacecraft() {
    delete scData;
 }
 
-astro::SkyDir LatSc::zAxis(double time) {
+auto LatSc::zAxis(double time) -> astro::SkyDir {
    CLHEP::HepRotation rotationMatrix = InstrumentToCelestial(time);
    return astro::SkyDir(rotationMatrix(CLHEP::Hep3Vector(0, 0, 1)),
                         astro::SkyDir::EQUATORIAL);
 }
 
-astro::SkyDir LatSc::xAxis(double time) {
+auto LatSc::xAxis(double time) -> astro::SkyDir {
    CLHEP::HepRotation rotationMatrix = InstrumentToCelestial(time);
    return astro::SkyDir(rotationMatrix(CLHEP::Hep3Vector(1, 0, 0)),
                         astro::SkyDir::EQUATORIAL);
 }
 
-double LatSc::EarthLon(double time) {
+auto LatSc::EarthLon(double time) -> double {
    astro::GPS * gps(astro::GPS::instance());
    gps->time(time);
    return gps->lon();
 }
 
-double LatSc::EarthLat(double time) {
+auto LatSc::EarthLat(double time) -> double {
    astro::GPS * gps(astro::GPS::instance());
    gps->time(time);
    return gps->lat();
 }
 
-CLHEP::HepRotation LatSc::InstrumentToCelestial(double time) {
+auto LatSc::InstrumentToCelestial(double time) -> CLHEP::HepRotation {
    astro::GPS * gps(astro::GPS::instance());
    gps->time(time);
    astro::PointingTransform transform(gps->zAxisDir(), gps->xAxisDir());
    return transform.localToCelestial();
 }
 
-bool LatSc::inSaa(double time) {
+auto LatSc::inSaa(double time) -> bool {
    if (::getenv("DISABLE_SAA")) {
       return false;
    }
@@ -94,7 +94,7 @@ void LatSc::getZenith(double time, double & ra, double & dec) {
    dec = zenithDir.dec();
 }
 
-double LatSc::livetimeFrac(double time) const {
+auto LatSc::livetimeFrac(double time) const -> double {
    if (m_start.size() == 0) { // We are not using an FT2 file.
       return Spacecraft::livetimeFrac(time);
    }

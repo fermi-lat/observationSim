@@ -12,7 +12,7 @@
 
 namespace observationSim {
 
-CLHEP::HepRotation EgretSc::InstrumentToCelestial(double) {
+auto EgretSc::InstrumentToCelestial(double) -> CLHEP::HepRotation {
 
 // This implementation *should* ensure that an orthogonal set of axes
 // are fed to the HepRotation constructor.

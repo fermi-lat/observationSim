@@ -252,7 +252,7 @@ void Simulator::makeEvents(EventContainer &events,
    } // while (!done())
 }
 
-bool Simulator::done() {
+auto Simulator::done() -> bool {
    if (m_elapsedTime > m_maxSimTime) {
       return true;
    }

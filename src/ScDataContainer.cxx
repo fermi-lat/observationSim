@@ -23,8 +23,8 @@
 #include "observationSim/ScDataContainer.h"
 
 namespace {
-   double geomag_lat(const std::vector<double> & scPosition,
-                     double met) {
+   auto geomag_lat(const std::vector<double> & scPosition,
+                     double met) -> double {
       CLHEP::Hep3Vector pos(scPosition.at(0)/1e3, scPosition.at(1)/1e3,
                             scPosition.at(2)/1e3);
       astro::EarthCoordinate coord(pos, met);

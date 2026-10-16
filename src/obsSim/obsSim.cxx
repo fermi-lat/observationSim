@@ -97,7 +97,7 @@ private:
    void createSimulator();
    void generateData();
    void saveEventIds(const observationSim::EventContainer & events) const;
-   double maxEffArea() const;
+   auto maxEffArea() const -> double;
    void get_tstart(std::string scfile, const std::string & sctable);
 
    static std::string s_cvs_id;
@@ -444,7 +444,7 @@ saveEventIds(const observationSim::EventContainer & events) const {
    outputFile.close();
 }
 
-double ObsSim::maxEffArea() const {
+auto ObsSim::maxEffArea() const -> double {
    if (m_respPtrs.empty()) {
       double effArea = m_pars["area"];
       return effArea;

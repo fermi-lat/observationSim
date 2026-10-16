@@ -19,7 +19,7 @@
 
 namespace observationSim {
 
-std::string ContainerBase::outputFileName() const {
+auto ContainerBase::outputFileName() const -> std::string {
    std::ostringstream outputfile;
    outputfile << m_filename;
    if (m_fileNum < 10) {
@@ -64,7 +64,7 @@ void ContainerBase::writeDateKeywords(tip::Extension * table,
    }
 }
 
-astro::JulianDate ContainerBase::currentTime() {
+auto ContainerBase::currentTime() -> astro::JulianDate {
    std::time_t my_time = std::time(0);
    std::tm * now = std::gmtime(&my_time);
    if (now != 0) {

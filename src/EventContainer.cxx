@@ -45,7 +45,7 @@ using CLHEP::HepRotation;
 #include "observationSim/Spacecraft.h"
 
 namespace {
-   double my_acos(double mu) {
+   auto my_acos(double mu) -> double {
       if (mu > 1) {
          return 0;
       } else if (mu < -1) {
@@ -55,13 +55,13 @@ namespace {
       }
    }
 
-   irfInterface::Irfs* drawRespPtr(std::vector<irfInterface::Irfs*> &respPtrs,
+   auto drawRespPtr(std::vector<irfInterface::Irfs*> &respPtrs,
                                    double area, double energy, 
                                    astro::SkyDir &sourceDir,
                                    astro::SkyDir &zAxis,
                                    astro::SkyDir &xAxis, 
                                    double time,
-                                   double ltfrac) {
+                                   double ltfrac) -> irfInterface::Irfs* {
 //
 // Build a vector of effective area accumulated over the vector
 // of response object pointers.
@@ -141,10 +141,10 @@ void EventContainer::init() {
    }
 }
 
-bool EventContainer::addEvent(EventSource * event, 
+auto EventContainer::addEvent(EventSource * event, 
                               std::vector<irfInterface::Irfs *> & respPtrs, 
                               Spacecraft * spacecraft,
-                              bool flush) {
+                              bool flush) -> bool {
    std::string particleType = event->particleName();
    double time = event->time();
    double energy = event->energy();
@@ -256,14 +256,14 @@ void EventContainer::setEventId(const std::string & name, int eventId) {
    }
 }
 
-astro::SkyDir EventContainer::ScZenith(double time) const {
+auto EventContainer::ScZenith(double time) const -> astro::SkyDir {
    astro::GPS * gps(astro::GPS::instance());
    gps->time(time);
    return gps->zenithDir();
 }
 
-double EventContainer::earthAzimuthAngle(double ra, double dec, 
-                                         double time) const {
+auto EventContainer::earthAzimuthAngle(double ra, double dec, 
+                                         double time) const -> double {
    // Calculation from FT1worker::Evaluate in AnalysisNtuple package.
    astro::SkyDir sdir(ra, dec);
    astro::SkyDir zenith(ScZenith(time));

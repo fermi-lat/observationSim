@@ -33,7 +33,7 @@ void help();
 
 void load_sources();
 
-int main(int iargc, char * argv[]) {
+auto main(int iargc, char * argv[]) -> int {
 #ifdef TRAP_FPE
    feenableexcept (FE_INVALID|FE_DIVBYZERO|FE_OVERFLOW);
 #endif
