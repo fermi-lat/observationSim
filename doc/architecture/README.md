@@ -330,8 +330,8 @@ None built. `python/observationSim.i` (SWIG) has no CMake target.
   `test_events_0000.fits` against
   `share/fermitools/data/observationSim/outref/` and only checks that
   `test_scData_0000.fits` exists. That reference data is not in this repo:
-  it ships in the `fermitools-test-scripts-data` conda package, sourced
-  from `outrefFiles/observationSim/` in `fermitools-data` (which also holds
+  it ships in the runtime `fermitools-data` conda package, sourced
+  from `outrefFiles/observationSim/` in the `fermitools-data` repository (which also holds
   an unused `test_scData_0000.fits`). See "Testing" in ScienceTools'
   `docs/architecture/README.md`.
 - **Regression coverage** of the full tool exists only in `sane`'s Python
