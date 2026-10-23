@@ -323,8 +323,19 @@ None built. `python/observationSim.i` (SWIG) has no CMake target.
   - It makes no assertions. It passes if it does not throw. `-fb` is
     parsed but has no effect.
   - `TRAP_FPE` is on for this target (not on macOS).
+- **ST-unit-test:** the default run of ScienceTools'
+  `recipe/tests/ST-unit-test` (`unitTestsWithoutRoot`) does **not** run
+  `test_observationSim`. Only the ROOT list (`--with-root`) has it, followed
+  by `check_test_observationSim_output`, which `ftdiff`s
+  `test_events_0000.fits` against
+  `share/fermitools/data/observationSim/outref/` and only checks that
+  `test_scData_0000.fits` exists. That reference data is not in this repo:
+  it ships in the `fermitools-test-scripts-data` conda package, sourced
+  from `outrefFiles/observationSim/` in `fermitools-data` (which also holds
+  an unused `test_scData_0000.fits`). See "Testing" in ScienceTools'
+  `docs/architecture/README.md`.
 - **Regression coverage** of the full tool exists only in `sane`'s Python
-  tests, which run outside CTest.
+  tests, which run outside CTest and outside `ST-unit-test`.
 - **Legacy:** `SConscript`, `observationSimLib.py` and
   `azure-pipelines.yml`. `doc/results.ps` is an old validation plot.
 
